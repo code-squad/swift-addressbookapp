@@ -14,6 +14,7 @@
 		8E1EB97B20636E9100726AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1EB97920636E9100726AB1 /* LaunchScreen.storyboard */; };
 		8E1EB98620636E9100726AB1 /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB98520636E9100726AB1 /* AddressBookAppTests.swift */; };
 		8E1EB99120636E9100726AB1 /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB99020636E9100726AB1 /* AddressBookAppUITests.swift */; };
+		8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8E1EB98C20636E9100726AB1 /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1EB99020636E9100726AB1 /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		8E1EB99220636E9100726AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				8E1EB97020636E9100726AB1 /* AppDelegate.swift */,
 				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
+				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
 				8E1EB97420636E9100726AB1 /* Main.storyboard */,
 				8E1EB97720636E9100726AB1 /* Assets.xcassets */,
 				8E1EB97920636E9100726AB1 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				8E1EB97320636E9100726AB1 /* TableViewController.swift in Sources */,
 				8E1EB97120636E9100726AB1 /* AppDelegate.swift in Sources */,
+				8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
