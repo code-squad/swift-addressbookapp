@@ -20,16 +20,61 @@
                         <sections>
                             <tableViewSection id="Jh5-cX-Wf5">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KvI-op-vho" userLabel="DateTimeCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KvI-op-vho" userLabel="DateTimeCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KvI-op-vho" id="SDp-PW-HAQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7y-cR-tcB" userLabel="timeLabel">
+                                                    <rect key="frame" x="188" y="11" width="171" height="28.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="aX0-36-g7d"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SM-59-19T" userLabel="eventLabel">
+                                                    <rect key="frame" x="16" y="40" width="343" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="eCs-mD-ud8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-VE-s5h" userLabel="dateLabel">
+                                                    <rect key="frame" x="16" y="11" width="171" height="28.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="sy3-Pe-l1a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="i7y-cR-tcB" secondAttribute="trailing" constant="16" id="4Yh-ke-eEc"/>
+                                                <constraint firstItem="i7y-cR-tcB" firstAttribute="leading" secondItem="c0g-VE-s5h" secondAttribute="trailing" constant="1" id="8gU-5n-4Uw"/>
+                                                <constraint firstItem="c0g-VE-s5h" firstAttribute="top" secondItem="SDp-PW-HAQ" secondAttribute="top" constant="11" id="H12-ew-Bao"/>
+                                                <constraint firstItem="i7y-cR-tcB" firstAttribute="height" relation="greaterThanOrEqual" secondItem="4SM-59-19T" secondAttribute="height" id="Hdj-8f-WHb"/>
+                                                <constraint firstItem="i7y-cR-tcB" firstAttribute="top" secondItem="SDp-PW-HAQ" secondAttribute="top" constant="11" id="IwN-Aa-ndv"/>
+                                                <constraint firstAttribute="trailing" secondItem="4SM-59-19T" secondAttribute="trailing" constant="16" id="Y5Z-YN-85a"/>
+                                                <constraint firstItem="4SM-59-19T" firstAttribute="leading" secondItem="SDp-PW-HAQ" secondAttribute="leading" constant="16" id="cUx-gz-64s"/>
+                                                <constraint firstItem="c0g-VE-s5h" firstAttribute="height" secondItem="i7y-cR-tcB" secondAttribute="height" id="hUz-Xe-TV9"/>
+                                                <constraint firstItem="c0g-VE-s5h" firstAttribute="height" relation="greaterThanOrEqual" secondItem="4SM-59-19T" secondAttribute="height" id="kD9-MO-Ag7"/>
+                                                <constraint firstItem="4SM-59-19T" firstAttribute="top" secondItem="i7y-cR-tcB" secondAttribute="bottom" constant="1" id="lPm-2r-wo7" userLabel="eventLabel.top = timeLabel.bottom"/>
+                                                <constraint firstItem="4SM-59-19T" firstAttribute="top" secondItem="c0g-VE-s5h" secondAttribute="bottom" constant="1" id="mbV-bn-aGk" userLabel="eventLabel.top = dateLabel.bottom"/>
+                                                <constraint firstItem="c0g-VE-s5h" firstAttribute="width" secondItem="i7y-cR-tcB" secondAttribute="width" id="nuc-u2-jQa"/>
+                                                <constraint firstAttribute="bottom" secondItem="4SM-59-19T" secondAttribute="bottom" constant="11" id="oke-uR-PBy"/>
+                                                <constraint firstItem="c0g-VE-s5h" firstAttribute="leading" secondItem="SDp-PW-HAQ" secondAttribute="leading" constant="16" id="rTS-CE-7mM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="100-cs-uve" userLabel="WeatherCell">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="80" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="100-cs-uve" id="dYf-pQ-w0o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -37,7 +82,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rUc-K9-LV4">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rUc-K9-LV4" id="IIn-aS-ybz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -55,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lo9-8q-5NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="158"/>
+            <point key="canvasLocation" x="213.59999999999999" y="157.87106446776613"/>
         </scene>
     </scenes>
 </document>
