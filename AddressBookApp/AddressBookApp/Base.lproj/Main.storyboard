@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7y-cR-tcB" userLabel="timeLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7y-cR-tcB" userLabel="timeLabel">
                                                     <rect key="frame" x="188" y="11" width="171" height="28.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="aX0-36-g7d"/>
@@ -36,7 +37,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SM-59-19T" userLabel="eventLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eventLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SM-59-19T" userLabel="eventLabel">
                                                     <rect key="frame" x="16" y="40" width="343" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="eCs-mD-ud8"/>
@@ -45,7 +46,7 @@
                                                     <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-VE-s5h" userLabel="dateLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-VE-s5h" userLabel="dateLabel">
                                                     <rect key="frame" x="16" y="11" width="171" height="28.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="sy3-Pe-l1a"/>
@@ -79,6 +80,32 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="100-cs-uve" id="dYf-pQ-w0o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-rainny" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-cm-lIA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 날씨는 흐림입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da2-49-gdz" userLabel="weatherDescription">
+                                                    <rect key="frame" x="32" y="9.5" width="187.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTY-8C-Qh3" userLabel="detailButton">
+                                                    <rect key="frame" x="337" y="11" width="22" height="22"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="VZo-cm-lIA" secondAttribute="bottom" id="LmS-ma-74k"/>
+                                                <constraint firstItem="JTY-8C-Qh3" firstAttribute="top" secondItem="dYf-pQ-w0o" secondAttribute="top" constant="11" id="N8I-HF-WJz"/>
+                                                <constraint firstItem="VZo-cm-lIA" firstAttribute="centerY" secondItem="dYf-pQ-w0o" secondAttribute="centerY" id="NhL-7o-xaC"/>
+                                                <constraint firstItem="da2-49-gdz" firstAttribute="leading" secondItem="dYf-pQ-w0o" secondAttribute="leadingMargin" constant="16" id="SwK-Td-BAa"/>
+                                                <constraint firstAttribute="trailing" secondItem="VZo-cm-lIA" secondAttribute="trailing" id="VKL-pE-I8c"/>
+                                                <constraint firstAttribute="trailing" secondItem="JTY-8C-Qh3" secondAttribute="trailing" constant="16" id="ZPJ-aF-yLe"/>
+                                                <constraint firstItem="VZo-cm-lIA" firstAttribute="top" secondItem="dYf-pQ-w0o" secondAttribute="top" id="dFJ-K4-T5n"/>
+                                                <constraint firstItem="VZo-cm-lIA" firstAttribute="centerX" secondItem="dYf-pQ-w0o" secondAttribute="centerX" id="ggZ-Ke-i3j"/>
+                                                <constraint firstItem="da2-49-gdz" firstAttribute="centerY" secondItem="VZo-cm-lIA" secondAttribute="centerY" id="ifl-DA-b7z"/>
+                                                <constraint firstItem="VZo-cm-lIA" firstAttribute="leading" secondItem="dYf-pQ-w0o" secondAttribute="leading" id="qSD-0f-FBq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rUc-K9-LV4">
@@ -103,4 +130,7 @@
             <point key="canvasLocation" x="213.59999999999999" y="157.87106446776613"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weather-rainny" width="400" height="250"/>
+    </resources>
 </document>
