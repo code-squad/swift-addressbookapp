@@ -36,9 +36,63 @@
 ![기본 화면](materials/step1_01.png)
 
 ---
+## Step2 (DataSource 객체)
+### 요구사항
+- 동적으로 (Dynamic) 셀을 만들어서 테이블뷰를 채우는 방법을 학습한다.
+- Delegate 패턴과 테이블뷰 동작에 대해 학습한다.
+- readme.md 파일을 자신의 프로젝트에 대한 설명으로 변경한다.
+    - 단계별로 미션을 해결하고 리뷰를 받고나면 readme.md 파일에 주요 작업 내용(바뀐 화면 이미지, 핵심 기능 설명)과 완성 날짜시간을 기록한다.
+    - 실행한 화면을 캡처해서 readme.md 파일에 포함한다.
+
+### 프로그래밍 요구사항
+- 스토리보드에 새로운 ViewController (Scene)를 추가하고, Initial ViewController로 지정한다. (기존 TableViewController를 삭제하거나 남겨둬도 상관없음)
+- 새로 추가한 ViewController.View에 TableView를 추가하고 화면 가득하게 채운다.
+    - TableView.Content 속성은 Dynamic Prototypes 로 지정하고, Prototype Cells는 1로 설정한다.
+    - 셀 프로토타입 Style은 Subtitle로 지정하고, reuse identifier 속성에 id를 고유한 값으로 지정한다.
+- UIViewController 에서 상속받아 새로운 뷰컨트롤러 클래스 HolidayViewController를 만들고, 스토리보드 ViewController의 Custom Class로 지정한다.
+    - TableView를 HolidayViewController 클래스의 IBOutlet으로 연결한다.
+    - TableView.dataSource를 HolidayViewController로 지정한다.
+- 다음과 같은 JSON 데이터를 HolidayViewController 코드에 추가하고 JSONSerialization을 활용해서 Array<Dictionary<String,String>> 타입으로 변환한다.
+```
+[{"date":"1월1일", "subtitle":"신정"},
+{"date":"2월16일", "subtitle":"구정"},
+{"date":"3월1일", "subtitle":"삼일절"},
+{"date":"5월5일", "subtitle":"어린이날"},
+{"date":"5월22일", "subtitle":"석가탄신일"},
+{"date":"6월6일", "subtitle":"현충일"},
+{"date":"8월15일", "subtitle":"광복절"},
+{"date":"9월24일", "subtitle":"추석"},
+{"date":"10월3일", "subtitle":"개천절"},
+{"date":"10월9일", "subtitle":"한글날"},
+{"date":"12월25일", "subtitle":"성탄절"}]
+```
+- HolidayViewController에 UITableViewDataSource 프로토콜을 채택하고 필수 메소드를 구현한다.
+    - cell.textLabel 에는 date 값을 출력하고, cell.subtitle 에는 subtitle 값을 출력한다.
+
+### 결과
+#### UI
+![기본 화면](materials/step2_01.png)
+
+---
 ## 중간에 고생했던 부분 / 기억할 부분 간단 정리
 - contentMode
     - Scale To Fill : 정해져 있는 UIImageView의 사이즈에 맞춰 사진 사이즈가 조정된다.
     - Aspect Fit : 정해져 있는 UIImageView의 사이즈의 width나 height 중 사진과 대비하여 작은 사이즈에 맞춰 사진 크기가 조정된다.
     - Aspect Fill : 사진의 사이즈에 맞춰 UIImageView의 사이즈가 조정된다.
 - TableViewController의 TableView 속성에서 Content 값을 Static Cells로 정하면 기본 뷰의 디자인을 기호에 맞게 정의할 수 있다.
+
+- UITableViewController
+    - Table View를 컨트롤하는 객체
+    - Table View
+        - header와 footer존재
+        - Section이 구분되고 Section 마다 header와 footer가 존재한다.
+        - Section 내에는 각 데이터를 포함하는 Table Cell이 있다.
+- JSON 파일을 이용할 때는 로컬이든 웹에서 가져오는 데이터든 URL객체를 사용해서 불러와야한다.
+- UITableViewDataSource 프로토콜
+```Swift
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+```
+    - 위의 두 메소드를 필수로 구현해줘야 한다.
+    - 위의 경우 한 Section당 몇개의 데이터(cell)가 포함되는지 정의해주는 부분
+    - 아래의 경우 각 Cell에 어떤 데이터가 채워질지를 정의할 수 있다.
