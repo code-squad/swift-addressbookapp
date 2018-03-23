@@ -15,6 +15,7 @@
 		8E1EB98620636E9100726AB1 /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB98520636E9100726AB1 /* AddressBookAppTests.swift */; };
 		8E1EB99120636E9100726AB1 /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB99020636E9100726AB1 /* AddressBookAppUITests.swift */; };
 		8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */; };
+		8E1EB9A3206495FD00726AB1 /* Holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A2206495FD00726AB1 /* Holidays.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8E1EB99020636E9100726AB1 /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		8E1EB99220636E9100726AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
+		8E1EB9A2206495FD00726AB1 /* Holidays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Holidays.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8E1EB97020636E9100726AB1 /* AppDelegate.swift */,
 				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
+				8E1EB9A2206495FD00726AB1 /* Holidays.json */,
 				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
 				8E1EB97420636E9100726AB1 /* Main.storyboard */,
 				8E1EB97720636E9100726AB1 /* Assets.xcassets */,
@@ -237,6 +240,7 @@
 			files = (
 				8E1EB97B20636E9100726AB1 /* LaunchScreen.storyboard in Resources */,
 				8E1EB97820636E9100726AB1 /* Assets.xcassets in Resources */,
+				8E1EB9A3206495FD00726AB1 /* Holidays.json in Resources */,
 				8E1EB97620636E9100726AB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

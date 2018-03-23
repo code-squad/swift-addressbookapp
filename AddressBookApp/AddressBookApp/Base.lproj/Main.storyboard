@@ -96,6 +96,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="da2-49-gdz" secondAttribute="trailingMargin" id="1jr-36-fgH"/>
                                                 <constraint firstAttribute="bottom" secondItem="VZo-cm-lIA" secondAttribute="bottom" id="LmS-ma-74k"/>
                                                 <constraint firstItem="JTY-8C-Qh3" firstAttribute="top" secondItem="dYf-pQ-w0o" secondAttribute="top" constant="11" id="N8I-HF-WJz"/>
                                                 <constraint firstItem="VZo-cm-lIA" firstAttribute="centerY" secondItem="dYf-pQ-w0o" secondAttribute="centerY" id="NhL-7o-xaC"/>
