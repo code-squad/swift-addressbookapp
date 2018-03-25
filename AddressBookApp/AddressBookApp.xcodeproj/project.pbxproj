@@ -17,6 +17,8 @@
 		8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */; };
 		8E1EB9A3206495FD00726AB1 /* Holidays.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A2206495FD00726AB1 /* Holidays.json */; };
 		8E1EB9A52064E1B400726AB1 /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A42064E1B400726AB1 /* Holidays.swift */; };
+		8E1EB9A72067513300726AB1 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A62067513300726AB1 /* Keyword.swift */; };
+		8E1EB9A92067534000726AB1 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A82067534000726AB1 /* Holiday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		8E1EB9A2206495FD00726AB1 /* Holidays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Holidays.json; sourceTree = "<group>"; };
 		8E1EB9A42064E1B400726AB1 /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
+		8E1EB9A62067513300726AB1 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		8E1EB9A82067534000726AB1 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,10 @@
 			children = (
 				8E1EB97020636E9100726AB1 /* AppDelegate.swift */,
 				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
+				8E1EB9A82067534000726AB1 /* Holiday.swift */,
 				8E1EB9A42064E1B400726AB1 /* Holidays.swift */,
 				8E1EB9A2206495FD00726AB1 /* Holidays.json */,
+				8E1EB9A62067513300726AB1 /* Keyword.swift */,
 				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
 				8E1EB97420636E9100726AB1 /* Main.storyboard */,
 				8E1EB97720636E9100726AB1 /* Assets.xcassets */,
@@ -269,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1EB9A92067534000726AB1 /* Holiday.swift in Sources */,
 				8E1EB97320636E9100726AB1 /* TableViewController.swift in Sources */,
+				8E1EB9A72067513300726AB1 /* Keyword.swift in Sources */,
 				8E1EB97120636E9100726AB1 /* AppDelegate.swift in Sources */,
 				8E1EB9A52064E1B400726AB1 /* Holidays.swift in Sources */,
 				8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */,

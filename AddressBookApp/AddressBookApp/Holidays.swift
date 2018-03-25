@@ -8,26 +8,36 @@
 
 import Foundation
 
-struct Holidays {
-    enum Key: String {
-        case date = "date"
-        case subtitle = "subtitle"
+typealias JSONData = [[String: String]]
+
+struct Holidays: Codable {
+    enum Key {
+        case date
+        case subtitle
+
+        var value: String {
+            switch self {
+            case .date: return "date"
+            case .subtitle: return "subtitle"
+            }
+        }
     }
+
     private var holidays = [Holiday]()
 
-    init(jsonData: [[String : String]]) {
-        for eachData in jsonData {
-            let keys = eachData.keys
-            var date = ""
-            var subtitle = ""
-            for key in keys {
-                if case Key.date.rawValue = key {
-                    date = eachData[key]!
-                } else {
-                    subtitle = eachData[key]!
-                }
-            }
-            holidays.append(Holiday(date: date, subtitle: subtitle))
+    init?(jsonFile: String) {
+        let path = Bundle.main.path(forResource: jsonFile, ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? JSONData else { return nil }
+        setHolidays(jsonData: jsonData)
+    }
+
+    private mutating func setHolidays(jsonData: JSONData?) {
+        guard let jsonData = jsonData else { return }
+        jsonData.forEach {
+            self.holidays.append(Holiday(date: $0[Key.date.value] ?? "",
+                                         subtitle: $0[Key.subtitle.value] ?? ""))
         }
     }
 
@@ -37,14 +47,5 @@ struct Holidays {
 
     subscript(index: Int) -> Holiday {
         return holidays[index]
-    }
-}
-
-struct Holiday: Codable {
-    let date: String
-    let subtitle: String
-    init(date: String, subtitle: String) {
-        self.date = date
-        self.subtitle = subtitle
     }
 }

@@ -11,18 +11,17 @@ import UIKit
 class HolidayViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    private var holidays: Holidays!
+    private var holidays: Holidays! {
+        didSet {
+            self.tableView.dataSource = self
+            self.tableView.layoutSubviews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let path = Bundle.main.path(forResource: "Holidays", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        guard let data = try? Data(contentsOf: url) else { return }
-        guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String : String]] else { return }
-        self.holidays = Holidays(jsonData: jsonData!)
         DispatchQueue.main.async {
-            self.tableView.dataSource = self
-            self.tableView.layoutSubviews()
+            self.holidays = Holidays(jsonFile: Keyword.fileName.value)
         }
     }
 
@@ -31,7 +30,7 @@ class HolidayViewController: UIViewController, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "holiday", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Keyword.cellName.value, for: indexPath)
         cell.textLabel?.text = holidays[indexPath.row].date
         cell.detailTextLabel?.text = holidays[indexPath.row].subtitle
         return cell
