@@ -13,15 +13,17 @@ class HolidayViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     private var holidays: Holidays! {
         didSet {
-            self.tableView.dataSource = self
-            self.tableView.layoutSubviews()
+            DispatchQueue.main.async {
+                self.tableView.dataSource = self
+                self.tableView.layoutSubviews()
+            }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.holidays = Holidays(jsonFile: Keyword.fileName.value)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.holidays = Holidays(jsonFile: Keyword.fileName.value)
         }
     }
 

@@ -26,11 +26,19 @@ struct Holidays: Codable {
     private var holidays = [Holiday]()
 
     init?(jsonFile: String) {
+        guard let data = getData(from: jsonFile) else { return nil }
+        guard let jsonData = getJSONData(with: data) else { return nil }
+        setHolidays(jsonData: jsonData)
+    }
+
+    private func getData(from jsonFile: String) -> Data? {
         let path = Bundle.main.path(forResource: jsonFile, ofType: "json")
         let url = URL(fileURLWithPath: path!)
-        guard let data = try? Data(contentsOf: url) else { return nil }
-        guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? JSONData else { return nil }
-        setHolidays(jsonData: jsonData)
+        return try? Data(contentsOf: url)
+    }
+
+    private func getJSONData(with data: Data) -> JSONData? {
+        return try! JSONSerialization.jsonObject(with: data, options: []) as! JSONData
     }
 
     private mutating func setHolidays(jsonData: JSONData?) {
