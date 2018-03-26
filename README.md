@@ -74,6 +74,44 @@
 ![기본 화면](materials/step2_01.png)
 
 ---
+## Step3 (UITableViewCell 커스텀셀)
+### 요구사항
+- 테이블뷰 Custom 셀을 만들고, 테이블뷰를 채우는 방법을 학습한다.
+- readme.md 파일을 자신의 프로젝트에 대한 설명으로 변경한다.
+    - 단계별로 미션을 해결하고 리뷰를 받고나면 readme.md 파일에 주요 작업 내용(바뀐 화면 이미지, 핵심 기능 설명)과 완성 날짜시간을 기록한다.
+    - 실행한 화면을 캡처해서 readme.md 파일에 포함한다.
+
+### 프로그래밍 요구사항
+- HolidayViewController.TableView에 새로운 프로토타입 Cell을 추가하고, Custom 스타일로 지정한다.
+- 추가한 Custom cell은 높이를 80으로 하고 ImageView와 Label을 추가한다.
+- UITableViewCell 에서 상속받는 HolidayTableViewCell 클래스를 추가하고 새로 추가한 셀의 Custom class로 지정한다.
+    - Custom class 코드와 연결된 상태를 확인하고 각각 IBOutlet을 연결한다.
+    - ImageView는 backgroundImageView로 셀 전체를 채운다.
+    - dateLabel은 상단에 2/3를 차지하고, 글자크기는 24로 글자색은 흰색으로 지정하고 좌측 정렬한다.
+    - subtitleLabel은 하단에 1/3을 차지하고, 글자크기는 17로 글자색은 흰색으로 지정하고 우측 정렬한다.
+- 다음과 같은 JSON 데이터를 HolidayViewController 코드에 추가하고 JSONSerialization을 활용해서 Array<Dictionary<String,String>> 타입으로 변환한다.
+```
+[{"date":"1월1일", "subtitle":"신정", "image" : "snowy"},
+{"date":"2월16일", "subtitle":"구정", "image" : "sunny"},
+{"date":"3월1일", "subtitle":"삼일절"},
+{"date":"5월5일", "subtitle":"어린이날", "image" : "sunny"},
+{"date":"5월22일", "subtitle":"석가탄신일", "image" : "cloudy"},
+{"date":"6월6일", "subtitle":"현충일", "image" : "rainny"},
+{"date":"8월15일", "subtitle":"광복절", "image" : "sunny"},
+{"date":"9월24일", "subtitle":"추석", "image" : "rainny"},
+{"date":"10월3일", "subtitle":"개천절"},
+{"date":"10월9일", "subtitle":"한글날", "image" : "cloudy"},
+{"date":"12월25일", "subtitle":"성탄절", "image" : "snowy"}]
+```
+- UITableViewDataSource 프로토콜 구현 부분에서 cell을 HolidayTableViewCell 타입으로 변환해서 사용한다.
+    - cell.dateLabel 에는 date 값을 출력하고, cell.subtitleLabel 에는 subtitle 값을 출력하고, backgroundImageView에는 image 값에 해당하는 이미지를 표시한다.
+    - 만약 이미지가 없을 경우는 회색 배경이 보이도록 처리한다.
+
+### 결과
+#### UI
+![기본 화면](materials/step3_01.png)
+
+---
 ## 중간에 고생했던 부분 / 기억할 부분 간단 정리
 - contentMode
     - Scale To Fill : 정해져 있는 UIImageView의 사이즈에 맞춰 사진 사이즈가 조정된다.
