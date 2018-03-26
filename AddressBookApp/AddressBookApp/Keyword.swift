@@ -11,10 +11,12 @@ import Foundation
 enum Keyword {
     case cellName
     case fileName
+    case customCellName
 
     var value: String {
         switch self {
         case .cellName: return "holiday"
+        case .customCellName: return "holidaycustom"
         case .fileName: return "Holidays"
         }
     }

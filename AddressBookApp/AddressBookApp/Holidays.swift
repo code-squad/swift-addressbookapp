@@ -14,11 +14,13 @@ class Holidays: Codable {
     enum Key {
         case date
         case subtitle
+        case image
 
         var value: String {
             switch self {
             case .date: return "date"
             case .subtitle: return "subtitle"
+            case .image: return "image"
             }
         }
     }
@@ -48,7 +50,8 @@ class Holidays: Codable {
         guard let jsonData = jsonData else { return }
         jsonData.forEach {
             self.holidays.append(Holiday(date: $0[Key.date.value] ?? "",
-                                         subtitle: $0[Key.subtitle.value] ?? ""))
+                                         subtitle: $0[Key.subtitle.value] ?? "",
+                                         image: $0[Key.image.value] ?? ""))
         }
     }
 

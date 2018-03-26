@@ -42,10 +42,12 @@ class HolidayViewController: UIViewController, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Keyword.cellName.value, for: indexPath)
-        cell.textLabel?.text = holidays[indexPath.row].date
-        cell.detailTextLabel?.text = holidays[indexPath.row].subtitle
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: Keyword.cellName.value, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Keyword.customCellName.value, for: indexPath) as? HolidayTableViewCell
+        cell?.dateLabel.text = holidays[indexPath.row].date
+        cell?.subtitleLabel.text = holidays[indexPath.row].subtitle
+        cell?.setImage(with: holidays[indexPath.row].image)
+        return cell!
     }
 
     override func didReceiveMemoryWarning() {

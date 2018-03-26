@@ -140,26 +140,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z7e-Ea-9ZX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z7e-Ea-9ZX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="holiday" textLabel="Hje-Yz-cUF" detailTextLabel="j88-Os-qL7" style="IBUITableViewCellStyleSubtitle" id="SMB-Vy-9kx" userLabel="subtitleCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SMB-Vy-9kx" id="dsc-QP-hEB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hje-Yz-cUF">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="20" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j88-Os-qL7">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="43.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -168,14 +168,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="NKc-UE-clM" userLabel="holidaycustom" customClass="HolidayTableViewCell" customModule="AddressBookApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="holidaycustom" rowHeight="80" id="NKc-UE-clM" userLabel="holidaycustom" customClass="HolidayTableViewCell" customModule="AddressBookApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NKc-UE-clM" id="fFa-ON-dhZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-Ny-kb3" userLabel="weatherImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-Ny-kb3" userLabel="weatherImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epb-xP-Ypf" userLabel="dateLabel">
@@ -197,11 +197,11 @@
                                                 <constraint firstItem="gLn-Ny-kb3" firstAttribute="top" secondItem="fFa-ON-dhZ" secondAttribute="top" id="BkU-XE-Cp8"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epb-xP-Ypf" secondAttribute="trailing" id="FhU-Yv-A90"/>
                                                 <constraint firstItem="Xxq-l7-xo2" firstAttribute="bottom" secondItem="gLn-Ny-kb3" secondAttribute="bottom" id="Hf1-9p-uOZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Xxq-l7-xo2" secondAttribute="trailing" constant="-1" id="LWy-t3-eeb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xxq-l7-xo2" secondAttribute="trailing" constant="-1" id="LWy-t3-eeb" userLabel="trailingMargin = subtitleLabel.trailing"/>
                                                 <constraint firstItem="epb-xP-Ypf" firstAttribute="top" secondItem="gLn-Ny-kb3" secondAttribute="top" id="Ryt-xe-Cwf"/>
                                                 <constraint firstItem="gLn-Ny-kb3" firstAttribute="centerY" secondItem="fFa-ON-dhZ" secondAttribute="centerY" id="Wmx-VH-uWW"/>
                                                 <constraint firstItem="Xxq-l7-xo2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fFa-ON-dhZ" secondAttribute="leading" id="Zgi-Ym-4zb"/>
-                                                <constraint firstAttribute="bottom" secondItem="gLn-Ny-kb3" secondAttribute="bottom" constant="-0.5" id="cDG-0E-HPo"/>
+                                                <constraint firstAttribute="bottom" secondItem="gLn-Ny-kb3" secondAttribute="bottom" constant="-0.5" id="cDG-0E-HPo" userLabel="bottom = weatherImage.bottom"/>
                                                 <constraint firstItem="epb-xP-Ypf" firstAttribute="leading" secondItem="fFa-ON-dhZ" secondAttribute="leadingMargin" id="fkq-mJ-d6E"/>
                                                 <constraint firstItem="gLn-Ny-kb3" firstAttribute="leading" secondItem="fFa-ON-dhZ" secondAttribute="leading" id="pey-bx-KIQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="gLn-Ny-kb3" secondAttribute="trailing" id="rHe-Vu-aY9"/>

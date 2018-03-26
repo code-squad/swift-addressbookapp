@@ -11,8 +11,10 @@ import Foundation
 struct Holiday: Codable {
     let date: String
     let subtitle: String
-    init(date: String, subtitle: String) {
+    let image: String
+    init(date: String, subtitle: String, image: String) {
         self.date = date
         self.subtitle = subtitle
+        self.image = image
     }
 }
