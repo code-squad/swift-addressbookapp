@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -143,7 +144,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="holiday" textLabel="Hje-Yz-cUF" detailTextLabel="j88-Os-qL7" style="IBUITableViewCellStyleSubtitle" id="SMB-Vy-9kx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="holiday" textLabel="Hje-Yz-cUF" detailTextLabel="j88-Os-qL7" style="IBUITableViewCellStyleSubtitle" id="SMB-Vy-9kx" userLabel="subtitleCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SMB-Vy-9kx" id="dsc-QP-hEB">
@@ -166,6 +167,52 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="NKc-UE-clM" userLabel="holidaycustom" customClass="HolidayTableViewCell" customModule="AddressBookApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NKc-UE-clM" id="fFa-ON-dhZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-Ny-kb3" userLabel="weatherImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epb-xP-Ypf" userLabel="dateLabel">
+                                                    <rect key="frame" x="15" y="0.0" width="57" height="53"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxq-l7-xo2" userLabel="subtitleLabel">
+                                                    <rect key="frame" x="319" y="53.5" width="42" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xxq-l7-xo2" firstAttribute="height" secondItem="fFa-ON-dhZ" secondAttribute="height" multiplier="1:3" id="4lk-GK-P9R"/>
+                                                <constraint firstItem="epb-xP-Ypf" firstAttribute="height" secondItem="fFa-ON-dhZ" secondAttribute="height" multiplier="2:3" id="7aM-II-JRR"/>
+                                                <constraint firstItem="gLn-Ny-kb3" firstAttribute="top" secondItem="fFa-ON-dhZ" secondAttribute="top" id="BkU-XE-Cp8"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epb-xP-Ypf" secondAttribute="trailing" id="FhU-Yv-A90"/>
+                                                <constraint firstItem="Xxq-l7-xo2" firstAttribute="bottom" secondItem="gLn-Ny-kb3" secondAttribute="bottom" id="Hf1-9p-uOZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xxq-l7-xo2" secondAttribute="trailing" constant="-1" id="LWy-t3-eeb"/>
+                                                <constraint firstItem="epb-xP-Ypf" firstAttribute="top" secondItem="gLn-Ny-kb3" secondAttribute="top" id="Ryt-xe-Cwf"/>
+                                                <constraint firstItem="gLn-Ny-kb3" firstAttribute="centerY" secondItem="fFa-ON-dhZ" secondAttribute="centerY" id="Wmx-VH-uWW"/>
+                                                <constraint firstItem="Xxq-l7-xo2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fFa-ON-dhZ" secondAttribute="leading" id="Zgi-Ym-4zb"/>
+                                                <constraint firstAttribute="bottom" secondItem="gLn-Ny-kb3" secondAttribute="bottom" constant="-0.5" id="cDG-0E-HPo"/>
+                                                <constraint firstItem="epb-xP-Ypf" firstAttribute="leading" secondItem="fFa-ON-dhZ" secondAttribute="leadingMargin" id="fkq-mJ-d6E"/>
+                                                <constraint firstItem="gLn-Ny-kb3" firstAttribute="leading" secondItem="fFa-ON-dhZ" secondAttribute="leading" id="pey-bx-KIQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="gLn-Ny-kb3" secondAttribute="trailing" id="rHe-Vu-aY9"/>
+                                                <constraint firstItem="gLn-Ny-kb3" firstAttribute="centerX" secondItem="fFa-ON-dhZ" secondAttribute="centerX" id="wqP-qj-8ND"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="epb-xP-Ypf" id="Edk-0T-7Ad"/>
+                                            <outlet property="subtitleLabel" destination="Xxq-l7-xo2" id="zAd-v2-P7Q"/>
+                                            <outlet property="weatherImage" destination="gLn-Ny-kb3" id="L49-y4-ZgX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
