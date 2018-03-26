@@ -15,16 +15,26 @@ class HolidayViewController: UIViewController, UITableViewDataSource {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.dataSource = self
-                self.tableView.layoutSubviews()
+                self.tableView.reloadData()
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.holidays = Holidays(jsonFile: Keyword.fileName.value)
-        }
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(holidaysSetted(notification:)),
+            name: .holidays,
+            object: nil
+        )
+        self.holidays = Holidays()
+        self.holidays.setJSONData(with: Keyword.fileName.value)
+    }
+
+    @objc private func holidaysSetted(notification: Notification) {
+        guard let holidays = notification.object as? Holidays else { return }
+        self.holidays = holidays
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

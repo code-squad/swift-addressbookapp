@@ -19,3 +19,7 @@ enum Keyword {
         }
     }
 }
+
+extension Notification.Name {
+    static let holidays = Notification.Name("holidays")
+}

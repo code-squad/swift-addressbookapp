@@ -10,7 +10,7 @@ import Foundation
 
 typealias JSONData = [[String: String]]
 
-struct Holidays: Codable {
+class Holidays: Codable {
     enum Key {
         case date
         case subtitle
@@ -25,10 +25,13 @@ struct Holidays: Codable {
 
     private var holidays = [Holiday]()
 
-    init?(jsonFile: String) {
-        guard let data = getData(from: jsonFile) else { return nil }
-        guard let jsonData = getJSONData(with: data) else { return nil }
-        setHolidays(jsonData: jsonData)
+    func setJSONData(with fileName: String) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let data = self?.getData(from: fileName) else { return }
+            guard let jsonData = self?.getJSONData(with: data) else { return }
+            self?.setHolidays(jsonData: jsonData)
+            NotificationCenter.default.post(name: .holidays, object: self)
+        }
     }
 
     private func getData(from jsonFile: String) -> Data? {
@@ -41,7 +44,7 @@ struct Holidays: Codable {
         return try! JSONSerialization.jsonObject(with: data, options: []) as! JSONData
     }
 
-    private mutating func setHolidays(jsonData: JSONData?) {
+    private func setHolidays(jsonData: JSONData?) {
         guard let jsonData = jsonData else { return }
         jsonData.forEach {
             self.holidays.append(Holiday(date: $0[Key.date.value] ?? "",
@@ -56,4 +59,5 @@ struct Holidays: Codable {
     subscript(index: Int) -> Holiday {
         return holidays[index]
     }
+
 }

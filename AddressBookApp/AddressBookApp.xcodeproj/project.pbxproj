@@ -109,9 +109,9 @@
 			children = (
 				8E1EB97020636E9100726AB1 /* AppDelegate.swift */,
 				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
+				8E1EB9A2206495FD00726AB1 /* Holidays.json */,
 				8E1EB9A82067534000726AB1 /* Holiday.swift */,
 				8E1EB9A42064E1B400726AB1 /* Holidays.swift */,
-				8E1EB9A2206495FD00726AB1 /* Holidays.json */,
 				8E1EB9A62067513300726AB1 /* Keyword.swift */,
 				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
 				8E1EB97420636E9100726AB1 /* Main.storyboard */,
