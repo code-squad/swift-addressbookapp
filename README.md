@@ -112,6 +112,40 @@
 ![기본 화면](materials/step3_01.png)
 
 ---
+## Step4 (Contacts 프레임워크 적용)
+### 요구사항
+- Contacts 프레임워크를 학습하고, 주소록 데이터를 가져오는 모델 객체를 만든다.
+- 주소록 데이터를 가져와 테이블뷰에 커스텀 셀로 채우도록 구현한다.
+- 애플 개발자 문서에서 Contacts 관련 샘플 찾아 다운로드 받아서 압축을 푼다.
+    - 자기만의 방식으로 샘플 코드 구조를 분석하세요.
+- 이번 단계 앱 실행은 디바이스에서 실행하고 실제 동작 화면을 캡처한다.
+- readme.md 파일을 자신의 프로젝트에 대한 설명으로 변경한다.
+    - 단계별로 미션을 해결하고 리뷰를 받고나면 readme.md 파일에 주요 작업 내용(바뀐 화면 이미지, 핵심 기능 설명)과 완성 날짜시간을 기록한다.
+    - 실행한 화면을 캡처해서 readme.md 파일에 포함한다.
+
+### 프로그래밍 요구사항
+- 다운로드 받은 샘플에서 MGCContactStore 클래스와 의존성이 있는 클래스를 최소로 함께 프로젝트에 복사한다.
+- 스토리보드에 새로운 TableViewController를 추가하고, Initial ViewController로 지정한다.
+- UITableViewController 에서 상속받아 새로운 뷰컨트롤러 클래스 AddressBookViewController를 만들고, 스토리보드 TableViewController의 Custom Class로 지정한다.
+- 복사한 MGCContactStore 클래스 메소드를 활용해서 주소록에 있는 전체 Contacts 정보를 Fetch하고, TableViewDataSource에서 활용한다.
+- 새로 추가한 TableViewController 속성에서 Content 값을 Dynamic Prototypes로 변경하고 Custom 셀을 추가한다.
+- 추가한 Custom cell은 높이를 90으로 하고 ImageView와 Label 3개를 추가한다.
+- UITableViewCell 에서 상속받는 AddressTableViewCell 클래스를 추가하고 새로 추가한 셀의 Custom class로 지정한다.
+    - 셀 Identifier는 addressCell 로 지정한다.
+    - Custom class 코드와 연결된 상태를 확인하고 각각 IBOutlet을 연결한다.
+    - ImageView는 profileImageView로 셀 좌측에 정사각형으로 고정한다.
+    - nameLabel은 상단에 높이 2/3를 차지하고, 글자크기는 24로 글자색은 검정색으로 지정하고 좌측 정렬한다.
+    - telLabel은 nameLabel과 동일한 높이에, 글자크기는 17로 글자색은 옅은 회색으로 지정하고 우측 정렬한다.
+    - emailLabel은 하단에 1/3을 차지하고, 글자크기는 16로 글자색은 진한 회색으로 지정하고 좌측 정렬한다.
+- 주소록 정보 중에 다음과 같이 셀에 표시한다.
+    - cell.nameLabel 에는 lastName + firstName 값을 출력하고, cell.telLabel 에는 phoneNumber 값을 출력하고, cell.emailLabel에는 email 값을 출력하고, profileImageView에는 profilePicture.imageData 를 이미지로 표시한다.
+    - 만약 프로필 이미지가 없을 경우는 기본 이미지가 보이도록 처리한다.
+
+### 결과
+#### UI
+![기본 화면](materials/step4_01.png)
+
+---
 ## 중간에 고생했던 부분 / 기억할 부분 간단 정리
 - contentMode
     - Scale To Fill : 정해져 있는 UIImageView의 사이즈에 맞춰 사진 사이즈가 조정된다.
@@ -134,3 +168,4 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     - 위의 두 메소드를 필수로 구현해줘야 한다.
     - 위의 경우 한 Section당 몇개의 데이터(cell)가 포함되는지 정의해주는 부분
     - 아래의 경우 각 Cell에 어떤 데이터가 채워질지를 정의할 수 있다.
+- Contacts에 접근권한을 요청하기 위해 plist에 NSContactsUsageDescription(Privacy - Contacts Usage Description) 을 추가해줘야한다.
