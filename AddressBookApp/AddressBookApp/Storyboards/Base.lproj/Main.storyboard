@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" rowHeight="90" id="OyS-n0-nH5" userLabel="addressCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addressCell" rowHeight="90" id="OyS-n0-nH5" userLabel="addressCell" customClass="AddressBookTableViewCell" customModule="AddressBookApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OyS-n0-nH5" id="a9y-iR-bT4">
@@ -155,7 +155,7 @@
                                                 <constraint firstAttribute="width" secondItem="xrk-h4-cQi" secondAttribute="height" multiplier="1:1" id="dL3-ks-sMo"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="김수한무" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="00k-7O-y6r" userLabel="nameLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" misplaced="YES" text="김수한무" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00k-7O-y6r" userLabel="nameLabel">
                                             <rect key="frame" x="98" y="0.0" width="106" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
@@ -180,7 +180,7 @@
                                         <constraint firstItem="00k-7O-y6r" firstAttribute="leading" secondItem="xrk-h4-cQi" secondAttribute="trailing" constant="8" id="1IR-EJ-tZh"/>
                                         <constraint firstItem="00k-7O-y6r" firstAttribute="height" secondItem="a9y-iR-bT4" secondAttribute="height" multiplier="2:3" id="7sQ-Mi-uA0"/>
                                         <constraint firstItem="00k-7O-y6r" firstAttribute="top" secondItem="a9y-iR-bT4" secondAttribute="top" id="CiC-dU-6Xa"/>
-                                        <constraint firstItem="zZa-Ay-yA5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="00k-7O-y6r" secondAttribute="trailing" constant="8" id="DHq-7O-Seq"/>
+                                        <constraint firstItem="zZa-Ay-yA5" firstAttribute="leading" secondItem="00k-7O-y6r" secondAttribute="trailing" priority="750" constant="8" id="DHq-7O-Seq"/>
                                         <constraint firstItem="00k-7O-y6r" firstAttribute="height" secondItem="zZa-Ay-yA5" secondAttribute="height" id="JJM-6s-j6y"/>
                                         <constraint firstAttribute="trailing" secondItem="zZa-Ay-yA5" secondAttribute="trailing" constant="8" id="K1R-gm-fK1"/>
                                         <constraint firstItem="QeL-ld-o0k" firstAttribute="height" secondItem="a9y-iR-bT4" secondAttribute="height" multiplier="1:3" id="NMn-Fl-C61"/>
@@ -194,6 +194,12 @@
                                     </constraints>
                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emailLabel" destination="QeL-ld-o0k" id="mSr-4I-GKS"/>
+                                    <outlet property="nameLabel" destination="00k-7O-y6r" id="uDa-pt-0lo"/>
+                                    <outlet property="profile" destination="xrk-h4-cQi" id="XM7-T9-FW5"/>
+                                    <outlet property="telLabel" destination="zZa-Ay-yA5" id="w8M-ek-o0p"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
