@@ -28,6 +28,7 @@
 		8E1EB9B92069E10B00726AB1 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9B32069E10B00726AB1 /* MGCContactStore.swift */; };
 		8E1EB9C12069E6DA00726AB1 /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */; };
 		8E1EB9C32069EA5200726AB1 /* AddressBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C22069EA5200726AB1 /* AddressBookTableViewController.swift */; };
+		8E1EB9C52069EBE000726AB1 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C42069EBE000726AB1 /* AddressBookTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		8E1EB9B32069E10B00726AB1 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		8E1EB9C22069EA5200726AB1 /* AddressBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewController.swift; sourceTree = "<group>"; };
+		8E1EB9C42069EBE000726AB1 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1EB9AC2068C13A00726AB1 /* HolidayTableViewCell.swift */,
+				8E1EB9C42069EBE000726AB1 /* AddressBookTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				8E1EB9A52064E1B400726AB1 /* Holidays.swift in Sources */,
 				8E1EB9B52069E10B00726AB1 /* MGCPostalAddress.swift in Sources */,
 				8E1EB9C12069E6DA00726AB1 /* MGCExtensions.swift in Sources */,
+				8E1EB9C52069EBE000726AB1 /* AddressBookTableViewCell.swift in Sources */,
 				8E1EB9B82069E10B00726AB1 /* MGCContact.swift in Sources */,
 				8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */,
 			);
