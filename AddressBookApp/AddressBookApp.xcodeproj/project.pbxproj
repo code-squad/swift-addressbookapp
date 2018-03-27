@@ -20,6 +20,13 @@
 		8E1EB9A72067513300726AB1 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A62067513300726AB1 /* Keyword.swift */; };
 		8E1EB9A92067534000726AB1 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9A82067534000726AB1 /* Holiday.swift */; };
 		8E1EB9AD2068C13A00726AB1 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9AC2068C13A00726AB1 /* HolidayTableViewCell.swift */; };
+		8E1EB9B42069E10B00726AB1 /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9AE2069E10A00726AB1 /* MGCContactStoreUtilities.swift */; };
+		8E1EB9B52069E10B00726AB1 /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9AF2069E10A00726AB1 /* MGCPostalAddress.swift */; };
+		8E1EB9B62069E10B00726AB1 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9B02069E10A00726AB1 /* MGCLabelValue.swift */; };
+		8E1EB9B72069E10B00726AB1 /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9B12069E10B00726AB1 /* MGCAppConfiguration.swift */; };
+		8E1EB9B82069E10B00726AB1 /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9B22069E10B00726AB1 /* MGCContact.swift */; };
+		8E1EB9B92069E10B00726AB1 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9B32069E10B00726AB1 /* MGCContactStore.swift */; };
+		8E1EB9C12069E6DA00726AB1 /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		8E1EB9A62067513300726AB1 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
 		8E1EB9A82067534000726AB1 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		8E1EB9AC2068C13A00726AB1 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
+		8E1EB9AE2069E10A00726AB1 /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
+		8E1EB9AF2069E10A00726AB1 /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
+		8E1EB9B02069E10A00726AB1 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
+		8E1EB9B12069E10B00726AB1 /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
+		8E1EB9B22069E10B00726AB1 /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
+		8E1EB9B32069E10B00726AB1 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
+		8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,17 +123,15 @@
 		8E1EB96F20636E9100726AB1 /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E1EB9BF2069E23700726AB1 /* TableViewCells */,
+				8E1EB9BE2069E20A00726AB1 /* Storyboards */,
+				8E1EB9BD2069E1CE00726AB1 /* Utilities */,
+				8E1EB9BC2069E16300726AB1 /* ViewControllers */,
+				8E1EB9BB2069E15100726AB1 /* Models */,
+				8E1EB9BA2069E12300726AB1 /* ContactsModels */,
 				8E1EB97020636E9100726AB1 /* AppDelegate.swift */,
-				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
 				8E1EB9A2206495FD00726AB1 /* Holidays.json */,
-				8E1EB9A82067534000726AB1 /* Holiday.swift */,
-				8E1EB9A42064E1B400726AB1 /* Holidays.swift */,
-				8E1EB9A62067513300726AB1 /* Keyword.swift */,
-				8E1EB9AC2068C13A00726AB1 /* HolidayTableViewCell.swift */,
-				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
-				8E1EB97420636E9100726AB1 /* Main.storyboard */,
 				8E1EB97720636E9100726AB1 /* Assets.xcassets */,
-				8E1EB97920636E9100726AB1 /* LaunchScreen.storyboard */,
 				8E1EB97C20636E9100726AB1 /* Info.plist */,
 			);
 			path = AddressBookApp;
@@ -141,6 +153,63 @@
 				8E1EB99220636E9100726AB1 /* Info.plist */,
 			);
 			path = AddressBookAppUITests;
+			sourceTree = "<group>";
+		};
+		8E1EB9BA2069E12300726AB1 /* ContactsModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */,
+				8E1EB9B12069E10B00726AB1 /* MGCAppConfiguration.swift */,
+				8E1EB9B22069E10B00726AB1 /* MGCContact.swift */,
+				8E1EB9B32069E10B00726AB1 /* MGCContactStore.swift */,
+				8E1EB9AE2069E10A00726AB1 /* MGCContactStoreUtilities.swift */,
+				8E1EB9B02069E10A00726AB1 /* MGCLabelValue.swift */,
+				8E1EB9AF2069E10A00726AB1 /* MGCPostalAddress.swift */,
+			);
+			path = ContactsModels;
+			sourceTree = "<group>";
+		};
+		8E1EB9BB2069E15100726AB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB9A82067534000726AB1 /* Holiday.swift */,
+				8E1EB9A42064E1B400726AB1 /* Holidays.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E1EB9BC2069E16300726AB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB97220636E9100726AB1 /* TableViewController.swift */,
+				8E1EB99E2063A4B300726AB1 /* HolidayViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8E1EB9BD2069E1CE00726AB1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB9A62067513300726AB1 /* Keyword.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8E1EB9BE2069E20A00726AB1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB97420636E9100726AB1 /* Main.storyboard */,
+				8E1EB97920636E9100726AB1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8E1EB9BF2069E23700726AB1 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8E1EB9AC2068C13A00726AB1 /* HolidayTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,12 +347,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1EB9B72069E10B00726AB1 /* MGCAppConfiguration.swift in Sources */,
 				8E1EB9A92067534000726AB1 /* Holiday.swift in Sources */,
+				8E1EB9B92069E10B00726AB1 /* MGCContactStore.swift in Sources */,
 				8E1EB97320636E9100726AB1 /* TableViewController.swift in Sources */,
+				8E1EB9B62069E10B00726AB1 /* MGCLabelValue.swift in Sources */,
 				8E1EB9A72067513300726AB1 /* Keyword.swift in Sources */,
 				8E1EB9AD2068C13A00726AB1 /* HolidayTableViewCell.swift in Sources */,
 				8E1EB97120636E9100726AB1 /* AppDelegate.swift in Sources */,
+				8E1EB9B42069E10B00726AB1 /* MGCContactStoreUtilities.swift in Sources */,
 				8E1EB9A52064E1B400726AB1 /* Holidays.swift in Sources */,
+				8E1EB9B52069E10B00726AB1 /* MGCPostalAddress.swift in Sources */,
+				8E1EB9C12069E6DA00726AB1 /* MGCExtensions.swift in Sources */,
+				8E1EB9B82069E10B00726AB1 /* MGCContact.swift in Sources */,
 				8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
