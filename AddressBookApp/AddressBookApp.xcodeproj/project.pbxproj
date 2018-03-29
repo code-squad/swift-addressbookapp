@@ -29,6 +29,7 @@
 		8E1EB9C12069E6DA00726AB1 /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */; };
 		8E1EB9C32069EA5200726AB1 /* AddressBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C22069EA5200726AB1 /* AddressBookTableViewController.swift */; };
 		8E1EB9C52069EBE000726AB1 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C42069EBE000726AB1 /* AddressBookTableViewCell.swift */; };
+		8E1EB9C7206CA96D00726AB1 /* ContactsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1EB9C6206CA96D00726AB1 /* ContactsInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		8E1EB9C02069E6DA00726AB1 /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		8E1EB9C22069EA5200726AB1 /* AddressBookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewController.swift; sourceTree = "<group>"; };
 		8E1EB9C42069EBE000726AB1 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
+		8E1EB9C6206CA96D00726AB1 /* ContactsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				8E1EB9A82067534000726AB1 /* Holiday.swift */,
 				8E1EB9A42064E1B400726AB1 /* Holidays.swift */,
+				8E1EB9C6206CA96D00726AB1 /* ContactsInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				8E1EB9C52069EBE000726AB1 /* AddressBookTableViewCell.swift in Sources */,
 				8E1EB9B82069E10B00726AB1 /* MGCContact.swift in Sources */,
 				8E1EB99F2063A4B300726AB1 /* HolidayViewController.swift in Sources */,
+				8E1EB9C7206CA96D00726AB1 /* ContactsInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

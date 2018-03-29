@@ -27,12 +27,12 @@ class AddressBookTableViewCell: UITableViewCell {
         if let imageData = imageData {
             self.profile.image = UIImage(data: imageData)
         } else {
-            self.profile.image = UIImage(named: "addressbook-default-profile")
+            self.profile.image = UIImage(named: Keyword.defaultImage.value)
         }
     }
 
     private func setName(faimly: String, given: String) {
-        nameLabel.text = faimly + given
+        nameLabel.text = "\(faimly) \(given)".trimmingCharacters(in: [" "])
     }
 
     private func setTel(among phoneNumbers: [CNLabeledValue<CNPhoneNumber>]) {
