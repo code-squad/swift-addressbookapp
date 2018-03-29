@@ -18,8 +18,8 @@ class ContactsInformation {
     private let KOREAN_END = 55199    // "힣"
     private let INITIAL_CYCLE = 588
     private let koreanInitial = [
-        "ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ",
-        "ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"
+        "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ",
+        "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"
     ]
 
     func set(with allContacts: [CNContact]) {
@@ -32,7 +32,6 @@ class ContactsInformation {
             contacts[index].append(contact)
             contacts[index].sort(by: { (lhs, rhs) in
                 lhs.givenName.localizedCaseInsensitiveCompare(rhs.givenName) == .orderedAscending
-
             })
         } else if index == contacts.count {
             contacts.append([contact])

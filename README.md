@@ -167,9 +167,9 @@
 ---
 ## 중간에 고생했던 부분 / 기억할 부분 간단 정리
 - contentMode
-    - Scale To Fill : 정해져 있는 UIImageView의 사이즈에 맞춰 사진 사이즈가 조정된다.
-    - Aspect Fit : 정해져 있는 UIImageView의 사이즈의 width나 height 중 사진과 대비하여 작은 사이즈에 맞춰 사진 크기가 조정된다.
-    - Aspect Fill : 사진의 사이즈에 맞춰 UIImageView의 사이즈가 조정된다.
+    - Scale To Fill : 내용(이미지)에 맞춰 UIImageView의 사이즈가 조정된다. 필요하다면 aspect ratio가 변경된다.
+    - Aspect Fit : 정해져 있는 UIImageView의 사이즈의 width나 height 중 사진과 대비하여 작은 사이즈에 맞춰 사진 크기가 조정된다. 나머지 부분은 투명처리된다.
+    - Aspect Fill : UIImageView의 사이즈에 맞게 내용(이미지)이 들어가며 이미지 크기가 크다면 큰 부분은 clip된다.
 - TableViewController의 TableView 속성에서 Content 값을 Static Cells로 정하면 기본 뷰의 디자인을 기호에 맞게 정의할 수 있다.
 
 - UITableViewController
