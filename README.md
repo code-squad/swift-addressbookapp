@@ -196,3 +196,9 @@ let precomposed: Character = "\u{D55C}"                  // 한
 let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
 // precomposed is 한, decomposed is 한
 ```
+- Storyboard에서 UITableViewController로 화면을 만들면 한가지 문제가 생긴다.
+세로로 스크롤을 할 경우 TableView의 컨텐츠가 StatusBar를 침범하여 글씨가 겹치는 현상이 그 문제다.
+이 경우 해결방안은 두가지가 존재한다.
+1. Base가 되는 View Controller를 UIViewController로 만들고 그 위에 TableView를 올린뒤 Top의 Constraint를 알맞게 지정하는 방법.
+2. UINavigationController로 UITableViewController를 Embed 시키는 방법.
+이 문제는 아무래도 애플과 Xcode가 해결해야할 숙제라고 생각된다. 그 전까지는 이런 방식으로 우회해서 사용하는 수밖에.

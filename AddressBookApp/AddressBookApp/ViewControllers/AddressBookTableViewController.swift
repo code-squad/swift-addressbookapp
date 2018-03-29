@@ -14,7 +14,13 @@ class AddressBookTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitle()
         fetchContacts()
+    }
+
+    private func setNavigationTitle() {
+        guard let parent = self.parent as? UINavigationController else { return }
+        parent.navigationBar.topItem?.title = "Contacts"
     }
 
     private func fetchContacts() {
