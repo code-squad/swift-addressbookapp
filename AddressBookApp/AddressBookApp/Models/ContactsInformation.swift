@@ -11,14 +11,23 @@ import Contacts
 
 class ContactsInformation {
     private var contacts = [[CNContact]]()
-    private var headers = [Character]()
+    private var headers = [String]()
+
+    // UTF-8
+    private let KOREAN_START = 44032  // "가"
+    private let KOREAN_END = 55199    // "힣"
+    private let INITIAL_CYCLE = 588
+    private let koreanInitial = [
+        "ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ",
+        "ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"
+    ]
 
     func set(with allContacts: [CNContact]) {
         allContacts.forEach { add(contact: $0) }
     }
 
     private func add(contact: CNContact) {
-        let index = headerIndex(of: "\(contact.familyName) \(contact.givenName)")
+        let index = headerIndex(of: "\(contact.familyName)")
         if index < contacts.count {
             contacts[index].append(contact)
             contacts[index].sort(by: { (lhs, rhs) in
@@ -31,12 +40,34 @@ class ContactsInformation {
     }
 
     private func headerIndex(of name: String) -> Int {
-        let name = name.trimmingCharacters(in: [" "]).first ?? "_"
-        guard let headerIndex = headers.index(of: name) else {
-            headers.append(name)
+        let initial = name.trimmingCharacters(in: [" "]).first ?? "_"
+        let header = getHeader(from: String(initial))
+        guard let headerIndex = headers.index(of: header) else {
+            headers.append(header)
             return headers.count - 1
         }
         return headerIndex
+    }
+
+    private func getHeader(from initial: String) -> String {
+        let scala = initial.unicodeScalars
+        let unicode = Int(scala[scala.startIndex].value)
+        let header = getHeader(of: unicode)
+        return header
+    }
+
+    private func getHeader(of unicode: Int) -> String {
+        if isKorean(unicode: unicode) {
+            let index = unicode - KOREAN_START
+            let header = koreanInitial[index / INITIAL_CYCLE]
+            return header
+        } else {
+            return String(UnicodeScalar(unicode) ?? "_")
+        }
+    }
+
+    private func isKorean(unicode: Int) -> Bool {
+        return unicode >= KOREAN_START && unicode <= KOREAN_END
     }
 
     var numberOfSections: Int {
