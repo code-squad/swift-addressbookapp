@@ -200,4 +200,5 @@ let decomposed: Character = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
 이 경우 해결방안은 두가지가 존재한다.
 > 1. Base가 되는 View Controller를 UIViewController로 만들고 그 위에 TableView를 올린뒤 Top의 Constraint를 알맞게 지정하는 방법.
 > 2. UINavigationController로 UITableViewController를 Embed 시키는 방법.
+
 > 이 문제는 아무래도 애플과 Xcode가 해결해야할 숙제라고 생각된다. 그 전까지는 이런 방식으로 우회해서 사용하는 수밖에.
