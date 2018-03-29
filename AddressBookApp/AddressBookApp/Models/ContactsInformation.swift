@@ -11,7 +11,7 @@ import Contacts
 
 class ContactsInformation {
     private var contacts = [[CNContact]]()
-    private var headers = [String]()
+    private(set) var headers = [String]()
 
     // UTF-8
     private let KOREAN_START = 44032  // "가"
