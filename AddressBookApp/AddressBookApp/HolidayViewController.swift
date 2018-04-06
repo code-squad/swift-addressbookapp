@@ -12,6 +12,10 @@ class HolidayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let urlPath = "/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
+        if let contents = try? String(contentsOfFile: urlPath) {
+            print(contents)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -19,4 +23,3 @@ class HolidayViewController: UIViewController {
     }
 
 }
-

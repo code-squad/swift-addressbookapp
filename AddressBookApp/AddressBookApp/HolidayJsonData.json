@@ -1,11 +1,3 @@
-//
-//  HolidayDate.json
-//  AddressBookApp
-//
-//  Created by Eunjin Kim on 2018. 4. 6..
-//  Copyright © 2018년 Eunjin Kim. All rights reserved.
-//
-
 [{"date":"1월1일", "subtitle":"신정"},
  {"date":"2월16일", "subtitle":"구정"},
  {"date":"3월1일", "subtitle":"삼일절"},

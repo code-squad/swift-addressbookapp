@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+//[{"date":"1월1일", "subtitle":"신정"},
+//Array<Dictionary<String,String>>
+struct Holiday {
+    var date: String
+    var subtitle: String
+}
+
+struct HolidayList {
+    var list: [Holiday]
+}
