@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4500E1BA2077877000D4C247 /* HolidayDate.json in Resources */ = {isa = PBXBuildFile; fileRef = 4500E1B92077877000D4C247 /* HolidayDate.json */; };
 		4525828E207708CA004771E7 /* DateTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828D207708CA004771E7 /* DateTimeCell.swift */; };
 		452582902077592D004771E7 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828F2077592D004771E7 /* HolidayViewController.swift */; };
 		45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126A207650E800DCE31F /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4500E1B92077877000D4C247 /* HolidayDate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HolidayDate.json; sourceTree = "<group>"; };
 		4525828D207708CA004771E7 /* DateTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCell.swift; sourceTree = "<group>"; };
 		4525828F2077592D004771E7 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		45CD1267207650E800DCE31F /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				45CD1273207650E800DCE31F /* LaunchScreen.storyboard */,
 				45CD1276207650E800DCE31F /* Info.plist */,
 				4525828D207708CA004771E7 /* DateTimeCell.swift */,
+				4500E1B92077877000D4C247 /* HolidayDate.json */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4500E1BA2077877000D4C247 /* HolidayDate.json in Resources */,
 				45CD1275207650E800DCE31F /* LaunchScreen.storyboard in Resources */,
 				45CD1272207650E800DCE31F /* Assets.xcassets in Resources */,
 				45CD1270207650E800DCE31F /* Main.storyboard in Resources */,
