@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4525828E207708CA004771E7 /* DateTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828D207708CA004771E7 /* DateTimeCell.swift */; };
 		45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126A207650E800DCE31F /* AppDelegate.swift */; };
 		45CD126D207650E800DCE31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126C207650E800DCE31F /* ViewController.swift */; };
 		45CD1270207650E800DCE31F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CD126E207650E800DCE31F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4525828D207708CA004771E7 /* DateTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCell.swift; sourceTree = "<group>"; };
 		45CD1267207650E800DCE31F /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CD126A207650E800DCE31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45CD126C207650E800DCE31F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				45CD1271207650E800DCE31F /* Assets.xcassets */,
 				45CD1273207650E800DCE31F /* LaunchScreen.storyboard */,
 				45CD1276207650E800DCE31F /* Info.plist */,
+				4525828D207708CA004771E7 /* DateTimeCell.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				45CD126D207650E800DCE31F /* ViewController.swift in Sources */,
 				45CD12992076521100DCE31F /* TableViewController.swift in Sources */,
+				4525828E207708CA004771E7 /* DateTimeCell.swift in Sources */,
 				45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
