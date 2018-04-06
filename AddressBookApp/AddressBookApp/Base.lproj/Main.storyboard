@@ -24,10 +24,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Holiday View Controller-->
         <scene sceneID="Ikm-Hu-WDo">
             <objects>
-                <viewController id="a7t-9q-fMy" sceneMemberID="viewController">
+                <viewController id="a7t-9q-fMy" customClass="HolidayViewController" customModule="AddressBookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dPk-KW-nlX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgV-H1-YE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104.8" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1538" y="33"/>
         </scene>
     </scenes>
 </document>
