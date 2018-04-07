@@ -9,18 +9,33 @@
 import UIKit
 
 class HolidayViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    var json: Array<Dictionary<String,String>> = []
+    let urlPath = "/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
+}
+
+extension HolidayViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return json.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HolidayCell", for: indexPath) as! HolidayCell
+        cell.date.text = json[indexPath.row]["date"]
+        cell.subTitle.text = json[indexPath.row]["subtitle"]
+        return cell
+    }
+}
+
+extension HolidayViewController: UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let urlPath = "/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
+        
         if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) {
-            let json = try! JSONSerialization.jsonObject(with: contents!, options: []) as! Array<Dictionary<String,String>>
+            self.json = try! JSONSerialization.jsonObject(with: contents!, options: []) as! Array<Dictionary<String,String>>
             print(json)
         }
+        tableView.dataSource = self
+        tableView.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 }

@@ -1,0 +1,14 @@
+//
+//  Holiday.swift
+//  AddressBookApp
+//
+//  Created by Eunjin Kim on 2018. 4. 6..
+//  Copyright © 2018년 Eunjin Kim. All rights reserved.
+//
+
+import UIKit
+
+class HolidayCell: UITableViewCell {
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
+}
