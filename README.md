@@ -1,9 +1,7 @@
-# swift-addressbookapp
+# swift-addressbookapp step1
 iOS 레벨3 주소록 앱 저장소
 
 > 시작하기 - UITableViewController
-
-
 
 - ***학습꺼리***
 
@@ -15,9 +13,19 @@ iOS 레벨3 주소록 앱 저장소
 	2) Aspect Fit: 이미지를 늘리지 않고 화면에 딱 맞게 정렬한다.  
 	3) Aspect Fill: 이미지를 늘리지 않고 화면에 꽉 채워서 정렬한다.  
 	
-2. UITableViewController를 활용해서 static cell을 디자인하는 방식을 학습한다.
-: 
+2. UITableViewController를 활용해서 static cell을 디자인하는 방식을 학습한다. 
 
 ---
 
+# swift-addressbookapp step2
+
+> DataSource 객체
+
+- ***학습꺼리***
+
+1. UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습한다.
+2. DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리한다.
+3. Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습한다.
+
+---
 
