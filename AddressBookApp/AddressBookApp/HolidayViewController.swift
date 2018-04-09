@@ -13,15 +13,16 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
         static let cellIdentifier = "HolidayCell"
         static let title = "date"
         static let subTitle = "subtitle"
-        static let weatherImage = "weatherImage"
+        static let weatherImage = "image"
         static let customCell = "customCell"
+        static let dataResource = "HolidayJsonData"
     }
     @IBOutlet weak var tableView: UITableView!
     var json: Array<Dictionary<String,String>> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let urlPath = Bundle.main.path(forResource: "HolidayJsonData", ofType: "json") else {
+        guard let urlPath = Bundle.main.path(forResource: Contstant.dataResource, ofType: "json") else {
             return
         }
         if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) ?? Data() {
@@ -47,7 +48,7 @@ extension HolidayViewController: UITableViewDataSource {
         }
         cell.dateLabel.text = json[indexPath.row][Contstant.title]
         cell.subtitleLabel.text = json[indexPath.row][Contstant.subTitle]
-        let imageName = json[indexPath.row]["image"]
+        let imageName = json[indexPath.row][Contstant.weatherImage]
         if imageName != nil {
             cell.weatherImage.image = UIImage(named: imageName!)
         }else {
