@@ -12,8 +12,6 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var json: Array<Dictionary<String,String>> = []
     
-    //"/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let urlPath = Bundle.main.path(forResource: "HolidayJsonData", ofType: "json") else {
