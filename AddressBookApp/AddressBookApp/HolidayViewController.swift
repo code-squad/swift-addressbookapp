@@ -9,6 +9,11 @@
 import UIKit
 
 class HolidayViewController: UIViewController, UITableViewDelegate {
+    struct Contstant {
+        static let cellIdentifier = "HolidayCell"
+        static let title = "date"
+        static let subTitle = "subtitle"
+    }
     @IBOutlet weak var tableView: UITableView!
     var json: Array<Dictionary<String,String>> = []
     
@@ -34,9 +39,9 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "HolidayCell")
-        cell.textLabel?.text = json[indexPath.row]["date"]
-        cell.detailTextLabel?.text = json[indexPath.row]["subtitle"]
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Contstant.cellIdentifier)
+        cell.textLabel?.text = json[indexPath.row][Contstant.title]
+        cell.detailTextLabel?.text = json[indexPath.row][Contstant.subTitle]
         return cell
     }
 }
