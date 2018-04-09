@@ -11,13 +11,16 @@ import UIKit
 class HolidayViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var json: Array<Dictionary<String,String>> = []
-    let urlPath = "/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
+    
+    //"/Users/elly/Documents/ios_Level3/swift-addressbookapp/AddressBookApp/AddressBookApp/HolidayJsonData.json"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard let urlPath = Bundle.main.path(forResource: "HolidayJsonData", ofType: "json") else {
+            return
+        }
         if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) {
             self.json = try! JSONSerialization.jsonObject(with: contents!, options: []) as! Array<Dictionary<String,String>>
-            print(json)
         }
         tableView.dataSource = self
         tableView.delegate = self
