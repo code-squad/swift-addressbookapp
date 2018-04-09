@@ -16,6 +16,7 @@
 		45CD1275207650E800DCE31F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CD1273207650E800DCE31F /* LaunchScreen.storyboard */; };
 		45CD1280207650E900DCE31F /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD127F207650E900DCE31F /* AddressBookAppTests.swift */; };
 		45CD128B207650E900DCE31F /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD128A207650E900DCE31F /* AddressBookAppUITests.swift */; };
+		45F99539207B7C7200C5C37F /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F99538207B7C7200C5C37F /* HolidayTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		45CD1286207650E900DCE31F /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CD128A207650E900DCE31F /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		45CD128C207650E900DCE31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F99538207B7C7200C5C37F /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				45CD126C207650E800DCE31F /* ViewController.swift */,
 				4525828F2077592D004771E7 /* HolidayViewController.swift */,
 				45CD126E207650E800DCE31F /* Main.storyboard */,
+				45F99538207B7C7200C5C37F /* HolidayTableViewCell.swift */,
 				45CD1271207650E800DCE31F /* Assets.xcassets */,
 				45CD1273207650E800DCE31F /* LaunchScreen.storyboard */,
 				45CD1276207650E800DCE31F /* Info.plist */,
@@ -268,6 +271,7 @@
 			files = (
 				45CD126D207650E800DCE31F /* ViewController.swift in Sources */,
 				452582902077592D004771E7 /* HolidayViewController.swift in Sources */,
+				45F99539207B7C7200C5C37F /* HolidayTableViewCell.swift in Sources */,
 				45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
