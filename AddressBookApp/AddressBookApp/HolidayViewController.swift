@@ -13,6 +13,8 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
         static let cellIdentifier = "HolidayCell"
         static let title = "date"
         static let subTitle = "subtitle"
+        static let weatherImage = "weatherImage"
+        static let customCell = "customCell"
     }
     @IBOutlet weak var tableView: UITableView!
     var json: Array<Dictionary<String,String>> = []
@@ -28,6 +30,7 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
             }
             json = jsonData
         }
+        tableView.rowHeight = 80
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -39,9 +42,17 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Contstant.cellIdentifier)
-        cell.textLabel?.text = json[indexPath.row][Contstant.title]
-        cell.detailTextLabel?.text = json[indexPath.row][Contstant.subTitle]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Contstant.customCell, for: indexPath) as? HolidayTableViewCell else {
+            return HolidayTableViewCell()
+        }
+        cell.dateLabel.text = json[indexPath.row][Contstant.title]
+        cell.subtitleLabel.text = json[indexPath.row][Contstant.subTitle]
+        let imageName = json[indexPath.row]["image"]
+        if imageName != nil {
+            cell.weatherImage.image = UIImage(named: imageName!)
+        }else {
+            cell.weatherImage.backgroundColor = UIColor.gray
+        }
         return cell
     }
 }
