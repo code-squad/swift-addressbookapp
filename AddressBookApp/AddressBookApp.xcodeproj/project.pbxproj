@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4500E1BA2077877000D4C247 /* HolidayJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4500E1B92077877000D4C247 /* HolidayJsonData.json */; };
-		4500E1BC2077906400D4C247 /* HolidayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4500E1BB2077906400D4C247 /* HolidayCell.swift */; };
 		452582902077592D004771E7 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828F2077592D004771E7 /* HolidayViewController.swift */; };
 		45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126A207650E800DCE31F /* AppDelegate.swift */; };
 		45CD126D207650E800DCE31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126C207650E800DCE31F /* ViewController.swift */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		4500E1B92077877000D4C247 /* HolidayJsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HolidayJsonData.json; sourceTree = "<group>"; };
-		4500E1BB2077906400D4C247 /* HolidayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCell.swift; sourceTree = "<group>"; };
 		4525828F2077592D004771E7 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		45CD1267207650E800DCE31F /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CD126A207650E800DCE31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				45CD1273207650E800DCE31F /* LaunchScreen.storyboard */,
 				45CD1276207650E800DCE31F /* Info.plist */,
 				4500E1B92077877000D4C247 /* HolidayJsonData.json */,
-				4500E1BB2077906400D4C247 /* HolidayCell.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -271,7 +268,6 @@
 			files = (
 				45CD126D207650E800DCE31F /* ViewController.swift in Sources */,
 				452582902077592D004771E7 /* HolidayViewController.swift in Sources */,
-				4500E1BC2077906400D4C247 /* HolidayCell.swift in Sources */,
 				45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

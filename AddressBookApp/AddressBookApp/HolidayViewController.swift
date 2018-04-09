@@ -20,9 +20,9 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HolidayCell", for: indexPath) as! HolidayCell
-        cell.date.text = json[indexPath.row]["date"]
-        cell.subTitle.text = json[indexPath.row]["subtitle"]
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "HolidayCell")
+        cell.textLabel?.text = json[indexPath.row]["date"]
+        cell.detailTextLabel?.text = json[indexPath.row]["subtitle"]
         return cell
     }
 }
