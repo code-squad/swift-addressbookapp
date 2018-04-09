@@ -17,8 +17,11 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
         guard let urlPath = Bundle.main.path(forResource: "HolidayJsonData", ofType: "json") else {
             return
         }
-        if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) {
-            self.json = try! JSONSerialization.jsonObject(with: contents!, options: []) as! Array<Dictionary<String,String>>
+        if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) ?? Data() {
+            guard let jsonData = try? JSONSerialization.jsonObject(with: contents, options: []) as? Array<Dictionary<String,String>> ?? [] else {
+                return
+            }
+            json = jsonData
         }
         tableView.dataSource = self
         tableView.delegate = self
