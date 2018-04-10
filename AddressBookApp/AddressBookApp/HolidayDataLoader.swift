@@ -36,9 +36,9 @@ class HolidayDataLoader {
         return json.count
     }
     
-    func makeJsonData(_ index: IndexPath, _ key: Contstant) -> String {
+    func makeJsonData(_ index: IndexPath, _ key: Contstant) -> String? {
         guard let title = json[index.row][key.rawValue] else {
-            return ""
+            return nil
         }
         return title
     }

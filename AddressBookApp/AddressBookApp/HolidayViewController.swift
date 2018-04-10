@@ -36,11 +36,9 @@ extension HolidayViewController: UITableViewDataSource {
         
         cell.dateLabel.text = holidayData?.makeJsonData(indexPath, Constant.title)
         cell.subtitleLabel.text = holidayData?.makeJsonData(indexPath, Constant.subTitle)
-        let imageName = holidayData?.makeJsonData(indexPath, Constant.title)
-        if imageName != nil {
-            cell.weatherImage.image = UIImage(named: imageName!)
-        }else {
-            cell.weatherImage.backgroundColor = UIColor.gray
+        cell.weatherImage.backgroundColor = UIColor.gray
+        if let imageName = holidayData?.makeJsonData(indexPath, Constant.weatherImage) {
+            cell.weatherImage.image = UIImage(named: imageName)
         }
         return cell
     }
