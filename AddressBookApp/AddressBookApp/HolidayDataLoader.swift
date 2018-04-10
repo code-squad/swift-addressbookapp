@@ -9,18 +9,11 @@
 import Foundation
 
 class HolidayDataLoader {
-    enum Contstant: String {
-        case cellIdentifier = "HolidayCell"
-        case title = "date"
-        case subTitle = "subtitle"
-        case weatherImage = "image"
-        case dataResource = "HolidayJsonData"
-    }
-    private var json: Array<Dictionary<String,String>> = []
+    private(set) var json: Array<Dictionary<String,String>> = []
     private static var holidayDataLoader = HolidayDataLoader()
     private init() {
         // json 데이터 가져오기
-        guard let urlPath = Bundle.main.path(forResource: Contstant.dataResource.rawValue , ofType: "json") else {
+        guard let urlPath = Bundle.main.path(forResource: Constant.dataResource.rawValue , ofType: "json") else {
             return
         }
         // Array 형태로 데이터 변환
@@ -36,12 +29,9 @@ class HolidayDataLoader {
         return json.count
     }
     
-    func makeJsonData(_ index: IndexPath, _ key: Contstant) -> String? {
-        guard let title = json[index.row][key.rawValue] else {
-            return nil
-        }
-        return title
-    }
+//    func makeJsonData(_ cell: HolidayDataCell) -> String? {
+//        return cell.dateLabel
+//    }
 
     static func sharedInstance() -> HolidayDataLoader {
         return holidayDataLoader

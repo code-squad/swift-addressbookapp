@@ -11,7 +11,6 @@ import UIKit
 class HolidayViewController: UIViewController, UITableViewDelegate {
     var holidayData: HolidayDataLoader?
     let customCell = "customCell"
-    typealias Constant = HolidayDataLoader.Contstant
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +32,11 @@ extension HolidayViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as? HolidayTableViewCell else {
             return HolidayTableViewCell()
         }
-        
-        cell.dateLabel.text = holidayData?.makeJsonData(indexPath, Constant.title)
-        cell.subtitleLabel.text = holidayData?.makeJsonData(indexPath, Constant.subTitle)
-        cell.weatherImage.backgroundColor = UIColor.gray
-        if let imageName = holidayData?.makeJsonData(indexPath, Constant.weatherImage) {
-            cell.weatherImage.image = UIImage(named: imageName)
+        // HolidayDataCell로 cell을 만들어주는 부분
+        guard let data = holidayData else {
+            return HolidayTableViewCell()
         }
+        cell.makeCellData(indexPath: indexPath, holidayData: data)
         return cell
     }
 }
