@@ -9,28 +9,11 @@
 import UIKit
 
 class HolidayViewController: UIViewController, UITableViewDelegate {
-    struct Contstant {
-        static let cellIdentifier = "HolidayCell"
-        static let title = "date"
-        static let subTitle = "subtitle"
-        static let weatherImage = "image"
-        static let customCell = "customCell"
-        static let dataResource = "HolidayJsonData"
-    }
+    var holidayData: HolidayDataLoader?
+    let customCell = "customCell"
     @IBOutlet weak var tableView: UITableView!
-    var json: Array<Dictionary<String,String>> = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let urlPath = Bundle.main.path(forResource: Contstant.dataResource, ofType: "json") else {
-            return
-        }
-        if let contents = try? String(contentsOfFile: urlPath).data(using: .utf8) ?? Data() {
-            guard let jsonData = try? JSONSerialization.jsonObject(with: contents, options: []) as? Array<Dictionary<String,String>> ?? [] else {
-                return
-            }
-            json = jsonData
-        }
         tableView.rowHeight = 80
         tableView.dataSource = self
         tableView.delegate = self
@@ -39,16 +22,19 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
 
 extension HolidayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return json.count
+        guard let jsonCount = holidayData?.countJsonData() else {
+            return 0
+        }
+        return jsonCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Contstant.customCell, for: indexPath) as? HolidayTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as? HolidayTableViewCell else {
             return HolidayTableViewCell()
         }
-        cell.dateLabel.text = json[indexPath.row][Contstant.title]
-        cell.subtitleLabel.text = json[indexPath.row][Contstant.subTitle]
-        let imageName = json[indexPath.row][Contstant.weatherImage]
+        cell.dateLabel.text = holidayData?.takeOutTitle(indexPath)
+        cell.subtitleLabel.text = holidayData?.takeOutSubTitle(indexPath)
+        let imageName = holidayData?.takeOutImage(indexPath)
         if imageName != nil {
             cell.weatherImage.image = UIImage(named: imageName!)
         }else {
