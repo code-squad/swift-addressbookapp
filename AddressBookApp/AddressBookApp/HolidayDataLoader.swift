@@ -9,18 +9,18 @@
 import Foundation
 
 class HolidayDataLoader {
-    struct Contstant {
-        static let cellIdentifier = "HolidayCell"
-        static let title = "date"
-        static let subTitle = "subtitle"
-        static let weatherImage = "image"
-        static let dataResource = "HolidayJsonData"
+    enum Contstant: String {
+        case cellIdentifier = "HolidayCell"
+        case title = "date"
+        case subTitle = "subtitle"
+        case weatherImage = "image"
+        case dataResource = "HolidayJsonData"
     }
     private var json: Array<Dictionary<String,String>> = []
     private static var holidayDataLoader = HolidayDataLoader()
     private init() {
         // json 데이터 가져오기
-        guard let urlPath = Bundle.main.path(forResource: Contstant.dataResource, ofType: "json") else {
+        guard let urlPath = Bundle.main.path(forResource: Contstant.dataResource.rawValue , ofType: "json") else {
             return
         }
         // Array 형태로 데이터 변환
@@ -36,25 +36,11 @@ class HolidayDataLoader {
         return json.count
     }
     
-    func takeOutTitle(_ index: IndexPath) -> String {
-        guard let title = json[index.row][Contstant.title] else {
+    func makeJsonData(_ index: IndexPath, _ key: Contstant) -> String {
+        guard let title = json[index.row][key.rawValue] else {
             return ""
         }
         return title
-    }
-    
-    func takeOutSubTitle(_ index: IndexPath) -> String {
-        guard let subTitle = json[index.row][Contstant.subTitle] else {
-            return ""
-        }
-        return subTitle
-    }
-    
-    func takeOutImage(_ index: IndexPath) -> String {
-        guard let image = json[index.row][Contstant.weatherImage] else {
-            return ""
-        }
-        return image
     }
 
     static func sharedInstance() -> HolidayDataLoader {
