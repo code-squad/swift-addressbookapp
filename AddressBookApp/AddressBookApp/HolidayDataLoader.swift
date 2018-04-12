@@ -28,10 +28,6 @@ class HolidayDataLoader {
     func countJsonData() -> Int {
         return json.count
     }
-    
-//    func makeJsonData(_ cell: HolidayDataCell) -> String? {
-//        return cell.dateLabel
-//    }
 
     static func sharedInstance() -> HolidayDataLoader {
         return holidayDataLoader

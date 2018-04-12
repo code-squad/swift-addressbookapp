@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45004DD5207E44A80022DAA7 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45004DD4207E44A80022DAA7 /* CellData.swift */; };
 		4500E1BA2077877000D4C247 /* HolidayJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4500E1B92077877000D4C247 /* HolidayJsonData.json */; };
 		452582902077592D004771E7 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828F2077592D004771E7 /* HolidayViewController.swift */; };
 		45BF000C207C7C3E009EA368 /* HolidayDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BF000B207C7C3E009EA368 /* HolidayDataLoader.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45004DD4207E44A80022DAA7 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		4500E1B92077877000D4C247 /* HolidayJsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HolidayJsonData.json; sourceTree = "<group>"; };
 		4525828F2077592D004771E7 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		45BF000B207C7C3E009EA368 /* HolidayDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataLoader.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				4500E1B92077877000D4C247 /* HolidayJsonData.json */,
 				45BF000B207C7C3E009EA368 /* HolidayDataLoader.swift */,
 				45F1CBF3207D06930059DA43 /* Constant.swift */,
+				45004DD4207E44A80022DAA7 /* CellData.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				45CD126D207650E800DCE31F /* ViewController.swift in Sources */,
 				45BF000C207C7C3E009EA368 /* HolidayDataLoader.swift in Sources */,
 				452582902077592D004771E7 /* HolidayViewController.swift in Sources */,
+				45004DD5207E44A80022DAA7 /* CellData.swift in Sources */,
 				45F99539207B7C7200C5C37F /* HolidayTableViewCell.swift in Sources */,
 				45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */,
 			);
