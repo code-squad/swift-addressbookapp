@@ -28,6 +28,13 @@ class HolidayDataLoader {
     func countJsonData() -> Int {
         return json.count
     }
+    
+    func makeCellData(indexPath: IndexPath) -> CellData {
+        let title = json[indexPath.row][Constant.title.rawValue]
+        let subTitle = json[indexPath.row][Constant.subTitle.rawValue]
+        let imageName = json[indexPath.row][Constant.weatherImage.rawValue]
+        return CellData.init(title: title ?? "", subTitle: subTitle ?? "", imageName: imageName ?? "")
+    }
 
     static func sharedInstance() -> HolidayDataLoader {
         return holidayDataLoader

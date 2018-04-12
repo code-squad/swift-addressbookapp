@@ -20,12 +20,13 @@ class HolidayTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func makeCellData(cellData: CellData) {
-        // 딱 필요한 데이터란 무엇이 있을까? - title, subTitle, imageName
-        self.dateLabel.text = cellData.title
-        self.subtitleLabel.text = cellData.subTitle
+    func makeHolidayCell(data: CellData) {
+        self.dateLabel.text = data.title
+        self.subtitleLabel.text = data.subTitle
         self.weatherImage.backgroundColor = UIColor.gray
-        self.weatherImage.image = UIImage(named: cellData.imageName)
+        if data.imageName != "" {
+            self.weatherImage.image = UIImage(named: data.imageName)
+        }
     }
 
 }

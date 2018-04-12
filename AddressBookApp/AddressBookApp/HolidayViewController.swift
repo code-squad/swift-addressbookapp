@@ -33,20 +33,11 @@ extension HolidayViewController: UITableViewDataSource {
             return HolidayTableViewCell()
         }
         // HolidayDataCell로 cell을 만들어주는 부분
-        guard let json = holidayData?.json else {
+        guard let data = holidayData?.makeCellData(indexPath: indexPath) else {
             return HolidayTableViewCell()
         }
-        guard let title = json[indexPath.row][Constant.title.rawValue] else {
-            return HolidayTableViewCell()
-        }
-        guard let subTitle = json[indexPath.row][Constant.subTitle.rawValue] else {
-            return HolidayTableViewCell()
-        }
-        guard let imageName = json[indexPath.row][Constant.weatherImage.rawValue] else {
-            return HolidayTableViewCell()
-        }
-        let cellData = CellData.init(title: title, subTitle: subTitle, imageName: imageName)
-        cell.makeCellData(cellData: cellData)
+        
+        cell.makeHolidayCell(data: data)
         return cell
     }
 }
