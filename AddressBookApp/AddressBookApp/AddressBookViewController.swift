@@ -7,27 +7,25 @@
 //
 
 import UIKit
+import Contacts
 
 class AddressBookViewController: UITableViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var telLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
     }
 
 }
