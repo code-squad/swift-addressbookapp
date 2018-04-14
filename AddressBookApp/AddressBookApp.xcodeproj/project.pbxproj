@@ -18,6 +18,7 @@
 		4547EE79207F2E57001547CA /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE78207F2E57001547CA /* MGCPostalAddress.swift */; };
 		4547EE7F207F3478001547CA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE7E207F3478001547CA /* AddressBookViewController.swift */; };
 		4547EE83207F4679001547CA /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE82207F4679001547CA /* AddressTableViewCell.swift */; };
+		45AF10542081EE8500746B14 /* ContactsDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF10532081EE8500746B14 /* ContactsDataLoader.swift */; };
 		45BF000C207C7C3E009EA368 /* HolidayDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BF000B207C7C3E009EA368 /* HolidayDataLoader.swift */; };
 		45CD126B207650E800DCE31F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126A207650E800DCE31F /* AppDelegate.swift */; };
 		45CD126D207650E800DCE31F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD126C207650E800DCE31F /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		4547EE78207F2E57001547CA /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
 		4547EE7E207F3478001547CA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		4547EE82207F4679001547CA /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		45AF10532081EE8500746B14 /* ContactsDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDataLoader.swift; sourceTree = "<group>"; };
 		45BF000B207C7C3E009EA368 /* HolidayDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataLoader.swift; sourceTree = "<group>"; };
 		45CD1267207650E800DCE31F /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CD126A207650E800DCE31F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				45F1CBF3207D06930059DA43 /* Constant.swift */,
 				45004DD4207E44A80022DAA7 /* CellData.swift */,
 				4547EE82207F4679001547CA /* AddressTableViewCell.swift */,
+				45AF10532081EE8500746B14 /* ContactsDataLoader.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			files = (
 				4547EE75207F2E21001547CA /* MGCAppConfiguration.swift in Sources */,
 				4547EE6F207F2D87001547CA /* MGCContactStore.swift in Sources */,
+				45AF10542081EE8500746B14 /* ContactsDataLoader.swift in Sources */,
 				4547EE77207F2E43001547CA /* MGCLabelValue.swift in Sources */,
 				4547EE73207F2DC9001547CA /* MGCContactStoreUtilities.swift in Sources */,
 				45F1CBF4207D06940059DA43 /* Constant.swift in Sources */,
