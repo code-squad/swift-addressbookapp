@@ -10,11 +10,9 @@ import Foundation
 import Contacts
 
 class ContactsDataLoader {
-    
+    var contactsData =  [ContactData]()
     init() {
         let store = MGCContactStore()
-        var contactsData =  [ContactData]()
-        
         store.checkContactsAccess({
             granted in
             // 주소록 접근 권한 허용시
@@ -23,13 +21,16 @@ class ContactsDataLoader {
                     contacts in
                     for info in contacts {
                         let name = info.familyName + info.givenName
+                        guard let image = info.thumbnailImageData else {
+                            return
+                        }
                         guard let phoneNumber = info.phoneNumbers.first?.value.stringValue else {
                             return
                         }
                         guard let email = info.emailAddresses.first?.value as String? else{
                             return
                         }
-                        contactsData.append(ContactData.init(name: name, phoneNumber: phoneNumber, email: email))
+                        self.contactsData.append(ContactData.init(image: image, name: name, phoneNumber: phoneNumber, email: email))
                     }
                 })
             }
@@ -40,4 +41,9 @@ class ContactsDataLoader {
             
         })
     }
+    
+    func makeContactsData(indexPath: IndexPath) -> ContactData {
+        return contactsData[indexPath.row]
+    }
+
 }

@@ -22,6 +22,13 @@ class AddressTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func makeAddressCell(data: ContactData) {
+        self.profileImageView.image = UIImage(data: data.image)
+        self.nameLabel.text = data.name
+        self.telLabel.text = data.phoneNumber
+        self.emailLabel.text = data.email
+    }
 
 }
 

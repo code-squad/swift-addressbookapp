@@ -9,6 +9,7 @@
 import Foundation
 
 struct ContactData {
+    var image: Data
     var name: String
     var phoneNumber: String
     var email: String

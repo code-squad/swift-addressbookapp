@@ -9,7 +9,8 @@
 import UIKit
 
 class AddressBookViewController: UITableViewController {
-
+    var contactsDataLoader: ContactsDataLoader?
+    let customCell = "addressCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,17 +25,14 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        // 주소록에 접근해서 정보 가져오기
-        
-        
-        // 가져온 정보를 AddressTableViewCell에 담기
-        
-        
-        
-        
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as? AddressTableViewCell else {
+            return AddressTableViewCell()
+        }
+        if let data = contactsDataLoader?.makeContactsData(indexPath: indexPath) {
+            // 가져온 정보를 cell에 출력
+            cell.makeAddressCell(data: data)
+        }
+        return cell
     }
 
 }
