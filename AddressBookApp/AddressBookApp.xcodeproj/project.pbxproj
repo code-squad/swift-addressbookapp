@@ -29,6 +29,7 @@
 		45CD128B207650E900DCE31F /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD128A207650E900DCE31F /* AddressBookAppUITests.swift */; };
 		45F1CBF4207D06940059DA43 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F1CBF3207D06930059DA43 /* Constant.swift */; };
 		45F99539207B7C7200C5C37F /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F99538207B7C7200C5C37F /* HolidayTableViewCell.swift */; };
+		45FA727020825A6A00AA4571 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA726F20825A6A00AA4571 /* ContactData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		45CD128C207650E900DCE31F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F1CBF3207D06930059DA43 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		45F99538207B7C7200C5C37F /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
+		45FA726F20825A6A00AA4571 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				45004DD4207E44A80022DAA7 /* CellData.swift */,
 				4547EE82207F4679001547CA /* AddressTableViewCell.swift */,
 				45AF10532081EE8500746B14 /* ContactsDataLoader.swift */,
+				45FA726F20825A6A00AA4571 /* ContactData.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4547EE75207F2E21001547CA /* MGCAppConfiguration.swift in Sources */,
+				45FA727020825A6A00AA4571 /* ContactData.swift in Sources */,
 				4547EE6F207F2D87001547CA /* MGCContactStore.swift in Sources */,
 				45AF10542081EE8500746B14 /* ContactsDataLoader.swift in Sources */,
 				4547EE77207F2E43001547CA /* MGCLabelValue.swift in Sources */,
