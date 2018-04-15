@@ -45,5 +45,9 @@ class ContactsDataLoader {
     func makeContactsData(indexPath: IndexPath) -> ContactData {
         return contactsData[indexPath.row]
     }
+    
+    func countOfContacts() -> Int {
+        return contactsData.count
+    }
 
 }

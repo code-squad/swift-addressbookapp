@@ -9,11 +9,10 @@
 import UIKit
 
 class AddressBookViewController: UITableViewController {
-    var contactsDataLoader: ContactsDataLoader?
+    var contactsData: ContactsDataLoader?
     let customCell = "addressCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,14 +20,17 @@ class AddressBookViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let countOfContacts = contactsData?.countOfContacts() else {
+            return 0
+        }
+        return countOfContacts
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as? AddressTableViewCell else {
             return AddressTableViewCell()
         }
-        if let data = contactsDataLoader?.makeContactsData(indexPath: indexPath) {
+        if let data = contactsData?.makeContactsData(indexPath: indexPath) {
             // 가져온 정보를 cell에 출력
             cell.makeAddressCell(data: data)
         }
