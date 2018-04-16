@@ -20,6 +20,9 @@
 
 ##### 실행결과
 
+<img src="./images/address-book-1-1.png" width="45%" />
+<img src="./images/address-book-1-2.png" width="45%" />
+
 ##### 학습거리
 * 이미지 채우는 contentMode에 대해 학습함
 * UITableViewController를 활용해서 static cell을 디자인하는 방식을 학습함
