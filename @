@@ -1,0 +1,12 @@
+add Notification to update Contacts View #25
+
+주소록 데이터를 가져왔을 때 뷰를 업데이트 하도록 구현함
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch addressbookapp-step4
+# Changes to be committed:
+#	modified:   AddressBookApp/AddressBookApp/AddressBookViewController.swift
+#	modified:   AddressBookApp/AddressBookApp/Base.lproj/Main.storyboard
+#	modified:   AddressBookApp/AddressBookApp/ContactsDataLoader.swift
+#

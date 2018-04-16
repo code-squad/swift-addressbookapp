@@ -23,26 +23,29 @@ class ContactsDataLoader {
                     contacts in
                     for info in contacts {
                         let name = info.familyName + info.givenName
+                        var email = ""
+                        var phone = ""
                         guard var image = UIImagePNGRepresentation(UIImage(named: "profile")!) else {
                             return
                         }
-                        if let thumbnailImage = info.thumbnailImageData{
+                        if let thumbnailImage = info.thumbnailImageData {
                             image = thumbnailImage
                         }
-                        guard let phoneNumber = info.phoneNumbers.first?.value.stringValue else {
-                            return
+                        if let phoneNumber = info.phoneNumbers.first?.value.stringValue {
+                            phone = phoneNumber
                         }
-                        var email = ""
                         if let emailAddress = info.emailAddresses.first?.value as String? {
                             email = emailAddress
                         }
-                        self.contactsData.append(ContactData.init(image: image, name: name, phoneNumber: phoneNumber, email: email))
+                        self.contactsData.append(ContactData.init(image: image, name: name, phoneNumber: phone, email: email))
                     }
+                    NotificationCenter.default.post(name: Notification.Name.DidUpdateAddressTable, object: self)
                 })
             }
             // 접근 권한 비허용 시
             else {
                 // alert Notification
+                NotificationCenter.default.post(name: Notification.Name.DidAlertAccessDenied, object: self)
             }
             
         })
@@ -60,4 +63,9 @@ class ContactsDataLoader {
         return contactsDataLoader
     }
     
+}
+
+extension Notification.Name {
+    static let DidUpdateAddressTable = Notification.Name("updateAddressTable")
+    static let DidAlertAccessDenied = Notification.Name("accessDenied")
 }

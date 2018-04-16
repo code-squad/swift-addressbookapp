@@ -13,6 +13,32 @@ class AddressBookViewController: UITableViewController {
     let customCell = "addressCell"
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerObserver()
+        self.tableView.rowHeight = 100
+    }
+    
+    func registerObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateAddressTable),
+                                               name: Notification.Name.DidUpdateAddressTable,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(alertAccessDenied),
+                                               name: Notification.Name.DidAlertAccessDenied,
+                                               object: nil)
+    }
+    
+    @objc func updateAddressTable() {
+        self.tableView.reloadData()
+    }
+    
+    @objc func alertAccessDenied() {
+        let title = "주소록 접근 실패"
+        let message = "주소록 접근 권한을 설정 해주세요."
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default) {(_) in }
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
