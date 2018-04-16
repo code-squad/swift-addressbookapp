@@ -11,6 +11,8 @@
 		876FFAF82084990B00C22BE6 /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF62084990B00C22BE6 /* JSONConverter.swift */; };
 		876FFAFA20849BCB00C22BE6 /* ViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF920849BCB00C22BE6 /* ViewProperties.swift */; };
 		876FFAFB20849BCB00C22BE6 /* ViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF920849BCB00C22BE6 /* ViewProperties.swift */; };
+		876FFAFD20849D0300C22BE6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAFC20849D0300C22BE6 /* JSON.swift */; };
+		876FFAFE20849D0300C22BE6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAFC20849D0300C22BE6 /* JSON.swift */; };
 		87910FC320843496003933D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC220843496003933D4 /* AppDelegate.swift */; };
 		87910FC520843496003933D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC420843496003933D4 /* ViewController.swift */; };
 		87910FC820843496003933D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FC620843496003933D4 /* Main.storyboard */; };
@@ -50,6 +52,7 @@
 		690D039EF53D11CFC12DCE54 /* Pods-AddressBookAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		876FFAF62084990B00C22BE6 /* JSONConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
 		876FFAF920849BCB00C22BE6 /* ViewProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProperties.swift; sourceTree = "<group>"; };
+		876FFAFC20849D0300C22BE6 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		87910FBF20843496003933D4 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FC220843496003933D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87910FC420843496003933D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				87910FCE20843497003933D4 /* Info.plist */,
 				876FFAF62084990B00C22BE6 /* JSONConverter.swift */,
 				876FFAF920849BCB00C22BE6 /* ViewProperties.swift */,
+				876FFAFC20849D0300C22BE6 /* JSON.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -465,6 +469,7 @@
 			files = (
 				87910FC520843496003933D4 /* ViewController.swift in Sources */,
 				87910FC320843496003933D4 /* AppDelegate.swift in Sources */,
+				876FFAFD20849D0300C22BE6 /* JSON.swift in Sources */,
 				876FFAFA20849BCB00C22BE6 /* ViewProperties.swift in Sources */,
 				87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */,
 				876FFAF72084990B00C22BE6 /* JSONConverter.swift in Sources */,
@@ -475,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				876FFAFE20849D0300C22BE6 /* JSON.swift in Sources */,
 				87910FD820843497003933D4 /* AddressBookAppTests.swift in Sources */,
 				876FFAF82084990B00C22BE6 /* JSONConverter.swift in Sources */,
 				876FFAFB20849BCB00C22BE6 /* ViewProperties.swift in Sources */,
