@@ -33,7 +33,9 @@ class AddressBookViewController: UITableViewController {
         if let data = contactsData?.makeContactsData(indexPath: indexPath) {
             // 가져온 정보를 cell에 출력
             cell.makeAddressCell(data: data)
+            print(data)
         }
+        
         return cell
     }
 

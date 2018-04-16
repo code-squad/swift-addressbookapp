@@ -8,10 +8,12 @@
 
 import Foundation
 import Contacts
+import UIKit
 
 class ContactsDataLoader {
     var contactsData =  [ContactData]()
-    init() {
+    private static var contactsDataLoader = ContactsDataLoader()
+    private init() {
         let store = MGCContactStore()
         store.checkContactsAccess({
             granted in
@@ -21,14 +23,18 @@ class ContactsDataLoader {
                     contacts in
                     for info in contacts {
                         let name = info.familyName + info.givenName
-                        guard let image = info.thumbnailImageData else {
+                        guard var image = UIImagePNGRepresentation(UIImage(named: "profile")!) else {
                             return
+                        }
+                        if let thumbnailImage = info.thumbnailImageData{
+                            image = thumbnailImage
                         }
                         guard let phoneNumber = info.phoneNumbers.first?.value.stringValue else {
                             return
                         }
-                        guard let email = info.emailAddresses.first?.value as String? else{
-                            return
+                        var email = ""
+                        if let emailAddress = info.emailAddresses.first?.value as String? {
+                            email = emailAddress
                         }
                         self.contactsData.append(ContactData.init(image: image, name: name, phoneNumber: phoneNumber, email: email))
                     }
@@ -50,4 +56,8 @@ class ContactsDataLoader {
         return contactsData.count
     }
 
+    static func sharedInstance() -> ContactsDataLoader {
+        return contactsDataLoader
+    }
+    
 }

@@ -13,10 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+// KVO, 옵저빙
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let vc = window?.rootViewController as? HolidayViewController {
             vc.holidayData = HolidayDataLoader.sharedInstance()
+        }
+        if let vc = window?.rootViewController as? AddressBookViewController {
+            vc.contactsData = ContactsDataLoader.sharedInstance()
         }
         return true
     }
