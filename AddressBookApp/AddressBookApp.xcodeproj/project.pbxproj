@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876FFAF72084990B00C22BE6 /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF62084990B00C22BE6 /* JSONConverter.swift */; };
+		876FFAF82084990B00C22BE6 /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF62084990B00C22BE6 /* JSONConverter.swift */; };
+		876FFAFA20849BCB00C22BE6 /* ViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF920849BCB00C22BE6 /* ViewProperties.swift */; };
+		876FFAFB20849BCB00C22BE6 /* ViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAF920849BCB00C22BE6 /* ViewProperties.swift */; };
 		87910FC320843496003933D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC220843496003933D4 /* AppDelegate.swift */; };
 		87910FC520843496003933D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC420843496003933D4 /* ViewController.swift */; };
 		87910FC820843496003933D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FC620843496003933D4 /* Main.storyboard */; };
@@ -14,6 +18,7 @@
 		87910FCD20843497003933D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FCB20843497003933D4 /* LaunchScreen.storyboard */; };
 		87910FD820843497003933D4 /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FD720843497003933D4 /* AddressBookAppTests.swift */; };
 		87910FE320843497003933D4 /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FE220843497003933D4 /* AddressBookAppUITests.swift */; };
+		87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F8DB2084809F00D4165C /* HolidayViewController.swift */; };
 		8CF080DEC5FC28E6AFDB059F /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */; };
 		C2F830CCBC16B14BE2A7FB93 /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */; };
 		DBE0230EAA7DF72E6EC2CA86 /* Pods_AddressBookAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EA5ABBC2CB87C9F7325A0E /* Pods_AddressBookAppUITests.framework */; };
@@ -43,6 +48,8 @@
 		479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DCDC5C1A3B78A95FD78092 /* Pods-AddressBookApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.release.xcconfig"; sourceTree = "<group>"; };
 		690D039EF53D11CFC12DCE54 /* Pods-AddressBookAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		876FFAF62084990B00C22BE6 /* JSONConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
+		876FFAF920849BCB00C22BE6 /* ViewProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProperties.swift; sourceTree = "<group>"; };
 		87910FBF20843496003933D4 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FC220843496003933D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87910FC420843496003933D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 		87910FDE20843497003933D4 /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FE220843497003933D4 /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		87910FE420843497003933D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A5F8DB2084809F00D4165C /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		C5479922A018FF256555D762 /* Pods-AddressBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E056C91AD5ED7F4C0E8901CC /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +125,12 @@
 				87910FC220843496003933D4 /* AppDelegate.swift */,
 				87910FC420843496003933D4 /* ViewController.swift */,
 				87910FC620843496003933D4 /* Main.storyboard */,
+				87A5F8DB2084809F00D4165C /* HolidayViewController.swift */,
 				87910FC920843497003933D4 /* Assets.xcassets */,
 				87910FCB20843497003933D4 /* LaunchScreen.storyboard */,
 				87910FCE20843497003933D4 /* Info.plist */,
+				876FFAF62084990B00C22BE6 /* JSONConverter.swift */,
+				876FFAF920849BCB00C22BE6 /* ViewProperties.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -454,6 +465,9 @@
 			files = (
 				87910FC520843496003933D4 /* ViewController.swift in Sources */,
 				87910FC320843496003933D4 /* AppDelegate.swift in Sources */,
+				876FFAFA20849BCB00C22BE6 /* ViewProperties.swift in Sources */,
+				87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */,
+				876FFAF72084990B00C22BE6 /* JSONConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +476,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				87910FD820843497003933D4 /* AddressBookAppTests.swift in Sources */,
+				876FFAF82084990B00C22BE6 /* JSONConverter.swift in Sources */,
+				876FFAFB20849BCB00C22BE6 /* ViewProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +646,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -646,7 +665,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -663,7 +685,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -681,7 +707,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -698,7 +728,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -715,7 +749,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T393J4TVCC;
 				INFOPLIST_FILE = AddressBookAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
