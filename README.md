@@ -20,8 +20,8 @@
 
 ##### 실행결과
 
-<img src="./images/address-book-1-1.png" width="45%" />
-<img src="./images/address-book-1-2.png" width="45%" />
+<img src="./images/address-book-1-1.png" width="45%"></img>
+<img src="./images/address-book-1-2.png" width="45%"></img>
 
 ##### 학습거리
 * 이미지 채우는 contentMode에 대해 학습함
