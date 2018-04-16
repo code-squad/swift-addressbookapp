@@ -75,3 +75,31 @@ guard let cell = tableView.dequeueReusableCell(withIdentifier: Contstant.customC
 
 ---
 
+
+# swift-addressbookapp step4
+
+> DataSource 객체
+
+- ***실행화면***
+![step4](img/step4_1.png) ![step4](img/step4_2.png) ![step4](img/step4_3.png)
+
+- ***학습꺼리***
+
+1. 애플 샘플 코드를 분석하고, 일부 코드를 활용하는 방식을 학습한다.  
+: MGCContact, MGCContactStore를 사용하여 주소록 데이터를 가져오도록 구현해보았다.
+
+ex,
+
+```swift
+let store = MGCContactStore()
+        store.checkContactsAccess({
+            granted in
+            // 주소록 접근 권한 허용시
+            if granted {
+                store.fetchContacts({
+                    contacts in
+                    for info in contacts {
+                        let name = info.familyName + info.givenName
+```
+
+---

@@ -47,7 +47,6 @@ class ContactsDataLoader {
                 // alert Notification
                 NotificationCenter.default.post(name: Notification.Name.DidAlertAccessDenied, object: self)
             }
-            
         })
     }
     

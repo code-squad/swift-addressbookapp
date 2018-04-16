@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		45004DD5207E44A80022DAA7 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45004DD4207E44A80022DAA7 /* CellData.swift */; };
 		4500E1BA2077877000D4C247 /* HolidayJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4500E1B92077877000D4C247 /* HolidayJsonData.json */; };
+		450DCB1C20848EE600ACD556 /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450DCB1B20848EE600ACD556 /* MGCPostalAddress.swift */; };
 		452582902077592D004771E7 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4525828F2077592D004771E7 /* HolidayViewController.swift */; };
 		4547EE6F207F2D87001547CA /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE6E207F2D87001547CA /* MGCContactStore.swift */; };
 		4547EE71207F2DC1001547CA /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE70207F2DC1001547CA /* MGCContact.swift */; };
 		4547EE73207F2DC9001547CA /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE72207F2DC8001547CA /* MGCContactStoreUtilities.swift */; };
 		4547EE75207F2E21001547CA /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE74207F2E21001547CA /* MGCAppConfiguration.swift */; };
 		4547EE77207F2E43001547CA /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE76207F2E43001547CA /* MGCLabelValue.swift */; };
-		4547EE79207F2E57001547CA /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE78207F2E57001547CA /* MGCPostalAddress.swift */; };
 		4547EE7F207F3478001547CA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE7E207F3478001547CA /* AddressBookViewController.swift */; };
 		4547EE83207F4679001547CA /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4547EE82207F4679001547CA /* AddressTableViewCell.swift */; };
 		45AF10542081EE8500746B14 /* ContactsDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF10532081EE8500746B14 /* ContactsDataLoader.swift */; };
@@ -52,13 +52,13 @@
 /* Begin PBXFileReference section */
 		45004DD4207E44A80022DAA7 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		4500E1B92077877000D4C247 /* HolidayJsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HolidayJsonData.json; sourceTree = "<group>"; };
+		450DCB1B20848EE600ACD556 /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
 		4525828F2077592D004771E7 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		4547EE6E207F2D87001547CA /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		4547EE70207F2DC1001547CA /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
 		4547EE72207F2DC8001547CA /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 		4547EE74207F2E21001547CA /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
 		4547EE76207F2E43001547CA /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
-		4547EE78207F2E57001547CA /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
 		4547EE7E207F3478001547CA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		4547EE82207F4679001547CA /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		45AF10532081EE8500746B14 /* ContactsDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDataLoader.swift; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		45CD1269207650E800DCE31F /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				450DCB1B20848EE600ACD556 /* MGCPostalAddress.swift */,
 				4547EE7E207F3478001547CA /* AddressBookViewController.swift */,
-				4547EE78207F2E57001547CA /* MGCPostalAddress.swift */,
 				4547EE76207F2E43001547CA /* MGCLabelValue.swift */,
 				4547EE74207F2E21001547CA /* MGCAppConfiguration.swift */,
 				4547EE72207F2DC8001547CA /* MGCContactStoreUtilities.swift */,
@@ -316,10 +316,10 @@
 				4547EE73207F2DC9001547CA /* MGCContactStoreUtilities.swift in Sources */,
 				45F1CBF4207D06940059DA43 /* Constant.swift in Sources */,
 				45CD126D207650E800DCE31F /* ViewController.swift in Sources */,
+				450DCB1C20848EE600ACD556 /* MGCPostalAddress.swift in Sources */,
 				45BF000C207C7C3E009EA368 /* HolidayDataLoader.swift in Sources */,
 				4547EE71207F2DC1001547CA /* MGCContact.swift in Sources */,
 				452582902077592D004771E7 /* HolidayViewController.swift in Sources */,
-				4547EE79207F2E57001547CA /* MGCPostalAddress.swift in Sources */,
 				4547EE7F207F3478001547CA /* AddressBookViewController.swift in Sources */,
 				45004DD5207E44A80022DAA7 /* CellData.swift in Sources */,
 				4547EE83207F4679001547CA /* AddressTableViewCell.swift in Sources */,
