@@ -60,6 +60,37 @@
 
 <img src="./images/address-book-2-1.png" width="45%"></img>
 
+##### 피드백
+* 고치기 전
+    * 모델 클래스가 뷰를 알거나 델리게이트 메소드를 그대로 가져올 필요는 없어요. 그럴거면 DataSource 역할을 하는 객체를 따로 만드는게 좋습니다.
+    * Cell을 채우는 코드는 차라리 Cell 내부에 구현하고, Cell에게는 필요한 데이터만 넘기세요. 
+    * 만약 ViewController가 DataSource 역할을 할꺼면 holidays: [Holiday] = [Holiday]() 를 대체하는 객체만 만들고,
+    * DataSource 프로토콜을 구현하는 메소드에서 모델 객체에 필요한 데이터만 요청해서 받아서 Cell을 채우세요.
+    
+```swift
+class HolidayViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    private var holidays: [Holiday] = [Holiday]()
+
+    // ...
+}
+
+class HolidayBox {
+    private var holiday: Holiday
+    
+    init(_ holiday: Holiday) {
+        self.holiday = holiday
+    }
+    
+    func cell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ViewProperties.holidayTableCell, for: indexPath)
+        cell.textLabel?.text = holiday.date
+        cell.detailTextLabel?.text = holiday.subtitle
+        return cell
+    }
+}
+```
+
 ##### 학습거리 
 * UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
 * DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
