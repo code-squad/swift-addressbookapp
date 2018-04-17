@@ -58,7 +58,12 @@
 
 ##### 실행결과
 
-<img src="./images/address-book-2-1.png" width="45%"></img>
+<img src="./images/address-book-2.png" width="45%"></img>
+
+##### 학습거리 
+* UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
+* DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
+* Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습함
 
 ##### 피드백
 * 고치기 전
@@ -128,12 +133,9 @@ extension HolidayViewController: UITableViewDataSource {
 ```
 
 ##### UITableViewDataSource, UITableViewDelegate
-* [정리](https://wiki.yuaming.com/ios/ui-application-main.html)
+* [정리](https://wiki.yuaming.com/ios/tableview-datasource-delegate.html)
 
-##### 학습거리 
-* UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
-* DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
-* Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습함
+
 
 ### 3. UITableViewCell 커스텀셀
 
@@ -165,10 +167,31 @@ extension HolidayViewController: UITableViewDataSource {
     * cell.dateLabel 에는 date 값을 출력하고, cell.subtitleLabel 에는 subtitle 값을 출력하고, backgroundImageView에는 image 값에 해당하는 이미지를 표시함
     * 만약 이미지가 없을 경우는 회색 배경이 보이도록 처리함
 
-##### UITableView, UITableViewCell
-* [정리](https://wiki.yuaming.com/ios/ui-application-main.html)
+##### 실행결과 
+
+<img src="./images/address-book-3.png" width="45%"></img>
 
 ##### 학습거리 
 * 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법에 대해 학습함
 * 셀 id별로 재사용하는 방식에 대해 학습함
 * 커스텀 셀을 사용할 때 주의해야 할 사항들을 정리함
+
+##### 피드백
+* 커스텀 셀을 재사용하면서 셀이 가지고 있는 값을 초기화 하지 않아서 문제가 발생함. HolidayDataManager에서 Holiday 배열 값은 제대로 가지고 있었지만 TableView에서 이미지가 제대로 바인딩되지 않음. 부를때마다 초기값 셋팅이 필요함
+
+```swift
+class HolidayTableViewCell: UITableViewCell {
+    // ...
+    
+    override func prepareForReuse() {
+        self.weatherImageView.image = nil
+        self.dateLabel.text = ""
+        self.subtitleLabel.text = ""
+    }
+
+    // ...
+}
+```
+
+##### UITableView, UITableViewCell
+* [정리](https://wiki.yuaming.com/ios/tableview-cell.html)
