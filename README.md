@@ -91,6 +91,39 @@ class HolidayBox {
 }
 ```
 
+* 고친 후
+    * 피드백에 대해 제대로 이해하지 못함
+    * `HolidayViewController가 [Holiday]를 직접 가지고 있는게 아니라 [Holiday]를 가지고 있는 HolidayDataManager 객체가 가지고 있는 속성이나 함수를 통해 접근해야 함`
+    * 예전에 자판기 앱 했을 때 동일한 작업인데, 놓치고 있었음. 프로토콜 이런 것보다 새로운 객체로 쪼갤 수 있다면 쉽게 생각하자. 기본에 충실하자:)
+
+```swift
+class HolidayViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    private var holidayDataManager: HolidayDataManager!
+    private let cellIndentifier = "Cell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.dataSource = self
+        
+        holidayDataManager = HolidayDataManager().convert(HolidayJson.string)
+    }
+}
+
+extension HolidayViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath)
+        cell.textLabel?.text = holidayDataManager[indexPath.row].date
+        cell.detailTextLabel?.text = holidayDataManager[indexPath.row].subtitle
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return holidayDataManager.count
+    }
+}
+```
+
 ##### 학습거리 
 * UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
 * DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
