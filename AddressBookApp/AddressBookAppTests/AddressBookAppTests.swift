@@ -10,31 +10,41 @@ import XCTest
 @testable import AddressBookApp
 
 class AddressBookAppTests: XCTestCase {
-    let jsonString = """
-        [{"date":"1월1일", "subtitle":"신정"},
-        {"date":"2월16일", "subtitle":"구정"},
-        {"date":"3월1일", "subtitle":"삼일절"},
-        {"date":"5월5일", "subtitle":"어린이날"},
-        {"date":"5월22일", "subtitle":"석가탄신일"},
-        {"date":"6월6일", "subtitle":"현충일"},
-        {"date":"8월15일", "subtitle":"광복절"},
-        {"date":"9월24일", "subtitle":"추석"},
-        {"date":"10월3일", "subtitle":"개천절"},
-        {"date":"10월9일", "subtitle":"한글날"},
-        {"date":"12월25일", "subtitle":"성탄절"}]
+    static let string: String = """
+    [{"date":"1월1일", "subtitle":"신정"},
+    {"date":"2월16일", "subtitle":"구정"},
+    {"date":"3월1일", "subtitle":"삼일절"},
+    {"date":"5월5일", "subtitle":"어린이날"}]
+    """
+    
+    static let stringAddedImages: String = """
+    [{"date":"1월1일", "subtitle":"신정", "image" : "snowy"},
+    {"date":"2월16일", "subtitle":"구정", "image" : "sunny"},
+    {"date":"3월1일", "subtitle":"삼일절"}]
     """
     
     func test_changeFromStringToHolidays() {
-        let jsonData = HolidayDataConverter.data(jsonString)
+        let jsonData = HolidayDataConverter.data(HolidayJson.string)
         let holidays = HolidayDataConverter.object(jsonData)
         XCTAssertEqual(holidays.count, 11)
     }
     
     func test_hasHolidayData() {
-        let dataManager = HolidayDataManager().convert(jsonString)
+        let dataManager = HolidayDataManager()
+        dataManager.convert(HolidayJson.string)
         let holiday = dataManager[2]
-        let comparedHoliday = Holiday(date: "3월1일", subtitle: "삼일절")
+        let comparedHoliday = Holiday(date: "3월1일", subtitle: "삼일절", image: "")
         XCTAssertEqual(comparedHoliday.date, holiday.date)
         XCTAssertEqual(comparedHoliday.subtitle, holiday.subtitle)
+    }
+    
+    func test_hasHolidayDataWithImage() {
+        let dataManager = HolidayDataManager()
+        dataManager.convert(HolidayJson.stringAddedImages)
+        let holiday = dataManager[1]
+        let comparedHoliday = Holiday(date: "2월16일", subtitle: "구정", image: "sunny")
+        XCTAssertEqual(comparedHoliday.date, holiday.date)
+        XCTAssertEqual(comparedHoliday.subtitle, holiday.subtitle)
+        XCTAssertEqual(comparedHoliday.image, holiday.image)
     }
 }

@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		876FFAFD20849D0300C22BE6 /* HolidayJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAFC20849D0300C22BE6 /* HolidayJson.swift */; };
-		876FFAFE20849D0300C22BE6 /* HolidayJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAFC20849D0300C22BE6 /* HolidayJson.swift */; };
 		878BF2AC20858A33009A0F15 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2AB20858A33009A0F15 /* Holiday.swift */; };
-		878BF2AD20858A33009A0F15 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2AB20858A33009A0F15 /* Holiday.swift */; };
 		878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */; };
-		878BF2B62085B904009A0F15 /* HolidayDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */; };
 		878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */; };
-		878BF2BC2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */; };
 		878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */; };
 		87910FC320843496003933D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC220843496003933D4 /* AppDelegate.swift */; };
 		87910FC520843496003933D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC420843496003933D4 /* ViewController.swift */; };
@@ -493,10 +489,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876FFAFE20849D0300C22BE6 /* HolidayJson.swift in Sources */,
-				878BF2AD20858A33009A0F15 /* Holiday.swift in Sources */,
-				878BF2BC2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */,
-				878BF2B62085B904009A0F15 /* HolidayDataConverter.swift in Sources */,
 				87910FD820843497003933D4 /* AddressBookAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
