@@ -99,6 +99,9 @@ class HolidayBox {
 ```swift
 class HolidayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+
+    // weak로 변수 선언해야 하는 것인가?
+    // * HolidayViewController에서 사용한다면 굳이 weak로 선언할 필요가 없음. 다만 다른 곳에서 만든 것을 사용한다면 weak 선언이 필요함
     private var holidayDataManager: HolidayDataManager!
     private let cellIndentifier = "Cell"
     
@@ -128,3 +131,38 @@ extension HolidayViewController: UITableViewDataSource {
 * UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
 * DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
 * Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습함
+
+### 3. UITableViewCell 커스텀셀
+
+##### 프로그래밍 요구사항
+* HolidayViewController.TableView에 새로운 프로토타입 Cell을 추가하고, Custom 스타일로 지정함
+* 추가한 Custom cell은 높이를 80으로 하고 다음과 같이 ImageView와 Label을 추가함
+* UITableViewCell 에서 상속받는 HolidayTableViewCell 클래스를 추가하고 새로 추가한 셀의 Custom class로 지정한다.
+    * Custom class 코드와 연결된 상태를 확인하고 각각 IBOutlet을 연결함
+    * ImageView는 backgroundImageView로 셀 전체를 채움
+    * dateLabel은 상단에 2/3를 차지하고, 글자크기는 24로 글자색은 흰색으로 지정하고 좌측 정렬함
+    * subtitleLabel은 하단에 1/3을 차지하고, 글자크기는 17로 글자색은 흰색으로 지정하고 우측 정렬함
+* 다음과 같은 JSON 데이터를 HolidayViewController 코드에 추가하고 JSONSerialization을 활용해서 Array<Dictionary<String,String>> 타입으로 변환함
+
+```
+[{"date":"1월1일", "subtitle":"신정", "image" : "snowy"},
+{"date":"2월16일", "subtitle":"구정", "image" : "sunny"},
+{"date":"3월1일", "subtitle":"삼일절"},
+{"date":"5월5일", "subtitle":"어린이날", "image" : "sunny"},
+{"date":"5월22일", "subtitle":"석가탄신일", "image" : "cloudy"},
+{"date":"6월6일", "subtitle":"현충일", "image" : "rainny"},
+{"date":"8월15일", "subtitle":"광복절", "image" : "sunny"},
+{"date":"9월24일", "subtitle":"추석", "image" : "rainny"},
+{"date":"10월3일", "subtitle":"개천절"},
+{"date":"10월9일", "subtitle":"한글날", "image" : "cloudy"},
+{"date":"12월25일", "subtitle":"성탄절", "image" : "snowy"}]
+```
+
+* UITableViewDataSource 프로토콜 구현 부분에서 cell을 HolidayTableViewCell 타입으로 변환해서 사용함
+    * cell.dateLabel 에는 date 값을 출력하고, cell.subtitleLabel 에는 subtitle 값을 출력하고, backgroundImageView에는 image 값에 해당하는 이미지를 표시함
+    * 만약 이미지가 없을 경우는 회색 배경이 보이도록 처리함
+
+##### 학습거리 
+* 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법에 대해 학습함
+* 셀 id별로 재사용하는 방식에 대해 학습함
+* 커스텀 셀을 사용할 때 주의해야 할 사항들을 정리함
