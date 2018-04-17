@@ -15,6 +15,7 @@
 		878BF2B62085B904009A0F15 /* HolidayDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */; };
 		878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */; };
 		878BF2BC2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */; };
+		878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */; };
 		87910FC320843496003933D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC220843496003933D4 /* AppDelegate.swift */; };
 		87910FC520843496003933D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC420843496003933D4 /* ViewController.swift */; };
 		87910FC820843496003933D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FC620843496003933D4 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		87910FCD20843497003933D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FCB20843497003933D4 /* LaunchScreen.storyboard */; };
 		87910FD820843497003933D4 /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FD720843497003933D4 /* AddressBookAppTests.swift */; };
 		87910FE320843497003933D4 /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FE220843497003933D4 /* AddressBookAppUITests.swift */; };
+		879AECEA2085F59300A0AA1D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AECE92085F59300A0AA1D /* Extensions.swift */; };
 		87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F8DB2084809F00D4165C /* HolidayViewController.swift */; };
 		8CF080DEC5FC28E6AFDB059F /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */; };
 		C2F830CCBC16B14BE2A7FB93 /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */; };
@@ -56,6 +58,7 @@
 		878BF2AB20858A33009A0F15 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataConverter.swift; sourceTree = "<group>"; };
 		878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataManager.swift; sourceTree = "<group>"; };
+		878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		87910FBF20843496003933D4 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FC220843496003933D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87910FC420843496003933D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		87910FDE20843497003933D4 /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FE220843497003933D4 /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		87910FE420843497003933D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		879AECE92085F59300A0AA1D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87A5F8DB2084809F00D4165C /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 		C5479922A018FF256555D762 /* Pods-AddressBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E056C91AD5ED7F4C0E8901CC /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				878BF2AB20858A33009A0F15 /* Holiday.swift */,
 				878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */,
 				878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */,
+				878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */,
+				879AECE92085F59300A0AA1D /* Extensions.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -472,7 +478,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				87910FC520843496003933D4 /* ViewController.swift in Sources */,
+				879AECEA2085F59300A0AA1D /* Extensions.swift in Sources */,
 				87910FC320843496003933D4 /* AppDelegate.swift in Sources */,
+				878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */,
 				878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */,
 				878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */,
 				878BF2AC20858A33009A0F15 /* Holiday.swift in Sources */,
