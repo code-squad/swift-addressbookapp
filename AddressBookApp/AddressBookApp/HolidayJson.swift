@@ -1,5 +1,5 @@
 //
-//  JSON
+//  HolidayJson.swift
 //  AddressBookApp
 //
 //  Created by yuaming on 16/04/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct JSON {
+struct HolidayJson {
     static let string: String = """
     [{"date":"1월1일", "subtitle":"신정"},
     {"date":"2월16일", "subtitle":"구정"},
