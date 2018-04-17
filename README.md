@@ -94,7 +94,7 @@ class HolidayBox {
 * 고친 후
     * 피드백에 대해 제대로 이해하지 못함
     * `HolidayViewController가 [Holiday]를 직접 가지고 있는게 아니라 [Holiday]를 가지고 있는 HolidayDataManager 객체가 가지고 있는 속성이나 함수를 통해 접근해야 함`
-    * 예전에 자판기 앱 했을 때 동일한 작업인데, 놓치고 있었음. 프로토콜 이런 것보다 새로운 객체로 쪼갤 수 있다면 쉽게 생각하자. 기본에 충실하자:)
+    * 예전에 자판기 앱 했을 때 동일한 작업인데, 놓치고 있었음. 프로토콜 이런 것보다 새로운 객체로 쪼갤 수 있다면 그렇게 처리하고 쉽게 생각하고 기본에 충실하자:)
 
 ```swift
 class HolidayViewController: UIViewController {
