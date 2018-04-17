@@ -132,11 +132,6 @@ extension HolidayViewController: UITableViewDataSource {
 }
 ```
 
-##### UITableViewDataSource, UITableViewDelegate
-* [정리](https://wiki.yuaming.com/ios/tableview-datasource-delegate.html)
-
-
-
 ### 3. UITableViewCell 커스텀셀
 
 ##### 프로그래밍 요구사항
@@ -193,5 +188,5 @@ class HolidayTableViewCell: UITableViewCell {
 }
 ```
 
-##### UITableView, UITableViewCell
-* [정리](https://wiki.yuaming.com/ios/tableview-cell.html)
+##### UITableView, UITableViewController
+* [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
