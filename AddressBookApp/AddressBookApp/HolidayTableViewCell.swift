@@ -26,6 +26,7 @@ class HolidayTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         self.weatherImageView.image = nil
         self.dateLabel.text = ""
         self.subtitleLabel.text = ""
