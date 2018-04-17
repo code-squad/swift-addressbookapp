@@ -8,21 +8,17 @@
 
 import Foundation
 
-class HolidayDataManager {
+class HolidayDataManager: Codable {
     private var holidays: [Holiday]
-
-    init(_ holidays: [Holiday]) {
-        self.holidays = holidays
+    
+    init() {
+        self.holidays = [Holiday]()
     }
     
-    convenience init() {
-        self.init([Holiday]())
-    }
-    
-    func convert(_ jsonString: String) -> HolidayDataManager {
+    func convert(_ jsonString: String) {
         let jsonData = HolidayDataConverter.data(jsonString)
-        holidays = HolidayDataConverter.object(jsonData)
-        return HolidayDataManager(holidays)
+        self.holidays = HolidayDataConverter.object(jsonData)
+        NotificationCenter.default.post(name: Notification.Name.holidayDataManager, object: self)
     }
     
     subscript(index: Int) -> Holiday {

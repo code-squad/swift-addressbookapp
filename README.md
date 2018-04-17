@@ -127,6 +127,9 @@ extension HolidayViewController: UITableViewDataSource {
 }
 ```
 
+##### UITableViewDataSource, UITableViewDelegate
+* [정리](https://wiki.yuaming.com/ios/ui-application-main.html)
+
 ##### 학습거리 
 * UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
 * DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
@@ -161,6 +164,9 @@ extension HolidayViewController: UITableViewDataSource {
 * UITableViewDataSource 프로토콜 구현 부분에서 cell을 HolidayTableViewCell 타입으로 변환해서 사용함
     * cell.dateLabel 에는 date 값을 출력하고, cell.subtitleLabel 에는 subtitle 값을 출력하고, backgroundImageView에는 image 값에 해당하는 이미지를 표시함
     * 만약 이미지가 없을 경우는 회색 배경이 보이도록 처리함
+
+##### UITableView, UITableViewCell
+* [정리](https://wiki.yuaming.com/ios/ui-application-main.html)
 
 ##### 학습거리 
 * 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법에 대해 학습함

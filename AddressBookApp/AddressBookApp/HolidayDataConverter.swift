@@ -30,7 +30,10 @@ struct HolidayDataConverter {
         guard jsonData.count > 0 else { return holidays }
         
         jsonData.forEach {
-            holidays.append(Holiday(date: $0[Holiday.Keys.date.name]!, subtitle: $0[Holiday.Keys.subtitle.name]!))
+            holidays.append(Holiday(date: $0[Holiday.Keys.date.name] ?? "",
+                                    subtitle: $0[Holiday.Keys.subtitle.name] ?? "",
+                                    image: $0[Holiday.Keys.image.name] ?? ""
+                            ))
         }
         
         return holidays
