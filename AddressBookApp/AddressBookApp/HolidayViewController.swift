@@ -13,6 +13,8 @@ class HolidayViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var holidayDataManager: HolidayDataManager!
+    private let cellIndentifier = "Cell"
+    private let cellHeight = CGFloat(80)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +49,12 @@ private extension HolidayViewController {
 
 extension HolidayViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HolidayTableViewCell.cellIndentifier, for: indexPath) as?  HolidayTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as?  HolidayTableViewCell else {
             return UITableViewCell()
         }
+    
+        cell.bind(holidayDataManager[indexPath.row])
         
-        cell.dateLabel?.text = holidayDataManager[indexPath.row].date
-        cell.subtitleLabel?.text = holidayDataManager[indexPath.row].subtitle
-        cell.bindImage(holidayDataManager[indexPath.row].image)
         return cell
     }
 
@@ -62,6 +63,6 @@ extension HolidayViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HolidayTableViewCell.cellHeight
+        return cellHeight
     }
 }

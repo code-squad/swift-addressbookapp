@@ -14,9 +14,6 @@ class HolidayTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
-    static let cellIndentifier = "Cell"
-    static let cellHeight = CGFloat(80)
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -31,12 +28,17 @@ class HolidayTableViewCell: UITableViewCell {
         self.dateLabel.text = ""
         self.subtitleLabel.text = ""
     }
-    
-    func bindImage(_ imageName: String) {
-        if imageName == "" {
+}
+
+extension HolidayTableViewCell {
+    func bind(_ holiday: Holiday) {
+        self.dateLabel.text = holiday.date
+        self.subtitleLabel.text = holiday.subtitle
+        
+        if holiday.image == "" {
             self.weatherImageView.backgroundColor = UIColor.gray
         } else {
-            self.weatherImageView.image = UIImage(imageLiteralResourceName: imageName)
+            self.weatherImageView.image = UIImage(imageLiteralResourceName: holiday.image)
         }
     }
 }
