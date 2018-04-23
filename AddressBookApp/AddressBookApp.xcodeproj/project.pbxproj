@@ -141,14 +141,13 @@
 		87910FC120843496003933D4 /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				87913507208D9CFD008310CB /* Common */,
+				87913506208D9CEA008310CB /* ViewControllers */,
+				87913505208D9CDA008310CB /* Storyboards */,
 				875C021E208D794E0015B895 /* TableViewExample */,
 				87910FC220843496003933D4 /* AppDelegate.swift */,
-				87910FC420843496003933D4 /* ViewController.swift */,
-				87910FC620843496003933D4 /* Main.storyboard */,
 				87910FC920843497003933D4 /* Assets.xcassets */,
-				87910FCB20843497003933D4 /* LaunchScreen.storyboard */,
 				87910FCE20843497003933D4 /* Info.plist */,
-				879AECE92085F59300A0AA1D /* Extensions.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -169,6 +168,31 @@
 				87910FE420843497003933D4 /* Info.plist */,
 			);
 			path = AddressBookAppUITests;
+			sourceTree = "<group>";
+		};
+		87913505208D9CDA008310CB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				87910FCB20843497003933D4 /* LaunchScreen.storyboard */,
+				87910FC620843496003933D4 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		87913506208D9CEA008310CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				87910FC420843496003933D4 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		87913507208D9CFD008310CB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				879AECE92085F59300A0AA1D /* Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		99942C3662675930C73260AE /* Pods */ = {
