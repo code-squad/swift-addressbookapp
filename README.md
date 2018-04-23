@@ -190,3 +190,35 @@ class HolidayTableViewCell: UITableViewCell {
 
 ##### UITableView, UITableViewController
 * [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
+
+### 4. Contacts 프레임워크 적용
+
+##### 프로그래밍 요구사항
+* 다운로드 받은 샘플에서 MGCContactStore 클래스와 의존성이 있는 클래스를 최소로 함께 프로젝트에 복사함
+* 스토리보드에 새로운 TableViewController를 추가하고, Initial ViewController로 지정함
+* UITableViewController 에서 상속받아 새로운 뷰컨트롤러 클래스 AddressBookViewController를 만들고, 스토리보드 TableViewController의 Custom Class로 지정함
+* 복사한 MGCContactStore 클래스 메소드를 활용해서 주소록에 있는 전체 Contacts 정보를 Fetch하고, TableViewDataSource에서 활용함
+* 새로 추가한 TableViewController 속성에서 Content 값을 Dynamic Prototypes로 변경하고 Custom 셀을 추가함
+* 추가한 Custom cell은 높이를 90으로 하고 다음과 같이 ImageView와 Label 3개를 추가함
+
+<img src="./images/addressbook-addressbookviewcontroller-customcell-design.png" width="45%"></img>
+
+* UITableViewCell 에서 상속받는 AddressTableViewCell 클래스를 추가하고 새로 추가한 셀의 Custom class로 지정함
+    * 셀 Identifier는 addressCell 로 지정함
+    * Custom class 코드와 연결된 상태를 확인하고 각각 IBOutlet을 연결함
+    * ImageView는 profileImageView로 셀 좌측에 정사각형으로 고정함
+    * nameLabel은 상단에 높이 2/3를 차지하고, 글자크기는 24로 글자색은 검정색으로 지정하고 좌측 정렬함
+    * telLabel은 nameLabel과 동일한 높이에, 글자크기는 17로 글자색은 옅은 회색으로 지정하고 우측 정렬함
+    * emailLabel은 하단에 1/3을 차지하고, 글자크기는 16로 글자색은 진한 회색으로 지정하고 좌측 정렬함
+* 주소록 정보 중에 다음과 같이 셀에 표시함
+    * cell.nameLabel 에는 lastName + firstName 값을 출력하고, cell.telLabel 에는 phoneNumber 값을 출력하고, cell.emailLabel에는 email 값을 출력하고, profileImageView에는 profilePicture.imageData 를 이미지로 표시함
+    * 만약 프로필 이미지가 없을 경우는 다음 이미지가 보이도록 처리함
+
+    <img src="./images/addressbook-default-profile.png" />
+
+* 애플 샘플 코드를 분석하고, 일부 코드를 활용하는 방식을 학습함
+
+##### 학습거리
+* [Contacts](https://developer.apple.com/documentation/contacts)
+* [Introducing the Contacts Framework for iOS and OS X](https://developer.apple.com/videos/play/wwdc2015/223/)
+* [샘플코드](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
