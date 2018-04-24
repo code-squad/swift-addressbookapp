@@ -231,7 +231,9 @@ class HolidayTableViewCell: UITableViewCell {
 * [Introducing the Contacts Framework for iOS and OS X](https://developer.apple.com/videos/play/wwdc2015/223/)
 * [샘플코드](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
 * Info.plist
-    * 권한설정 
-* Contacts 분석하면서 느낀 점
-    * MARK 주석 사용 기준
-    * 객체 별 역할 구성
+    * Privacy - Contacts Usage Description 설정하는 법 
+* Contacts 샘플 코드 분석하면서 새롭게 알게 된 점
+    * DispatchQueue 
+    * MARK 사용 기준
+    * 객체 역할 
+    * 폴더 관리        
