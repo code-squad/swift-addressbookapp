@@ -21,12 +21,8 @@ class HolidayViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
         setup()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.tableView.reloadData()
     }
 }
 

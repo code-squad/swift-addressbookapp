@@ -188,6 +188,9 @@ class HolidayTableViewCell: UITableViewCell {
 }
 ```
 
+* `viewDidLayoutSubviews` 는 View Controller의 View Bounds가 변화할 때 호출함. `reloadData` 트리거가 일어나지 않음
+
+
 ##### UITableView, UITableViewController
 * [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
 
