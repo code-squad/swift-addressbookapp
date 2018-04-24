@@ -42,7 +42,7 @@ private extension ContactDataManager {
         mgcContactStoreInstance.fetchContacts({ (contacts: [CNContact]) in
             guard contacts.count > 0 else { return }
             
-            contacts.enumerated().forEach({ (index: Int, value: CNContact) in
+            contacts.forEach({ (value: CNContact) in
                 let lastName = value.familyName
                 let firstName = value.givenName
                 let imageData: Data? = value.thumbnailImageData
