@@ -221,7 +221,17 @@ class HolidayTableViewCell: UITableViewCell {
 
 * 애플 샘플 코드를 분석하고, 일부 코드를 활용하는 방식을 학습함
 
+##### 실행결과
+
+<img src="./images/addressbook-4-1.png" width="45%"></img>
+<img src="./images/addressbook-4-2.png" width="45%"></img>
+
 ##### 학습거리
 * [Contacts](https://developer.apple.com/documentation/contacts)
 * [Introducing the Contacts Framework for iOS and OS X](https://developer.apple.com/videos/play/wwdc2015/223/)
 * [샘플코드](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
+* Info.plist
+    * 권한설정 
+* Contacts 분석하면서 느낀 점
+    * MARK 주석 사용 기준
+    * 객체 별 역할 구성

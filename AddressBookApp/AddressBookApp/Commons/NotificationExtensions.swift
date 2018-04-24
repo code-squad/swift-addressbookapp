@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let holidayDataManager = Notification.Name("HolidayDataManager")
+    static let contactDataManager = Notification.Name("ContactDataManager")
 }

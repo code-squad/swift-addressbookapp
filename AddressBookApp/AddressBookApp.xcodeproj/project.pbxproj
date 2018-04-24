@@ -31,6 +31,7 @@
 		87DE4E8E208DCD7800CF4915 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E8D208DCD7800CF4915 /* AddressBookViewController.swift */; };
 		87DE4E91208DCE7C00CF4915 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E90208DCE7C00CF4915 /* AddressTableViewCell.swift */; };
 		87DE4E95208ED7F200CF4915 /* ContactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */; };
+		87EBBD77208F08DB00791E73 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBBD76208F08DB00791E73 /* Contact.swift */; };
 		8CF080DEC5FC28E6AFDB059F /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */; };
 		C2F830CCBC16B14BE2A7FB93 /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */; };
 		DBE0230EAA7DF72E6EC2CA86 /* Pods_AddressBookAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EA5ABBC2CB87C9F7325A0E /* Pods_AddressBookAppUITests.framework */; };
@@ -90,6 +91,7 @@
 		87DE4E8D208DCD7800CF4915 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		87DE4E90208DCE7C00CF4915 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataManager.swift; sourceTree = "<group>"; };
+		87EBBD76208F08DB00791E73 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		C5479922A018FF256555D762 /* Pods-AddressBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E056C91AD5ED7F4C0E8901CC /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				876BAE51208D9E5800408CE9 /* MGCPostalAddress.swift */,
 				87913510208D9DF5008310CB /* MGCContact.swift */,
 				87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */,
+				87EBBD76208F08DB00791E73 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				87910FC320843496003933D4 /* AppDelegate.swift in Sources */,
 				878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */,
 				87DE4E8E208DCD7800CF4915 /* AddressBookViewController.swift in Sources */,
+				87EBBD77208F08DB00791E73 /* Contact.swift in Sources */,
 				8791350A208D9D9B008310CB /* MGCContactStore.swift in Sources */,
 				878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */,
 				878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */,
