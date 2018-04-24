@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		876BAE53208D9E5800408CE9 /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BAE51208D9E5800408CE9 /* MGCPostalAddress.swift */; };
+		876BAE54208D9E5800408CE9 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BAE52208D9E5800408CE9 /* MGCLabelValue.swift */; };
+		876BAE56208D9F1500408CE9 /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BAE55208D9F1500408CE9 /* MGCContactStoreUtilities.swift */; };
+		876BAE58208DA14800408CE9 /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876BAE57208DA14800408CE9 /* MGCExtensions.swift */; };
 		876FFAFD20849D0300C22BE6 /* HolidayJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876FFAFC20849D0300C22BE6 /* HolidayJson.swift */; };
 		878BF2AC20858A33009A0F15 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2AB20858A33009A0F15 /* Holiday.swift */; };
 		878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */; };
@@ -19,8 +23,14 @@
 		87910FCD20843497003933D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FCB20843497003933D4 /* LaunchScreen.storyboard */; };
 		87910FD820843497003933D4 /* HolidayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FD720843497003933D4 /* HolidayAppTests.swift */; };
 		87910FE320843497003933D4 /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FE220843497003933D4 /* AddressBookAppUITests.swift */; };
-		879AECEA2085F59300A0AA1D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AECE92085F59300A0AA1D /* Extensions.swift */; };
+		8791350A208D9D9B008310CB /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87913509208D9D9B008310CB /* MGCContactStore.swift */; };
+		8791350C208D9DCD008310CB /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8791350B208D9DCD008310CB /* MGCAppConfiguration.swift */; };
+		87913511208D9DF5008310CB /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87913510208D9DF5008310CB /* MGCContact.swift */; };
+		879AECEA2085F59300A0AA1D /* NotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AECE92085F59300A0AA1D /* NotificationExtensions.swift */; };
 		87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5F8DB2084809F00D4165C /* HolidayViewController.swift */; };
+		87DE4E8E208DCD7800CF4915 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E8D208DCD7800CF4915 /* AddressBookViewController.swift */; };
+		87DE4E91208DCE7C00CF4915 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E90208DCE7C00CF4915 /* AddressTableViewCell.swift */; };
+		87DE4E95208ED7F200CF4915 /* ContactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */; };
 		8CF080DEC5FC28E6AFDB059F /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */; };
 		C2F830CCBC16B14BE2A7FB93 /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */; };
 		DBE0230EAA7DF72E6EC2CA86 /* Pods_AddressBookAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EA5ABBC2CB87C9F7325A0E /* Pods_AddressBookAppUITests.framework */; };
@@ -50,6 +60,10 @@
 		479BE575D6CB5D59B16723E1 /* Pods_AddressBookApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DCDC5C1A3B78A95FD78092 /* Pods-AddressBookApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.release.xcconfig"; sourceTree = "<group>"; };
 		690D039EF53D11CFC12DCE54 /* Pods-AddressBookAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		876BAE51208D9E5800408CE9 /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
+		876BAE52208D9E5800408CE9 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
+		876BAE55208D9F1500408CE9 /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
+		876BAE57208DA14800408CE9 /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		876FFAFC20849D0300C22BE6 /* HolidayJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayJson.swift; sourceTree = "<group>"; };
 		878BF2AB20858A33009A0F15 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataConverter.swift; sourceTree = "<group>"; };
@@ -68,8 +82,14 @@
 		87910FDE20843497003933D4 /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FE220843497003933D4 /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
 		87910FE420843497003933D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		879AECE92085F59300A0AA1D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		87913509208D9D9B008310CB /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
+		8791350B208D9DCD008310CB /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
+		87913510208D9DF5008310CB /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
+		879AECE92085F59300A0AA1D /* NotificationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtensions.swift; sourceTree = "<group>"; };
 		87A5F8DB2084809F00D4165C /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
+		87DE4E8D208DCD7800CF4915 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		87DE4E90208DCE7C00CF4915 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataManager.swift; sourceTree = "<group>"; };
 		C5479922A018FF256555D762 /* Pods-AddressBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E056C91AD5ED7F4C0E8901CC /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF9AE01F4755ED58D2FE36B9 /* Pods_AddressBookAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +161,9 @@
 		87910FC120843496003933D4 /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
-				87913507208D9CFD008310CB /* Common */,
+				87DE4E8F208DCE6100CF4915 /* Views */,
+				8791350F208D9DDD008310CB /* Models */,
+				87913507208D9CFD008310CB /* Commons */,
 				87913506208D9CEA008310CB /* ViewControllers */,
 				87913505208D9CDA008310CB /* Storyboards */,
 				875C021E208D794E0015B895 /* TableViewExample */,
@@ -183,16 +205,40 @@
 			isa = PBXGroup;
 			children = (
 				87910FC420843496003933D4 /* ViewController.swift */,
+				87DE4E8D208DCD7800CF4915 /* AddressBookViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		87913507208D9CFD008310CB /* Common */ = {
+		87913507208D9CFD008310CB /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				879AECE92085F59300A0AA1D /* Extensions.swift */,
+				876BAE57208DA14800408CE9 /* MGCExtensions.swift */,
+				876BAE55208D9F1500408CE9 /* MGCContactStoreUtilities.swift */,
+				8791350B208D9DCD008310CB /* MGCAppConfiguration.swift */,
+				87913509208D9D9B008310CB /* MGCContactStore.swift */,
+				879AECE92085F59300A0AA1D /* NotificationExtensions.swift */,
 			);
-			path = Common;
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		8791350F208D9DDD008310CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				876BAE52208D9E5800408CE9 /* MGCLabelValue.swift */,
+				876BAE51208D9E5800408CE9 /* MGCPostalAddress.swift */,
+				87913510208D9DF5008310CB /* MGCContact.swift */,
+				87DE4E94208ED7F200CF4915 /* ContactDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		87DE4E8F208DCE6100CF4915 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87DE4E90208DCE7C00CF4915 /* AddressTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		99942C3662675930C73260AE /* Pods */ = {
@@ -505,13 +551,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8791350C208D9DCD008310CB /* MGCAppConfiguration.swift in Sources */,
+				876BAE56208D9F1500408CE9 /* MGCContactStoreUtilities.swift in Sources */,
+				87913511208D9DF5008310CB /* MGCContact.swift in Sources */,
+				876BAE54208D9E5800408CE9 /* MGCLabelValue.swift in Sources */,
+				87DE4E95208ED7F200CF4915 /* ContactDataManager.swift in Sources */,
 				87910FC520843496003933D4 /* ViewController.swift in Sources */,
-				879AECEA2085F59300A0AA1D /* Extensions.swift in Sources */,
+				876BAE58208DA14800408CE9 /* MGCExtensions.swift in Sources */,
+				87DE4E91208DCE7C00CF4915 /* AddressTableViewCell.swift in Sources */,
+				879AECEA2085F59300A0AA1D /* NotificationExtensions.swift in Sources */,
 				87910FC320843496003933D4 /* AppDelegate.swift in Sources */,
 				878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */,
+				87DE4E8E208DCD7800CF4915 /* AddressBookViewController.swift in Sources */,
+				8791350A208D9D9B008310CB /* MGCContactStore.swift in Sources */,
 				878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */,
 				878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */,
 				878BF2AC20858A33009A0F15 /* Holiday.swift in Sources */,
+				876BAE53208D9E5800408CE9 /* MGCPostalAddress.swift in Sources */,
 				876FFAFD20849D0300C22BE6 /* HolidayJson.swift in Sources */,
 				87A5F8DC2084809F00D4165C /* HolidayViewController.swift in Sources */,
 			);
@@ -688,13 +744,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T393J4TVCC;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = AddressBookApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodeSquad.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,13 +763,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T393J4TVCC;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = AddressBookApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuaming.AddressBookApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodeSquad.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
