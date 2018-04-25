@@ -227,13 +227,28 @@ class HolidayTableViewCell: UITableViewCell {
 <img src="./images/addressbook-4-2.png" width="45%"></img>
 
 ##### 학습거리
-* [Contacts](https://developer.apple.com/documentation/contacts)
+* [Contacts Framework](https://developer.apple.com/documentation/contacts)
 * [Introducing the Contacts Framework for iOS and OS X](https://developer.apple.com/videos/play/wwdc2015/223/)
-* [샘플코드](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
-* Info.plist
-    * Privacy - Contacts Usage Description 설정하는 법 
-* Contacts 샘플 코드 분석하면서 새롭게 알게 된 점
+* [Contacts 샘플코드를 분석하면서 새롭게 알게 된 점](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
     * DispatchQueue 
     * MARK 사용 기준
     * 객체 역할 
-    * 폴더 관리        
+    * 폴더 관리      
+* info.plist에서 Privacy - Contacts Usage Description 설정하는 법 
+
+### 5. 주소록 섹션 정렬과 인덱스
+
+##### 프로그래밍 요구사항
+* 주소록에 있는 전체 Contacts 정보를 Fetch한 다음에 성-이름 순으로 오름차순 정렬을 하고, 아래 그림처럼 sectionHeader를 이용해서 초성 단위로 section을 구분함
+    * 새로운 화면에 필요한 데이터 구조는 개선함 
+* Section과 매칭해서 곧바로 원하는 위치로 스크롤해서 이동할 수 있도록 인덱스제목(indexTitle)을 지정함
+    * 인덱스에서 타이틀을 누르면 해당 Section으로 이동하도록 설정함
+
+##### 실행결과
+
+##### 학습거리
+* UITableViewDataSource 프로토콜의 역할과 세부 동작에 대해 학습함
+* SectionHeader와 SectionFooter 기능에 대해 학습함
+* IndexTitle 방식에 대해 학습하고, 화면에 적합한 데이터 구조를 작성함
+* 유니코드(unicode) 표준에 대해 학습하고, 그 중에 한글을 표현할 때 초성+중성+종성 분리 구조와 완성형 구조가 어떻게 다른지 학습함
+
