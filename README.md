@@ -235,6 +235,7 @@ class HolidayTableViewCell: UITableViewCell {
     * TableView Section Header가 고정이 되지 않음
     * 한글에 대한 처리도 고려해야 함
 
+<img src="./images/addressbook-5-1" width="45%"></img>
 <img src="./images/addressbook-5-2" width="45%"></img>
 
 ##### UITableView, UITableViewController, UITableViewDelegate, UITableViewDataSource
