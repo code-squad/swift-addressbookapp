@@ -60,12 +60,7 @@
 
 <img src="./images/address-book-2.png" width="45%"></img>
 
-##### 학습거리 
-* UITableViewController와 UIViewController에 UITableView를 추가한 차이를 학습함
-* DataSource 프로토콜을 구현하기 위한 필수 메소드 형식과 동작 방식을 정리함
-* Delegate 패턴과 DataSource 프로토콜과 비슷한 점, 차이점은 무엇인지 학습함
-
-##### 피드백
+##### 피드백 정리
 * 고치기 전
     * 모델 클래스가 뷰를 알거나 델리게이트 메소드를 그대로 가져올 필요는 없어요. 그럴거면 DataSource 역할을 하는 객체를 따로 만드는게 좋습니다.
     * Cell을 채우는 코드는 차라리 Cell 내부에 구현하고, Cell에게는 필요한 데이터만 넘기세요. 
@@ -166,11 +161,6 @@ extension HolidayViewController: UITableViewDataSource {
 
 <img src="./images/address-book-3.png" width="45%"></img>
 
-##### 학습거리 
-* 테이블뷰에서 자동으로 결정하는게 아니라 강제로 셀 높이를 지정하는 방법에 대해 학습함
-* 셀 id별로 재사용하는 방식에 대해 학습함
-* 커스텀 셀을 사용할 때 주의해야 할 사항들을 정리함
-
 ##### 피드백
 * 커스텀 셀을 재사용하면서 셀이 가지고 있는 값을 초기화 하지 않아서 문제가 발생함. HolidayDataManager에서 Holiday 배열 값은 제대로 가지고 있었지만 TableView에서 이미지가 제대로 바인딩되지 않음. 부를때마다 초기값 셋팅이 필요함
 
@@ -189,10 +179,6 @@ class HolidayTableViewCell: UITableViewCell {
 ```
 
 * `viewDidLayoutSubviews` 는 View Controller의 View Bounds가 변화할 때 호출함. `reloadData` 트리거가 일어나지 않음
-
-
-##### UITableView, UITableViewController
-* [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
 
 ### 4. Contacts 프레임워크 적용
 
@@ -226,7 +212,7 @@ class HolidayTableViewCell: UITableViewCell {
 <img src="./images/addressbook-4-1.png" width="45%"></img>
 <img src="./images/addressbook-4-2.png" width="45%"></img>
 
-##### 학습거리
+##### 피드백 정리
 * [Contacts Framework](https://developer.apple.com/documentation/contacts)
 * [Introducing the Contacts Framework for iOS and OS X](https://developer.apple.com/videos/play/wwdc2015/223/)
 * [Contacts 샘플코드를 분석하면서 새롭게 알게 된 점](https://developer.apple.com/library/content/navigation/#section=Resource%20Types&topic=Sample%20Code)
@@ -245,10 +231,15 @@ class HolidayTableViewCell: UITableViewCell {
     * 인덱스에서 타이틀을 누르면 해당 Section으로 이동하도록 설정함
 
 ##### 실행결과
+* 첫 번째 이미지를 통해 알 수 있는 것
+    * TableView Section Header가 고정이 되지 않음
+    * 한글에 대한 처리도 고려해야 함
 
-##### 학습거리
-* UITableViewDataSource 프로토콜의 역할과 세부 동작에 대해 학습함
-* SectionHeader와 SectionFooter 기능에 대해 학습함
-* IndexTitle 방식에 대해 학습하고, 화면에 적합한 데이터 구조를 작성함
-* 유니코드(unicode) 표준에 대해 학습하고, 그 중에 한글을 표현할 때 초성+중성+종성 분리 구조와 완성형 구조가 어떻게 다른지 학습함
+<img src="./images/addressbook-5-2" width="45%"></img>
 
+##### UITableView, UITableViewController, UITableViewDelegate, UITableViewDataSource
+* [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
+
+##### Unicode
+* [정리](https://wiki.yuaming.com/cs/unicode.html)
+* [초성, 중성, 종성 참고](https://gist.github.com/thirdj/5333532)
