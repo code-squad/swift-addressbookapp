@@ -17,6 +17,7 @@
 		878BF2B52085B904009A0F15 /* HolidayDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */; };
 		878BF2BB2085CD1A009A0F15 /* HolidayDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */; };
 		878BF2BE2085D523009A0F15 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */; };
+		878F8FF620931FD90016EE5B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878F8FF520931FD90016EE5B /* StringExtensions.swift */; };
 		87910FC320843496003933D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC220843496003933D4 /* AppDelegate.swift */; };
 		87910FC520843496003933D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87910FC420843496003933D4 /* ViewController.swift */; };
 		87910FC820843496003933D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87910FC620843496003933D4 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		878BF2B42085B904009A0F15 /* HolidayDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataConverter.swift; sourceTree = "<group>"; };
 		878BF2BA2085CD1A009A0F15 /* HolidayDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataManager.swift; sourceTree = "<group>"; };
 		878BF2BD2085D523009A0F15 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
+		878F8FF520931FD90016EE5B /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		87910FBF20843496003933D4 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87910FC220843496003933D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87910FC420843496003933D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				87913509208D9D9B008310CB /* MGCContactStore.swift */,
 				879AECE92085F59300A0AA1D /* NotificationExtensions.swift */,
 				872B15002092BC2700AC0A8E /* ArrayExtensions.swift */,
+				878F8FF520931FD90016EE5B /* StringExtensions.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				876BAE54208D9E5800408CE9 /* MGCLabelValue.swift in Sources */,
 				87DE4E95208ED7F200CF4915 /* ContactDataManager.swift in Sources */,
 				87910FC520843496003933D4 /* ViewController.swift in Sources */,
+				878F8FF620931FD90016EE5B /* StringExtensions.swift in Sources */,
 				876BAE58208DA14800408CE9 /* MGCExtensions.swift in Sources */,
 				87DE4E91208DCE7C00CF4915 /* AddressTableViewCell.swift in Sources */,
 				879AECEA2085F59300A0AA1D /* NotificationExtensions.swift in Sources */,

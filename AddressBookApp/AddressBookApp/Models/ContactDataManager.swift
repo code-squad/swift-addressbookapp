@@ -54,7 +54,7 @@ class ContactDataManager {
     }
 }
 
-// MARK: - Private functions of ContactDataManager
+// MARK: - Functions of ContactDataManager
 private extension ContactDataManager {
     func fetchAllContacts() {
         mgcContactStoreInstance.fetchContacts({ (contacts: [CNContact]) in
@@ -72,25 +72,26 @@ private extension ContactDataManager {
     }
     
     func createContactData() {
-        let _titles = bringTitles()
-        
-        _titles.forEach({ (title: String) in
+        bringTitles().forEach({ (title: String) in
             self.contactData.append(createContactDataElements(title))
         })
     }
     
     func createContactDataElements(_ comparedTitle: String) -> [Contact] {
-        var values: [Contact] = [Contact]()
+        var elements: [Contact] = [Contact]()
         
         self.contacts.forEach({ (contact: Contact) in
-            if String(contact.lastName.trimmingCharacters(in: [" "]).first ?? " ").hasPrefix(comparedTitle) {
-                values.append(contact)
+            if seperateWords(contact.lastName).hasPrefix(comparedTitle) {
+                elements.append(contact)
             }
         })
         
-        return values
+        return elements
     }
-    
+}
+
+// MARK: - Functions of contacts
+private extension ContactDataManager {
     func appendContects(_ value: CNContact) {
         let lastName = value.familyName
         let firstName = value.givenName
@@ -99,9 +100,38 @@ private extension ContactDataManager {
         let email = value.emailAddresses.first?.value as String? ?? ""
         self.contacts.append(Contact(lastName, firstName, phoneNumber, email, imageData))
     }
+}
+
+// MARK: - Functions of titles
+private extension ContactDataManager {
+    func appendTitles(_ words: String) {
+        let word = self.seperateWords(words)
+        self.titles.append(word)
+    }
     
-    func appendTitles(_ title: String) {
-        let firstCharacter = String(title.trimmingCharacters(in: [" "]).first ?? " ")
-        self.titles.append(firstCharacter)
+    func isKorean(_ words: String) -> Bool {
+        return words.matchPatterns(Words.patternOfKorean)
+    }
+    
+    func seperateWords(_ words: String) -> String {
+        let word = String(words.trimmingCharacters(in: [" "]).first ?? " ")
+        
+        guard isKorean(words) else {
+            return word
+        }
+        
+        let wordScalas = word.unicodeScalars
+        let wordUnicode = Int(wordScalas[wordScalas.startIndex].value)
+        let initialScalas = Words.startedKoreanWord.unicodeScalars
+        let initialUnicode = Int(initialScalas[initialScalas.startIndex].value)
+        let index = ((wordUnicode - initialUnicode) / 28) / 21
+        return Words.initialConsonants[index]
+    }
+    
+    struct Words {
+        static let initialConsonants = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+        static let patternOfKorean = "[가-힣]"
+        static let startedKoreanWord = "가"
+        static let startedinitialConsonant = "ㄱ"
     }
 }
