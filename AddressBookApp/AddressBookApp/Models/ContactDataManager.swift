@@ -13,7 +13,9 @@ import UIKit
 class ContactDataManager {
     private static let sharedInstance = ContactDataManager()
     private let mgcContactStoreInstance = MGCContactStore.sharedInstance
+    private var titles: [String] = [String]()
     private var contacts: [Contact] = [Contact]()
+    private var contactData: [[Contact]] = [[Contact]]()
     
     func checkAccess() {
         mgcContactStoreInstance.checkContactsAccess({ (accessGranted: Bool) in
@@ -23,12 +25,24 @@ class ContactDataManager {
         })
     }
     
-    var count: Int {
-        return contacts.count
+    func numberOfCells(_ sectionIndex: Int) -> Int {
+        return contactData[sectionIndex].count
     }
     
-    subscript(_ index: Int) -> Contact {
-        return contacts[index]
+    func numberOfSections() -> Int {
+        return contactData.count
+    }
+    
+    func bringTitles() -> [String] {
+        return self.titles.filterDuplicatedElements()
+    }
+
+    subscript(_ sectionIndex: Int) -> [Contact] {
+        return contactData[sectionIndex]
+    }
+    
+    subscript(_ sectionIndex: Int, index: Int) -> Contact {
+        return contactData[sectionIndex][index]
     }
     
     static func share() -> ContactDataManager {
@@ -43,16 +57,47 @@ private extension ContactDataManager {
             guard contacts.count > 0 else { return }
             
             contacts.forEach({ (value: CNContact) in
-                let lastName = value.familyName
-                let firstName = value.givenName
-                let imageData: Data? = value.thumbnailImageData
-                let phoneNumber = value.phoneNumbers.first?.value.stringValue ?? ""
-                let email = value.emailAddresses.first?.value as String? ?? ""
-                
-                self.contacts.append(Contact(lastName, firstName, phoneNumber, email, imageData))
+                self.addContects(value)
+                self.addTitles(value.familyName)
             })
+            
+            self.createContactData()
             
             NotificationCenter.default.post(name: Notification.Name.contactDataManager, object: self)
         })
+    }
+    
+    func createContactData() {
+        let _titles = bringTitles()
+        
+        _titles.forEach({ (title: String) in
+            self.contactData.append(createContactDatas(title))
+        })
+    }
+    
+    func createContactDatas(_ comparedTitle: String) -> [Contact] {
+        var values: [Contact] = [Contact]()
+        
+        self.contacts.forEach({ (contact: Contact) in
+            if String(contact.lastName.trimmingCharacters(in: [" "]).first ?? " ").hasPrefix(comparedTitle) {
+                values.append(contact)
+            }
+        })
+        
+        return values
+    }
+    
+    func addContects(_ value: CNContact) {
+        let lastName = value.familyName
+        let firstName = value.givenName
+        let imageData: Data? = value.thumbnailImageData
+        let phoneNumber = value.phoneNumbers.first?.value.stringValue ?? ""
+        let email = value.emailAddresses.first?.value as String? ?? ""
+        self.contacts.append(Contact(lastName, firstName, phoneNumber, email, imageData))
+    }
+    
+    func addTitles(_ title: String) {
+        let firstCharacter = String(title.trimmingCharacters(in: [" "]).first ?? " ")
+        self.titles.append(firstCharacter)
     }
 }

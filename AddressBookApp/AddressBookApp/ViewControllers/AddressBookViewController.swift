@@ -19,11 +19,11 @@ class AddressBookViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return contactDataManager.numberOfSections()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactDataManager.count
+        return contactDataManager.numberOfCells(section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,13 +31,18 @@ class AddressBookViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        cell.setContact(contactDataManager[indexPath.row])
+        let contact = contactDataManager[indexPath.section][indexPath.row]
+        cell.setContact(contact)
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return addressCellHeight
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return contactDataManager.bringTitles()
     }
 }
 
