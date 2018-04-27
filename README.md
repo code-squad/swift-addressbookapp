@@ -233,14 +233,23 @@ class HolidayTableViewCell: UITableViewCell {
 ##### 실행결과
 * 첫 번째 이미지를 통해 알 수 있는 것
     * TableView Section Header가 고정이 되지 않음
+        * Navigation, Tab Bar View Controller를 이용하여 고정시킴
+        * 어떤 방법이 있을지 찾아봐야 함
+        * [Table View Section Headers in Swift](https://www.quickbytes.io/tutorials/table-view-section-headers-in-swift)
+        * [TableView in iOS](https://videos.raywenderlich.com/courses/22-table-views-in-ios/lessons/1)
     * 한글에 대한 처리도 고려해야 함
+        * [초성, 중성, 종성 처리](https://gist.github.com/thirdj/5333532)
+* 두 번째 이미지 
+    * 시뮬레이터 실행 화면
+* 세 번째 이미지
+    * 실제 휴대폰 실행 화면
 
-<img src="./images/addressbook-5-1.jpeg" width="45%"></img>
-<img src="./images/addressbook-5-2.png" width="45%"></img>
+<img src="./images/addressbook-5-1.jpeg" width="30%"></img>
+<img src="./images/addressbook-5-2.png" width="30%"></img>
+<img src="./images/addressbook-5-3.jpeg" width="30%"></img>
 
 ##### UITableView, UITableViewController, UITableViewDelegate, UITableViewDataSource
 * [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
 
 ##### Unicode
 * [정리](https://wiki.yuaming.com/cs/unicode.html)
-* [초성, 중성, 종성 참고](https://gist.github.com/thirdj/5333532)
