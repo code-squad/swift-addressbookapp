@@ -34,7 +34,11 @@ class ContactDataManager {
     }
     
     func bringTitles() -> [String] {
-        return self.titles.filterDuplicatedElements()
+        return self.titles.filterDuplicatedElements().sorted()
+    }
+    
+    subscript(_ titleIndex: Int) -> String {
+        return bringTitles()[titleIndex]
     }
 
     subscript(_ sectionIndex: Int) -> [Contact] {

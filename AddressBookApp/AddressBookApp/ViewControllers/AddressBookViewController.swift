@@ -44,6 +44,10 @@ class AddressBookViewController: UITableViewController {
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return contactDataManager.bringTitles()
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return contactDataManager[section]
+    }
 }
 
 // MARK: - Private functions of AddressBookViewController
