@@ -61,8 +61,8 @@ private extension ContactDataManager {
             guard contacts.count > 0 else { return }
             
             contacts.forEach({ (value: CNContact) in
-                self.addContects(value)
-                self.addTitles(value.familyName)
+                self.appendContects(value)
+                self.appendTitles(value.familyName)
             })
             
             self.createContactData()
@@ -75,11 +75,11 @@ private extension ContactDataManager {
         let _titles = bringTitles()
         
         _titles.forEach({ (title: String) in
-            self.contactData.append(createContactDatas(title))
+            self.contactData.append(createContactDataElements(title))
         })
     }
     
-    func createContactDatas(_ comparedTitle: String) -> [Contact] {
+    func createContactDataElements(_ comparedTitle: String) -> [Contact] {
         var values: [Contact] = [Contact]()
         
         self.contacts.forEach({ (contact: Contact) in
@@ -91,7 +91,7 @@ private extension ContactDataManager {
         return values
     }
     
-    func addContects(_ value: CNContact) {
+    func appendContects(_ value: CNContact) {
         let lastName = value.familyName
         let firstName = value.givenName
         let imageData: Data? = value.thumbnailImageData
@@ -100,7 +100,7 @@ private extension ContactDataManager {
         self.contacts.append(Contact(lastName, firstName, phoneNumber, email, imageData))
     }
     
-    func addTitles(_ title: String) {
+    func appendTitles(_ title: String) {
         let firstCharacter = String(title.trimmingCharacters(in: [" "]).first ?? " ")
         self.titles.append(firstCharacter)
     }

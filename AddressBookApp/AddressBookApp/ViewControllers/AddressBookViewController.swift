@@ -64,10 +64,6 @@ private extension AddressBookViewController {
         }
         
         self.contactDataManager = contactDataManager
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
     
     func setup() {
