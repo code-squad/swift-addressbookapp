@@ -11,6 +11,7 @@ import UIKit
 class AddressBookViewController: UITableViewController {
     private let cellIndentifier = "addressCell"
     private let addressCellHeight = CGFloat(90)
+    private let addressSectionHeaderHeight = CGFloat(20)
     private var contactDataManager: ContactDataManager! {
         didSet {
             DispatchQueue.main.async {
@@ -53,6 +54,10 @@ class AddressBookViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return contactDataManager[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return addressSectionHeaderHeight
     }
 }
 
