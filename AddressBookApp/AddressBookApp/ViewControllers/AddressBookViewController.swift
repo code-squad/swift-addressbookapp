@@ -11,7 +11,13 @@ import UIKit
 class AddressBookViewController: UITableViewController {
     private let cellIndentifier = "addressCell"
     private let addressCellHeight = CGFloat(90)
-    private var contactDataManager: ContactDataManager!
+    private var contactDataManager: ContactDataManager! {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +64,10 @@ private extension AddressBookViewController {
         }
         
         self.contactDataManager = contactDataManager
-        self.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func setup() {
