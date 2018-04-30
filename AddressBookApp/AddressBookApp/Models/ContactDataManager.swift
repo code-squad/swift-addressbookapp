@@ -61,7 +61,7 @@ private extension ContactDataManager {
             guard contacts.count > 0 else { return }
             
             contacts.forEach({ (value: CNContact) in
-                self.appendContects(value)
+                self.appendContacts(value)
                 self.appendTitles(value.familyName)
             })
             
@@ -92,7 +92,7 @@ private extension ContactDataManager {
 
 // MARK: - Functions of contacts
 private extension ContactDataManager {
-    func appendContects(_ value: CNContact) {
+    func appendContacts(_ value: CNContact) {
         let lastName = value.familyName
         let firstName = value.givenName
         let imageData: Data? = value.thumbnailImageData
