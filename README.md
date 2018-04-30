@@ -248,6 +248,46 @@ class HolidayTableViewCell: UITableViewCell {
 <img src="./images/addressbook-5-2.png" width="30%"></img>
 <img src="./images/addressbook-5-3.jpeg" width="30%"></img>
 
+##### 피드백
+* Contact 관련 자료구조 생각해보기
+* 동일한 기능 인터페이스가 겹친다는 것은 두 가지 동작을 하고 있는건 아닌가 의심해봐야 함
+
+```swift
+// 고치기 전
+class ContactDataManager {
+
+    private var titles: [String] = [String]()
+    private var contacts: [Contact] = [Contact]()
+    private var contactDatas: [[Contact]] = [[Contact]]()
+
+    // ...
+
+    subscript(_ titleIndex: Int) -> String {
+        return titles[titleIndex]
+    }
+
+    subscript(_ sectionIndex: Int) -> [Contact] {
+        return contactDatas[sectionIndex]
+    }
+
+    // ...
+}
+
+// 고친 후
+class ContactDataManager {
+    private(set) var titles: [String] = [String]()
+    private var contactDatas: [[Contact]] = [[Contact]]()
+
+    // ...
+
+    subscript(_ sectionIndex: Int) -> [Contact] {
+        return contactDatas[sectionIndex]
+    }
+
+    // ...
+}
+```
+
 ##### UITableView, UITableViewController, UITableViewDelegate, UITableViewDataSource
 * [정리](https://wiki.yuaming.com/ios/tableview-controller.html)
 
