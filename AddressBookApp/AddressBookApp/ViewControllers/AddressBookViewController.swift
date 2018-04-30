@@ -38,7 +38,7 @@ class AddressBookViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let contact = contactDataManager[indexPath.section][indexPath.row]
+        let contact = contactDataManager[indexPath.section, indexPath.row]
         cell.setContact(contact)
 
         return cell
@@ -49,11 +49,11 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return contactDataManager.bringTitles()
+        return contactDataManager.titles
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return contactDataManager[section]
+        return contactDataManager.titles[section]
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

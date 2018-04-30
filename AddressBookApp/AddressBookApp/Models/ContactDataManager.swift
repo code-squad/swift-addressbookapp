@@ -13,9 +13,8 @@ import UIKit
 class ContactDataManager {
     private static let sharedInstance = ContactDataManager()
     private let mgcContactStoreInstance = MGCContactStore.sharedInstance
-    private var titles: [String] = [String]()
-    private var contacts: [Contact] = [Contact]()
-    private var contactData: [[Contact]] = [[Contact]]()
+    private var contactDatas: [[Contact]] = [[Contact]]()
+    private(set) var titles: [String] = [String]()
     
     func checkAccess() {
         mgcContactStoreInstance.checkContactsAccess({ (accessGranted: Bool) in
@@ -25,28 +24,20 @@ class ContactDataManager {
         })
     }
     
-    func numberOfCells(_ sectionIndex: Int) -> Int {
-        return contactData[sectionIndex].count
-    }
-    
     func numberOfSections() -> Int {
-        return contactData.count
+        return contactDatas.count
     }
     
-    func bringTitles() -> [String] {
-        return self.titles.filterDuplicatedElements().sorted()
-    }
-    
-    subscript(_ titleIndex: Int) -> String {
-        return bringTitles()[titleIndex]
+    func numberOfCells(_ sectionIndex: Int) -> Int {
+        return contactDatas[sectionIndex].count
     }
 
     subscript(_ sectionIndex: Int) -> [Contact] {
-        return contactData[sectionIndex]
+        return contactDatas[sectionIndex]
     }
-    
-    subscript(_ sectionIndex: Int, index: Int) -> Contact {
-        return contactData[sectionIndex][index]
+
+    subscript(_ sectionIndex: Int, rowIndex: Int) -> Contact {
+        return contactDatas[sectionIndex][rowIndex]
     }
     
     static func share() -> ContactDataManager {
@@ -61,44 +52,44 @@ private extension ContactDataManager {
             guard contacts.count > 0 else { return }
             
             contacts.forEach({ (value: CNContact) in
-                self.appendContacts(value)
                 self.appendTitles(value.familyName)
             })
             
-            self.createContactData()
+            self.createContactDatas(contacts)
             
             NotificationCenter.default.post(name: Notification.Name.contactDataManager, object: self)
         })
     }
     
-    func createContactData() {
-        bringTitles().forEach({ (title: String) in
-            self.contactData.append(createContactDataElements(title))
+    func createContactDatas(_ contacts: [CNContact]) {
+        self.sortTitles()
+        self.titles.forEach({ (title: String) in
+            self.contactDatas.append(createValuesInContactDatas(title, contacts))
         })
     }
     
-    func createContactDataElements(_ comparedTitle: String) -> [Contact] {
-        var elements: [Contact] = [Contact]()
-        
-        self.contacts.forEach({ (contact: Contact) in
-            if seperateWords(contact.lastName).hasPrefix(comparedTitle) {
-                elements.append(contact)
+    func createValuesInContactDatas(_ comparedTitle: String, _ contacts: [CNContact]) -> [Contact] {
+        var values: [Contact] = [Contact]()
+
+        contacts.forEach({ (contact: CNContact) in
+            if seperateWords(contact.familyName).hasPrefix(comparedTitle) {
+                values.append(createContact(contact))
             }
         })
-        
-        return elements
+
+        return values
     }
 }
 
 // MARK: - Functions of contacts
 private extension ContactDataManager {
-    func appendContacts(_ value: CNContact) {
+    func createContact(_ value: CNContact) -> Contact {
         let lastName = value.familyName
         let firstName = value.givenName
         let imageData: Data? = value.thumbnailImageData
         let phoneNumber = value.phoneNumbers.first?.value.stringValue ?? ""
         let email = value.emailAddresses.first?.value as String? ?? ""
-        self.contacts.append(Contact(lastName, firstName, phoneNumber, email, imageData))
+        return Contact(lastName, firstName, phoneNumber, email, imageData)
     }
 }
 
@@ -116,9 +107,7 @@ private extension ContactDataManager {
     func seperateWords(_ words: String) -> String {
         let word = String(words.trimmingCharacters(in: [" "]).first ?? " ")
         
-        guard isKorean(words) else {
-            return word
-        }
+        guard isKorean(words) else { return word }
         
         let wordScalas = word.unicodeScalars
         let wordUnicode = Int(wordScalas[wordScalas.startIndex].value)
@@ -126,6 +115,10 @@ private extension ContactDataManager {
         let initialUnicode = Int(initialScalas[initialScalas.startIndex].value)
         let index = ((wordUnicode - initialUnicode) / 28) / 21
         return Words.initialConsonants[index]
+    }
+    
+    func sortTitles() {
+        self.titles = self.titles.filterDuplicatedElements().sorted()
     }
     
     struct Words {
