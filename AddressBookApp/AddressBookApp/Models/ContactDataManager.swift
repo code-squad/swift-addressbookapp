@@ -132,6 +132,5 @@ private extension ContactDataManager {
         static let initialConsonants = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
         static let patternOfKorean = "[가-힣]"
         static let startedKoreanWord = "가"
-        static let startedinitialConsonant = "ㄱ"
     }
 }
