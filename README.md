@@ -1,2 +1,3 @@
-# swift-addressbookapp
-iOS 레벨3 주소록 앱 저장소
+# Step1
+- 구현화면: 2018.05.29
+<img src="./screenshot/step1.png" width="60%">
