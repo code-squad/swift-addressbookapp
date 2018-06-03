@@ -21,11 +21,16 @@ The UITableViewController class manages a table view and adds support for many s
 - Data source는 UITableViewDataSource프로토콜을 따른다.
 - Delegate는  UITableViewDelegate프로토콜을 따르며, required메소드는 없고 optional메소드를 필요에 따라 구현하면 된다.
 
-### NSIndexPath Class
-- 테이블뷰의 메소드들은 index path를 파라미터나 리턴밸류로 사용한다.
-- index path는 중첩된 어레이의 특정한 노드로 가는 경로를 확인하고(identify), foundation프레임워크 내에서는 [NSIndexPath](https://developer.apple.com/documentation/foundation/nsindexpath)클래스이다.
-- 테이블뷰에서 셀을 index path를 이용하여 정렬할때 사용한다.
-- (Swift에서는 NSIndexPath 대신 IndexPath를 사용.)
+### IndexPath Class
+- Swift에서는 NSIndexPath 대신 IndexPath를 사용.
+- 테이블뷰의 메소드들은 Indexpath를 파라미터나 리턴밸류로 사용한다.
+- 셀을 index path를 이용하여 정렬할때 사용한다.
+- index path는 중첩된 어레이(이중배열, nested array)의 특정한 노드로 가는 경로를 확인하고(identify), foundation프레임워크 내에서는 [NSIndexPath](https://developer.apple.com/documentation/foundation/nsindexpath)클래스이다.
+- IndexPath의 section과 row: 행렬형태로 이해하고 보면 쉬움
+- section: 셀이 위치해야할 섹션. (The section in the table that the cell is going to be placed into.)
+- row: 섹션 내에서의 셀의 위치(순서) (The row (in the section) that the cell will be placed into.)
+- [참고링크 - Stackoverflow](https://stackoverflow.com/questions/28178030/what-does-indexpath-row-return)
+
 
 ### Table View Cells - 테이블뷰 셀
 - 셀은 UITableViewCell클래스를 상속받는다.
