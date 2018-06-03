@@ -8,6 +8,7 @@
 
 import Foundation
 
-class HolidayData: Codable {
-    
+struct HolidayData: Codable {
+    var date: String
+    var subtitle: String
 }

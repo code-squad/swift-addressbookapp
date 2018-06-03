@@ -10,6 +10,8 @@ import Foundation
 
 class HolidayDataParser {
 
+    let decoder = JSONDecoder()
+
     func extractData() -> Data? {
         let path = Bundle.main.path(forResource: "Holiday", ofType: "json")
         let url = URL(fileURLWithPath: path!)
@@ -23,6 +25,13 @@ class HolidayDataParser {
         } else {
             return nil
         }
+    }
+
+    // Codable타입 객체를 사용하여 JSONSerialization사용 X
+    func makeHolidayData(from data: Data?) -> Codable? {
+        guard let datum = data else { return nil }
+        guard let holidays = try? decoder.decode([HolidayData].self, from: datum) else { return nil }
+        return holidays
     }
 
 }
