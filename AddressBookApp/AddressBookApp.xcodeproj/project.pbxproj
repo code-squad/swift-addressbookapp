@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FD52AD5620C0251B008E44EF /* Holiday.json in Resources */ = {isa = PBXBuildFile; fileRef = FD52AD5520C0251B008E44EF /* Holiday.json */; };
 		FD52AD5820C0E735008E44EF /* HolidayDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */; };
-		FD52AD5A20C14EC1008E44EF /* HolidayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52AD5920C14EC1008E44EF /* HolidayData.swift */; };
+		FD52AD5A20C14EC1008E44EF /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52AD5920C14EC1008E44EF /* Holidays.swift */; };
 		FD561F7120BBCC210049C9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD561F7020BBCC210049C9B6 /* AppDelegate.swift */; };
 		FD561F7620BBCC210049C9B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7420BBCC210049C9B6 /* Main.storyboard */; };
 		FD561F7820BBCC220049C9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7720BBCC220049C9B6 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		FD52AD5520C0251B008E44EF /* Holiday.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Holiday.json; sourceTree = "<group>"; };
 		FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataParser.swift; sourceTree = "<group>"; };
-		FD52AD5920C14EC1008E44EF /* HolidayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayData.swift; sourceTree = "<group>"; };
+		FD52AD5920C14EC1008E44EF /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
 		FD561F6D20BBCC210049C9B6 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD561F7020BBCC210049C9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD561F7520BBCC210049C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 				FD561F7920BBCC220049C9B6 /* LaunchScreen.storyboard */,
 				FD561F7C20BBCC220049C9B6 /* Info.plist */,
 				FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */,
-				FD52AD5920C14EC1008E44EF /* HolidayData.swift */,
+				FD52AD5920C14EC1008E44EF /* Holidays.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD52AD5A20C14EC1008E44EF /* HolidayData.swift in Sources */,
+				FD52AD5A20C14EC1008E44EF /* Holidays.swift in Sources */,
 				FD561F7120BBCC210049C9B6 /* AppDelegate.swift in Sources */,
 				FD52AD5820C0E735008E44EF /* HolidayDataParser.swift in Sources */,
 				FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */,

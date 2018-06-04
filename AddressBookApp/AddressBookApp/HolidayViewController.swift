@@ -11,7 +11,7 @@ import UIKit
 class HolidayViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var holidays: [HolidayData]!
+    var holidays: Holidays!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,8 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
 
         let parser = HolidayDataParser()
-        guard let holidays = parser.makeHolidayData(from: parser.extractData()) else { return }
-        self.holidays = holidays as! [HolidayData]
+        guard let holidayData = parser.makeHolidayData(from: parser.extractData()) else { return }
+        self.holidays = Holidays(holidays: holidayData)
     }
 
 }
@@ -29,16 +29,15 @@ extension HolidayViewController: UITableViewDataSource {
 
     //섹션에 몇 개의 데이터(row)가 있는지
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.holidays.count
+        return self.holidays.count()
     }
 
     // 데이터를 표시할 템플릿, 셀
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        myCell.textLabel?.text = self.holidays[indexPath.row].date
-        myCell.detailTextLabel?.text = self.holidays[indexPath.row].subtitle
+        myCell.textLabel?.text = self.holidays.date(at: indexPath.row)
+        myCell.detailTextLabel?.text = self.holidays.subtitle(at: indexPath.row)
         return myCell
     }
-
 
 }
