@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIColor {
     func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
