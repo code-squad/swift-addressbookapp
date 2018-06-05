@@ -14,6 +14,19 @@ class HolidayTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
 
+    var status: HolidayData! {
+        didSet {
+            self.dateLabel.text = status.date
+            self.subtitleLabel.text = status.subtitle
+
+            if let weatherImage = ImageManager.weatherImageName(of: status.image) {
+                self.backgroundImage.image = UIImage(named: weatherImage)
+            } else {
+                self.backgroundImage.image = UIColor.gray.image()
+            }
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
