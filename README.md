@@ -9,6 +9,9 @@
 - 완성: 2018.06.03
 <img src="./screenshot/step2.png" width="60%">
 
+## Step3
+- 완성: 2018.06.05
+<img src="./screenshot/step3.png" width="60%">
 
 # 공부한 것 & 알게된 것들
 
@@ -99,3 +102,24 @@ The UITableViewController class manages a table view and adds support for many s
 - 이미 기존에 있는 셀(“off-the-shelf” cell object)에 커스텀서브뷰를 올려서 구현할 수도 있다.
 - UITableViewCell클래스를 상속받은 커스텀뷰를 만들어서 셀의 외관(appearance)이나 동작을 만들 수도 있다.
 - [테이블뷰 셀에 대한 더 자세한 내용 - A Closer Look at Table View Cells](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/TableView_iPhone/TableViewCells/TableViewCells.html#//apple_ref/doc/uid/TP40007451-CH7-SW1)
+
+## 테이블뷰 셀
+- 테이블뷰를 이루는 개별적인 행(row)
+- UITableViewCell클래스 상속
+
+## UITableViewCell클래스 셀 콘텐츠의 프로퍼티
+- textLabel: (UILabel 타입) 주제목 레이블
+- detailTextLabel: (UILabel 타입) 추가 세부 사항 표시를 위한 부제목 레이블
+- imageView: (UIImageView 타입) 이미지 표시를 위한 이미지뷰
+- UITableViewCell을 커스텀하는 경우, 기본 프로퍼티와 변수명이 같으면 원하는 대로 동작하지 않을 수 있으니 커스텀 셀 클래스의 변수명은 다르게 지어야함.
+  - (imageView, textLabel, detailLabel, accessoryView 등의 기본 프로퍼티 이름)
+
+## Configure UITableViewCell
+> 아래의 리스트들을 설정하여 셀을 설정할 수 있음. 셀의 요소를 파악하는데 도움이 되어 가져옴.
+
+- `selectionStyle`—Controls the appearance of the cell when selected.
+- `accessoryType and accessoryView`—Allow you to set one of the standard accessory views (disclosure indicator or detail disclosure control) or a custom accessory view for a cell in normal (nonediting) mode. For a custom view, you may provide any UIView object, such as a slider, a switch, or a custom view.
+- `editingAccessoryType and editingAccessoryView`—Allow you to set one of the standard accessory views (disclosure indicator or detail disclosure control) or a custom accessory view for a cell in editing mode. For a custom view, you may provide any UIView object, such as a slider, a switch, or a custom view.
+- `showsReorderControl`—Specifies whether it shows a reordering control when in editing mode. The related but read-only editingStyle property specifies the type of editing control the cell has (if any). The delegate returns the value of the editingStyle property in its implementation of the tableView:editingStyleForRowAtIndexPath: method.
+- `backgroundView and selectedBackgroundView`—Provide a background view (when a cell is unselected and selected) to display behind all other views of the cell.
+- `indentationLevel and indentationWidth`—Specify the indentation level for cell content and the width of each indentation level.
