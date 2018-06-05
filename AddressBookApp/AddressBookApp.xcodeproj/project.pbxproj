@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD05071920C69E9500899C9F /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD05071820C69E9500899C9F /* ImageManager.swift */; };
+		FD05071B20C69F2F00899C9F /* CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD05071A20C69F2F00899C9F /* CustomExtension.swift */; };
 		FD52AD5620C0251B008E44EF /* Holiday.json in Resources */ = {isa = PBXBuildFile; fileRef = FD52AD5520C0251B008E44EF /* Holiday.json */; };
 		FD52AD5820C0E735008E44EF /* HolidayDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */; };
 		FD52AD5A20C14EC1008E44EF /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD52AD5920C14EC1008E44EF /* Holidays.swift */; };
@@ -14,10 +16,13 @@
 		FD561F7620BBCC210049C9B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7420BBCC210049C9B6 /* Main.storyboard */; };
 		FD561F7820BBCC220049C9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7720BBCC220049C9B6 /* Assets.xcassets */; };
 		FD561F7B20BBCC220049C9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7920BBCC220049C9B6 /* LaunchScreen.storyboard */; };
+		FDEC149D20C6637E00A5AC25 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */; };
 		FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD05071820C69E9500899C9F /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		FD05071A20C69F2F00899C9F /* CustomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtension.swift; sourceTree = "<group>"; };
 		FD52AD5520C0251B008E44EF /* Holiday.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Holiday.json; sourceTree = "<group>"; };
 		FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDataParser.swift; sourceTree = "<group>"; };
 		FD52AD5920C14EC1008E44EF /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
@@ -27,6 +32,7 @@
 		FD561F7720BBCC220049C9B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD561F7A20BBCC220049C9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD561F7C20BBCC220049C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				FD561F6F20BBCC210049C9B6 /* AddressBookApp */,
-				FD561F6E20BBCC210049C9B6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,20 +60,25 @@
 				FD561F6D20BBCC210049C9B6 /* AddressBookApp.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FD561F6F20BBCC210049C9B6 /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
-				FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */,
-				FD52AD5520C0251B008E44EF /* Holiday.json */,
-				FD561F7020BBCC210049C9B6 /* AppDelegate.swift */,
 				FD561F7420BBCC210049C9B6 /* Main.storyboard */,
-				FD561F7720BBCC220049C9B6 /* Assets.xcassets */,
-				FD561F7920BBCC220049C9B6 /* LaunchScreen.storyboard */,
-				FD561F7C20BBCC220049C9B6 /* Info.plist */,
+				FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */,
+				FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */,
+				FD561F7020BBCC210049C9B6 /* AppDelegate.swift */,
 				FD52AD5720C0E735008E44EF /* HolidayDataParser.swift */,
 				FD52AD5920C14EC1008E44EF /* Holidays.swift */,
+				FD05071820C69E9500899C9F /* ImageManager.swift */,
+				FD05071A20C69F2F00899C9F /* CustomExtension.swift */,
+				FD561F7720BBCC220049C9B6 /* Assets.xcassets */,
+				FD52AD5520C0251B008E44EF /* Holiday.json */,
+				FD561F7C20BBCC220049C9B6 /* Info.plist */,
+				FD561F7920BBCC220049C9B6 /* LaunchScreen.storyboard */,
+				FD561F6E20BBCC210049C9B6 /* Products */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -148,7 +158,10 @@
 				FD52AD5A20C14EC1008E44EF /* Holidays.swift in Sources */,
 				FD561F7120BBCC210049C9B6 /* AppDelegate.swift in Sources */,
 				FD52AD5820C0E735008E44EF /* HolidayDataParser.swift in Sources */,
+				FD05071920C69E9500899C9F /* ImageManager.swift in Sources */,
 				FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */,
+				FD05071B20C69F2F00899C9F /* CustomExtension.swift in Sources */,
+				FDEC149D20C6637E00A5AC25 /* HolidayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

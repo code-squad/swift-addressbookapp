@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HolidayViewController: UIViewController, UITableViewDelegate {
+class HolidayViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var holidays: Holidays!
@@ -17,12 +17,19 @@ class HolidayViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 80.0
 
         let parser = HolidayDataParser()
         guard let holidayData = parser.makeHolidayData(from: parser.extractData()) else { return }
         self.holidays = Holidays(holidays: holidayData)
     }
 
+}
+
+extension HolidayViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
 }
 
 extension HolidayViewController: UITableViewDataSource {
@@ -34,10 +41,8 @@ extension HolidayViewController: UITableViewDataSource {
 
     // 데이터를 표시할 템플릿, 셀
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myCell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        myCell.textLabel?.text = self.holidays.date(at: indexPath.row)
-        myCell.detailTextLabel?.text = self.holidays.subtitle(at: indexPath.row)
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! HolidayTableViewCell
+        myCell.status = self.holidays.data(at: indexPath.row)
         return myCell
     }
-
 }
