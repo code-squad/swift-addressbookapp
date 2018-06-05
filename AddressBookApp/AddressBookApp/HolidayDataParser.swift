@@ -19,14 +19,6 @@ class HolidayDataParser {
         return data
     }
 
-    func makeJSON(of data: Data) -> Any? {
-        if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-            return json
-        } else {
-            return nil
-        }
-    }
-
     // Codable타입 객체를 사용하여 JSONSerialization사용 X
     func makeHolidayData(from data: Data?) -> Codable? {
         guard let datum = data else { return nil }
