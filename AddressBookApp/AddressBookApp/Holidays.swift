@@ -9,29 +9,22 @@
 import Foundation
 
 struct HolidayData: Codable {
-    fileprivate var date: String
-    fileprivate var subtitle: String
+    var date: String
+    var subtitle: String
+    var image: String?
 }
 
 class Holidays {
-    var holidays: [HolidayData]
+    private var holidays: [HolidayData]
 
     init(holidays: Codable) {
         self.holidays = holidays as! [HolidayData]
     }
 
-    func row(at: Int) -> HolidayData {
+    func data(at: Int) -> HolidayData {
         return self.holidays[at]
     }
-
-    func date(at: Int) -> String {
-        return self.holidays[at].date
-    }
-
-    func subtitle(at: Int) -> String {
-        return self.holidays[at].subtitle
-    }
-
+    
     func count() -> Int {
         return self.holidays.count
     }
