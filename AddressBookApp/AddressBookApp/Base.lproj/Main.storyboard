@@ -123,32 +123,46 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPX-qC-YZq" userLabel="profile">
-                                            <rect key="frame" x="16" y="0.0" width="95" height="89"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EuO-hC-rML">
+                                            <rect key="frame" x="96" y="11" width="277" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-Sy-H2E" userLabel="nameLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="142" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celluar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-15-fJC" userLabel="tellLabel">
+                                                    <rect key="frame" x="147" y="0.0" width="130" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-dl-Qvx" userLabel="emailLabel">
+                                            <rect key="frame" x="96" y="49.5" width="279" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPX-qC-YZq" userLabel="profile">
+                                            <rect key="frame" x="0.0" y="0.0" width="94" height="89"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="셀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-Sy-H2E" userLabel="nameLabel">
-                                            <rect key="frame" x="129" y="11" width="15" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD1-dl-Qvx" userLabel="emailLabel">
-                                            <rect key="frame" x="129" y="58" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="셀셀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-15-fJC" userLabel="tellLabel">
-                                            <rect key="frame" x="317" y="11" width="30" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PD1-dl-Qvx" firstAttribute="leading" secondItem="qPX-qC-YZq" secondAttribute="trailing" constant="2" id="14H-5m-fvg"/>
+                                        <constraint firstItem="EuO-hC-rML" firstAttribute="leading" secondItem="qPX-qC-YZq" secondAttribute="trailing" constant="2" id="2VU-Cu-e41"/>
+                                        <constraint firstItem="qPX-qC-YZq" firstAttribute="height" secondItem="aNr-C3-q5c" secondAttribute="height" id="38b-WL-3rt"/>
+                                        <constraint firstItem="PD1-dl-Qvx" firstAttribute="bottom" secondItem="aNr-C3-q5c" secondAttribute="bottomMargin" id="JTS-JH-rHD"/>
+                                        <constraint firstAttribute="trailing" secondItem="EuO-hC-rML" secondAttribute="trailing" constant="2" id="N7m-Cc-3zW"/>
+                                        <constraint firstItem="qPX-qC-YZq" firstAttribute="top" secondItem="aNr-C3-q5c" secondAttribute="top" id="aJ9-x4-H5x"/>
+                                        <constraint firstItem="PD1-dl-Qvx" firstAttribute="trailing" secondItem="aNr-C3-q5c" secondAttribute="trailing" id="iVB-m7-rZ8"/>
+                                        <constraint firstItem="PD1-dl-Qvx" firstAttribute="height" secondItem="aNr-C3-q5c" secondAttribute="height" multiplier="0.33" id="jiF-M3-NgH"/>
+                                        <constraint firstItem="qPX-qC-YZq" firstAttribute="leading" secondItem="aNr-C3-q5c" secondAttribute="leading" id="ktw-KS-rMy"/>
+                                        <constraint firstItem="EuO-hC-rML" firstAttribute="top" secondItem="aNr-C3-q5c" secondAttribute="topMargin" id="qWl-rT-RrN"/>
+                                        <constraint firstItem="qPX-qC-YZq" firstAttribute="width" secondItem="aNr-C3-q5c" secondAttribute="width" multiplier="0.25" id="wui-td-PPg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="emailLabel" destination="PD1-dl-Qvx" id="sCq-zP-xcM"/>
