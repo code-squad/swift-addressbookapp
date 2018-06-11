@@ -111,7 +111,7 @@
         <scene sceneID="BK9-HQ-pJg">
             <objects>
                 <tableViewController id="VLh-98-6Dv" customClass="AddressBookViewController" customModule="AddressBookApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4JI-tv-tU1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4JI-tv-tU1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,8 +127,8 @@
                                             <rect key="frame" x="16" y="0.0" width="95" height="89"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-Sy-H2E" userLabel="nameLabel">
-                                            <rect key="frame" x="129" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="셀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nj-Sy-H2E" userLabel="nameLabel">
+                                            <rect key="frame" x="129" y="11" width="15" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -141,8 +141,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-15-fJC" userLabel="tellLabel">
-                                            <rect key="frame" x="317" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="셀셀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-15-fJC" userLabel="tellLabel">
+                                            <rect key="frame" x="317" y="11" width="30" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -154,7 +154,7 @@
                                     <outlet property="emailLabel" destination="PD1-dl-Qvx" id="sCq-zP-xcM"/>
                                     <outlet property="nameLabel" destination="7nj-Sy-H2E" id="jaW-Yf-rzh"/>
                                     <outlet property="profile" destination="qPX-qC-YZq" id="YHE-HT-dzA"/>
-                                    <outlet property="tellLabel" destination="aNr-C3-q5c" id="9TG-Hw-aD1"/>
+                                    <outlet property="tellLabel" destination="w4j-15-fJC" id="5Ww-1I-GUj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -163,6 +163,9 @@
                             <outlet property="delegate" destination="VLh-98-6Dv" id="A4b-EB-2gS"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="4JI-tv-tU1" id="0Pa-d0-aeJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExW-Iu-SBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
