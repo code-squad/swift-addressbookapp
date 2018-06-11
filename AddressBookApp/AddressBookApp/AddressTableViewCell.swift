@@ -14,19 +14,6 @@ class AddressTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var tellLabel: UILabel!
 
-    var status: AddressData! {
-        didSet {
-            self.nameLabel.text = status.givenName + status.familyName
-            self.emailLabel.text = status.emailAddress
-            self.tellLabel.text = status.phoneNumber
-            if let imageData = status.profileImage {
-                self.profile.image = UIImage(data: imageData)
-            } else {
-                self.profile.image = UIImage(named: "addressbook-default-profile")
-            }
-        }
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,6 +23,18 @@ class AddressTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func setCell(data: AddressDataManager, at number: Int) {
+        self.nameLabel.text = data.givenName(at: number) + " " + data.familyName(at: number)
+        self.emailLabel.text = data.email(at: number)
+        self.tellLabel.text = data.phoneNumber(at: number)
+        if let imageData = data.profile(at: number) {
+            self.profile.image = UIImage(data: imageData)
+        } else {
+            self.profile.image = UIImage(named: "addressbook-default-profile")
+        }
+
     }
 
 }

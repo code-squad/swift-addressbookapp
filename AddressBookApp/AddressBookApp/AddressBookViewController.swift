@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 class AddressBookViewController: UITableViewController {
-    private var contacts = [AddressData]()
+    private var contacts: AddressDataManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class AddressBookViewController: UITableViewController {
                         try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
                             addressData.append(AddressData(contact))
                         })
-                        self.contacts = addressData
+                        self.contacts = AddressDataManager(address: addressData)
                     } catch let error {
                         print("Failed to enumerate:", error)
                     }
@@ -58,23 +58,19 @@ class AddressBookViewController: UITableViewController {
 }
 
 
-
 extension AddressBookViewController {
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contacts.count
+        guard let count = self.contacts?.count() else { return 0 }
+        return count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        cell.status = self.contacts[indexPath.row]
+        guard let addressManager = self.contacts else { return cell }
+        cell.setCell(data: addressManager, at: indexPath.row)
         return cell
     }
 

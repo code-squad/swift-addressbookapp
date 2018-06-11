@@ -18,7 +18,7 @@
 		FD561F7B20BBCC220049C9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD561F7920BBCC220049C9B6 /* LaunchScreen.storyboard */; };
 		FDC6F3D420C8FE7B00BA495E /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */; };
 		FDC6F3D620C9003E00BA495E /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */; };
-		FDC6F3E720C9987C00BA495E /* AddressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3E620C9987C00BA495E /* AddressData.swift */; };
+		FDC6F3E720C9987C00BA495E /* AddressDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */; };
 		FDEC149D20C6637E00A5AC25 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */; };
 		FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,7 @@
 		FD561F7C20BBCC220049C9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
-		FDC6F3E620C9987C00BA495E /* AddressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressData.swift; sourceTree = "<group>"; };
+		FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDataManager.swift; sourceTree = "<group>"; };
 		FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				FD561F7420BBCC210049C9B6 /* Main.storyboard */,
-				FDC6F3E620C9987C00BA495E /* AddressData.swift */,
+				FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */,
 				FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */,
 				FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */,
 				FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */,
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD52AD5A20C14EC1008E44EF /* Holidays.swift in Sources */,
-				FDC6F3E720C9987C00BA495E /* AddressData.swift in Sources */,
+				FDC6F3E720C9987C00BA495E /* AddressDataManager.swift in Sources */,
 				FD561F7120BBCC210049C9B6 /* AppDelegate.swift in Sources */,
 				FDC6F3D420C8FE7B00BA495E /* AddressBookViewController.swift in Sources */,
 				FD52AD5820C0E735008E44EF /* HolidayDataParser.swift in Sources */,
