@@ -38,7 +38,7 @@ extension AddressBookViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        cell.setCell(data: addressManager, at: indexPath.row)
+        cell.setCell(data: addressManager.data(at: indexPath.row))
         return cell
     }
 

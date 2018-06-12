@@ -16,24 +16,8 @@ class AddressDataManager {
         return self.addressList.count
     }
 
-    func givenName(at: Int) -> String {
-        return self.addressList[at].givenName
-    }
-
-    func familyName(at: Int) -> String {
-        return self.addressList[at].familyName
-    }
-
-    func email(at: Int) -> String {
-        return self.addressList[at].emailAddress
-    }
-
-    func phoneNumber(at: Int) -> String {
-        return self.addressList[at].phoneNumber
-    }
-
-    func profile(at: Int) -> Data? {
-        return self.addressList[at].profileImage
+    func data(at: Int) -> AddressData {
+        return self.addressList[at]
     }
 
     func fetchContacts(_ handler: (@escaping () -> Void)) {
@@ -67,11 +51,11 @@ class AddressDataManager {
 }
 
 struct AddressData {
-    fileprivate var givenName: String
-    fileprivate var familyName: String
-    fileprivate var phoneNumber: String
-    fileprivate var emailAddress: String
-    fileprivate var profileImage: Data?
+    var givenName: String
+    var familyName: String
+    var phoneNumber: String
+    var emailAddress: String
+    var profileImage: Data?
 
     init(_ contact: CNContact) {
         self.givenName = contact.givenName ?? " "

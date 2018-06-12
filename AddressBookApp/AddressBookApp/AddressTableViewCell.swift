@@ -25,11 +25,11 @@ class AddressTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setCell(data: AddressDataManager, at number: Int) {
-        self.nameLabel.text = data.givenName(at: number) + " " + data.familyName(at: number)
-        self.emailLabel.text = data.email(at: number)
-        self.tellLabel.text = data.phoneNumber(at: number)
-        if let imageData = data.profile(at: number) {
+    func setCell(data: AddressData) {
+        self.nameLabel.text = data.givenName + " " + data.familyName
+        self.emailLabel.text = data.emailAddress
+        self.tellLabel.text = data.phoneNumber
+        if let imageData = data.profileImage {
             self.profile.image = UIImage(data: imageData)
         } else {
             self.profile.image = UIImage(named: "addressbook-default-profile")
