@@ -10,44 +10,14 @@ import UIKit
 import Contacts
 
 class AddressBookViewController: UITableViewController {
-    private var contacts: AddressDataManager?
+    private var addressManager = AddressDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 90.0
-        fetchContacts()
-    }
-
-    // MARK: Fetch Contacts
-    private func fetchContacts() {
-
-        let store = CNContactStore()
-        store.requestAccess(for: .contacts) { (permitted, error) in
-            if let error = error {
-                print("Failed to Request access:", error)
-                return
-            } else {
-                if permitted {
-                    let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactEmailAddressesKey, CNContactImageDataKey]
-                    let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-
-                    do {
-                        var addressData = [AddressData]()
-                        try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
-                            addressData.append(AddressData(contact))
-                        })
-                        self.contacts = AddressDataManager(address: addressData)
-                    } catch let error {
-                        print("Failed to enumerate:", error)
-                    }
-                } else {
-                    print("Access Denied")
-                }
-            }
-            self.resetTableView()
-        }
+        addressManager.fetchContacts(resetTableView)
     }
 
     func resetTableView() {
@@ -63,13 +33,11 @@ extension AddressBookViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.contacts?.count() else { return 0 }
-        return count
+        return self.addressManager.count()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        guard let addressManager = self.contacts else { return cell }
         cell.setCell(data: addressManager, at: indexPath.row)
         return cell
     }

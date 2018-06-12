@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				FD561F7420BBCC210049C9B6 /* Main.storyboard */,
-				FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */,
 				FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */,
+				FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */,
 				FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */,
 				FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */,
 				FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */,
