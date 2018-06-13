@@ -162,3 +162,50 @@ The UITableViewController class manages a table view and adds support for many s
 - [참고링크 - stackoverflow](https://stackoverflow.com/questions/35169125/minimum-cell-height-with-uitableviewautomaticdimension?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [참고링크 - Table View 유동적인 행 높이 지정하기](http://blog.naver.com/PostView.nhn?blogId=jdub7138&logNo=220963701224&categoryNo=0&parentCategoryNo=115&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search)
 - [참고링크 - Raywenderlich(Self-sizing Table View) Cells](https://www.raywenderlich.com/129059/self-sizing-table-view-cells)
+
+
+
+## Codable
+```swift
+class HolidayDataParser {
+
+    let decoder = JSONDecoder()
+
+    func extractData() -> Data? {
+        let path = Bundle.main.path(forResource: "Holiday", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        return data
+    }
+
+    func makeJSON(of data: Data) -> Any? {
+        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [[String:String]] {
+            return json
+        } else {
+            return nil
+        }
+    }
+
+    // Codable타입 객체를 사용하여 JSONSerialization사용 X
+    func makeHolidayData(from data: Data?) -> Codable? {
+        guard let datum = data else { return nil }
+        guard let holiday = try? decoder.decode([HolidayData].self, from: datum) else { return nil }
+        return holiday
+    }
+}
+
+// Codable 타입의 HolidayData
+struct HolidayData: Codable {
+    var date: String
+    var subtitle: String
+    var image: String?
+}
+```
+- Codable: Codable프로토콜을 사용하여 JSONSerialization없이 바로 Data타입을 객체로 변환할 수 있었음
+- 변환을 원하는 객체는 Codable타입이어야 함
+- **Codable 사용X 일때**
+  - extractData() - makeJSON() - 딕셔너리 key:value 읽어와서 객체 초기화하기
+  - Holiday.json파일 Data로 변환하여 읽어오기 > Data를 JSONSerialization하여 foundation type으로 변환
+- **Codable 사용O 일때**:
+  - extractData() - makeJSON() - makeHolidayData()
+  - 바로 원하는 객체(Codable 타입)로 변경 가능.
