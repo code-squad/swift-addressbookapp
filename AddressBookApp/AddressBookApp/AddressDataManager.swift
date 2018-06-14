@@ -48,6 +48,19 @@ class AddressDataManager {
         }
     }
 
+    private let ENG_START_CODE: UInt32 = 97
+    private let ENG_END_CODE: UInt32 = 122
+
+    func isEnglish(text: String) -> Bool {
+        if let first = text.lowercased().first {
+            guard let scalarValue = UnicodeScalar(String(first))?.value else { return false }
+            return ENG_START_CODE...ENG_END_CODE ~= scalarValue
+        } else {
+            return false
+        }
+    }
+
+
 }
 
 struct AddressData {
@@ -56,6 +69,9 @@ struct AddressData {
     var phoneNumber: String
     var emailAddress: String
     var profileImage: Data?
+    var name: String {
+        return familyName + " " + givenName
+    }
 
     init(_ contact: CNContact) {
         self.givenName = contact.givenName ?? " "
@@ -64,4 +80,5 @@ struct AddressData {
         self.emailAddress = (contact.emailAddresses.first?.value) as String? ?? "no email"
         self.profileImage = contact.imageData
     }
+
 }
