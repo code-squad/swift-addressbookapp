@@ -9,24 +9,8 @@
 import Foundation
 
 class AddressSets {
-    private var addressListWithConsonant: [UInt32 : [AddressData]] = [:]
-    private var addressList = [AddressData]()
 
-    init(_ address: [AddressData]) {
-        self.addressList = address
-    }
-
-    // value가 하나도 없는 key값은 딕셔너리에서 제거
-    func arrange() {
-        self.addressListWithConsonant = addressListWithConsonant.filter{ $0.value.count > 0 }
-    }
-
-
-    func addressDict() -> [UInt32: [AddressData]]{
-        return addressListWithConsonant.filter{ $0.value.count > 0 }
-    }
-
-    // MARK: Check Consonant
+    // MARK: static properties
 
     static let KOR_CODE_RANGE: CountableClosedRange<UInt32> = 0...18
     static let ENG_CODE_RANGE: CountableClosedRange<UInt32> = (AddressSets.ENG_START_CODE - AddressSets.CONVERTER)...(AddressSets.ENG_END_CODE - AddressSets.CONVERTER)
@@ -44,6 +28,34 @@ class AddressSets {
 
     static let ENG_START_CODE: UInt32 = 65
     static let ENG_END_CODE: UInt32 = 90
+
+    private var addressListWithConsonant: [UInt32 : [AddressData]] = [:]
+    private var addressList = [AddressData]()
+
+
+    init(_ address: [AddressData]) {
+        self.addressList = address.sorted()
+    }
+
+    // MARK: Check Consonant
+
+    // 영어, 한글, 기타 문자인지 판단
+    func checkConsonantOf(address: AddressData) -> UInt32 {
+        let name = address.name
+        // 영어일때
+        if isEnglish(text: name) {
+            guard let code = matchEng(text: name) else { return AddressSets.ALL_CODE_RANGE.last! }
+            return code
+        }
+            // 한글일때
+        else if isKorean(text: name) {
+            guard let code = matchKor(text: name) else { return AddressSets.ALL_CODE_RANGE.last! }
+            return code
+        } else {
+            // 특수문자의 경우 code range의 가장 마지막 숫자를 리턴
+            return AddressSets.ALL_CODE_RANGE.last!
+        }
+    }
 
     func isEnglish(text: String) -> Bool {
         guard let first = text.uppercased().first else { return false }
@@ -73,28 +85,10 @@ class AddressSets {
         return converted
     }
 
-    // 영어, 한글, 기타 문자인지 판단5
-    func checkConsonantOf(address: AddressData) -> UInt32? {
-        let name = address.name
-        // 영어일때
-        if isEnglish(text: name) {
-            guard let code = matchEng(text: name) else { return AddressSets.ALL_CODE_RANGE.last }
-            return code
-        }
-        // 한글일때
-        else if isKorean(text: name) {
-            guard let code = matchKor(text: name) else { return AddressSets.ALL_CODE_RANGE.last }
-            return code
-        } else {
-            return AddressSets.ALL_CODE_RANGE.last
+    func setAddressListWithConsonant() {
+        addressListWithConsonant = addressList.reduce(into: [UInt32 : [AddressData]]()) {
+            $0[checkConsonantOf(address: $1), default:[]].append($1)
         }
     }
 
-    func setConsonant(address data: AddressData) {
-        self.checkConsonantOf(address: data)
-    }
-
-    func sortAddress() {
-        self.addressList.sort() // name 기준으로 sort
-    }
 }
