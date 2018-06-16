@@ -48,22 +48,13 @@ class AddressDataManager {
         }
     }
 
-    private let ENG_START_CODE: UInt32 = 97
-    private let ENG_END_CODE: UInt32 = 122
-
-    func isEnglish(text: String) -> Bool {
-        if let first = text.lowercased().first {
-            guard let scalarValue = UnicodeScalar(String(first))?.value else { return false }
-            return ENG_START_CODE...ENG_END_CODE ~= scalarValue
-        } else {
-            return false
-        }
-    }
-
-
 }
 
-struct AddressData {
+struct AddressData: Comparable {
+    static func < (lhs: AddressData, rhs: AddressData) -> Bool {
+        return lhs.name <= rhs.name
+    }
+
     var givenName: String
     var familyName: String
     var phoneNumber: String
