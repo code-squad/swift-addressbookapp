@@ -73,7 +73,7 @@ class AddressSets {
         return converted
     }
 
-    // 영어, 한글, 기타 문자인지 판단
+    // 영어, 한글, 기타 문자인지 판단5
     func checkConsonantOf(address: AddressData) -> UInt32? {
         let name = address.name
         // 영어일때
@@ -97,4 +97,4 @@ class AddressSets {
     func sortAddress() {
         self.addressList.sort() // name 기준으로 sort
     }
-
+}
