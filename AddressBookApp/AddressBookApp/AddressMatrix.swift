@@ -1,5 +1,5 @@
 //
-//  AddressSets.swift
+//  AddressMatrix.swift
 //  AddressBookApp
 //
 //  Created by YOUTH2 on 2018. 6. 15..
@@ -8,13 +8,13 @@
 
 import Foundation
 
-class AddressSets { 
+class AddressMatrix { 
 
     // MARK: static properties
 
     static let KOR_CODE_RANGE: CountableClosedRange<UInt32> = 0...18
-    static let ENG_CODE_RANGE: CountableClosedRange<UInt32> = (AddressSets.ENG_START_CODE - AddressSets.CONVERTER)...(AddressSets.ENG_END_CODE - AddressSets.CONVERTER)
-    static let ALL_CODE_RANGE: CountableClosedRange<UInt32> = 0...(AddressSets.ENG_END_CODE - AddressSets.CONVERTER + 1)
+    static let ENG_CODE_RANGE: CountableClosedRange<UInt32> = (AddressMatrix.ENG_START_CODE - AddressMatrix.CONVERTER)...(AddressMatrix.ENG_END_CODE - AddressMatrix.CONVERTER)
+    static let ALL_CODE_RANGE: CountableClosedRange<UInt32> = 0...(AddressMatrix.ENG_END_CODE - AddressMatrix.CONVERTER + 1)
     static let CONVERTER: UInt32 = 46
 
     static let KOR_INITIAL_CONSONANT_CODES: [UInt32] = Array(KOR_CODE_RANGE)
@@ -32,13 +32,13 @@ class AddressSets {
     // MARK: class properties and initializer
 
     private var addressList = [AddressData]()
-    private var addressListWithConsonant: [UInt32 : [AddressData]] = [:]
+    private var matrix: [UInt32 : [AddressData]] = [:]
 
     init() {}
 
     init(_ address: [AddressData]) {
         self.addressList = address.sorted()
-        self.addressListWithConsonant = addressList.reduce(into: [UInt32 : [AddressData]]()) {
+        self.matrix = addressList.reduce(into: [UInt32 : [AddressData]]()) {
             $0[checkConsonantOf(address: $1), default:[]].append($1)
         }
     }
@@ -50,26 +50,26 @@ class AddressSets {
         let name = address.name
 
         if isEnglish(text: name) {
-            guard let code = matchEng(text: name) else { return AddressSets.ALL_CODE_RANGE.last! }
+            guard let code = matchEng(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
             return code
         } else if isKorean(text: name) {
-            guard let code = matchKor(text: name) else { return AddressSets.ALL_CODE_RANGE.last! }
+            guard let code = matchKor(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
             return code
         } else {
             // 특수문자의 경우 code range의 가장 마지막 숫자를 리턴
-            return AddressSets.ALL_CODE_RANGE.last!
+            return AddressMatrix.ALL_CODE_RANGE.last!
         }
     }
 
     private func isEnglish(text: String) -> Bool {
         guard let first = text.uppercased().first else { return false }
         guard let scalarValue = UnicodeScalar(String(first))?.value else { return false }
-        return AddressSets.ENG_START_CODE...AddressSets.ENG_END_CODE ~= scalarValue
+        return AddressMatrix.ENG_START_CODE...AddressMatrix.ENG_END_CODE ~= scalarValue
     }
 
     private func isKorean(text: String) -> Bool {
         guard let scalarValue = matchKor(text: text) else { return false }
-        return AddressSets.KOR_CODE_RANGE ~= scalarValue
+        return AddressMatrix.KOR_CODE_RANGE ~= scalarValue
     }
 
     // 초성의 KOR INITIAL CONSONANT CODES 리턴
@@ -92,31 +92,31 @@ class AddressSets {
     // MARK: Information for Dictionary
 
     func countOfConsonant() -> Int {
-        return self.addressListWithConsonant.keys.count
+        return self.matrix.keys.count
     }
 
     func keys() -> [String] {
-        return self.addressListWithConsonant.keys.sorted().map{ codeToLetter(code: $0) }
+        return self.matrix.keys.sorted().map{ codeToLetter(code: $0) }
     }
 
     func count(of letter: String) -> Int {
         let section = letterToCode(letter: letter)
-        let count = self.addressListWithConsonant[section]?.count ?? 0
+        let count = self.matrix[section]?.count ?? 0
         return count
     }
 
     func data(section letter: String, row index: Int) -> AddressData {
         let section = letterToCode(letter: letter)
-        let address = self.addressListWithConsonant[section]![index]
+        let address = self.matrix[section]![index]
         return address
     }
 
     private func codeToLetter(code: UInt32) -> String {
-        return AddressSets.ALL_LETTERS[Int(code)]
+        return AddressMatrix.ALL_LETTERS[Int(code)]
     }
 
     private func letterToCode(letter: String) -> UInt32 {
-        return matchEng(text: letter) ?? matchKor(text: letter) ?? AddressSets.ALL_CODE_RANGE.last!
+        return matchEng(text: letter) ?? matchKor(text: letter) ?? AddressMatrix.ALL_CODE_RANGE.last!
     }
 
 }

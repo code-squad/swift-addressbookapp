@@ -11,7 +11,7 @@ import Contacts
 
 class AddressDataManager {
     private var list = [AddressData]()
-    private var matrix = AddressSets()
+    private var matrix = AddressMatrix()
 
     func fetchContacts(_ handler: (@escaping () -> Void)) {
         let store = CNContactStore()
@@ -30,7 +30,7 @@ class AddressDataManager {
                             contacts.append(AddressData(contact))
                         })
                         self.list = contacts
-                        self.matrix = AddressSets(contacts)
+                        self.matrix = AddressMatrix(contacts)
                     } catch let error {
                         print("Failed to enumerate:", error)
                     }
