@@ -10,15 +10,8 @@ import Foundation
 import Contacts
 
 class AddressDataManager {
-    private var addressList = [AddressData]()
-
-    func count() -> Int {
-        return self.addressList.count
-    }
-
-    func data(at: Int) -> AddressData {
-        return self.addressList[at]
-    }
+    private var list = [AddressData]()
+    private var matrix = AddressSets()
 
     func fetchContacts(_ handler: (@escaping () -> Void)) {
         let store = CNContactStore()
@@ -36,7 +29,8 @@ class AddressDataManager {
                         try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
                             contacts.append(AddressData(contact))
                         })
-                        self.addressList = contacts
+                        self.list = contacts
+                        self.matrix = AddressSets(contacts)
                     } catch let error {
                         print("Failed to enumerate:", error)
                     }
@@ -46,6 +40,22 @@ class AddressDataManager {
             }
             handler()
         }
+    }
+
+    func countOfAvailableConsonant() -> Int {
+        return matrix.countOfConsonant()
+    }
+
+    func sectionKeys() -> [String] {
+        return matrix.keys()
+    }
+
+    func count(of letter: String) -> Int {
+        return matrix.count(of: letter)
+    }
+
+    func data(of section: String, at row: Int) -> AddressData {
+        return matrix.data(section: section, row: row)
     }
 
 }
