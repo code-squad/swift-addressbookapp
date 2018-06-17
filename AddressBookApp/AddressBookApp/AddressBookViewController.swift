@@ -37,8 +37,8 @@ extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
-        label.text = sectionKeys[section]
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.text = " " + sectionKeys[section]
+        label.font = UIFont.preferredFont(forTextStyle: .title2)
         return label
     }
 
@@ -58,6 +58,10 @@ extension AddressBookViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
         cell.setCell(data: addressManager.data(of: sectionKeys[indexPath.section], at: indexPath.row))
         return cell
+    }
+
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.sectionKeys
     }
 
 }
