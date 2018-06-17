@@ -33,6 +33,7 @@ class AddressMatrix {
 
     private var addressList = [AddressData]()
     private var matrix: [UInt32 : [AddressData]] = [:]
+    private var consonants = [String]()
 
     init() {}
 
@@ -54,6 +55,7 @@ class AddressMatrix {
             return code
         } else if isKorean(text: name) {
             guard let code = matchKor(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
+
             return code
         } else {
             // 특수문자의 경우 code range의 가장 마지막 숫자를 리턴
@@ -96,7 +98,8 @@ class AddressMatrix {
     }
 
     func keys() -> [String] {
-        return self.matrix.keys.sorted().map{ codeToLetter(code: $0) }
+        consonants = self.matrix.keys.sorted().map{ codeToLetter(code: $0) }
+        return consonants
     }
 
     func count(of letter: String) -> Int {
@@ -116,7 +119,10 @@ class AddressMatrix {
     }
 
     private func letterToCode(letter: String) -> UInt32 {
-        return matchEng(text: letter) ?? matchKor(text: letter) ?? AddressMatrix.ALL_CODE_RANGE.last!
+        let index = consonants.index(of: letter) ?? 0
+        let keys = self.matrix.keys.sorted()
+        let section = keys[index]
+        return section
     }
 
 }

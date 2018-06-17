@@ -71,7 +71,7 @@ struct AddressData: Comparable {
     var emailAddress: String
     var profileImage: Data?
     var name: String {
-        return familyName + " " + givenName
+        return familyName + givenName
     }
 
     init(_ contact: CNContact) {
