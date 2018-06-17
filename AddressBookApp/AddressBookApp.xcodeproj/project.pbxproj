@@ -19,6 +19,7 @@
 		FDC6F3D420C8FE7B00BA495E /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */; };
 		FDC6F3D620C9003E00BA495E /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */; };
 		FDC6F3E720C9987C00BA495E /* AddressDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */; };
+		FDD1DDC620D3835F004B95BC /* AddressSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1DDC520D3835F004B95BC /* AddressSets.swift */; };
 		FDEC149D20C6637E00A5AC25 /* HolidayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */; };
 		FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDataManager.swift; sourceTree = "<group>"; };
+		FDD1DDC520D3835F004B95BC /* AddressSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSets.swift; sourceTree = "<group>"; };
 		FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				FD561F7420BBCC210049C9B6 /* Main.storyboard */,
 				FDC6F3D520C9003E00BA495E /* AddressTableViewCell.swift */,
 				FDC6F3E620C9987C00BA495E /* AddressDataManager.swift */,
+				FDD1DDC520D3835F004B95BC /* AddressSets.swift */,
 				FDC6F3D320C8FE7B00BA495E /* AddressBookViewController.swift */,
 				FDEFCDA420C019C700C93D92 /* HolidayViewController.swift */,
 				FDEC149C20C6637E00A5AC25 /* HolidayTableViewCell.swift */,
@@ -173,6 +176,7 @@
 				FDEFCDA520C019C700C93D92 /* HolidayViewController.swift in Sources */,
 				FDC6F3D620C9003E00BA495E /* AddressTableViewCell.swift in Sources */,
 				FD05071B20C69F2F00899C9F /* CustomExtension.swift in Sources */,
+				FDD1DDC620D3835F004B95BC /* AddressSets.swift in Sources */,
 				FDEC149D20C6637E00A5AC25 /* HolidayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

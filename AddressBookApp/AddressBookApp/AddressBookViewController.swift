@@ -11,6 +11,7 @@ import Contacts
 
 class AddressBookViewController: UITableViewController {
     private var addressManager = AddressDataManager()
+    private var sectionKeys = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class AddressBookViewController: UITableViewController {
         addressManager.fetchContacts(resetTableView)
     }
 
-    func resetTableView() {
+    private func resetTableView() {
         DispatchQueue.main.async(execute: {() -> Void in
             self.tableView!.reloadData()
         })
@@ -30,15 +31,32 @@ class AddressBookViewController: UITableViewController {
 
 extension AddressBookViewController {
 
+    // MARK: - Table view delegate
+
+    // UIView타입으로 header에 사용할 뷰를 리턴
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        label.text = sectionKeys[section]
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        return label
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return addressManager.countOfAvailableConsonant()
+    }
+
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.addressManager.count()
+        sectionKeys = addressManager.sectionKeys()
+        guard sectionKeys.count != 0 else { return 0 }
+        return self.addressManager.count(of: sectionKeys[section])
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        cell.setCell(data: addressManager.data(at: indexPath.row))
+        cell.setCell(data: addressManager.data(of: sectionKeys[indexPath.section], at: indexPath.row))
         return cell
     }
 

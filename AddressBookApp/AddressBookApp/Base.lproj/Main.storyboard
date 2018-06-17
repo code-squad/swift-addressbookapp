@@ -97,7 +97,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Hih-xk-UfP"/>
+                        <viewLayoutGuide key="safeArea" id="Gc9-LN-A6S"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="wQ9-Cv-YUI" id="mmK-Fv-aPI"/>
