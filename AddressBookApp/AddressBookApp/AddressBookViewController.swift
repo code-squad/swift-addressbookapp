@@ -11,7 +11,6 @@ import Contacts
 
 class AddressBookViewController: UITableViewController {
     private var addressManager = AddressDataManager()
-    private var sectionKeys = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +21,9 @@ class AddressBookViewController: UITableViewController {
     }
 
     private func resetTableView() {
-        DispatchQueue.main.async(execute: {() -> Void in
-            self.tableView!.reloadData()
-        })
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -37,7 +36,7 @@ extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
-        label.text = " " + sectionKeys[section]
+        label.text = " " + addressManager.consonantLetter(at: section)
         label.font = UIFont.preferredFont(forTextStyle: .title2)
         return label
     }
@@ -49,19 +48,18 @@ extension AddressBookViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sectionKeys = addressManager.sectionKeys()
-        guard sectionKeys.count != 0 else { return 0 }
-        return self.addressManager.count(of: sectionKeys[section])
+        guard addressManager.sectionKeys().count != 0 else { return 0 }
+        return self.addressManager.count(of: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        cell.setCell(data: addressManager.data(of: sectionKeys[indexPath.section], at: indexPath.row))
+        cell.setCell(data: addressManager.data(of: indexPath.section, at: indexPath.row))
         return cell
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return self.sectionKeys
+        return addressManager.sectionKeys()
     }
 
 }
