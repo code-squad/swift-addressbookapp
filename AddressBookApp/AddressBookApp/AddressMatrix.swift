@@ -26,6 +26,8 @@ class AddressMatrix {
 
     static let ENG_START_CODE: UInt32 = 65
     static let ENG_END_CODE: UInt32 = 90
+    static let KOREAN_LETTER_RANGE = (UnicodeScalar("가")?.value)!...(UnicodeScalar("힣")?.value)!
+    static let ENGLISH_LETTER_RANGE = (UnicodeScalar("A")?.value)!...(UnicodeScalar("Z")?.value)!
 
     // MARK: class properties and initializer
 
@@ -55,7 +57,6 @@ class AddressMatrix {
             return code
         } else if isKorean(text: name) {
             guard let code = matchKor(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
-
             return code
         } else {
             // 특수문자의 경우 code range의 가장 마지막 숫자를 리턴
@@ -63,15 +64,16 @@ class AddressMatrix {
         }
     }
 
-    private func isEnglish(text: String) -> Bool {
-        guard let first = text.uppercased().first else { return false }
-        guard let scalarValue = UnicodeScalar(String(first))?.value else { return false }
-        return AddressMatrix.ENG_START_CODE...AddressMatrix.ENG_END_CODE ~= scalarValue
+    func isKorean(text: String) -> Bool {
+        guard let text = text.first else { return false }
+        guard let value = UnicodeScalar(String(text))?.value else { return false }
+        return AddressMatrix.KOREAN_LETTER_RANGE ~= value
     }
 
-    private func isKorean(text: String) -> Bool {
-        guard let scalarValue = matchKor(text: text) else { return false }
-        return AddressMatrix.KOR_CODE_RANGE ~= scalarValue
+    func isEnglish(text: String) -> Bool {
+        guard let letter = text.uppercased().first else { return false }
+        guard let value = UnicodeScalar(String(letter))?.value else { return false }
+        return AddressMatrix.ENGLISH_LETTER_RANGE ~= value
     }
 
     // 초성의 KOR INITIAL CONSONANT CODES 리턴
