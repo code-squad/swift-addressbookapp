@@ -48,49 +48,18 @@ class AddressMatrix {
 
     // MARK: Check Consonant
 
-    // 영어, 한글, 기타 문자인지 판단
     func checkConsonantOf(address: AddressData) -> UInt32 {
         let name = address.name
+        guard let letter = name.uppercased().first else { return AddressMatrix.ALL_CODE_RANGE.last! }
+        guard let value = UnicodeScalar(String(letter))?.value else { return AddressMatrix.ALL_CODE_RANGE.last! }
 
-        if isEnglish(text: name) {
-            guard let code = matchEng(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
-            return code
-        } else if isKorean(text: name) {
-            guard let code = matchKor(text: name) else { return AddressMatrix.ALL_CODE_RANGE.last! }
-            return code
+        if AddressMatrix.KOREAN_LETTER_RANGE ~= value {
+            return ((value - 0xac00) / 28 / 21)
+        } else if AddressMatrix.ENGLISH_LETTER_RANGE ~= value {
+            return (value - AddressMatrix.CONVERTER)
         } else {
-            // 특수문자의 경우 code range의 가장 마지막 숫자를 리턴
             return AddressMatrix.ALL_CODE_RANGE.last!
         }
-    }
-
-    func isKorean(text: String) -> Bool {
-        guard let text = text.first else { return false }
-        guard let value = UnicodeScalar(String(text))?.value else { return false }
-        return AddressMatrix.KOREAN_LETTER_RANGE ~= value
-    }
-
-    func isEnglish(text: String) -> Bool {
-        guard let letter = text.uppercased().first else { return false }
-        guard let value = UnicodeScalar(String(letter))?.value else { return false }
-        return AddressMatrix.ENGLISH_LETTER_RANGE ~= value
-    }
-
-    // 초성의 KOR INITIAL CONSONANT CODES 리턴
-    private func matchKor(text: String) -> UInt32? {
-        guard let text = text.first else { return nil }
-        let val = UnicodeScalar(String(text))?.value
-        guard let value = val else { return nil }
-        let firstConsonant = (value - 0xac00) / 28 / 21
-        return firstConsonant
-    }
-
-    // 초성의 ENG INITIAL CONSONANT CODES 리턴
-    private func matchEng(text: String) -> UInt32? {
-        guard let first = text.uppercased().first else { return nil }
-        guard let scalarValue = UnicodeScalar(String(first))?.value else { return nil }
-        let converted = scalarValue - 46
-        return converted
     }
 
     // MARK: Information for Dictionary
