@@ -46,16 +46,20 @@ class AddressDataManager {
         return matrix.countOfConsonant()
     }
 
+    func consonantLetter(at section: Int) -> String {
+        return matrix.consonantString(at: section)
+    }
+
     func sectionKeys() -> [String] {
         return matrix.keys()
     }
 
-    func count(of letter: String) -> Int {
-        return matrix.count(of: letter)
+    func count(of section: Int) -> Int {
+        return matrix.count(of: section)
     }
 
-    func data(of section: String, at row: Int) -> AddressData {
-        return matrix.data(section: section, row: row)
+    func data(of section: Int, at row: Int) -> AddressData {
+        return matrix.data(of: section, at: row)
     }
 
 }
