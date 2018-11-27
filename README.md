@@ -1,2 +1,7 @@
 # swift-addressbookapp
-iOS 레벨3 주소록 앱 저장소
+
+# Step1
+> TableViewController & Static Cells
+
+### 첨부파일
+![Step1](CaptureImage/Step1.png)
