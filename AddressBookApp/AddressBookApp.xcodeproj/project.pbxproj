@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83321AD4FEB0031660E /* AppDelegate.swift */; };
-		472EA83621AD4FEB0031660E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83521AD4FEB0031660E /* ViewController.swift */; };
 		472EA83921AD4FEB0031660E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83721AD4FEB0031660E /* Main.storyboard */; };
 		472EA83B21AD4FEB0031660E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83A21AD4FEB0031660E /* Assets.xcassets */; };
 		472EA83E21AD4FEB0031660E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83C21AD4FEB0031660E /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EA83021AD4FEB0031660E /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EA83321AD4FEB0031660E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		472EA83521AD4FEB0031660E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		472EA83821AD4FEB0031660E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472EA83A21AD4FEB0031660E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472EA83D21AD4FEB0031660E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				472EA83321AD4FEB0031660E /* AppDelegate.swift */,
-				472EA83521AD4FEB0031660E /* ViewController.swift */,
 				472EA83721AD4FEB0031660E /* Main.storyboard */,
 				472EA83A21AD4FEB0031660E /* Assets.xcassets */,
 				472EA83C21AD4FEB0031660E /* LaunchScreen.storyboard */,
@@ -386,7 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472EA83621AD4FEB0031660E /* ViewController.swift in Sources */,
 				472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
