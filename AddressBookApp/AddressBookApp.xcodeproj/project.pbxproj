@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83321AD4FEB0031660E /* AppDelegate.swift */; };
+		472EA83621AD4FEB0031660E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83521AD4FEB0031660E /* ViewController.swift */; };
+		472EA83921AD4FEB0031660E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83721AD4FEB0031660E /* Main.storyboard */; };
+		472EA83B21AD4FEB0031660E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83A21AD4FEB0031660E /* Assets.xcassets */; };
+		472EA83E21AD4FEB0031660E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83C21AD4FEB0031660E /* LaunchScreen.storyboard */; };
+		472EA84921AD4FEC0031660E /* AddressBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA84821AD4FEC0031660E /* AddressBookAppTests.swift */; };
+		472EA85421AD4FEC0031660E /* AddressBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA85321AD4FEC0031660E /* AddressBookAppUITests.swift */; };
+		4751634EB7F7EA8524472F2E /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9433451672CFB42D7C553A8 /* Pods_AddressBookAppTests.framework */; };
+		4F36A3028D10C27C3AA97F6C /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83186E227E5603A1D6DA014 /* Pods_AddressBookApp.framework */; };
+		71674D4F68304007F792F11D /* Pods_AddressBookAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		472EA84521AD4FEC0031660E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 472EA82821AD4FEB0031660E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 472EA82F21AD4FEB0031660E;
+			remoteInfo = AddressBookApp;
+		};
+		472EA85021AD4FEC0031660E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 472EA82821AD4FEB0031660E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 472EA82F21AD4FEB0031660E;
+			remoteInfo = AddressBookApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		025F8154C171F5A69F58C3BB /* Pods-AddressBookAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		472EA83021AD4FEB0031660E /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		472EA83321AD4FEB0031660E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		472EA83521AD4FEB0031660E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		472EA83821AD4FEB0031660E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		472EA83A21AD4FEB0031660E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		472EA83D21AD4FEB0031660E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		472EA83F21AD4FEB0031660E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		472EA84421AD4FEC0031660E /* AddressBookAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		472EA84821AD4FEC0031660E /* AddressBookAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppTests.swift; sourceTree = "<group>"; };
+		472EA84A21AD4FEC0031660E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		472EA84F21AD4FEC0031660E /* AddressBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		472EA85321AD4FEC0031660E /* AddressBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookAppUITests.swift; sourceTree = "<group>"; };
+		472EA85521AD4FEC0031660E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7679CF56A2D01F9C2A3AA713 /* Pods-AddressBookAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8875E91380AEF35A4615E1A3 /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		900C00BC54A0D528183F9BFE /* Pods-AddressBookAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9433451672CFB42D7C553A8 /* Pods_AddressBookAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC95216325363D56E3D9971 /* Pods-AddressBookApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.release.xcconfig"; sourceTree = "<group>"; };
+		E6F086357B89CCF7FB061633 /* Pods-AddressBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookApp/Pods-AddressBookApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F83186E227E5603A1D6DA014 /* Pods_AddressBookApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		472EA82D21AD4FEB0031660E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F36A3028D10C27C3AA97F6C /* Pods_AddressBookApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84121AD4FEC0031660E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4751634EB7F7EA8524472F2E /* Pods_AddressBookAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84C21AD4FEC0031660E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71674D4F68304007F792F11D /* Pods_AddressBookAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		423EA45A137F692E1D6A4C4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6F086357B89CCF7FB061633 /* Pods-AddressBookApp.debug.xcconfig */,
+				BEC95216325363D56E3D9971 /* Pods-AddressBookApp.release.xcconfig */,
+				8875E91380AEF35A4615E1A3 /* Pods-AddressBookAppTests.debug.xcconfig */,
+				7679CF56A2D01F9C2A3AA713 /* Pods-AddressBookAppTests.release.xcconfig */,
+				025F8154C171F5A69F58C3BB /* Pods-AddressBookAppUITests.debug.xcconfig */,
+				900C00BC54A0D528183F9BFE /* Pods-AddressBookAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		472EA82721AD4FEB0031660E = {
+			isa = PBXGroup;
+			children = (
+				472EA83221AD4FEB0031660E /* AddressBookApp */,
+				472EA84721AD4FEC0031660E /* AddressBookAppTests */,
+				472EA85221AD4FEC0031660E /* AddressBookAppUITests */,
+				472EA83121AD4FEB0031660E /* Products */,
+				423EA45A137F692E1D6A4C4D /* Pods */,
+				9623CB575DDADA9A4524F046 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		472EA83121AD4FEB0031660E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				472EA83021AD4FEB0031660E /* AddressBookApp.app */,
+				472EA84421AD4FEC0031660E /* AddressBookAppTests.xctest */,
+				472EA84F21AD4FEC0031660E /* AddressBookAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		472EA83221AD4FEB0031660E /* AddressBookApp */ = {
+			isa = PBXGroup;
+			children = (
+				472EA83321AD4FEB0031660E /* AppDelegate.swift */,
+				472EA83521AD4FEB0031660E /* ViewController.swift */,
+				472EA83721AD4FEB0031660E /* Main.storyboard */,
+				472EA83A21AD4FEB0031660E /* Assets.xcassets */,
+				472EA83C21AD4FEB0031660E /* LaunchScreen.storyboard */,
+				472EA83F21AD4FEB0031660E /* Info.plist */,
+			);
+			path = AddressBookApp;
+			sourceTree = "<group>";
+		};
+		472EA84721AD4FEC0031660E /* AddressBookAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				472EA84821AD4FEC0031660E /* AddressBookAppTests.swift */,
+				472EA84A21AD4FEC0031660E /* Info.plist */,
+			);
+			path = AddressBookAppTests;
+			sourceTree = "<group>";
+		};
+		472EA85221AD4FEC0031660E /* AddressBookAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				472EA85321AD4FEC0031660E /* AddressBookAppUITests.swift */,
+				472EA85521AD4FEC0031660E /* Info.plist */,
+			);
+			path = AddressBookAppUITests;
+			sourceTree = "<group>";
+		};
+		9623CB575DDADA9A4524F046 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F83186E227E5603A1D6DA014 /* Pods_AddressBookApp.framework */,
+				B9433451672CFB42D7C553A8 /* Pods_AddressBookAppTests.framework */,
+				2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		472EA82F21AD4FEB0031660E /* AddressBookApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 472EA85821AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookApp" */;
+			buildPhases = (
+				3FA87860FA219982235F3206 /* [CP] Check Pods Manifest.lock */,
+				472EA82C21AD4FEB0031660E /* Sources */,
+				472EA82D21AD4FEB0031660E /* Frameworks */,
+				472EA82E21AD4FEB0031660E /* Resources */,
+				472EA86121AD50300031660E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AddressBookApp;
+			productName = AddressBookApp;
+			productReference = 472EA83021AD4FEB0031660E /* AddressBookApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		472EA84321AD4FEC0031660E /* AddressBookAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 472EA85B21AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookAppTests" */;
+			buildPhases = (
+				6915D1A9284A387233A8704A /* [CP] Check Pods Manifest.lock */,
+				472EA84021AD4FEC0031660E /* Sources */,
+				472EA84121AD4FEC0031660E /* Frameworks */,
+				472EA84221AD4FEC0031660E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				472EA84621AD4FEC0031660E /* PBXTargetDependency */,
+			);
+			name = AddressBookAppTests;
+			productName = AddressBookAppTests;
+			productReference = 472EA84421AD4FEC0031660E /* AddressBookAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		472EA84E21AD4FEC0031660E /* AddressBookAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 472EA85E21AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookAppUITests" */;
+			buildPhases = (
+				B5419B91972E1A411D1678F9 /* [CP] Check Pods Manifest.lock */,
+				472EA84B21AD4FEC0031660E /* Sources */,
+				472EA84C21AD4FEC0031660E /* Frameworks */,
+				472EA84D21AD4FEC0031660E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				472EA85121AD4FEC0031660E /* PBXTargetDependency */,
+			);
+			name = AddressBookAppUITests;
+			productName = AddressBookAppUITests;
+			productReference = 472EA84F21AD4FEC0031660E /* AddressBookAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		472EA82821AD4FEB0031660E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = oingbong;
+				TargetAttributes = {
+					472EA82F21AD4FEB0031660E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					472EA84321AD4FEC0031660E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 472EA82F21AD4FEB0031660E;
+					};
+					472EA84E21AD4FEC0031660E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 472EA82F21AD4FEB0031660E;
+					};
+				};
+			};
+			buildConfigurationList = 472EA82B21AD4FEB0031660E /* Build configuration list for PBXProject "AddressBookApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 472EA82721AD4FEB0031660E;
+			productRefGroup = 472EA83121AD4FEB0031660E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				472EA82F21AD4FEB0031660E /* AddressBookApp */,
+				472EA84321AD4FEC0031660E /* AddressBookAppTests */,
+				472EA84E21AD4FEC0031660E /* AddressBookAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		472EA82E21AD4FEB0031660E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				472EA83E21AD4FEB0031660E /* LaunchScreen.storyboard in Resources */,
+				472EA83B21AD4FEB0031660E /* Assets.xcassets in Resources */,
+				472EA83921AD4FEB0031660E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84221AD4FEC0031660E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84D21AD4FEC0031660E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FA87860FA219982235F3206 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AddressBookApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		472EA86121AD50300031660E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint \n";
+		};
+		6915D1A9284A387233A8704A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AddressBookAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5419B91972E1A411D1678F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AddressBookAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		472EA82C21AD4FEB0031660E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				472EA83621AD4FEB0031660E /* ViewController.swift in Sources */,
+				472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84021AD4FEC0031660E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				472EA84921AD4FEC0031660E /* AddressBookAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		472EA84B21AD4FEC0031660E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				472EA85421AD4FEC0031660E /* AddressBookAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		472EA84621AD4FEC0031660E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 472EA82F21AD4FEB0031660E /* AddressBookApp */;
+			targetProxy = 472EA84521AD4FEC0031660E /* PBXContainerItemProxy */;
+		};
+		472EA85121AD4FEC0031660E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 472EA82F21AD4FEB0031660E /* AddressBookApp */;
+			targetProxy = 472EA85021AD4FEC0031660E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		472EA83721AD4FEB0031660E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				472EA83821AD4FEB0031660E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		472EA83C21AD4FEB0031660E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				472EA83D21AD4FEB0031660E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		472EA85621AD4FEC0031660E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		472EA85721AD4FEC0031660E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		472EA85921AD4FEC0031660E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F086357B89CCF7FB061633 /* Pods-AddressBookApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		472EA85A21AD4FEC0031660E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC95216325363D56E3D9971 /* Pods-AddressBookApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		472EA85C21AD4FEC0031660E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8875E91380AEF35A4615E1A3 /* Pods-AddressBookAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddressBookApp.app/AddressBookApp";
+			};
+			name = Debug;
+		};
+		472EA85D21AD4FEC0031660E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7679CF56A2D01F9C2A3AA713 /* Pods-AddressBookAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddressBookApp.app/AddressBookApp";
+			};
+			name = Release;
+		};
+		472EA85F21AD4FEC0031660E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 025F8154C171F5A69F58C3BB /* Pods-AddressBookAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AddressBookApp;
+			};
+			name = Debug;
+		};
+		472EA86021AD4FEC0031660E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 900C00BC54A0D528183F9BFE /* Pods-AddressBookAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressBookAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oingbong.AddressBookAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AddressBookApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		472EA82B21AD4FEB0031660E /* Build configuration list for PBXProject "AddressBookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				472EA85621AD4FEC0031660E /* Debug */,
+				472EA85721AD4FEC0031660E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		472EA85821AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				472EA85921AD4FEC0031660E /* Debug */,
+				472EA85A21AD4FEC0031660E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		472EA85B21AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				472EA85C21AD4FEC0031660E /* Debug */,
+				472EA85D21AD4FEC0031660E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		472EA85E21AD4FEC0031660E /* Build configuration list for PBXNativeTarget "AddressBookAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				472EA85F21AD4FEC0031660E /* Debug */,
+				472EA86021AD4FEC0031660E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 472EA82821AD4FEB0031660E /* Project object */;
+}
