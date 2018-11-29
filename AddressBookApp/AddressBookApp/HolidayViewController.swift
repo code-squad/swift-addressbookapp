@@ -17,7 +17,6 @@ class HolidayViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         holidays.convertAndPush(from: jsonString.data)
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -29,8 +28,8 @@ extension HolidayViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let holiday = holidays[indexPath.row]
-        cell.textLabel?.text = holiday[holidays.keyDate]
-        cell.detailTextLabel?.text = holiday[holidays.keySubtitle]
+        cell.textLabel?.text = holiday.date
+        cell.detailTextLabel?.text = holiday.subtitle
         return cell
     }
 }

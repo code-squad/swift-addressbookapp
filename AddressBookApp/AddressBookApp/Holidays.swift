@@ -11,21 +11,16 @@ import Foundation
 struct Holidays {
     var keyDate = "date"
     var keySubtitle = "subtitle"
-    var holiday = [[String: String]]()
+    var holidays = [Holiday]()
     
     var count: Int {
-        return holiday.count
-    }
-    
-    mutating func push(from elements: [[String: String]]) {
-        for element in elements {
-            holiday.append(element)
-        }
+        return holidays.count
     }
     
     mutating func convertAndPush(from json: String) {
         guard let elements = convertDictionary(from: json) else { return }
-        push(from: elements)
+        let data = convertHoliday(from: elements)
+        push(from: data)
     }
     
     private func convertDictionary(from json: String) -> [[String: String]]? {
@@ -38,7 +33,24 @@ struct Holidays {
         }
     }
     
-    subscript(index: Int) -> [String: String] {
-        return holiday[index]
+    private func convertHoliday(from elements: [[String: String]]) -> [Holiday] {
+        var result = [Holiday]()
+        for element in elements {
+            guard let date = element[keyDate] else { continue }
+            guard let subtitle = element[keySubtitle] else { continue }
+            let holiday = Holiday(date: date, subtitle: subtitle)
+            result.append(holiday)
+        }
+        return result
+    }
+    
+    mutating private func push(from elements: [Holiday]) {
+        for element in elements {
+            holidays.append(element)
+        }
+    }
+    
+    subscript(index: Int) -> Holiday {
+        return holidays[index]
     }
 }
