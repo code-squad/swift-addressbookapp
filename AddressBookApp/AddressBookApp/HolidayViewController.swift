@@ -26,10 +26,10 @@ extension HolidayViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell: HolidayTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "holidayTableViewCell", for: indexPath) as! HolidayTableViewCell
         let holiday = holidays[indexPath.row]
-        cell.textLabel?.text = holiday.date
-        cell.detailTextLabel?.text = holiday.subtitle
+        cell.dateLabel.text = holiday.date
+        cell.subtitleLabel.text = holiday.subtitle
         return cell
     }
 }
