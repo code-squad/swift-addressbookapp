@@ -16,7 +16,8 @@ class HolidayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        holidays.convertAndPush(from: jsonString.data)
+        tableView.delegate = self
+        holidays.convertAndPush(from: jsonString.dataWithImage)
     }
 }
 
@@ -30,6 +31,16 @@ extension HolidayViewController: UITableViewDataSource {
         let holiday = holidays[indexPath.row]
         cell.dateLabel.text = holiday.date
         cell.subtitleLabel.text = holiday.subtitle
+        cell.weatherImage.backgroundColor = .darkGray
+        if let image = holiday.image {
+            cell.weatherImage.image = UIImage(named: image)
+        }
         return cell
+    }
+}
+
+extension HolidayViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }

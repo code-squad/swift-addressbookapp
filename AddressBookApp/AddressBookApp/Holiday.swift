@@ -11,4 +11,5 @@ import Foundation
 struct Holiday {
     var date: String
     var subtitle: String
+    var image: String?
 }

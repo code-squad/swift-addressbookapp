@@ -11,6 +11,7 @@ import Foundation
 struct Holidays {
     var keyDate = "date"
     var keySubtitle = "subtitle"
+    var keyImage = "image"
     var holidays = [Holiday]()
     
     var count: Int {
@@ -38,7 +39,8 @@ struct Holidays {
         for element in elements {
             guard let date = element[keyDate] else { continue }
             guard let subtitle = element[keySubtitle] else { continue }
-            let holiday = Holiday(date: date, subtitle: subtitle)
+            let image = element[keyImage]
+            let holiday = Holiday(date: date, subtitle: subtitle, image: image)
             result.append(holiday)
         }
         return result
