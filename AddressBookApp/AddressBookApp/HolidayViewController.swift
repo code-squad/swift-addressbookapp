@@ -27,6 +27,7 @@ class HolidayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         guard let elements = convertDictionary() else { return }
         appendHolidays(from: elements)
         // Do any additional setup after loading the view.
@@ -41,10 +42,24 @@ class HolidayViewController: UIViewController {
             return nil
         }
     }
-
+    
     private func appendHolidays(from elements: [[String: String]]) {
         for element in elements {
             holidays.append(element)
         }
+    }
+}
+
+extension HolidayViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return holidays.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let holiday = holidays[indexPath.row]
+        cell.textLabel?.text = holiday["date"]
+        cell.detailTextLabel?.text = holiday["subtitle"]
+        return cell
     }
 }
