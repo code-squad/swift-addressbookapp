@@ -16,19 +16,8 @@ class HolidayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        guard let elements = convertDictionary(from: jsonString.data) else { return }
-        holidays.push(from: elements)
+        holidays.convertAndPush(from: jsonString.data)
         // Do any additional setup after loading the view.
-    }
-    
-    private func convertDictionary(from json: String) -> [[String: String]]? {
-        guard let jsonData = json.data(using: .utf8) else { return nil }
-        do {
-            let result = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: String]]
-            return result
-        } catch {
-            return nil
-        }
     }
 }
 

@@ -23,6 +23,21 @@ struct Holidays {
         }
     }
     
+    mutating func convertAndPush(from json: String) {
+        guard let elements = convertDictionary(from: json) else { return }
+        push(from: elements)
+    }
+    
+    private func convertDictionary(from json: String) -> [[String: String]]? {
+        guard let jsonData = json.data(using: .utf8) else { return nil }
+        do {
+            let result = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: String]]
+            return result
+        } catch {
+            return nil
+        }
+    }
+    
     subscript(index: Int) -> [String: String] {
         return holiday[index]
     }
