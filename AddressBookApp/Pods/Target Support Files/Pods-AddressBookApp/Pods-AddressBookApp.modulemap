@@ -1,6 +1,0 @@
-framework module Pods_AddressBookApp {
-  umbrella header "Pods-AddressBookApp-umbrella.h"
-
-  export *
-  module * { export * }
-}
