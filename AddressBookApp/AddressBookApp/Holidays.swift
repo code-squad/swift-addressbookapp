@@ -12,7 +12,7 @@ struct Holidays {
     var keyDate = "date"
     var keySubtitle = "subtitle"
     var keyImage = "image"
-    var holidays = [Holiday]()
+    private var holidays = [Holiday]()
     
     var count: Int {
         return holidays.count
