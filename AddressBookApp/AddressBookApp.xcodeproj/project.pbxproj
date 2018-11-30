@@ -21,12 +21,6 @@
 		4751634EB7F7EA8524472F2E /* Pods_AddressBookAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9433451672CFB42D7C553A8 /* Pods_AddressBookAppTests.framework */; };
 		479BC26C21B102D70003B65A /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC26B21B102D70003B65A /* AddressBookViewController.swift */; };
 		479BC27021B108350003B65A /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC26F21B108350003B65A /* MGCContactStore.swift */; };
-		479BC27221B108500003B65A /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27121B108500003B65A /* MGCContactStoreUtilities.swift */; };
-		479BC27421B108FF0003B65A /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27321B108FF0003B65A /* MGCLabelValue.swift */; };
-		479BC27621B109180003B65A /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27521B109180003B65A /* MGCPostalAddress.swift */; };
-		479BC27821B1094C0003B65A /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27721B1094C0003B65A /* MGCContact.swift */; };
-		479BC27A21B1095F0003B65A /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27921B1095F0003B65A /* MGCAppConfiguration.swift */; };
-		479BC27C21B109A30003B65A /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27B21B109A30003B65A /* MGCExtensions.swift */; };
 		479BC27E21B10F090003B65A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27D21B10F090003B65A /* AddressTableViewCell.swift */; };
 		479BC28021B126120003B65A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27F21B126120003B65A /* Address.swift */; };
 		479BC28221B126250003B65A /* AddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC28121B126250003B65A /* AddressList.swift */; };
@@ -73,12 +67,6 @@
 		4750A80821B021C000D0322F /* HolidayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayTableViewCell.swift; sourceTree = "<group>"; };
 		479BC26B21B102D70003B65A /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		479BC26F21B108350003B65A /* MGCContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
-		479BC27121B108500003B65A /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
-		479BC27321B108FF0003B65A /* MGCLabelValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
-		479BC27521B109180003B65A /* MGCPostalAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
-		479BC27721B1094C0003B65A /* MGCContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
-		479BC27921B1095F0003B65A /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
-		479BC27B21B109A30003B65A /* MGCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		479BC27D21B10F090003B65A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		479BC27F21B126120003B65A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		479BC28121B126250003B65A /* AddressList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressList.swift; sourceTree = "<group>"; };
@@ -205,13 +193,7 @@
 				479BC28121B126250003B65A /* AddressList.swift */,
 				479BC27F21B126120003B65A /* Address.swift */,
 				479BC27D21B10F090003B65A /* AddressTableViewCell.swift */,
-				479BC27B21B109A30003B65A /* MGCExtensions.swift */,
 				479BC26F21B108350003B65A /* MGCContactStore.swift */,
-				479BC27521B109180003B65A /* MGCPostalAddress.swift */,
-				479BC27721B1094C0003B65A /* MGCContact.swift */,
-				479BC27921B1095F0003B65A /* MGCAppConfiguration.swift */,
-				479BC27121B108500003B65A /* MGCContactStoreUtilities.swift */,
-				479BC27321B108FF0003B65A /* MGCLabelValue.swift */,
 			);
 			name = AddressFolder;
 			sourceTree = "<group>";
@@ -448,9 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				479BC27021B108350003B65A /* MGCContactStore.swift in Sources */,
-				479BC27221B108500003B65A /* MGCContactStoreUtilities.swift in Sources */,
-				479BC27A21B1095F0003B65A /* MGCAppConfiguration.swift in Sources */,
-				479BC27421B108FF0003B65A /* MGCLabelValue.swift in Sources */,
 				4750A80921B021C000D0322F /* HolidayTableViewCell.swift in Sources */,
 				4750A80321AFD17900D0322F /* JsonString.swift in Sources */,
 				4750A80521B00CC600D0322F /* Holiday.swift in Sources */,
@@ -458,10 +437,7 @@
 				479BC26C21B102D70003B65A /* AddressBookViewController.swift in Sources */,
 				472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */,
 				4750A80121AFD0A800D0322F /* Holidays.swift in Sources */,
-				479BC27621B109180003B65A /* MGCPostalAddress.swift in Sources */,
-				479BC27C21B109A30003B65A /* MGCExtensions.swift in Sources */,
 				479BC27E21B10F090003B65A /* AddressTableViewCell.swift in Sources */,
-				479BC27821B1094C0003B65A /* MGCContact.swift in Sources */,
 				479BC28021B126120003B65A /* Address.swift in Sources */,
 				4750A7FF21AFB21700D0322F /* HolidayViewController.swift in Sources */,
 			);
