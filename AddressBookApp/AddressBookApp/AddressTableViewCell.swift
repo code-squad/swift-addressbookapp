@@ -17,6 +17,11 @@ class AddressTableViewCell: UITableViewCell {
     func configure(from address: Address) {
         nameLabel.text = address.name
         telLabel.text = address.tel
+        emailLabel.text = address.email
+        profileImageView.image = UIImage(named: "addressbook-default-profile")
+        if let profile = address.profile {
+            profileImageView.image = UIImage(data: profile)
+        }
     }
     
     override func awakeFromNib() {
