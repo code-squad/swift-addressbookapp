@@ -14,6 +14,11 @@ class AddressTableViewCell: UITableViewCell {
     @IBOutlet weak var telLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    func configure(from address: Address) {
+        nameLabel.text = address.name
+        telLabel.text = address.tel
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
