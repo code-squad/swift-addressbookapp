@@ -18,7 +18,7 @@ struct Holidays {
         return holidays.count
     }
     
-    mutating func convertAndPush(from json: String) {
+    init(json: String) {
         guard let elements = convertDictionary(from: json) else { return }
         let data = convertHoliday(from: elements)
         push(from: data)
