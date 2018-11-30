@@ -22,3 +22,10 @@
 
 ### 첨부파일
 ![Step3](CaptureImage/Step3.png)
+
+# Step4
+> Contact & MGC Framework
+
+### 정리
+1. Privacy - Contacts Usage Description 접근 권한 여부 확인 ( in Info.plist ) 
+2. tableView.reloadData() 를 사용해서 테이블 뷰 갱신 
