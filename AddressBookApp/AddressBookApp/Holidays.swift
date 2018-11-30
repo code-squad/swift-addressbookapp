@@ -20,7 +20,7 @@ struct Holidays {
     
     init(json: String) {
         guard let elements = convertDictionary(from: json) else { return }
-        convertAndAppend(from: elements)
+        buildHoliday(from: elements)
     }
     
     private func convertDictionary(from json: String) -> [[String: String]]? {
@@ -33,7 +33,7 @@ struct Holidays {
         }
     }
     
-    mutating private func convertAndAppend(from elements: [[String: String]]) {
+    mutating private func buildHoliday(from elements: [[String: String]]) {
         for element in elements {
             guard let date = element[keyDate] else { continue }
             guard let subtitle = element[keySubtitle] else { continue }
