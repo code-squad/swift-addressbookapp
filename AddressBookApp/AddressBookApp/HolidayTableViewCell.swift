@@ -13,6 +13,15 @@ class HolidayTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    func configure(from holiday: Holiday) {
+        dateLabel.text = holiday.date
+        subtitleLabel.text = holiday.subtitle
+        weatherImage.backgroundColor = .darkGray
+        if let image = holiday.image {
+            weatherImage.image = UIImage(named: image)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +32,4 @@ class HolidayTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
