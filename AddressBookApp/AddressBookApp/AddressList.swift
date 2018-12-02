@@ -40,10 +40,6 @@ class AddressList {
             controller.tableView.reloadData()
         }
     }
-    
-    func append(with address: Address) {
-        self.addresses.append(address)
-    }
 
     private func fetchConsonant(from name: String) -> Character? {
         /*
