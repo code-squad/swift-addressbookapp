@@ -7,60 +7,104 @@
 //
 
 import UIKit
+import Contacts
+
+/*
+ 1. 주소록에서 전체 데이터 가져옵니다.
+ 2. 주소록에서 원하는 데이터 추출합니다.
+ 3. [[Address]] 형태를 만들고 데이터를 저장합니다.
+ 1) Consonant 크기만큼 배열을 만듭니다. (일단은 한글만)
+ 2) 한글은 첫글자 초성의 숫자, 영어는 첫글자의 숫자를 가져옵니다.
+ 4. 정해진 groupBySection 의 index 에 데이터를 저장합니다.
+ 5. [String: [Address]] 형태로 데이터를 가공합니다.
+ 6. 필터링 오름차순
+ 7. [AddressGroup] 형태로 가공합니다.
+ 8. tableView.reloadData()
+ */
 
 class AddressList {
-    private var addresses = [Address]()
-    
-    enum KoreanConsonant: Int {
-        case ㄱ = 0, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ
+    struct AddressGroup {
+        var sectionName: String
+        var sectionObjects: [Address]
     }
     
-    var count: Int {
-        return addresses.count
-    }
+    var addressesGroup = [AddressGroup]()
     
     init(with controller: UITableViewController) {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
-            for contact in contacts {
-                let name = contact.familyName + contact.givenName
-                var tel = ""
-                for phoneNumber in contact.phoneNumbers {
-                    tel = phoneNumber.value.stringValue
-                }
-                var email = ""
-                for emailAddress in contact.emailAddresses {
-                    email = emailAddress.value as String
-                }
-                let profile = contact.imageData
-                
-                self.addresses.append(Address(name: name, tel: tel, email: email, profile: profile))
-
-                guard let consonant = self.fetchConsonant(from: name) else { continue }
-            }
+            let addresses = self.extractContacts(from: contacts)
+            let groupBySection = self.appendGroupBySection(from: addresses)
+            let tempGroup = self.configureAddressGroup(from: groupBySection)
+            self.appendAddresses(from: tempGroup)
             controller.tableView.reloadData()
         }
     }
-
-    private func fetchConsonant(from name: String) -> Character? {
+    
+    private func extractContacts(from contacts: [CNContact]) -> [Address] {
+        var addresses = [Address]()
+        for contact in contacts {
+            let name = contact.familyName + contact.givenName
+            var tel = ""
+            for phoneNumber in contact.phoneNumbers {
+                tel = phoneNumber.value.stringValue
+            }
+            var email = ""
+            for emailAddress in contact.emailAddresses {
+                email = emailAddress.value as String
+            }
+            let profile = contact.imageData
+            addresses.append(Address(name: name, tel: tel, email: email, profile: profile))
+        }
+        return addresses
+    }
+    
+    private func appendGroupBySection(from addresses: [Address]) -> [[Address]] {
+        var groupBySection = configureGroupBySection()
+        for address in addresses {
+            guard let consonant = self.fetchConsonant(from: address.name) else { continue }
+            // 일단 한글만 먼저 진행합니다.
+            let korean = KoreanConsonant(rawValue: consonant)
+            guard let index = korean?.rawValue else { continue }
+            groupBySection[index].append(address)
+        }
+        return groupBySection
+    }
+    
+    private func configureGroupBySection() -> [[Address]] {
+        var groupBySection = [[Address]]()
+        for _ in 0..<KoreanConsonant.allCases.count {
+            let emptyAddress = [Address]()
+            groupBySection.append(emptyAddress)
+        }
+        return groupBySection
+    }
+    
+    private func fetchConsonant(from name: String) -> Int? {
         /*
          영어 : 앞글자 리턴 (유니코드 65 - 122)
          한글 : 앞글자 초성 리턴
          */
         guard let text = name.first else { return nil }
         guard let value = UnicodeScalar(String(text))?.value else { return nil }
-        guard value > 122 else { return text }
+        guard value > 122 else { return Int(value) }
         let index = (value - 0xAC00) / 28 / 21
-        let consonant = extractConsonant(at: index)
-        return consonant
+        return Int(index)
     }
     
-    private func extractConsonant(at index: UInt32) -> Character? {
-        guard let unicodeConsonant = UnicodeScalar(0x1100 + index) else { return nil }
-        let consonant = Character(unicodeConsonant)
-        return consonant
+    private func configureAddressGroup(from groupBySection: [[Address]]) -> [String: [Address]] {
+        var tempGroup = [String: [Address]]()
+        for index in 0..<groupBySection.count {
+            let addresses = groupBySection[index]
+            guard let key = KoreanConsonant(rawValue: index)?.description else { continue }
+            tempGroup.updateValue(addresses, forKey: key)
+        }
+        return tempGroup
     }
     
-    subscript(index: Int) -> Address {
-        return addresses[index]
+    private func appendAddresses(from addresses: [String: [Address]]) {
+        let sortedAddresses = addresses.sorted { $0.0 < $1.0 } // 오름차순 정렬
+        for (key, value) in sortedAddresses {
+            self.addressesGroup.append(AddressGroup(sectionName: key, sectionObjects: value))
+        }
     }
 }
