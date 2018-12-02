@@ -31,8 +31,7 @@ class AddressList {
     
     private let lastEnglishUnicode = 122
     private let forConsonant: UInt32 = 46
-    
-    var addressesGroup = [AddressGroup]()
+    private var addressesGroup = [AddressGroup]()
     
     init(with controller: UITableViewController) {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
@@ -111,11 +110,21 @@ class AddressList {
     }
 }
 
-extension UInt32 {
-    var uppercase: UInt32 {
-        switch self {
-        case 97...122: return self - 32
-        default: return self
-        }
+// for Controller
+extension AddressList {
+    var count: Int {
+        return addressesGroup.count
+    }
+    
+    func sectionName(at index: Int) -> String {
+        return addressesGroup[index].sectionName
+    }
+    
+    func countInSection(at index: Int) -> Int {
+        return addressesGroup[index].sectionObjects.count
+    }
+    
+    func addressInSection(sectionIndex: Int, rowIndex: Int) -> Address {
+        return addressesGroup[sectionIndex].sectionObjects[rowIndex]
     }
 }

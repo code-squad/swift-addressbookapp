@@ -21,7 +21,7 @@ class AddressBookViewController: UITableViewController {
 extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressTableViewCell", for: indexPath) as! AddressTableViewCell
-        let address = addressList.addressesGroup[indexPath.section].sectionObjects[indexPath.row]
+        let address = addressList.addressInSection(sectionIndex: indexPath.section, rowIndex: indexPath.row)
         cell.configure(from: address)
         return cell
     }
@@ -34,14 +34,14 @@ extension AddressBookViewController {
 // for Section
 extension AddressBookViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return addressList.addressesGroup.count
+        return addressList.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return addressList.addressesGroup[section].sectionName
+        return addressList.sectionName(at: section)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return addressList.addressesGroup[section].sectionObjects.count
+        return addressList.countInSection(at: section)
     }
 }
