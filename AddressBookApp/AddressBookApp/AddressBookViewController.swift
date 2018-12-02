@@ -49,7 +49,7 @@ extension AddressBookViewController {
 // for indexTitle
 extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return Consonant.allCases.count
+        return index
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
