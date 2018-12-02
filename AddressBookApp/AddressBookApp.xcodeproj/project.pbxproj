@@ -25,7 +25,7 @@
 		479BC27021B108350003B65A /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC26F21B108350003B65A /* MGCContactStore.swift */; };
 		479BC27E21B10F090003B65A /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27D21B10F090003B65A /* AddressTableViewCell.swift */; };
 		479BC28021B126120003B65A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC27F21B126120003B65A /* Address.swift */; };
-		479BC28221B126250003B65A /* AddressList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC28121B126250003B65A /* AddressList.swift */; };
+		479BC28221B126250003B65A /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479BC28121B126250003B65A /* Addresses.swift */; };
 		4F36A3028D10C27C3AA97F6C /* Pods_AddressBookApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83186E227E5603A1D6DA014 /* Pods_AddressBookApp.framework */; };
 		71674D4F68304007F792F11D /* Pods_AddressBookAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,7 +73,7 @@
 		479BC26F21B108350003B65A /* MGCContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		479BC27D21B10F090003B65A /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		479BC27F21B126120003B65A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		479BC28121B126250003B65A /* AddressList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressList.swift; sourceTree = "<group>"; };
+		479BC28121B126250003B65A /* Addresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
 		7679CF56A2D01F9C2A3AA713 /* Pods-AddressBookAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		8875E91380AEF35A4615E1A3 /* Pods-AddressBookAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppTests/Pods-AddressBookAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		900C00BC54A0D528183F9BFE /* Pods-AddressBookAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				479BC26B21B102D70003B65A /* AddressBookViewController.swift */,
-				479BC28121B126250003B65A /* AddressList.swift */,
+				479BC28121B126250003B65A /* Addresses.swift */,
 				4712434321B42AD9003036E3 /* UInt32+uppercase.swift */,
 				479BC27F21B126120003B65A /* Address.swift */,
 				479BC27D21B10F090003B65A /* AddressTableViewCell.swift */,
@@ -440,7 +440,7 @@
 				4750A80921B021C000D0322F /* HolidayTableViewCell.swift in Sources */,
 				4750A80321AFD17900D0322F /* JsonString.swift in Sources */,
 				4750A80521B00CC600D0322F /* Holiday.swift in Sources */,
-				479BC28221B126250003B65A /* AddressList.swift in Sources */,
+				479BC28221B126250003B65A /* Addresses.swift in Sources */,
 				4712434221B3F0E4003036E3 /* Consonant.swift in Sources */,
 				479BC26C21B102D70003B65A /* AddressBookViewController.swift in Sources */,
 				472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */,

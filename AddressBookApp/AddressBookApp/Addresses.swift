@@ -23,7 +23,7 @@ import Contacts
  8. tableView.reloadData()
  */
 
-class AddressList {
+class Addresses {
     struct AddressGroup {
         var sectionName: String
         var sectionObjects: [Address]
@@ -31,7 +31,7 @@ class AddressList {
     
     private let lastEnglishUnicode = 122
     private let forConsonant: UInt32 = 46
-    private var addressesGroup = [AddressGroup]()
+    private var group = [AddressGroup]()
     
     init(with controller: UITableViewController) {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
@@ -105,26 +105,26 @@ class AddressList {
     private func appendAddresses(from addresses: [String: [Address]]) {
         let sortedAddresses = addresses.sorted { $0.0 < $1.0 } // 오름차순 정렬
         for (key, value) in sortedAddresses {
-            self.addressesGroup.append(AddressGroup(sectionName: key, sectionObjects: value))
+            self.group.append(AddressGroup(sectionName: key, sectionObjects: value))
         }
     }
 }
 
 // for Controller
-extension AddressList {
+extension Addresses {
     var count: Int {
-        return addressesGroup.count
+        return group.count
     }
     
     func sectionName(at index: Int) -> String {
-        return addressesGroup[index].sectionName
+        return group[index].sectionName
     }
     
     func countInSection(at index: Int) -> Int {
-        return addressesGroup[index].sectionObjects.count
+        return group[index].sectionObjects.count
     }
     
     func addressInSection(sectionIndex: Int, rowIndex: Int) -> Address {
-        return addressesGroup[sectionIndex].sectionObjects[rowIndex]
+        return group[sectionIndex].sectionObjects[rowIndex]
     }
 }

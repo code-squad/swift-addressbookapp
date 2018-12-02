@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 class AddressBookViewController: UITableViewController {
-    private lazy var addressList = AddressList(with: self)
+    private lazy var addresses = Addresses(with: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class AddressBookViewController: UITableViewController {
 extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressTableViewCell", for: indexPath) as! AddressTableViewCell
-        let address = addressList.addressInSection(sectionIndex: indexPath.section, rowIndex: indexPath.row)
+        let address = addresses.addressInSection(sectionIndex: indexPath.section, rowIndex: indexPath.row)
         cell.configure(from: address)
         return cell
     }
@@ -34,14 +34,14 @@ extension AddressBookViewController {
 // for Section
 extension AddressBookViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return addressList.count
+        return addresses.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return addressList.sectionName(at: section)
+        return addresses.sectionName(at: section)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return addressList.countInSection(at: section)
+        return addresses.countInSection(at: section)
     }
 }
