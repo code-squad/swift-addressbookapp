@@ -45,3 +45,18 @@ extension AddressBookViewController {
         return addresses.countInSection(at: section)
     }
 }
+
+// for indexTitle
+extension AddressBookViewController {
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return Consonant.allCases.count
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        var list = [String]()
+        for consonant in Consonant.allCases {
+            list.append(consonant.description)
+        }
+        return list
+    }
+}
