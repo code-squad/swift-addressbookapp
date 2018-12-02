@@ -18,7 +18,7 @@ import Contacts
     (영어는 대문자로 변경해서 숫자를 가져옵니다.)
  4. 정해진 groupBySection 의 index 에 데이터를 저장합니다.
  5. [String: [Address]] 형태로 데이터를 가공합니다.
- 6. 필터링 오름차순
+ 6. 필터링 : Consonant 이용해서 영어보다 한글이 먼저 오도록 필터링 합니다.
  7. [AddressGroup] 형태로 가공합니다.
  8. tableView.reloadData()
  */
