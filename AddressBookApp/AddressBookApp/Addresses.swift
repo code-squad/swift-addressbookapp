@@ -103,8 +103,9 @@ class Addresses {
     }
     
     private func appendAddresses(from addresses: [String: [Address]]) {
-        let sortedAddresses = addresses.sorted { $0.0 < $1.0 } // 오름차순 정렬
-        for (key, value) in sortedAddresses {
+        for consonant in Consonant.allCases {
+            let key = consonant.description
+            guard let value = addresses[key] else { continue }
             self.group.append(AddressGroup(sectionName: key, sectionObjects: value))
         }
     }
