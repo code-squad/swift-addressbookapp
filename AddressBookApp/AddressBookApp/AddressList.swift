@@ -13,8 +13,9 @@ import Contacts
  1. 주소록에서 전체 데이터 가져옵니다.
  2. 주소록에서 원하는 데이터 추출합니다.
  3. [[Address]] 형태를 만들고 데이터를 저장합니다.
- 1) Consonant 크기만큼 배열을 만듭니다. (일단은 한글만)
+ 1) Consonant 크기만큼 배열을 만듭니다.
  2) 한글은 첫글자 초성의 숫자, 영어는 첫글자의 숫자를 가져옵니다.
+    (영어는 대문자로 변경해서 숫자를 가져옵니다.)
  4. 정해진 groupBySection 의 index 에 데이터를 저장합니다.
  5. [String: [Address]] 형태로 데이터를 가공합니다.
  6. 필터링 오름차순
@@ -27,6 +28,9 @@ class AddressList {
         var sectionName: String
         var sectionObjects: [Address]
     }
+    
+    private let lastEnglishUnicode = 122
+    private let forConsonant: UInt32 = 46
     
     var addressesGroup = [AddressGroup]()
     
@@ -61,10 +65,7 @@ class AddressList {
     private func appendGroupBySection(from addresses: [Address]) -> [[Address]] {
         var groupBySection = configureGroupBySection()
         for address in addresses {
-            guard let consonant = self.fetchConsonant(from: address.name) else { continue }
-            // 일단 한글만 먼저 진행합니다.
-            let korean = KoreanConsonant(rawValue: consonant)
-            guard let index = korean?.rawValue else { continue }
+            guard let index = self.fetchConsonant(from: address.name) else { continue }
             groupBySection[index].append(address)
         }
         return groupBySection
@@ -72,7 +73,7 @@ class AddressList {
     
     private func configureGroupBySection() -> [[Address]] {
         var groupBySection = [[Address]]()
-        for _ in 0..<KoreanConsonant.allCases.count {
+        for _ in 0..<Consonant.allCases.count {
             let emptyAddress = [Address]()
             groupBySection.append(emptyAddress)
         }
@@ -85,8 +86,9 @@ class AddressList {
          한글 : 앞글자 초성 리턴
          */
         guard let text = name.first else { return nil }
-        guard let value = UnicodeScalar(String(text))?.value else { return nil }
-        guard value > 122 else { return Int(value) }
+        guard var value = UnicodeScalar(String(text))?.value else { return nil }
+        value = value.uppercase
+        guard value > lastEnglishUnicode else { return Int(value - forConsonant) }
         let index = (value - 0xAC00) / 28 / 21
         return Int(index)
     }
@@ -95,7 +97,7 @@ class AddressList {
         var tempGroup = [String: [Address]]()
         for index in 0..<groupBySection.count {
             let addresses = groupBySection[index]
-            guard let key = KoreanConsonant(rawValue: index)?.description else { continue }
+            guard let key = Consonant(rawValue: index)?.description else { continue }
             tempGroup.updateValue(addresses, forKey: key)
         }
         return tempGroup
@@ -105,6 +107,15 @@ class AddressList {
         let sortedAddresses = addresses.sorted { $0.0 < $1.0 } // 오름차순 정렬
         for (key, value) in sortedAddresses {
             self.addressesGroup.append(AddressGroup(sectionName: key, sectionObjects: value))
+        }
+    }
+}
+
+extension UInt32 {
+    var uppercase: UInt32 {
+        switch self {
+        case 97...122: return self - 32
+        default: return self
         }
     }
 }
