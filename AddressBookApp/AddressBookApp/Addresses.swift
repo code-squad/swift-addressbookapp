@@ -126,7 +126,7 @@ extension Addresses {
         return group[index].sectionObjects.count
     }
     
-    func addressInSection(sectionIndex: Int, rowIndex: Int) -> Address {
-        return group[sectionIndex].sectionObjects[rowIndex]
+    func addressInSection(with indexPath: IndexPath) -> Address {
+        return group[indexPath.section].sectionObjects[indexPath.row]
     }
 }
