@@ -33,7 +33,7 @@ class Addresses {
     private let forConsonant: UInt32 = 46
     private var group = [AddressGroup]()
     
-    init(with controller: UITableViewController) {
+    init() {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
             let addresses = self.extractContacts(from: contacts)
             let groupBySection = self.appendGroupBySection(from: addresses)

@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 class AddressBookViewController: UITableViewController {
-    private lazy var addresses = Addresses(with: self)
+    private lazy var addresses = Addresses()
     
     override func viewDidLoad() {
         super.viewDidLoad()
