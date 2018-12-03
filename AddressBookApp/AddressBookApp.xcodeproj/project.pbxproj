@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4712434221B3F0E4003036E3 /* Consonant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434121B3F0E4003036E3 /* Consonant.swift */; };
-		4712434421B42AD9003036E3 /* UInt32+uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434321B42AD9003036E3 /* UInt32+uppercase.swift */; };
+		4712434421B42AD9003036E3 /* UnicodeOfUInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434321B42AD9003036E3 /* UnicodeOfUInt32.swift */; };
 		4712434621B4FCF5003036E3 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434521B4FCF5003036E3 /* Key.swift */; };
 		472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83321AD4FEB0031660E /* AppDelegate.swift */; };
 		472EA83921AD4FEB0031660E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83721AD4FEB0031660E /* Main.storyboard */; };
@@ -52,7 +52,7 @@
 		025F8154C171F5A69F58C3BB /* Pods-AddressBookAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBookAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBookAppUITests/Pods-AddressBookAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4712434121B3F0E4003036E3 /* Consonant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consonant.swift; sourceTree = "<group>"; };
-		4712434321B42AD9003036E3 /* UInt32+uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+uppercase.swift"; sourceTree = "<group>"; };
+		4712434321B42AD9003036E3 /* UnicodeOfUInt32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeOfUInt32.swift; sourceTree = "<group>"; };
 		4712434521B4FCF5003036E3 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		472EA83021AD4FEB0031660E /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EA83321AD4FEB0031660E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				479BC26B21B102D70003B65A /* AddressBookViewController.swift */,
 				4712434521B4FCF5003036E3 /* Key.swift */,
 				479BC28121B126250003B65A /* Addresses.swift */,
-				4712434321B42AD9003036E3 /* UInt32+uppercase.swift */,
+				4712434321B42AD9003036E3 /* UnicodeOfUInt32.swift */,
 				479BC27F21B126120003B65A /* Address.swift */,
 				479BC27D21B10F090003B65A /* AddressTableViewCell.swift */,
 				4712434121B3F0E4003036E3 /* Consonant.swift */,
@@ -439,7 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				479BC27021B108350003B65A /* MGCContactStore.swift in Sources */,
-				4712434421B42AD9003036E3 /* UInt32+uppercase.swift in Sources */,
+				4712434421B42AD9003036E3 /* UnicodeOfUInt32.swift in Sources */,
 				4750A80921B021C000D0322F /* HolidayTableViewCell.swift in Sources */,
 				4750A80321AFD17900D0322F /* JsonString.swift in Sources */,
 				4750A80521B00CC600D0322F /* Holiday.swift in Sources */,

@@ -86,10 +86,10 @@ class Addresses {
          한글 : 앞글자 초성 리턴
          */
         guard let text = name.first else { return nil }
-        guard var value = UnicodeScalar(String(text))?.value else { return nil }
-        value = value.uppercase
-        guard value > lastEnglishUnicode else { return Int(value - forConsonant) }
-        let index = (value - 0xAC00) / 28 / 21
+        guard let value = UnicodeScalar(String(text))?.value else { return nil }
+        let unicodeOfUInt32 = UnicodeOfUInt32(with: value)
+        guard unicodeOfUInt32.value > lastEnglishUnicode else { return Int(unicodeOfUInt32.value - forConsonant) }
+        let index = (unicodeOfUInt32.value - 0xAC00) / 28 / 21
         return Int(index)
     }
     
