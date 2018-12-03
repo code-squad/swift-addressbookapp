@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4712434221B3F0E4003036E3 /* Consonant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434121B3F0E4003036E3 /* Consonant.swift */; };
 		4712434421B42AD9003036E3 /* UInt32+uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434321B42AD9003036E3 /* UInt32+uppercase.swift */; };
+		4712434621B4FCF5003036E3 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4712434521B4FCF5003036E3 /* Key.swift */; };
 		472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EA83321AD4FEB0031660E /* AppDelegate.swift */; };
 		472EA83921AD4FEB0031660E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83721AD4FEB0031660E /* Main.storyboard */; };
 		472EA83B21AD4FEB0031660E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EA83A21AD4FEB0031660E /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		2B50E13A45ADE2AF66DF3CAD /* Pods_AddressBookAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressBookAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4712434121B3F0E4003036E3 /* Consonant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consonant.swift; sourceTree = "<group>"; };
 		4712434321B42AD9003036E3 /* UInt32+uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+uppercase.swift"; sourceTree = "<group>"; };
+		4712434521B4FCF5003036E3 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		472EA83021AD4FEB0031660E /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EA83321AD4FEB0031660E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		472EA83821AD4FEB0031660E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				479BC26B21B102D70003B65A /* AddressBookViewController.swift */,
+				4712434521B4FCF5003036E3 /* Key.swift */,
 				479BC28121B126250003B65A /* Addresses.swift */,
 				4712434321B42AD9003036E3 /* UInt32+uppercase.swift */,
 				479BC27F21B126120003B65A /* Address.swift */,
@@ -442,6 +445,7 @@
 				4750A80521B00CC600D0322F /* Holiday.swift in Sources */,
 				479BC28221B126250003B65A /* Addresses.swift in Sources */,
 				4712434221B3F0E4003036E3 /* Consonant.swift in Sources */,
+				4712434621B4FCF5003036E3 /* Key.swift in Sources */,
 				479BC26C21B102D70003B65A /* AddressBookViewController.swift in Sources */,
 				472EA83421AD4FEB0031660E /* AppDelegate.swift in Sources */,
 				4750A80121AFD0A800D0322F /* Holidays.swift in Sources */,

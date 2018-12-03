@@ -39,7 +39,8 @@ class Addresses {
             let groupBySection = self.appendGroupBySection(from: addresses)
             let tempGroup = self.configureAddressGroup(from: groupBySection)
             self.appendAddresses(from: tempGroup)
-            controller.tableView.reloadData()
+            let key = Notification.Name(Key.reloadData)
+            NotificationCenter.default.post(name: key, object: nil)
         }
     }
     

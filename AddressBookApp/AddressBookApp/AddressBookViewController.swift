@@ -14,13 +14,23 @@ class AddressBookViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureObserver()
+    }
+    
+    private func configureObserver() {
+        let reloadData = Notification.Name(Key.reloadData)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: reloadData, object: nil)
+    }
+    
+    @objc private func reload() {
+        self.tableView.reloadData()
     }
 }
 
 // for Cell
 extension AddressBookViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addressTableViewCell", for: indexPath) as! AddressTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Key.addressTableViewCell, for: indexPath) as! AddressTableViewCell
         let address = addresses.addressInSection(sectionIndex: indexPath.section, rowIndex: indexPath.row)
         cell.configure(from: address)
         return cell
