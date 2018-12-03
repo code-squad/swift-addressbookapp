@@ -29,8 +29,6 @@ class Addresses {
         var sectionObjects: [Address]
     }
     
-    private let lastEnglishUnicode = 122
-    private let forConsonant: UInt32 = 46
     private var group = [AddressGroup]()
     
     init() {
@@ -87,10 +85,8 @@ class Addresses {
          */
         guard let text = name.first else { return nil }
         guard let value = UnicodeScalar(String(text))?.value else { return nil }
-        let unicodeOfUInt32 = UnicodeOfUInt32(with: value)
-        guard unicodeOfUInt32.value > lastEnglishUnicode else { return Int(unicodeOfUInt32.value - forConsonant) }
-        let index = (unicodeOfUInt32.value - 0xAC00) / 28 / 21
-        return Int(index)
+        let consonant = UnicodeOfUInt32(with: value).extractConsonant()
+        return consonant
     }
     
     private func configureAddressGroup(from groupBySection: [[Address]]) -> [String: [Address]] {

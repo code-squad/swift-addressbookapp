@@ -9,7 +9,9 @@
 import Foundation
 
 struct UnicodeOfUInt32 {
-    var value: UInt32
+    private let value: UInt32
+    private let lastEnglishUnicode = 122
+    private let forConsonant: UInt32 = 46
     
     init(with value: UInt32) {
         let uppercase: UInt32
@@ -18,5 +20,11 @@ struct UnicodeOfUInt32 {
         default: uppercase = value
         }
         self.value = uppercase
+    }
+    
+    func extractConsonant() -> Int {
+        guard self.value > lastEnglishUnicode else { return Int(self.value - forConsonant) }
+        let koreanUnicode = (self.value - 0xAC00) / 28 / 21
+        return Int(koreanUnicode)
     }
 }
