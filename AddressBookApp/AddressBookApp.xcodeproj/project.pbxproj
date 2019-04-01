@@ -20,6 +20,7 @@
 		7DC918FD2252433E0078A750 /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F52252433E0078A750 /* MGCContactStoreUtilities.swift */; };
 		7DC918FE2252433E0078A750 /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F62252433E0078A750 /* MGCExtensions.swift */; };
 		7DC918FF2252433E0078A750 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F72252433E0078A750 /* MGCLabelValue.swift */; };
+		7DC919012252487D0078A750 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC919002252487D0078A750 /* AddressBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7DC918F52252433E0078A750 /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 		7DC918F62252433E0078A750 /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		7DC918F72252433E0078A750 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
+		7DC919002252487D0078A750 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				7D827B472251DBE8007202FC /* ViewController.swift */,
 				7DC918EF2252433E0078A750 /* MGC */,
 				7D827B492251DBE8007202FC /* Main.storyboard */,
+				7DC919002252487D0078A750 /* AddressBookViewController.swift */,
 				7D827B4C2251DBEA007202FC /* Assets.xcassets */,
 				7D827B4E2251DBEA007202FC /* LaunchScreen.storyboard */,
 				7D827B512251DBEA007202FC /* Info.plist */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC919012252487D0078A750 /* AddressBookViewController.swift in Sources */,
 				7D827B482251DBE8007202FC /* ViewController.swift in Sources */,
 				7DC918F92252433E0078A750 /* MGCSegue.swift in Sources */,
 				7DC918FF2252433E0078A750 /* MGCLabelValue.swift in Sources */,
