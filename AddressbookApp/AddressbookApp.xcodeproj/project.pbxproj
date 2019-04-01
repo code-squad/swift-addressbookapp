@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DFC130C2251F4E200AF238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC130B2251F4E200AF238C /* AppDelegate.swift */; };
+		9DFC13112251F4E200AF238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC130F2251F4E200AF238C /* Main.storyboard */; };
+		9DFC13132251F4E400AF238C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC13122251F4E400AF238C /* Assets.xcassets */; };
+		9DFC13162251F4E400AF238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC13142251F4E400AF238C /* LaunchScreen.storyboard */; };
+		9DFC131E2251F53F00AF238C /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC131D2251F53F00AF238C /* AddressBookViewController.swift */; };
+		9DFC13342251FB0800AF238C /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13272251FB0700AF238C /* MGCContactStore.swift */; };
+		9DFC13352251FB0800AF238C /* MGCParsingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13282251FB0700AF238C /* MGCParsingUtilities.swift */; };
+		9DFC13362251FB0800AF238C /* MGCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13292251FB0700AF238C /* MGCModel.swift */; };
+		9DFC13372251FB0800AF238C /* MGCHelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132A2251FB0700AF238C /* MGCHelperClass.swift */; };
+		9DFC13382251FB0800AF238C /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132B2251FB0700AF238C /* MGCExtensions.swift */; };
+		9DFC13392251FB0800AF238C /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132C2251FB0700AF238C /* MGCAppConfiguration.swift */; };
+		9DFC133A2251FB0800AF238C /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132D2251FB0700AF238C /* MGCPostalAddress.swift */; };
+		9DFC133B2251FB0800AF238C /* MGCSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132E2251FB0700AF238C /* MGCSegue.swift */; };
+		9DFC133C2251FB0800AF238C /* MGCMenuSectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC132F2251FB0700AF238C /* MGCMenuSectionFeature.swift */; };
+		9DFC133D2251FB0800AF238C /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13302251FB0700AF238C /* MGCLabelValue.swift */; };
+		9DFC133E2251FB0800AF238C /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13312251FB0800AF238C /* MGCContact.swift */; };
+		9DFC133F2251FB0800AF238C /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13322251FB0800AF238C /* MGCContactStoreUtilities.swift */; };
+		9DFC13402251FB0800AF238C /* MGCMenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13332251FB0800AF238C /* MGCMenuSection.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9DFC13082251F4E200AF238C /* AddressbookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressbookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFC130B2251F4E200AF238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9DFC13102251F4E200AF238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DFC13122251F4E400AF238C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DFC13152251F4E400AF238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DFC13172251F4E400AF238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DFC131D2251F53F00AF238C /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		9DFC13272251FB0700AF238C /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
+		9DFC13282251FB0700AF238C /* MGCParsingUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCParsingUtilities.swift; sourceTree = "<group>"; };
+		9DFC13292251FB0700AF238C /* MGCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCModel.swift; sourceTree = "<group>"; };
+		9DFC132A2251FB0700AF238C /* MGCHelperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCHelperClass.swift; sourceTree = "<group>"; };
+		9DFC132B2251FB0700AF238C /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
+		9DFC132C2251FB0700AF238C /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
+		9DFC132D2251FB0700AF238C /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
+		9DFC132E2251FB0700AF238C /* MGCSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCSegue.swift; sourceTree = "<group>"; };
+		9DFC132F2251FB0700AF238C /* MGCMenuSectionFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCMenuSectionFeature.swift; sourceTree = "<group>"; };
+		9DFC13302251FB0700AF238C /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
+		9DFC13312251FB0800AF238C /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
+		9DFC13322251FB0800AF238C /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
+		9DFC13332251FB0800AF238C /* MGCMenuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCMenuSection.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DFC13052251F4E200AF238C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DFC12FF2251F4E200AF238C = {
+			isa = PBXGroup;
+			children = (
+				9DFC130A2251F4E200AF238C /* AddressbookApp */,
+				9DFC13092251F4E200AF238C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DFC13092251F4E200AF238C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC13082251F4E200AF238C /* AddressbookApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DFC130A2251F4E200AF238C /* AddressbookApp */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC13412251FB1100AF238C /* MGC */,
+				9DFC130B2251F4E200AF238C /* AppDelegate.swift */,
+				9DFC130F2251F4E200AF238C /* Main.storyboard */,
+				9DFC13122251F4E400AF238C /* Assets.xcassets */,
+				9DFC13142251F4E400AF238C /* LaunchScreen.storyboard */,
+				9DFC13172251F4E400AF238C /* Info.plist */,
+				9DFC131D2251F53F00AF238C /* AddressBookViewController.swift */,
+			);
+			path = AddressbookApp;
+			sourceTree = "<group>";
+		};
+		9DFC13412251FB1100AF238C /* MGC */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC132C2251FB0700AF238C /* MGCAppConfiguration.swift */,
+				9DFC13312251FB0800AF238C /* MGCContact.swift */,
+				9DFC13272251FB0700AF238C /* MGCContactStore.swift */,
+				9DFC13322251FB0800AF238C /* MGCContactStoreUtilities.swift */,
+				9DFC132B2251FB0700AF238C /* MGCExtensions.swift */,
+				9DFC132A2251FB0700AF238C /* MGCHelperClass.swift */,
+				9DFC13302251FB0700AF238C /* MGCLabelValue.swift */,
+				9DFC13332251FB0800AF238C /* MGCMenuSection.swift */,
+				9DFC132F2251FB0700AF238C /* MGCMenuSectionFeature.swift */,
+				9DFC13292251FB0700AF238C /* MGCModel.swift */,
+				9DFC13282251FB0700AF238C /* MGCParsingUtilities.swift */,
+				9DFC132D2251FB0700AF238C /* MGCPostalAddress.swift */,
+				9DFC132E2251FB0700AF238C /* MGCSegue.swift */,
+			);
+			path = MGC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DFC13072251F4E200AF238C /* AddressbookApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFC131A2251F4E400AF238C /* Build configuration list for PBXNativeTarget "AddressbookApp" */;
+			buildPhases = (
+				9DFC13042251F4E200AF238C /* Sources */,
+				9DFC13052251F4E200AF238C /* Frameworks */,
+				9DFC13062251F4E200AF238C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AddressbookApp;
+			productName = AddressbookApp;
+			productReference = 9DFC13082251F4E200AF238C /* AddressbookApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DFC13002251F4E200AF238C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "윤동민";
+				TargetAttributes = {
+					9DFC13072251F4E200AF238C = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 9DFC13032251F4E200AF238C /* Build configuration list for PBXProject "AddressbookApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DFC12FF2251F4E200AF238C;
+			productRefGroup = 9DFC13092251F4E200AF238C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DFC13072251F4E200AF238C /* AddressbookApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DFC13062251F4E200AF238C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFC13162251F4E400AF238C /* LaunchScreen.storyboard in Resources */,
+				9DFC13132251F4E400AF238C /* Assets.xcassets in Resources */,
+				9DFC13112251F4E200AF238C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DFC13042251F4E200AF238C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFC130C2251F4E200AF238C /* AppDelegate.swift in Sources */,
+				9DFC133E2251FB0800AF238C /* MGCContact.swift in Sources */,
+				9DFC13402251FB0800AF238C /* MGCMenuSection.swift in Sources */,
+				9DFC133B2251FB0800AF238C /* MGCSegue.swift in Sources */,
+				9DFC133D2251FB0800AF238C /* MGCLabelValue.swift in Sources */,
+				9DFC131E2251F53F00AF238C /* AddressBookViewController.swift in Sources */,
+				9DFC13342251FB0800AF238C /* MGCContactStore.swift in Sources */,
+				9DFC13362251FB0800AF238C /* MGCModel.swift in Sources */,
+				9DFC133F2251FB0800AF238C /* MGCContactStoreUtilities.swift in Sources */,
+				9DFC13392251FB0800AF238C /* MGCAppConfiguration.swift in Sources */,
+				9DFC13382251FB0800AF238C /* MGCExtensions.swift in Sources */,
+				9DFC13372251FB0800AF238C /* MGCHelperClass.swift in Sources */,
+				9DFC133A2251FB0800AF238C /* MGCPostalAddress.swift in Sources */,
+				9DFC133C2251FB0800AF238C /* MGCMenuSectionFeature.swift in Sources */,
+				9DFC13352251FB0800AF238C /* MGCParsingUtilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9DFC130F2251F4E200AF238C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DFC13102251F4E200AF238C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9DFC13142251F4E400AF238C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DFC13152251F4E400AF238C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DFC13182251F4E400AF238C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9DFC13192251F4E400AF238C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DFC131B2251F4E400AF238C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressbookApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-01421036.AddressbookApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DFC131C2251F4E400AF238C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AddressbookApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-01421036.AddressbookApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DFC13032251F4E200AF238C /* Build configuration list for PBXProject "AddressbookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFC13182251F4E400AF238C /* Debug */,
+				9DFC13192251F4E400AF238C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFC131A2251F4E400AF238C /* Build configuration list for PBXNativeTarget "AddressbookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFC131B2251F4E400AF238C /* Debug */,
+				9DFC131C2251F4E400AF238C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DFC13002251F4E200AF238C /* Project object */;
+}
