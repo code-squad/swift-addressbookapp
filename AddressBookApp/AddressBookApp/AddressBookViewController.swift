@@ -58,10 +58,13 @@ class AddressBookViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath)
+        
+        guard let addressCell = cell as? AddressTableViewCell else { return cell }
+        
 
         // Configure the cell...
 
-        return cell
+        return addressCell
     }
     
 

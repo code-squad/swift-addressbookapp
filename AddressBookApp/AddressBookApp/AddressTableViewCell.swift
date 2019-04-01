@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 class AddressTableViewCell: UITableViewCell {
     
@@ -17,6 +18,10 @@ class AddressTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var telLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    
+    //MARK: Private
+    
+    private let defaultProfile = "addressbook-default-profile"
     
     //MARK: - Methods
     //MARK: Life Cycle
@@ -32,4 +37,14 @@ class AddressTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func show(contact: MGCContact) {
+        self.nameLabel.text = contact.lastName + contact.firstName
+        self.telLabel.text = contact.phoneNumber?.label
+        self.emailLabel.text = contact.email?.label
+        guard let imageData = contact.profilePicture?.imageData else {
+            self.profile.image = UIImage(named: defaultProfile)
+            return
+        }
+        self.profile.image = UIImage(data: imageData)
+    }
 }
