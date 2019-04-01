@@ -22,6 +22,7 @@
 		7DC918FF2252433E0078A750 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F72252433E0078A750 /* MGCLabelValue.swift */; };
 		7DC919012252487D0078A750 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC919002252487D0078A750 /* AddressBookViewController.swift */; };
 		7DC9190322524CA50078A750 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC9190222524CA50078A750 /* Contacts.swift */; };
+		7DC91905225264A80078A750 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC91904225264A80078A750 /* AddressTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7DC918F72252433E0078A750 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
 		7DC919002252487D0078A750 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		7DC9190222524CA50078A750 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		7DC91904225264A80078A750 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				7DC918EF2252433E0078A750 /* MGC */,
 				7D827B492251DBE8007202FC /* Main.storyboard */,
 				7DC919002252487D0078A750 /* AddressBookViewController.swift */,
+				7DC91904225264A80078A750 /* AddressTableViewCell.swift */,
 				7DC9190222524CA50078A750 /* Contacts.swift */,
 				7D827B4C2251DBEA007202FC /* Assets.xcassets */,
 				7D827B4E2251DBEA007202FC /* LaunchScreen.storyboard */,
@@ -185,6 +188,7 @@
 				7DC918FE2252433E0078A750 /* MGCExtensions.swift in Sources */,
 				7DC918FB2252433E0078A750 /* MGCAppConfiguration.swift in Sources */,
 				7DC918F82252433E0078A750 /* MGCContactStore.swift in Sources */,
+				7DC91905225264A80078A750 /* AddressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

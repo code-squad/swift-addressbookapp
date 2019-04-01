@@ -18,7 +18,7 @@ class AddressBookViewController: UITableViewController {
     //MARK: Private
     
     private var contacts = Contacts()
-    private let contactCellIdentifier = "contactCell"
+    private let contactCellIdentifier = "addressCell"
     
     //MARK: - Methods
     //MARK: LifeCycle
