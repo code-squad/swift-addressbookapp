@@ -18,7 +18,7 @@ class AddressBookViewController: UITableViewController {
     //MARK: Private
     
     private var contacts = Addresses()
-    private let contactCellIdentifier = "addressCell"
+    
     
     //MARK: - Methods
     //MARK: LifeCycle
@@ -46,8 +46,8 @@ class AddressBookViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.identifier, for: indexPath)
+
         guard let addressCell = cell as? AddressTableViewCell,
             let mgcContact = contacts.mgcContact(with: indexPath.row) else { return cell }
         

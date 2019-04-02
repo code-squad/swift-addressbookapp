@@ -23,6 +23,10 @@ class AddressTableViewCell: UITableViewCell {
     
     private let defaultProfile = "addressbook-default-profile"
     
+    //MARK: Type
+    
+    static let identifier = "addressCell"
+    
     //MARK: - Methods
     //MARK: Life Cycle
     
