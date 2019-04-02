@@ -39,8 +39,8 @@ class AddressTableViewCell: UITableViewCell {
 
     func show(contact: MGCContact) {
         self.nameLabel.text = contact.lastName + contact.firstName
-        self.telLabel.text = contact.phoneNumber?.label
-        self.emailLabel.text = contact.email?.label
+        self.telLabel.text = contact.phoneNumber?.value
+        self.emailLabel.text = contact.email?.value
         guard let imageData = contact.profilePicture?.imageData else {
             self.profile.image = UIImage(named: defaultProfile)
             return
