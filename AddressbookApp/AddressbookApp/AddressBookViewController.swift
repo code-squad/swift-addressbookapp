@@ -43,7 +43,14 @@ class AddressBookViewController: UITableViewController {
         let reuseIdentifier = "addressCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AddressTableViewCell
         
-        address.access(at: indexPath.row) { cell.set($0) }
+        address.access(at: indexPath.row) {
+            let addressDTO = AddressDTO(givenName: $0.givenName,
+                       familyName: $0.familyName,
+                       email: $0.emailAddresses,
+                       phoneNumbers: $0.phoneNumbers,
+                       imageData: $0.imageData)
+            cell.set(addressDTO)
+        }
         return cell
     }
     

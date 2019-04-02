@@ -25,16 +25,15 @@ class AddressTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func set(_ information: CNContact) {
+    func set(_ dto: AddressDTO) {
         let defaultProfileName = "addressbook-default-profile"
         
-        let fullName = CNContactFormatter.string(from: information, style: .fullName)
-        let phoneNumber = information.phoneNumbers.first?.value.stringValue
-        let email = information.emailAddresses.first?.value
-        nameLabel.text = fullName
+        let phoneNumber = dto.phoneNumbers.first?.value.stringValue
+        let email = dto.email.first?.value
+        nameLabel.text = dto.givenName + " " + dto.familyName
         telLabel.text = phoneNumber
         emailLabel.text = email as String?
-        if let imageData = information.imageData { profileImageView.image = UIImage(data: imageData) }
+        if let imageData = dto.imageData { profileImageView.image = UIImage(data: imageData) }
         else { profileImageView.image = UIImage(named: defaultProfileName) }
     }
 }
