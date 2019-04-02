@@ -26,6 +26,8 @@ class AddressTableViewCell: UITableViewCell {
     }
     
     func set(_ information: CNContact) {
+        let defaultProfileName = "addressbook-default-profile"
+        
         let fullName = CNContactFormatter.string(from: information, style: .fullName)
         let phoneNumber = information.phoneNumbers.first?.value.stringValue
         let email = information.emailAddresses.first?.value
@@ -33,6 +35,6 @@ class AddressTableViewCell: UITableViewCell {
         telLabel.text = phoneNumber
         emailLabel.text = email as String?
         if let imageData = information.imageData { profileImageView.image = UIImage(data: imageData) }
-        else { profileImageView.image = UIImage(named: "addressbook-default-profile") }
+        else { profileImageView.image = UIImage(named: defaultProfileName) }
     }
 }

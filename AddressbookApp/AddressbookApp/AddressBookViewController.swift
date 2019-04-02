@@ -40,8 +40,8 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressTableViewCell
-        cell.profileImageView.image = UIImage(named: "addressbook-default-profile")
+        let reuseIdentifier = "addressCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AddressTableViewCell
         
         address.access(at: indexPath.row) { cell.set($0) }
         return cell
