@@ -26,6 +26,7 @@
 		9DFC133F2251FB0800AF238C /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13322251FB0800AF238C /* MGCContactStoreUtilities.swift */; };
 		9DFC13402251FB0800AF238C /* MGCMenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13332251FB0800AF238C /* MGCMenuSection.swift */; };
 		9DFC13432252281500AF238C /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13422252281500AF238C /* AddressTableViewCell.swift */; };
+		9DFC13452252314600AF238C /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13442252314600AF238C /* AddressModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		9DFC13322251FB0800AF238C /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 		9DFC13332251FB0800AF238C /* MGCMenuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCMenuSection.swift; sourceTree = "<group>"; };
 		9DFC13422252281500AF238C /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		9DFC13442252314600AF238C /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				9DFC13172251F4E400AF238C /* Info.plist */,
 				9DFC131D2251F53F00AF238C /* AddressBookViewController.swift */,
 				9DFC13422252281500AF238C /* AddressTableViewCell.swift */,
+				9DFC13442252314600AF238C /* AddressModel.swift */,
 			);
 			path = AddressbookApp;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				9DFC13372251FB0800AF238C /* MGCHelperClass.swift in Sources */,
 				9DFC133A2251FB0800AF238C /* MGCPostalAddress.swift in Sources */,
 				9DFC133C2251FB0800AF238C /* MGCMenuSectionFeature.swift in Sources */,
+				9DFC13452252314600AF238C /* AddressModel.swift in Sources */,
 				9DFC13432252281500AF238C /* AddressTableViewCell.swift in Sources */,
 				9DFC13352251FB0800AF238C /* MGCParsingUtilities.swift in Sources */,
 			);

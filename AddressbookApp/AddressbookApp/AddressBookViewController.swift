@@ -8,17 +8,23 @@
 
 import UIKit
 
+extension NSNotification.Name {
+    static let setAddress = NSNotification.Name(rawValue: "setAddress")
+}
+
 class AddressBookViewController: UITableViewController {
+    private var address: AddressModel = AddressModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        MGCContactStore.sharedInstance.checkContactsAccess { isAccess in
-            if isAccess { print("접속에 성공했습니다.") }
-            else { print("접속에 실패하였습니다.") }
-        }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: .setAddress, object: nil)
         MGCContactStore.sharedInstance.fetchContacts { contacts in
-            
+            self.address.set(information: contacts)
         }
+    }
+    
+    @objc func reloadTableView() {
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -30,7 +36,7 @@ class AddressBookViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return address.count()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
