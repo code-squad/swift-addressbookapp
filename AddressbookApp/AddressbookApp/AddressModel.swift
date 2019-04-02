@@ -12,10 +12,28 @@ import Contacts
 class AddressModel {
     private var information: [CNContact] = []
     
+    private var informationByFamilyName: [[CNContact]] = []
+    
     func set(information: [CNContact]) {
         self.information = information
         NotificationCenter.default.post(name: .setAddress, object: nil)
     }
+    
+//    func set(information: [CNContact]) {
+//        let rowCount = countRow(of: information)
+//        print(rowCount)
+//    }
+//
+//    func countRow(of information: [CNContact]) -> Int {
+//        guard information.count != 0 else { return 0 }
+//        var count = 0
+//        var prefix = information.first?.familyName.first
+//        for index in 1..<information.count {
+//            if prefix != information[index].familyName.first { count += 1 }
+//            prefix = information[index].familyName.first
+//        }
+//        return count
+//    }
     
     func count() -> Int {
         return information.count

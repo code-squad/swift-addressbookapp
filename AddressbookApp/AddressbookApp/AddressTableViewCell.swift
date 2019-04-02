@@ -27,7 +27,7 @@ class AddressTableViewCell: UITableViewCell {
     func set(_ dto: AddressDTO) {
         let defaultProfileName = "addressbook-default-profile"
         
-        nameLabel.text = dto.givenName + " " + dto.familyName
+        nameLabel.text = dto.familyName + " " + dto.givenName
         telLabel.text = dto.phoneNumbers
         emailLabel.text = dto.email
         if let imageData = dto.imageData { profileImageView.image = UIImage(data: imageData) }

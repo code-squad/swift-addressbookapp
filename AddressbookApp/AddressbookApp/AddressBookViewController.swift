@@ -26,14 +26,14 @@ class AddressBookViewController: UITableViewController {
     @objc func reloadTableView() {
         self.tableView.reloadData()
     }
+}
 
-    // MARK: - Table view data source
-
+extension AddressBookViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return address.count()
@@ -45,10 +45,10 @@ class AddressBookViewController: UITableViewController {
         
         address.access(at: indexPath.row) {
             let addressDTO = AddressDTO(givenName: $0.givenName,
-                       familyName: $0.familyName,
-                       email: $0.emailAddresses,
-                       phoneNumbers: $0.phoneNumbers,
-                       imageData: $0.imageData)
+                                        familyName: $0.familyName,
+                                        email: $0.emailAddresses,
+                                        phoneNumbers: $0.phoneNumbers,
+                                        imageData: $0.imageData)
             cell.set(addressDTO)
         }
         return cell
@@ -57,4 +57,9 @@ class AddressBookViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Hi"
+    }
+    
 }
