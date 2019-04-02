@@ -9,7 +9,7 @@
 import Foundation
 import Contacts
 
-class Contacts {
+class Addresses {
     private var contacts = [CNContact]()
     
     init() {
