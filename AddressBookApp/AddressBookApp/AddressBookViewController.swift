@@ -29,7 +29,8 @@ class AddressBookViewController: UITableViewController {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadTableView),
                                                name: .updatedContacts,
-                                               object: self)
+                                               object: nil)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,9 +60,10 @@ class AddressBookViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath)
         
-        guard let addressCell = cell as? AddressTableViewCell else { return cell }
+        guard let addressCell = cell as? AddressTableViewCell,
+            let mgcContact = contacts.mgcContact(with: indexPath.row) else { return cell }
         
-
+        addressCell.show(contact: mgcContact)
         // Configure the cell...
 
         return addressCell

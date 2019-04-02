@@ -10,20 +10,24 @@ import Foundation
 import Contacts
 
 class Contacts {
-    private var contacts = [CNContact]() {
-        didSet {
-            NotificationCenter.default.post(name: .updatedContacts, object: self)
-        }
-    }
+    private var contacts = [CNContact]()
     
     init() {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
             self.contacts += contacts
+            NotificationCenter.default.post(name: .updatedContacts, object: self)
         }
     }
     
     func count() -> Int {
         return self.contacts.count
+    }
+    
+    func mgcContact(with number: Int) -> MGCContact? {
+        guard 0 <= number, number < contacts.count else { return nil }
+        let cnContact = contacts[number]
+        let mgcContact = MGCContactStoreUtilities().parse(cnContact)
+        return mgcContact
     }
 }
 
