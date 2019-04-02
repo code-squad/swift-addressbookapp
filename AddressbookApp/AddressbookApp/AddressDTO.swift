@@ -12,8 +12,8 @@ import Contacts
 struct AddressDTO {
     var givenName: String
     var familyName: String
-    var email: [CNLabeledValue<NSString>]
-    var phoneNumbers: [CNLabeledValue<CNPhoneNumber>]
+    var email: String?
+    var phoneNumbers: String?
     var imageData: Data?
     
     init(givenName: String,
@@ -23,8 +23,8 @@ struct AddressDTO {
          imageData: Data?) {
         self.givenName = givenName
         self.familyName = familyName
-        self.email = email
-        self.phoneNumbers = phoneNumbers
+        self.email = email.first?.value as String?
+        self.phoneNumbers = phoneNumbers.first?.value.stringValue
         self.imageData = imageData
     }
 }

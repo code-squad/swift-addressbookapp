@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Contacts
 
 class AddressTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
@@ -28,11 +27,9 @@ class AddressTableViewCell: UITableViewCell {
     func set(_ dto: AddressDTO) {
         let defaultProfileName = "addressbook-default-profile"
         
-        let phoneNumber = dto.phoneNumbers.first?.value.stringValue
-        let email = dto.email.first?.value
         nameLabel.text = dto.givenName + " " + dto.familyName
-        telLabel.text = phoneNumber
-        emailLabel.text = email as String?
+        telLabel.text = dto.phoneNumbers
+        emailLabel.text = dto.email
         if let imageData = dto.imageData { profileImageView.image = UIImage(data: imageData) }
         else { profileImageView.image = UIImage(named: defaultProfileName) }
     }
