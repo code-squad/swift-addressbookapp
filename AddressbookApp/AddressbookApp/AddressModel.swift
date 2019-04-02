@@ -20,4 +20,8 @@ class AddressModel {
     func count() -> Int {
         return information.count
     }
+    
+    func access(at index: Int, form: (CNContact) -> Void) {
+        form(information[index])
+    }
 }
