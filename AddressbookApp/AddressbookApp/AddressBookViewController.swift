@@ -59,7 +59,7 @@ extension AddressBookViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Hi"
+        return address.getGroupKey(at: section)
     }
     
 }

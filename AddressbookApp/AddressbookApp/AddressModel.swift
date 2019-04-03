@@ -22,7 +22,7 @@ struct AddressGroup {
 class AddressModel {
     private var addressGroups: [AddressGroup] = []
     
-    func set(information: [CNContact]) {g
+    func set(information: [CNContact]) {
         seperateGroup(of: information)
         NotificationCenter.default.post(name: .setAddress, object: nil)
     }
@@ -52,6 +52,11 @@ class AddressModel {
     func countRow(at section: Int) -> Int {
         if addressGroups.count == 0 { return 0 }
         return addressGroups[section].addresses.count
+    }
+    
+    func getGroupKey(at section: Int) -> String {
+        if addressGroups.count == 0 { return "" }
+        return addressGroups[section].key
     }
     
     func access(section: Int, row: Int, form: (CNContact) -> Void) {
