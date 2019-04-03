@@ -9,37 +9,52 @@
 import Foundation
 import Contacts
 
+struct AddressGroup {
+    let key: String
+    var addresses: [CNContact]
+    
+    init(key: String, element: CNContact) {
+        self.key = key
+        addresses = [element]
+    }
+}
+
 class AddressModel {
-    private var information: [CNContact] = []
+    private var addressGroups: [AddressGroup] = []
     
-    private var informationByFamilyName: [[CNContact]] = []
-    
-    func set(information: [CNContact]) {
-        self.information = information
+    func set(information: [CNContact]) {g
+        seperateGroup(of: information)
         NotificationCenter.default.post(name: .setAddress, object: nil)
     }
     
-//    func set(information: [CNContact]) {
-//        let rowCount = countRow(of: information)
-//        print(rowCount)
-//    }
-//
-//    func countRow(of information: [CNContact]) -> Int {
-//        guard information.count != 0 else { return 0 }
-//        var count = 0
-//        var prefix = information.first?.familyName.first
-//        for index in 1..<information.count {
-//            if prefix != information[index].familyName.first { count += 1 }
-//            prefix = information[index].familyName.first
-//        }
-//        return count
-//    }
-    
-    func count() -> Int {
-        return information.count
+    private func seperateGroup(of information: [CNContact]) {
+        let informationCount = information.count
+        guard informationCount != 0 else { return }
+        var prefix = Extractor.extractInitial(from: information[0].familyName)
+        addressGroups.append(AddressGroup(key: prefix, element: information[0]))
+        
+        guard informationCount != 1 else { return }
+        for index in 1..<informationCount {
+            let currentKey = Extractor.extractInitial(from: information[index].familyName)
+            if prefix == currentKey {
+                addressGroups[addressGroups.count-1].addresses.append(information[index])
+            } else {
+                addressGroups.append(AddressGroup(key: currentKey, element: information[index]))
+            }
+            prefix = currentKey
+        }
     }
     
-    func access(at index: Int, form: (CNContact) -> Void) {
-        form(information[index])
+    func countSection() -> Int {
+        return addressGroups.count
+    }
+    
+    func countRow(at section: Int) -> Int {
+        if addressGroups.count == 0 { return 0 }
+        return addressGroups[section].addresses.count
+    }
+    
+    func access(section: Int, row: Int, form: (CNContact) -> Void) {
+        form(addressGroups[section].addresses[row])
     }
 }

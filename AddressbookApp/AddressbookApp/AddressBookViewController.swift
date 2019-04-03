@@ -31,25 +31,25 @@ class AddressBookViewController: UITableViewController {
 extension AddressBookViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return address.countSection()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return address.count()
+        return address.countRow(at: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = "addressCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! AddressTableViewCell
         
-        address.access(at: indexPath.row) {
-            let addressDTO = AddressDTO(givenName: $0.givenName,
-                                        familyName: $0.familyName,
-                                        email: $0.emailAddresses,
-                                        phoneNumbers: $0.phoneNumbers,
-                                        imageData: $0.imageData)
-            cell.set(addressDTO)
+        address.access(section: indexPath.section, row: indexPath.row) {
+            let addreessDTO = AddressDTO(givenName: $0.givenName,
+                                         familyName: $0.familyName,
+                                         email: $0.emailAddresses,
+                                         phoneNumbers: $0.phoneNumbers,
+                                         imageData: $0.imageData)
+            cell.set(addreessDTO)
         }
         return cell
     }
