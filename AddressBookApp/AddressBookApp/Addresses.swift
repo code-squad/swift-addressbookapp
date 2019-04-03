@@ -32,8 +32,8 @@ class Addresses {
     }
     
     func sort() {
-        let familyNameSortDescriptor = NSSortDescriptor(key: CNContact.familyNameSortKey, ascending: true)
-        let givenNameSortDescriptor = NSSortDescriptor(key: CNContact.givenNameSortKey, ascending: true)
+        let familyNameSortDescriptor = NSSortDescriptor(key: CNContact.familyNameSortKey, ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let givenNameSortDescriptor = NSSortDescriptor(key: CNContact.givenNameSortKey, ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         let sortDescriptors = [familyNameSortDescriptor, givenNameSortDescriptor]
         let sortedContacts = (contacts as NSArray).sortedArray(using: sortDescriptors)
         guard let contacts = sortedContacts as? [CNContact] else { return }
