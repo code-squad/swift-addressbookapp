@@ -15,6 +15,7 @@ class Addresses {
     init() {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
             self.contacts += contacts
+            self.sort()
             NotificationCenter.default.post(name: .updatedContacts, object: self)
         }
     }
@@ -29,8 +30,22 @@ class Addresses {
         let mgcContact = MGCContactStoreUtilities().parse(cnContact)
         return mgcContact
     }
+    
+    func sort() {
+        let familyNameSortDescriptor = NSSortDescriptor(key: CNContact.familyNameSortKey, ascending: true)
+        let givenNameSortDescriptor = NSSortDescriptor(key: CNContact.givenNameSortKey, ascending: true)
+        let sortDescriptors = [familyNameSortDescriptor, givenNameSortDescriptor]
+        let sortedContacts = (contacts as NSArray).sortedArray(using: sortDescriptors)
+        guard let contacts = sortedContacts as? [CNContact] else { return }
+        self.contacts = contacts
+    }
 }
 
 extension NSNotification.Name {
     static let updatedContacts = Notification.Name(rawValue: "updatedContacts")
+}
+
+extension CNContact {
+    static let familyNameSortKey = "familyName"
+    static let givenNameSortKey = "givenName"
 }
