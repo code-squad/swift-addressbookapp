@@ -119,3 +119,117 @@ let phoneNumber = information.phoneNumbers.first?.value.stringValue
 **실행화면**
 
 <img src="5.png" height="500px"/>
+
+
+
+
+
+### Step 2
+
+![screen](./6.png)
+
+![screen](./7.png)
+
+* 한글에서 초성, 중성, 종성 구하기
+* `TableView` `Index Title` 활용해 원하는 `Section`으로 이동 
+
+
+
+**유니코드 활용해 초성 구하기**
+
+ 한글은 유니코드에서 `0xAC00` ~ `0xD7A3` 사이의 코드 값을 가진다. 10진수로 변경해보면 `44032` ~ `55203` 사이의 값이다. 초성 19개, 중성 21개, 종성 28개로 만들 수 있는 한글자의 개수이다.
+
+ 이를 활용해서 초성, 중성, 종성을 구할 수 있다.
+
+ **한글 유니코드 계산식 =((초성 * 21) + 중성) * 28 + 종성 + 0xAC00** —> 여기서 초성 중성 종성이란, 19개 21개 28개중 자신이 해당하는 인덱스이다.
+
+ 이 식에서 초성, 중성, 종성을 구하는 식을 유도할 수 있다.
+
+ **초성 계산식 = (유니코드 - 0xAC00) / 28 / 21**
+
+ **중성 계산식 = (유니코드 - 0xAC00) / 28 % 21 **
+
+ **종성 계산식 = (유니코드 - 0xAC00) % 28**
+
+
+
+ 초성
+
+| **ㄱ** | **ㄲ** | **ㄴ** | **ㄷ** | **ㄸ** | **ㄹ** | **ㅁ** | **ㅂ** | **ㅃ** | **ㅅ** | **ㅆ** | **ㅇ** | **ㅈ** | **ㅉ** | **ㅊ** | **ㅋ** | **ㅌ** | **ㅍ** | **ㅎ** |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 0      | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     | 13     | 14     | 15     | 16     | 17     | 18     |
+
+중성
+
+| **ㅏ** | **ㅐ** | **ㅑ** | **ㅒ** | **ㅓ** | **ㅔ** | **ㅕ** | **ㅖ** | **ㅗ** | **ㅘ** | **ㅙ** | **ㅚ** | **ㅛ** | **ㅜ** | **ㅝ** | **ㅞ** | **ㅟ** | **ㅠ** | **ㅡ** | **ㅢ** | **ㅣ** |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 0      | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     | 13     | 14     | 15     | 16     | 17     | 18     | 19     | 20     |
+
+종성
+
+|      | **ㄱ** | **ㄲ** | **ㄳ** | **ㄴ** | **ㄵ** | **ㄶ** | **ㄷ** | **ㄹ** | **ㄺ** | **ㄻ** | **ㄼ** | **ㄽ** | **ㄾ** | **ㄿ** | **ㅀ** | **ㅁ** | **ㅂ** | **ㅄ** | **ㅅ** | **ㅆ** | **ㅇ** | **ㅈ** | **ㅊ** | **ㅋ** | **ㅌ** | **ㅍ** | **ㅎ** |
+| ---- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| 0    | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     | 13     | 14     | 15     | 16     | 17     | 18     | 19     | 20     | 21     | 22     | 23     | 24     | 25     | 26     | 27     |
+
+
+
+ 넘어온 문자열 중, 첫번째 글자의 초성 구하기
+
+```swift
+static func extractInitial(from string: String) -> String {
+  let koreanInitial = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+
+  guard let firstCharactor = string.first else { return "" } 			// 첫번째 문자만 골라냄
+  guard let charactorUnicode = firstCharactor.unicodeScalars.first else { return "" } // 첫번째 문자의 Unicode 값
+
+  if charactorUnicode.value >= 44032 && charactorUnicode.value <= 55203 {		// 한글일 경우
+    let index = (charactorUnicode.value - 0xAC00) / 28 / 21
+    return koreanInitial[Int(index)]
+  } else {
+    return String(charactorUnicode)																					// 아닐 경우
+  }
+}
+```
+
+
+
+**Section Header 만들기**
+
+ `UITableViewDelegate` 의 메소드인 다음 메소드를 구현해주어야 한다. 인자로 들어오는 section은 몇번 째 Section에 해당 Header를 사용할지 지정할 때 사용될 수 있다.
+
+```swift
+override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  return address.getGroupKey(at: section)
+}
+```
+
+
+
+**Index Title활용 Section매칭**
+
+ 우선 IPhone을 사용하면서 자주 볼 수 있는 오른쪽에 인덱스를 생성하여야한다. 인덱스를 생성하기 위해선 `UITableViewDataSource` 의 메소드인 다음과 같은 메소드를 구현하여야한다.
+
+ 다음과 같이 구현하게 되면 A, B, C, D 순으로 클릭할 시 Section 0, 1, 2, 3으로 이동하게 된다.
+
+```swift
+override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+  return ["A", "B", "C", "D"]
+}
+```
+
+이를 제어하기 위해 `UITableViewDataSource` 의 메소드인 다음과 같은 메소드가 필요하다. 구현하게 되면 클릭한 `Index`, `title` 에 따라 이동할 Section을 지정해줄 수 있게 된다. 
+
+```swift
+override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+  return address.getIndexBy(title)
+}
+```
+
+
+
+
+
+**실행화면**
+
+<img src="8.gif" height="500px"/>
+
