@@ -9,57 +9,47 @@
 import Foundation
 import Contacts
 
-struct AddressGroup {
-    let key: String
-    var addresses: [CNContact]
-    
-    init(key: String, element: CNContact) {
-        self.key = key
-        addresses = [element]
-    }
-}
-
 class AddressModel {
-    private var addressGroups: [AddressGroup] = []
+    private var addressByInitial: Dictionary<String, [CNContact]> = [:]
+    private var sortedKeys: [String] = []
     
     func set(information: [CNContact]) {
-        seperateGroup(of: information)
+        setDictionary(of: information)
+        sortedKeys = addressByInitial.keys.sorted()
         NotificationCenter.default.post(name: .setAddress, object: nil)
     }
     
-    private func seperateGroup(of information: [CNContact]) {
-        let informationCount = information.count
-        guard informationCount != 0 else { return }
-        var prefix = Extractor.extractInitial(from: information[0].familyName)
-        addressGroups.append(AddressGroup(key: prefix, element: information[0]))
-        
-        guard informationCount != 1 else { return }
-        for index in 1..<informationCount {
-            let currentKey = Extractor.extractInitial(from: information[index].familyName)
-            if prefix == currentKey {
-                addressGroups[addressGroups.count-1].addresses.append(information[index])
-            } else {
-                addressGroups.append(AddressGroup(key: currentKey, element: information[index]))
-            }
-            prefix = currentKey
+    private func setDictionary(of information: [CNContact]) {
+        for each in information {
+            let key = Extractor.extractInitial(from: each.familyName)
+            if addressByInitial[key] == nil { addressByInitial.updateValue([each], forKey: key) }
+            else { addressByInitial[key]?.append(each) }
         }
     }
     
     func countSection() -> Int {
-        return addressGroups.count
+        return addressByInitial.count
     }
     
     func countRow(at section: Int) -> Int {
-        if addressGroups.count == 0 { return 0 }
-        return addressGroups[section].addresses.count
+        guard let group = addressByInitial[sortedKeys[section]] else { return 0 }
+        return group.count
     }
     
     func getGroupKey(at section: Int) -> String {
-        if addressGroups.count == 0 { return "" }
-        return addressGroups[section].key
+        if sortedKeys.count == 0 { return "" }
+        return sortedKeys[section]
     }
     
     func access(section: Int, row: Int, form: (CNContact) -> Void) {
-        form(addressGroups[section].addresses[row])
+        guard let group = addressByInitial[sortedKeys[section]] else { return }
+        form(group[row])
+    }
+    
+    func getIndexBy(_ title: String) -> Int {
+        for index in 0..<sortedKeys.count {
+            if title == sortedKeys[index] { return index }
+        }
+        return sortedKeys.count
     }
 }

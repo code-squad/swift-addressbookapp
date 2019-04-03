@@ -14,7 +14,8 @@ extension NSNotification.Name {
 
 class AddressBookViewController: UITableViewController {
     private var address: AddressModel = AddressModel()
-    
+    private let indexTitle = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: .setAddress, object: nil)
@@ -62,4 +63,11 @@ extension AddressBookViewController {
         return address.getGroupKey(at: section)
     }
     
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return address.getIndexBy(title)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return indexTitle
+    }
 }
