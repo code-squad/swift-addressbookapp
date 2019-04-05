@@ -20,3 +20,11 @@ iOS 레벨3 주소록 앱 저장소
 
 `NSDescriptor`와 `(NSArray).sortedArray(using:)`을 사용하면 됨.
 <script src="https://gist.github.com/hngfu/23fa7e4405b0810efd42b86957c8a515.js"></script>
+
+- 언어 및 지역 설정 하는 방법에 대해 배웠다.
+1. 시뮬레이터에 들어가서 `설정 -> 일반 -> 언어 및 지역`에서 설정 가능.
+2. Xcode에서 `Edit Scheme -> Run -> option -> Application Language, Application Region`에서 설정 가능
+
+`UILocalizedIndexedCollation`를 이용할때 Language에 따라 section index title이 달라지기 때문에 알아보게 되었다.
+
+<img width="927" alt="2019-04-05_17-04-52" src="https://user-images.githubusercontent.com/38850628/55613182-fd83f180-57c4-11e9-99a0-eb8a78a5d8a6.png">
