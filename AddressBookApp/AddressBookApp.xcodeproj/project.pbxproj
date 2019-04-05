@@ -12,6 +12,7 @@
 		7D827B4B2251DBE8007202FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D827B492251DBE8007202FC /* Main.storyboard */; };
 		7D827B4D2251DBEA007202FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D827B4C2251DBEA007202FC /* Assets.xcassets */; };
 		7D827B502251DBEA007202FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D827B4E2251DBEA007202FC /* LaunchScreen.storyboard */; };
+		7DBC64DD2255DE77005284DC /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC64DC2255DE77005284DC /* Address.swift */; };
 		7DC918F82252433E0078A750 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F02252433E0078A750 /* MGCContactStore.swift */; };
 		7DC918F92252433E0078A750 /* MGCSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F12252433E0078A750 /* MGCSegue.swift */; };
 		7DC918FA2252433E0078A750 /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC918F22252433E0078A750 /* MGCPostalAddress.swift */; };
@@ -33,6 +34,7 @@
 		7D827B4C2251DBEA007202FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D827B4F2251DBEA007202FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D827B512251DBEA007202FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBC64DC2255DE77005284DC /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		7DC918F02252433E0078A750 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		7DC918F12252433E0078A750 /* MGCSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCSegue.swift; sourceTree = "<group>"; };
 		7DC918F22252433E0078A750 /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				7DC919002252487D0078A750 /* AddressBookViewController.swift */,
 				7DC91904225264A80078A750 /* AddressTableViewCell.swift */,
 				7DC9190222524CA50078A750 /* Addresses.swift */,
+				7DBC64DC2255DE77005284DC /* Address.swift */,
 				7D827B4C2251DBEA007202FC /* Assets.xcassets */,
 				7D827B4E2251DBEA007202FC /* LaunchScreen.storyboard */,
 				7D827B512251DBEA007202FC /* Info.plist */,
@@ -182,6 +185,7 @@
 				7DC918FF2252433E0078A750 /* MGCLabelValue.swift in Sources */,
 				7D827B462251DBE8007202FC /* AppDelegate.swift in Sources */,
 				7DC918FC2252433E0078A750 /* MGCContact.swift in Sources */,
+				7DBC64DD2255DE77005284DC /* Address.swift in Sources */,
 				7DC918FA2252433E0078A750 /* MGCPostalAddress.swift in Sources */,
 				7DC918FD2252433E0078A750 /* MGCContactStoreUtilities.swift in Sources */,
 				7DC9190322524CA50078A750 /* Addresses.swift in Sources */,

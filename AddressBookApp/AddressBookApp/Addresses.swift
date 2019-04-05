@@ -10,7 +10,8 @@ import Foundation
 import Contacts
 
 class Addresses {
-    private var contacts = [CNContact]()
+    
+    private var contacts = [String: Addresses]()
     
     init() {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in

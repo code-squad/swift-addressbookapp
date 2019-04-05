@@ -11,3 +11,12 @@ iOS 레벨3 주소록 앱 저장소
 ### 실행화면
 
 <img src="https://user-images.githubusercontent.com/38850628/55384401-9a485400-5565-11e9-81ab-0e30ffd25ed6.png" height="700">
+
+## step-02. 섹션 정렬
+
+### 배운내용
+
+- 다양한 순서로 정렬하는 방법을 배웠다.
+
+`NSDescriptor`와 `(NSArray).sortedArray(using:)`을 사용하면 됨.
+<script src="https://gist.github.com/hngfu/23fa7e4405b0810efd42b86957c8a515.js"></script>
