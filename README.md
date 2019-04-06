@@ -48,3 +48,9 @@ iOS 레벨3 주소록 앱 저장소
 
 <img width="400" alt="2019-04-06_17-14-18" src="https://user-images.githubusercontent.com/38850628/55666874-8e270400-588f-11e9-91ae-d61704dcc13c.png">
 <img width="400" alt="2019-04-06_17-14-31" src="https://user-images.githubusercontent.com/38850628/55666875-8e270400-588f-11e9-9d31-4199be317744.png">
+
+- `func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int` 에서 return 값을 `-1`로 주면 이동하지 않는다는것을 배웠다.
+
+### 실행화면
+
+<img src="https://user-images.githubusercontent.com/38850628/55667595-1a89f480-5899-11e9-8b95-36d48fe5ec8a.PNG" height="700">
