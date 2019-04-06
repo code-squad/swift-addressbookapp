@@ -28,3 +28,15 @@ iOS 레벨3 주소록 앱 저장소
 `UILocalizedIndexedCollation`를 이용할때 Language에 따라 section index title이 달라지기 때문에 알아보게 되었다.
 
 <img width="927" alt="2019-04-05_17-04-52" src="https://user-images.githubusercontent.com/38850628/55613182-fd83f180-57c4-11e9-99a0-eb8a78a5d8a6.png">
+
+- 유니코드 한글 분석 하는 법을 배웠다. 
+
+`( (초성 * 21) + 중성 ) * 28 + 종성 + 0xAC00 = 글자`  
+
+> 조립은 분해의 역순이다.
+
+초성 구하는 방법은 위 식의 역순으로 `0xAC00`을 빼죽고 `28`을 나누고 `21`을 나눠주면 됩니다.
+
+그리고 자음 유니코드가 시작하는 `0x1100`를 더해주면 끝.
+
+<script src="https://gist.github.com/hngfu/fb0862afe1dd619995c33a02d7ec6a0b.js"></script>
