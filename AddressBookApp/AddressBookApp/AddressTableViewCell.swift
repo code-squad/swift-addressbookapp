@@ -42,7 +42,7 @@ class AddressTableViewCell: UITableViewCell {
     }
 
     func show(contact: MGCContact) {
-        self.nameLabel.text = contact.lastName + contact.firstName
+        self.nameLabel.text = contact.firstName + contact.lastName 
         self.telLabel.text = contact.phoneNumber?.value
         self.emailLabel.text = contact.email?.value
         guard let imageData = contact.profilePicture?.imageData else {

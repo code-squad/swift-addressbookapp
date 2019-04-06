@@ -41,20 +41,29 @@ class AddressBookViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        return contacts[section]?.count() ?? 0
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return contacts.count()
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.identifier, for: indexPath)
 
         guard let addressCell = cell as? AddressTableViewCell,
-            let mgcContact = contacts.mgcContact(with: indexPath.row) else { return cell }
+            let addressSection = contacts[indexPath.section],
+            let mgcContact = addressSection[indexPath.row] else { return cell }
         
         addressCell.show(contact: mgcContact)
         // Configure the cell...
 
         return addressCell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let addressSection = contacts[section] else { return nil }
+        return addressSection.title
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
