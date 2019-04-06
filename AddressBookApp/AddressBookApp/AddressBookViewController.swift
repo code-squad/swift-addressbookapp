@@ -56,4 +56,8 @@ class AddressBookViewController: UITableViewController {
 
         return addressCell
     }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return contacts.indexTitles
+    }
 }

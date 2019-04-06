@@ -11,7 +11,10 @@ import Contacts
 
 class Addresses {
     
-    private var contacts = [String: Addresses]()
+    let indexTitles = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#",]
+    
+    private var contacts = [CNContact]()
+    private(set) var sectionTitles = [String]()
     
     init() {
         MGCContactStore.sharedInstance.fetchContacts { (contacts) in
