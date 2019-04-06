@@ -19,7 +19,15 @@ iOS 레벨3 주소록 앱 저장소
 - 다양한 순서로 정렬하는 방법을 배웠다.
 
 `NSDescriptor`와 `(NSArray).sortedArray(using:)`을 사용하면 됨.
-<script src="https://gist.github.com/hngfu/23fa7e4405b0810efd42b86957c8a515.js"></script>
+
+```swift
+let familyNameSortDescriptor = NSSortDescriptor(key: CNContact.familyNameSortKey, ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+let givenNameSortDescriptor = NSSortDescriptor(key: CNContact.givenNameSortKey, ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+let sortDescriptors = [familyNameSortDescriptor, givenNameSortDescriptor]
+let sortedContacts = (contacts as NSArray).sortedArray(using: sortDescriptors)
+guard let contacts = sortedContacts as? [CNContact] else { return }
+self.contacts = contacts
+```
 
 - 언어 및 지역 설정 하는 방법에 대해 배웠다.
 1. 시뮬레이터에 들어가서 `설정 -> 일반 -> 언어 및 지역`에서 설정 가능.
@@ -39,7 +47,13 @@ iOS 레벨3 주소록 앱 저장소
 
 그리고 자음 유니코드가 시작하는 `0x1100`를 더해주면 끝.
 
-<script src="https://gist.github.com/hngfu/fb0862afe1dd619995c33a02d7ec6a0b.js"></script>
+```swift
+let scalar = Unicode.Scalar("흥")
+let consonantIndex = (scalar.value - 0xac00) / 28 / 21
+let consonantScalar = Unicode.Scalar(consonantIndex + 0x1100)!
+
+print(consonantScalar)  //ㅎ
+```
 
 - 같은 모양, 다른 값의 자음이 존재한다는 것을 알게됐다.
 
