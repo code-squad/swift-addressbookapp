@@ -40,3 +40,11 @@ iOS 레벨3 주소록 앱 저장소
 그리고 자음 유니코드가 시작하는 `0x1100`를 더해주면 끝.
 
 <script src="https://gist.github.com/hngfu/fb0862afe1dd619995c33a02d7ec6a0b.js"></script>
+
+- 같은 모양, 다른 값의 자음이 존재한다는 것을 알게됐다.
+
+유니코드 분석을 통해 추출된 초성 `ㄱ`은 4352값이 나오고 미리 지정해둔 자음배열의 `ㄱ`은 12593값이 나왔다.  
+그래서 원하는대로 딕셔너리에 값이 들어가지 않아서 이 문제를 유니코드 분석후 마지막에 `0x1100` 대신 `0x3131`을 더해주는 방법으로 해결했다.
+
+<img width="400" alt="2019-04-06_17-14-18" src="https://user-images.githubusercontent.com/38850628/55666874-8e270400-588f-11e9-91ae-d61704dcc13c.png">
+<img width="400" alt="2019-04-06_17-14-31" src="https://user-images.githubusercontent.com/38850628/55666875-8e270400-588f-11e9-9d31-4199be317744.png">
