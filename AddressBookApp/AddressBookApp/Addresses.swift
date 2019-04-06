@@ -59,6 +59,12 @@ class Addresses {
     func count() -> Int {
         return self.addressSection.count
     }
+    
+    func indexOfTitle(_ index: Int) -> Int? {
+        let title = self.indexTitles[index]
+        let firstIndex = addressSection.firstIndex(where: {$0.title == title})
+        return firstIndex
+    }
 }
 
 extension NSNotification.Name {

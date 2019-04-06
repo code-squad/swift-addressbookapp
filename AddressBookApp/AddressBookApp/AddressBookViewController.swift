@@ -61,6 +61,10 @@ class AddressBookViewController: UITableViewController {
         return addressCell
     }
     
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return contacts.indexOfTitle(index) ?? -1
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let addressSection = contacts[section] else { return nil }
         return addressSection.title
