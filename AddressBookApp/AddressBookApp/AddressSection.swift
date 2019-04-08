@@ -27,8 +27,10 @@ struct AddressSection {
     }
     
     func filteredContacts(with searchText: String) -> [MGCContact] {
+        let extracter = InitialConsonantExtracter()
         return address.filter({ (mgcContact) -> Bool in
-            mgcContact.firstName.lowercased().contains(searchText.lowercased())
+            mgcContact.firstName.lowercased().contains(searchText.lowercased()) ||
+            extracter.initialConsonants(of: mgcContact.firstName).contains(searchText)
         })
     }
 }
