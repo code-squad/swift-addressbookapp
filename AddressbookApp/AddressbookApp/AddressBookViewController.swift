@@ -27,6 +27,7 @@ class AddressBookViewController: UITableViewController {
         }
         searchBar.showsCancelButton = true
         searchBar.delegate = self
+        searchBar.placeholder = "Searching Name"
     }
     
     @objc func reloadTableView() {
@@ -88,8 +89,12 @@ extension AddressBookViewController {
 
 extension AddressBookViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredAddress = address.filterBy(searchText)
-        isSearching = true
+        if searchText == "" {
+            isSearching = false
+        } else {
+            filteredAddress = address.filterBy(searchText)
+            isSearching = true
+        }
         tableView.reloadData()
     }
     
