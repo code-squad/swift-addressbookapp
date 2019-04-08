@@ -68,3 +68,21 @@ print(consonantScalar)  //ㅎ
 ### 실행화면
 
 <img src="https://user-images.githubusercontent.com/38850628/55667595-1a89f480-5899-11e9-8b95-36d48fe5ec8a.PNG" height="700">
+
+## step-03. 검색하기
+
+### 배운내용
+
+- `UISearchController`에 대해서 배웠다.
+
+1. `navigationItem.searchController` 또는 `tableView.tableHeaderView`에 주로 위치시켜서 사용한다.
+2. `searchResultsUpdater` property에 `UISearchResultsUpdating` 프로토콜을 채택한 객체를 넣어서 사용한다.
+3. `searchBar`를 가지고 있다.
+4. `dimsBackgroundDuringPresentation`를 `false`로 한다. 이 속성을 `true`로 하면 검색중일때 `searchable content`가 흐려진다.
+5. `dimsBackgroundDuringPresentation` 대신 `obscuresBackgroundDuringPresentation`를 사용한다. * 애플 공식문서에 딱 저렇게(아래 Discussion)만 나와있었습니다...
+
+<img width="500" alt="2019-04-07_14-39-16" src="https://user-images.githubusercontent.com/38850628/55679235-f7b41a80-5942-11e9-94d1-35ce3ddf6c38.png">
+
+- `MGCContactStore`에 `fetchContacts(with:completion:)`라는 메서드가 있는데 검색할때 사용하면 되게 좋다는 것을 배웠다.
+
+### 실행화면
