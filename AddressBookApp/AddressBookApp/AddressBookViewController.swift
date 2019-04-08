@@ -29,6 +29,7 @@ class AddressBookViewController: UITableViewController {
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadTableView),
