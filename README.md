@@ -69,8 +69,7 @@ print(consonantScalar)  //ㅎ
 
 왼쪽과 오른쪽의 연관된 규칙도 보이지 않아 서로를 이어주는 매퍼를 만드는것으로 문제를 해결했다.
 
-<img width="130" alt="2019-04-08_20-41-54" src="https://user-images.githubusercontent.com/38850628/55721688-ef410a00-5a3e-11e9-9f9e-7438d2a47377.png">
-<img width="132" alt="2019-04-08_20-42-06" src="https://user-images.githubusercontent.com/38850628/55721689-ef410a00-5a3e-11e9-9795-6d5c3fe64f6d.png">
+<img width="261" alt="2019-04-08_22-35-29" src="https://user-images.githubusercontent.com/38850628/55728237-ab560100-5a4e-11e9-9ef2-daf246ae6b24.png">
 
 `출처 - https://winplz.tistory.com/entry/한글-자음-비교같지만-다른-자음들`
 
