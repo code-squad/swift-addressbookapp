@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1837D0225B17D7001F02F4 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1837CF225B17D7001F02F4 /* TextType.swift */; };
 		9DFC130C2251F4E200AF238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC130B2251F4E200AF238C /* AppDelegate.swift */; };
 		9DFC13112251F4E200AF238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC130F2251F4E200AF238C /* Main.storyboard */; };
 		9DFC13132251F4E400AF238C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC13122251F4E400AF238C /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D1837CF225B17D7001F02F4 /* TextType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
 		9DFC13082251F4E200AF238C /* AddressbookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressbookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC130B2251F4E200AF238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DFC13102251F4E200AF238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				9DFC13442252314600AF238C /* AddressModel.swift */,
 				9DFC13462253512600AF238C /* AddressDTO.swift */,
 				9DFC134A225375F000AF238C /* SeparateString.swift */,
+				9D1837CF225B17D7001F02F4 /* TextType.swift */,
 			);
 			path = AddressbookApp;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				9DFC131E2251F53F00AF238C /* AddressBookViewController.swift in Sources */,
 				9DFC13342251FB0800AF238C /* MGCContactStore.swift in Sources */,
 				9DFC13362251FB0800AF238C /* MGCModel.swift in Sources */,
+				9D1837D0225B17D7001F02F4 /* TextType.swift in Sources */,
 				9DFC133F2251FB0800AF238C /* MGCContactStoreUtilities.swift in Sources */,
 				9DFC13392251FB0800AF238C /* MGCAppConfiguration.swift in Sources */,
 				9DFC13382251FB0800AF238C /* MGCExtensions.swift in Sources */,

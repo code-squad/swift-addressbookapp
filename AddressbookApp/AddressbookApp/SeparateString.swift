@@ -22,5 +22,15 @@ struct Extractor {
             return String(charactorUnicode)
         }
     }
+    
+    static func extractInitial(from unicode: UnicodeScalar) -> String {
+        let koreanInitial = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+        if unicode.value >= 44032 && unicode.value <= 55203 {
+            let index = (unicode.value - 0xAC00) / 28 / 21
+            return koreanInitial[Int(index)]
+        } else {
+            return String(unicode)
+        }
+    }
 }
 
