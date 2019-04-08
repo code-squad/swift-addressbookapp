@@ -79,6 +79,11 @@ class Addresses {
         filteredAddress = filteredContacts
         NotificationCenter.default.post(name: .updatedContacts, object: self)
     }
+    
+    func filteredAddress(index: Int) -> MGCContact? {
+        guard 0 <= index, index < self.filteredAddress.count else { return nil }
+        return self.filteredAddress[index]
+    }
 }
 
 extension NSNotification.Name {
