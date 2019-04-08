@@ -17,14 +17,15 @@ class Addresses {
     
     //MARK: Private
     
-    private var addressSection = [AddressSection]()
+    private var addressSections = [AddressSection]()
+    private var filteredAddress = [MGCContact]()
     
     //MARK: - Methods
     //MARK: Subscript
     
     subscript(index: Int) -> AddressSection? {
-        guard 0 <= index, index < addressSection.count else { return nil }
-        return addressSection[index]
+        guard 0 <= index, index < addressSections.count else { return nil }
+        return addressSections[index]
     }
     
     //MARK: Initialization
@@ -46,7 +47,7 @@ class Addresses {
             
             for indexTitle in self.indexTitles {
                 guard let section = sections[indexTitle] else { continue }
-                self.addressSection.append(AddressSection(title: indexTitle,
+                self.addressSections.append(AddressSection(title: indexTitle,
                                                           contacts: section))
             }
             
@@ -57,13 +58,26 @@ class Addresses {
     //MARK: Instance
     
     func count() -> Int {
-        return self.addressSection.count
+        return self.addressSections.count
+    }
+    
+    func filterdCount() -> Int {
+        return self.filteredAddress.count
     }
     
     func indexOfTitle(_ index: Int) -> Int? {
         let title = self.indexTitles[index]
-        let firstIndex = addressSection.firstIndex(where: {$0.title == title})
+        let firstIndex = addressSections.firstIndex(where: {$0.title == title})
         return firstIndex
+    }
+    
+    func filterContactWith(searchText: String) {
+        var filteredContacts = [MGCContact]()
+        for addressSection in addressSections {
+            filteredContacts += addressSection.filteredContacts(with: searchText)
+        }
+        filteredAddress = filteredContacts
+        NotificationCenter.default.post(name: .updatedContacts, object: self)
     }
 }
 

@@ -25,4 +25,10 @@ struct AddressSection {
     func count() -> Int {
         return address.count
     }
+    
+    func filteredContacts(with searchText: String) -> [MGCContact] {
+        return address.filter({ (mgcContact) -> Bool in
+            mgcContact.firstName.lowercased().contains(searchText.lowercased())
+        })
+    }
 }

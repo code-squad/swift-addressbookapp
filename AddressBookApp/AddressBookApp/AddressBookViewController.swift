@@ -45,10 +45,16 @@ class AddressBookViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.isActive {
+            return contacts.filterdCount()
+        }
         return contacts[section]?.count() ?? 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        if searchController.isActive {
+            return 1
+        }
         return contacts.count()
     }
     
@@ -70,17 +76,23 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let addressSection = contacts[section] else { return nil }
+        guard let addressSection = contacts[section],
+            !searchController.isActive else { return nil }
         return addressSection.title
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if searchController.isActive {
+            return nil
+        }
         return contacts.indexTitles
     }
 }
 
 extension AddressBookViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        guard let searchText = searchController.searchBar.text,
+            !searchText.isEmpty else { return }
+        contacts.filterContactWith(searchText: searchText)
     }
 }
