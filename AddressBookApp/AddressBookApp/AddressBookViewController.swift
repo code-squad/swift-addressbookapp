@@ -26,7 +26,7 @@ class AddressBookViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        contactTableView.tableHeaderView = searchController.searchBar
+        navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         
