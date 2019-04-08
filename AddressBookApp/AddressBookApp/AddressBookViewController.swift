@@ -28,6 +28,8 @@ class AddressBookViewController: UITableViewController {
 
         contactTableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadTableView),
                                                name: .updatedContacts,
