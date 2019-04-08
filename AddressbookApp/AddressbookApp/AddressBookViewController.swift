@@ -92,4 +92,10 @@ extension AddressBookViewController: UISearchBarDelegate {
         isSearching = true
         tableView.reloadData()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
 }
