@@ -29,7 +29,7 @@
 		9DFC13432252281500AF238C /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13422252281500AF238C /* AddressTableViewCell.swift */; };
 		9DFC13452252314600AF238C /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13442252314600AF238C /* AddressModel.swift */; };
 		9DFC13472253512600AF238C /* AddressDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC13462253512600AF238C /* AddressDTO.swift */; };
-		9DFC134B225375F000AF238C /* SeparateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC134A225375F000AF238C /* SeparateString.swift */; };
+		9DFC134B225375F000AF238C /* Extractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC134A225375F000AF238C /* Extractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		9DFC13422252281500AF238C /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		9DFC13442252314600AF238C /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		9DFC13462253512600AF238C /* AddressDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDTO.swift; sourceTree = "<group>"; };
-		9DFC134A225375F000AF238C /* SeparateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateString.swift; sourceTree = "<group>"; };
+		9DFC134A225375F000AF238C /* Extractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 				9DFC13422252281500AF238C /* AddressTableViewCell.swift */,
 				9DFC13442252314600AF238C /* AddressModel.swift */,
 				9DFC13462253512600AF238C /* AddressDTO.swift */,
-				9DFC134A225375F000AF238C /* SeparateString.swift */,
+				9DFC134A225375F000AF238C /* Extractor.swift */,
 				9D1837CF225B17D7001F02F4 /* TextType.swift */,
 			);
 			path = AddressbookApp;
@@ -214,7 +214,7 @@
 				9DFC133C2251FB0800AF238C /* MGCMenuSectionFeature.swift in Sources */,
 				9DFC13452252314600AF238C /* AddressModel.swift in Sources */,
 				9DFC13432252281500AF238C /* AddressTableViewCell.swift in Sources */,
-				9DFC134B225375F000AF238C /* SeparateString.swift in Sources */,
+				9DFC134B225375F000AF238C /* Extractor.swift in Sources */,
 				9DFC13352251FB0800AF238C /* MGCParsingUtilities.swift in Sources */,
 				9DFC13472253512600AF238C /* AddressDTO.swift in Sources */,
 			);
