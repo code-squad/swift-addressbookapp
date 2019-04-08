@@ -57,11 +57,22 @@ print(consonantScalar)  //ㅎ
 
 - 같은 모양, 다른 값의 자음이 존재한다는 것을 알게됐다.
 
-유니코드 분석을 통해 추출된 초성 `ㄱ`은 4352값이 나오고 미리 지정해둔 자음배열의 `ㄱ`은 12593값이 나왔다.  
-그래서 원하는대로 딕셔너리에 값이 들어가지 않아서 이 문제를 유니코드 분석후 마지막에 `0x1100` 대신 `0x3131`을 더해주는 방법으로 해결했다.
-
 <img width="400" alt="2019-04-06_17-14-18" src="https://user-images.githubusercontent.com/38850628/55666874-8e270400-588f-11e9-91ae-d61704dcc13c.png">
 <img width="400" alt="2019-04-06_17-14-31" src="https://user-images.githubusercontent.com/38850628/55666875-8e270400-588f-11e9-9d31-4199be317744.png">
+
+<del>유니코드 분석을 통해 추출된 초성 `ㄱ`은 4352값이 나오고 미리 지정해둔 자음배열의 `ㄱ`은 12593값이 나왔다.  
+그래서 원하는대로 딕셔너리에 값이 들어가지 않아서 이 문제를 유니코드 분석후 마지막에 `0x1100` 대신 `0x3131`을 더해주
+는 방법으로 해결했다.</del>
+
+해결 못했었다. 숫자 증가량이 달라 일부는 잘 나오고 일부는 나오지 않았었다.
+(아래 표를 보면 왼쪽에 추출해서 나온 자음은 'ㄱ'에서 'ㄴ'으로 갈때 2가 증가하지만 오른쪽에 직접입력한 자음은 'ㄱ'에서 'ㄴ'으로 갈때 3이 증가한다.)
+
+왼쪽과 오른쪽의 연관된 규칙도 보이지 않아 서로를 이어주는 매퍼를 만드는것으로 문제를 해결했다.
+
+<img width="130" alt="2019-04-08_20-41-54" src="https://user-images.githubusercontent.com/38850628/55721688-ef410a00-5a3e-11e9-9f9e-7438d2a47377.png">
+<img width="132" alt="2019-04-08_20-42-06" src="https://user-images.githubusercontent.com/38850628/55721689-ef410a00-5a3e-11e9-9795-6d5c3fe64f6d.png">
+
+`출처 - https://winplz.tistory.com/entry/한글-자음-비교같지만-다른-자음들`
 
 - `func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int` 에서 return 값을 `-1`로 주면 이동하지 않는다는것을 배웠다.
 
