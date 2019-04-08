@@ -18,7 +18,7 @@ class AddressBookViewController: UITableViewController {
     //MARK: Private
     
     private var contacts = Addresses()
-    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     //MARK: - Methods
     //MARK: LifeCycle
@@ -26,6 +26,8 @@ class AddressBookViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        contactTableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadTableView),
                                                name: .updatedContacts,
@@ -72,5 +74,11 @@ class AddressBookViewController: UITableViewController {
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return contacts.indexTitles
+    }
+}
+
+extension AddressBookViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
