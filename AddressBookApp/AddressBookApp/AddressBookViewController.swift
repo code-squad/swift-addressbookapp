@@ -52,37 +52,28 @@ class AddressBookViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if isFiltering() {
-            return contacts.filterdCount()
-        }
+        if isFiltering() { return contacts.filterdCount() }
         return contacts[section]?.count() ?? 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if isFiltering() {
-            return 1
-        }
-        return contacts.count()
+        return isFiltering() ? 1 : contacts.count()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.identifier, for: indexPath)
 
         guard let addressCell = cell as? AddressTableViewCell else { return cell }
-        let contact: MGCContact
         
         if isFiltering(),
             let mgcContact = contacts.filteredAddress(index: indexPath.row) {
-            contact = mgcContact
-            addressCell.show(contact: contact)
-        } else
-        
-        if let addressSection = contacts[indexPath.section],
-            let mgcContact = addressSection[indexPath.row] {
-            contact = mgcContact
-            addressCell.show(contact: contact)
+            addressCell.show(contact: mgcContact)
+            return addressCell
         }
         
+        guard let addressSection = contacts[indexPath.section],
+            let mgcContact = addressSection[indexPath.row] else { return addressCell }
+        addressCell.show(contact: mgcContact)
         return addressCell
     }
     
@@ -91,16 +82,12 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let addressSection = contacts[section],
-            !isFiltering() else { return nil }
+        guard let addressSection = contacts[section], !isFiltering() else { return nil }
         return addressSection.title
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        if isFiltering() {
-            return nil
-        }
-        return contacts.indexTitles
+        return isFiltering() ? nil : contacts.indexTitles
     }
 }
 
