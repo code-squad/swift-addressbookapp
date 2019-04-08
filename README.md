@@ -95,6 +95,8 @@ print(consonantScalar)  //ㅎ
 
 - `MGCContactStore`에 `fetchContacts(with:completion:)`라는 메서드가 있는데 검색할때 사용하면 되게 좋다는 것을 배웠다.
 
+- `navigationItem.hidesSearchBarWhenScrolling = false`를 하면 검색창을 상단에 고정할 수 있다는 것을 배웠다.
+
 ### 실행화면
 
 <img width="500" src="https://user-images.githubusercontent.com/38850628/55726605-22899600-5a4b-11e9-92f6-5d763b2ddbdb.png">
