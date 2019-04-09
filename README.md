@@ -322,4 +322,59 @@ class ViewController: UISearchBarDelegate {
 
 
 
+
+
+**UISearchController 활용**
+
+ 이전 SearchBar를 추가하여 사용하면서 스크롤 시 SearchBar를 화면 상단에 고민시키고 싶었다. 그렇게 하기 위한 방법을 찾아보다. `UISearchController` 을 활용하는 방법을 찾았다.
+
+ `UINavigationItem` 은 `NavigationContoller` 를 사용하게 되면 쌓이는 Navigation Stack View들은 모두 가지고 있는 프로퍼티이다. 이 Item에 들어있는 값이 `Navigation Bar` 에 표현되게 된다. 
+
+ 이 `UINavigationItem` 의 레퍼런스 타입은 `var searchContoller: UISearchContoller?` 프로퍼티를 가진다. 이를 활용해서 스크롤을 하여도 Navigation Bar에서 같이 내려가지 않는 Search Bar를 구현할려고 한다.
+
+ 우선 `UISearchController` 생성을 해주어야 한다.
+
+```swift
+class TableViewContoller: UITableViewController {
+  let searchController = UISearchController(searchResultsController: nil)
+  // searchResultsController에 들어가는 컨트롤러는 서치의 결과를 표시할 뷰를 넣어준다.
+  // nil일 경우 현재 뷰 컨트롤러가 결과를 표시하게 된다.
+}
+```
+
+  `UISearchController` 을 활용하기 전에 `UISearchBar`에서 `Delegate` 을 설정해준 것과 같이 설정이 필요하다. `UISearchContoller` 에선 `UISearchRusultsUpdating` 을 채택하고 구현해준 class를 프로퍼티에 넣어주어야 한다.
+
+```swift
+class TableViewContoller: UITableViewController {
+  let searchController = UISearchController(searchResultsController: nil)
+  
+  override func viewDidLoad() {
+    searchController.searchResultsUpdater = self
+    searchController.obscureBackgroundDuringPresentation = false
+    // 검색 결과를 보여주는 동안 현재 뷰를 가린다. defualt 값은 true이다.
+    // 여기서는 현재 화면에서 검색 결과를 표시하기 때문에 false로 해준다.
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
+    // scroll할 때, searchBar가 상단에 고정되게 한다.
+    definesPresentationContext = true
+    // UISearchController가 활성화 된 동안 다른 View로 이동 시 searchBar가 화면에 남지 		// 않게 한다.
+  }
+}
+
+extension TableViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+  }
+}
+```
+
+ 이렇게 하게 되면 스크롤 시 상단에 고정되는 SearchBar 완성이다.
+
+
+
+
+
+**실행화면**
+
+<img src="10.gif" height="500px"/>
+
  
