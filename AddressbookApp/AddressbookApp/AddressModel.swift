@@ -63,16 +63,7 @@ class AddressModel {
             guard let fullName = CNContactFormatter.string(from: address, style: .fullName) else { return [] }
             var index = 0
             for unicode in fullName.unicodeScalars {
-                switch searchBarTextTypes[index] {
-                case .hangulInitial:
-                    let textIndex = text.index(text.startIndex, offsetBy: index)
-                    if String(text[textIndex]) == Extractor.extractInitial(from: unicode) { index += 1 }
-                    else { index = 0 }
-                default:
-                    let textIndex = text.index(text.startIndex, offsetBy: index)
-                    if String(unicode) == String(text[textIndex]) { index += 1 }
-                    else { index = 0 }
-                }
+                index = compare(searchText: text, with: unicode, searchTextType: searchBarTextTypes[index], index: index)
                 if index == text.count {
                     filteredAddresses.append(AddressDTO(givenName: address.givenName,
                                                         familyName: address.familyName,
@@ -86,18 +77,18 @@ class AddressModel {
         return filteredAddresses
     }
     
-//    private func compare(searchText: String, nameUnicode: UnicodeScalar, searchTextType: TextType, index: Int) -> Int {
-//        switch searchTextType {
-//        case .hangulInitial:
-//            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
-//            if String(searchText[searchTextIndex]) == Extractor.extractInitial(from: nameUnicode) { return index + 1 }
-//            else { return 0 }
-//        default:
-//            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
-//            if String(nameUnicode) == String(searchText[searchTextIndex]) { return index + 1 }
-//            else { return 0}
-//        }
-//    }
+    private func compare(searchText: String, with nameUnicode: UnicodeScalar, searchTextType: TextType, index: Int) -> Int {
+        switch searchTextType {
+        case .hangulInitial:
+            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
+            if String(searchText[searchTextIndex]) == Extractor.extractInitial(from: nameUnicode) { return index + 1 }
+            else { return 0 }
+        default:
+            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
+            if String(nameUnicode) == String(searchText[searchTextIndex]) { return index + 1 }
+            else { return 0}
+        }
+    }
     
     private func getAllAddresses() -> [CNContact] {
         var addresses: [CNContact] = []
