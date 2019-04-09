@@ -37,12 +37,6 @@ class AddressBookViewController: UITableViewController {
                                                object: nil)
     }
     
-    //MARK: Instance
-    
-    private func isFiltering() -> Bool {
-        return searchController.isActive && !searchController.searchBar.isEmpty()
-    }
-    
     //MARK: @objc
     
     @objc private func reloadTableView(_ noti: Notification) {
@@ -52,12 +46,12 @@ class AddressBookViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if isFiltering() { return contacts.filterdCount() }
+        if searchController.isFiltering() { return contacts.filterdCount() }
         return contacts[section]?.count() ?? 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return isFiltering() ? 1 : contacts.count()
+        return searchController.isFiltering() ? 1 : contacts.count()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +59,7 @@ class AddressBookViewController: UITableViewController {
 
         guard let addressCell = cell as? AddressTableViewCell else { return cell }
         
-        if isFiltering(),
+        if searchController.isFiltering(),
             let mgcContact = contacts.filteredAddress(index: indexPath.row) {
             addressCell.show(contact: mgcContact)
             return addressCell
@@ -82,12 +76,12 @@ class AddressBookViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let addressSection = contacts[section], !isFiltering() else { return nil }
+        guard let addressSection = contacts[section], !searchController.isFiltering() else { return nil }
         return addressSection.title
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return isFiltering() ? nil : contacts.indexTitles
+        return searchController.isFiltering() ? nil : contacts.indexTitles
     }
 }
 
@@ -101,5 +95,11 @@ extension AddressBookViewController: UISearchResultsUpdating {
 extension UISearchBar {
     func isEmpty() -> Bool {
         return text?.isEmpty ?? true
+    }
+}
+
+extension UISearchController {
+    func isFiltering() -> Bool {
+        return self.isActive && !self.searchBar.isEmpty()
     }
 }
