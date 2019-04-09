@@ -86,6 +86,19 @@ class AddressModel {
         return filteredAddresses
     }
     
+//    private func compare(searchText: String, nameUnicode: UnicodeScalar, searchTextType: TextType, index: Int) -> Int {
+//        switch searchTextType {
+//        case .hangulInitial:
+//            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
+//            if String(searchText[searchTextIndex]) == Extractor.extractInitial(from: nameUnicode) { return index + 1 }
+//            else { return 0 }
+//        default:
+//            let searchTextIndex = searchText.index(searchText.startIndex, offsetBy: index)
+//            if String(nameUnicode) == String(searchText[searchTextIndex]) { return index + 1 }
+//            else { return 0}
+//        }
+//    }
+    
     private func getAllAddresses() -> [CNContact] {
         var addresses: [CNContact] = []
         for key in sortedKeys {

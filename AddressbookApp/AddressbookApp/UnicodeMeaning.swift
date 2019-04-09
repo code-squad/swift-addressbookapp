@@ -9,8 +9,8 @@
 import Foundation
 
 struct UnicodeMeaning {
-    static let hangulStart = 44032
-    static let hangulFinish = 55203
-    static let englishStart = 97
-    static let englishFinish = 122
+    static let hangulStart: UInt32 = 44032
+    static let hangulFinish: UInt32 = 55203
+    static let englishStart: UInt32 = 97
+    static let englishFinish: UInt32 = 122
 }
