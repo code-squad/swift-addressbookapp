@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7D4BE2FD225874C700465D7B /* InitialConsonantExtracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4BE2FC225874C700465D7B /* InitialConsonantExtracter.swift */; };
+		7D50934F225C75A5003D6E89 /* FilterdAddressDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50934E225C75A5003D6E89 /* FilterdAddressDataSource.swift */; };
+		7D509351225C7745003D6E89 /* AddressDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D509350225C7745003D6E89 /* AddressDataSource.swift */; };
 		7D827B462251DBE8007202FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D827B452251DBE8007202FC /* AppDelegate.swift */; };
 		7D827B482251DBE8007202FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D827B472251DBE8007202FC /* ViewController.swift */; };
 		7D827B4B2251DBE8007202FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D827B492251DBE8007202FC /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		7D4BE2FC225874C700465D7B /* InitialConsonantExtracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialConsonantExtracter.swift; sourceTree = "<group>"; };
+		7D50934E225C75A5003D6E89 /* FilterdAddressDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterdAddressDataSource.swift; sourceTree = "<group>"; };
+		7D509350225C7745003D6E89 /* AddressDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDataSource.swift; sourceTree = "<group>"; };
 		7D827B422251DBE8007202FC /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D827B452251DBE8007202FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D827B472251DBE8007202FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				7DC918EF2252433E0078A750 /* MGC */,
 				7D827B492251DBE8007202FC /* Main.storyboard */,
 				7DC919002252487D0078A750 /* AddressBookViewController.swift */,
+				7D509350225C7745003D6E89 /* AddressDataSource.swift */,
+				7D50934E225C75A5003D6E89 /* FilterdAddressDataSource.swift */,
 				7DC91904225264A80078A750 /* AddressTableViewCell.swift */,
 				7DC9190222524CA50078A750 /* Addresses.swift */,
 				7DBC64DC2255DE77005284DC /* AddressSection.swift */,
@@ -186,6 +192,7 @@
 				7DC919012252487D0078A750 /* AddressBookViewController.swift in Sources */,
 				7D827B482251DBE8007202FC /* ViewController.swift in Sources */,
 				7DC918F92252433E0078A750 /* MGCSegue.swift in Sources */,
+				7D50934F225C75A5003D6E89 /* FilterdAddressDataSource.swift in Sources */,
 				7DC918FF2252433E0078A750 /* MGCLabelValue.swift in Sources */,
 				7D827B462251DBE8007202FC /* AppDelegate.swift in Sources */,
 				7DC918FC2252433E0078A750 /* MGCContact.swift in Sources */,
@@ -196,6 +203,7 @@
 				7DC918FE2252433E0078A750 /* MGCExtensions.swift in Sources */,
 				7DC918FB2252433E0078A750 /* MGCAppConfiguration.swift in Sources */,
 				7DC918F82252433E0078A750 /* MGCContactStore.swift in Sources */,
+				7D509351225C7745003D6E89 /* AddressDataSource.swift in Sources */,
 				7DC91905225264A80078A750 /* AddressTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

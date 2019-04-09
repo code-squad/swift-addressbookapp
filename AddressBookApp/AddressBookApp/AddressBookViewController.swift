@@ -20,12 +20,19 @@ class AddressBookViewController: UITableViewController {
     private var contacts = Addresses()
     private let searchController = UISearchController(searchResultsController: nil)
     
+    private let filteredAddressDataSource = FilteredAddressDataSource()
+    private let addressDataSource = AddressDataSource()
+    
     //MARK: - Methods
     //MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filteredAddressDataSource.attach(contacts: contacts)
+        addressDataSource.attach(contacts: contacts)
 
+        contactTableView.dataSource = addressDataSource
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -42,52 +49,16 @@ class AddressBookViewController: UITableViewController {
     @objc private func reloadTableView(_ noti: Notification) {
         contactTableView.reloadData()
     }
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if searchController.isFiltering() { return contacts.filterdCount() }
-        return contacts[section]?.count() ?? 0
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return searchController.isFiltering() ? 1 : contacts.count()
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.identifier, for: indexPath)
-
-        guard let addressCell = cell as? AddressTableViewCell else { return cell }
-        
-        if searchController.isFiltering(),
-            let mgcContact = contacts.filteredAddress(index: indexPath.row) {
-            addressCell.show(contact: mgcContact)
-            return addressCell
-        }
-        
-        guard let addressSection = contacts[indexPath.section],
-            let mgcContact = addressSection[indexPath.row] else { return addressCell }
-        addressCell.show(contact: mgcContact)
-        return addressCell
-    }
-    
-    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return contacts.indexOfTitle(index) ?? -1
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let addressSection = contacts[section], !searchController.isFiltering() else { return nil }
-        return addressSection.title
-    }
-    
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return searchController.isFiltering() ? nil : contacts.indexTitles
-    }
 }
 
 extension AddressBookViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
+        if searchController.isFiltering() {
+            contactTableView.dataSource = filteredAddressDataSource
+        } else {
+            contactTableView.dataSource = addressDataSource
+        }
         contacts.filterContactWith(searchText: searchText)
     }
 }
