@@ -98,8 +98,10 @@ class AddressModel {
     private func eachTextType(_ text: String) -> [TextType] {
         var textTypes: [TextType] = []
         for unicode in text.unicodeScalars {
-            if unicode.value >= 44032 && unicode.value <= 55203 { textTypes.append(.completeHangul) }
-            else if unicode.value >= 97 && unicode.value <= 122 { textTypes.append(.english) }
+            if unicode.value >= UnicodeMeaning.hangulStart &&
+                unicode.value <= UnicodeMeaning.hangulFinish { textTypes.append(.completeHangul) }
+            else if unicode.value >= UnicodeMeaning.englishStart &&
+                unicode.value <= UnicodeMeaning.englishFinish { textTypes.append(.english) }
             else { textTypes.append(.hangulInitial) }
         }
         return textTypes

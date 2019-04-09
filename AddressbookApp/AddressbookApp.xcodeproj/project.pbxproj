@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D1837D0225B17D7001F02F4 /* TextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1837CF225B17D7001F02F4 /* TextType.swift */; };
+		9D1837D2225C4C9D001F02F4 /* UnicodeMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1837D1225C4C9D001F02F4 /* UnicodeMeaning.swift */; };
 		9DFC130C2251F4E200AF238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC130B2251F4E200AF238C /* AppDelegate.swift */; };
 		9DFC13112251F4E200AF238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC130F2251F4E200AF238C /* Main.storyboard */; };
 		9DFC13132251F4E400AF238C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFC13122251F4E400AF238C /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		9D1837CF225B17D7001F02F4 /* TextType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextType.swift; sourceTree = "<group>"; };
+		9D1837D1225C4C9D001F02F4 /* UnicodeMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeMeaning.swift; sourceTree = "<group>"; };
 		9DFC13082251F4E200AF238C /* AddressbookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressbookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC130B2251F4E200AF238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DFC13102251F4E200AF238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				9DFC13462253512600AF238C /* AddressDTO.swift */,
 				9DFC134A225375F000AF238C /* Extractor.swift */,
 				9D1837CF225B17D7001F02F4 /* TextType.swift */,
+				9D1837D1225C4C9D001F02F4 /* UnicodeMeaning.swift */,
 			);
 			path = AddressbookApp;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1837D2225C4C9D001F02F4 /* UnicodeMeaning.swift in Sources */,
 				9DFC130C2251F4E200AF238C /* AppDelegate.swift in Sources */,
 				9DFC133E2251FB0800AF238C /* MGCContact.swift in Sources */,
 				9DFC13402251FB0800AF238C /* MGCMenuSection.swift in Sources */,
