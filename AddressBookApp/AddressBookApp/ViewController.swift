@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Contacts
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        fetchAllContacts()
     }
-
-
+    
+    /// Fetches all contacts, then updates all tabs accordingly.
+    fileprivate func fetchAllContacts() {
+        MGCContactStore.sharedInstance.fetchContacts(({(contacts: [CNContact]) in
+            dump(contacts)
+        
+        }))
+    }
 }
 
