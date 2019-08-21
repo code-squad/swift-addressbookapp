@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33115B25230BD772007347AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B24230BD772007347AB /* AppDelegate.swift */; };
-		33115B27230BD772007347AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33115B26230BD772007347AB /* ViewController.swift */; };
 		33115B2A230BD772007347AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B28230BD772007347AB /* Main.storyboard */; };
 		33115B2C230BD776007347AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2B230BD776007347AB /* Assets.xcassets */; };
 		33115B2F230BD776007347AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2D230BD776007347AB /* LaunchScreen.storyboard */; };
@@ -24,12 +23,12 @@
 		3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874A230CE75F004594EA /* MGCAppConfiguration.swift */; };
 		3395874D230CE785004594EA /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874C230CE785004594EA /* MGCExtensions.swift */; };
 		3395874F230CF9A0004594EA /* MGCParsingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874E230CF9A0004594EA /* MGCParsingUtilities.swift */; };
+		33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958750230CFE43004594EA /* AddressBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33115B21230BD772007347AB /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33115B24230BD772007347AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33115B26230BD772007347AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		33115B29230BD772007347AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33115B2B230BD776007347AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33115B2E230BD776007347AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		3395874A230CE75F004594EA /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
 		3395874C230CE785004594EA /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		3395874E230CF9A0004594EA /* MGCParsingUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCParsingUtilities.swift; sourceTree = "<group>"; };
+		33958750230CFE43004594EA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 				33958747230CE702004594EA /* Common Code */,
 				33958736230CE099004594EA /* Model */,
 				33115B24230BD772007347AB /* AppDelegate.swift */,
-				33115B26230BD772007347AB /* ViewController.swift */,
+				33958750230CFE43004594EA /* AddressBookViewController.swift */,
 				33115B28230BD772007347AB /* Main.storyboard */,
 				33115B2B230BD776007347AB /* Assets.xcassets */,
 				33115B2D230BD776007347AB /* LaunchScreen.storyboard */,
@@ -187,10 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */,
 				33958743230CE0A8004594EA /* MGCMenuSection.swift in Sources */,
 				3395874F230CF9A0004594EA /* MGCParsingUtilities.swift in Sources */,
 				3395874D230CE785004594EA /* MGCExtensions.swift in Sources */,
-				33115B27230BD772007347AB /* ViewController.swift in Sources */,
 				33958740230CE0A8004594EA /* MGCSegue.swift in Sources */,
 				33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */,
 				3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */,
