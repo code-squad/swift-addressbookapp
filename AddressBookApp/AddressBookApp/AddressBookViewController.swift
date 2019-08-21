@@ -21,20 +21,10 @@ class AddressBookViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressBookTableViewCell
-
+        
         MGCContactStore.sharedInstance.fetchContacts(({(contacts: [CNContact]) in
             let contact = contacts[indexPath.row]
-            
-            cell.nameLabel.text = contact.familyName + " " + contact.givenName
-            cell.telLabel.text = (contact.phoneNumbers[0].value ).stringValue
-            
-            if let emailAddress = contact.emailAddresses.first {
-                cell.emailLabel.text = emailAddress.value as String
-            }
-            
-            if let imageData = contact.imageData {
-                cell.profile.image = UIImage(data: imageData)
-            }
+            cell.putInfo(contact: contact)
         }))
         
         return cell
