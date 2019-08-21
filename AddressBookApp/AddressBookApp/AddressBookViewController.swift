@@ -26,9 +26,15 @@ class AddressBookViewController: UITableViewController {
             let contact = contacts[indexPath.row]
             
             cell.nameLabel.text = contact.familyName + " " + contact.givenName
-//            cell.telLabel.text = String(contact.phoneNumbers.first)
-//            cell.emailLabel.text = String(contact.emailAddresses.first)
-//            cell.profile.image = contact.imageData
+            cell.telLabel.text = (contact.phoneNumbers[0].value ).stringValue
+            
+            if let emailAddress = contact.emailAddresses.first {
+                cell.emailLabel.text = emailAddress.value as String
+            }
+            
+            if let imageData = contact.imageData {
+                cell.profile.image = UIImage(data: imageData)
+            }
         }))
         
         return cell
