@@ -72,6 +72,7 @@
 		33115B23230BD772007347AB /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				331C7BB3230E61A000638339 /* View */,
 				331C7BAE230E59E900638339 /* Model */,
 				331C7BAD230E597400638339 /* ManagingContacts */,
 				33115B24230BD772007347AB /* AppDelegate.swift */,
@@ -80,7 +81,6 @@
 				33115B2B230BD776007347AB /* Assets.xcassets */,
 				33115B2D230BD776007347AB /* LaunchScreen.storyboard */,
 				33115B30230BD776007347AB /* Info.plist */,
-				33958752230D0111004594EA /* AddressBookTableViewCell.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -100,6 +100,14 @@
 				331C7BAF230E5A0700638339 /* ContactDTO.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		331C7BB3230E61A000638339 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33958752230D0111004594EA /* AddressBookTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		33958736230CE099004594EA /* Model */ = {
