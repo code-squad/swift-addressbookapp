@@ -11,17 +11,13 @@
 		33115B2A230BD772007347AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B28230BD772007347AB /* Main.storyboard */; };
 		33115B2C230BD776007347AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2B230BD776007347AB /* Assets.xcassets */; };
 		33115B2F230BD776007347AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2D230BD776007347AB /* LaunchScreen.storyboard */; };
-		3395873E230CE0A8004594EA /* MGCMenuSectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958737230CE0A8004594EA /* MGCMenuSectionFeature.swift */; };
 		3395873F230CE0A8004594EA /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958738230CE0A8004594EA /* MGCContact.swift */; };
-		33958740230CE0A8004594EA /* MGCSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958739230CE0A8004594EA /* MGCSegue.swift */; };
 		33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873A230CE0A8004594EA /* MGCLabelValue.swift */; };
 		33958742230CE0A8004594EA /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873B230CE0A8004594EA /* MGCPostalAddress.swift */; };
-		33958743230CE0A8004594EA /* MGCMenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873C230CE0A8004594EA /* MGCMenuSection.swift */; };
 		33958746230CE6C1004594EA /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958745230CE6C1004594EA /* MGCContactStore.swift */; };
 		33958749230CE716004594EA /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958748230CE716004594EA /* MGCContactStoreUtilities.swift */; };
 		3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874A230CE75F004594EA /* MGCAppConfiguration.swift */; };
 		3395874D230CE785004594EA /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874C230CE785004594EA /* MGCExtensions.swift */; };
-		3395874F230CF9A0004594EA /* MGCParsingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874E230CF9A0004594EA /* MGCParsingUtilities.swift */; };
 		33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958750230CFE43004594EA /* AddressBookViewController.swift */; };
 		33958753230D0111004594EA /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958752230D0111004594EA /* AddressBookTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -33,17 +29,13 @@
 		33115B2B230BD776007347AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33115B2E230BD776007347AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33115B30230BD776007347AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33958737230CE0A8004594EA /* MGCMenuSectionFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCMenuSectionFeature.swift; sourceTree = "<group>"; };
 		33958738230CE0A8004594EA /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
-		33958739230CE0A8004594EA /* MGCSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCSegue.swift; sourceTree = "<group>"; };
 		3395873A230CE0A8004594EA /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
 		3395873B230CE0A8004594EA /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
-		3395873C230CE0A8004594EA /* MGCMenuSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCMenuSection.swift; sourceTree = "<group>"; };
 		33958745230CE6C1004594EA /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		33958748230CE716004594EA /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 		3395874A230CE75F004594EA /* MGCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCAppConfiguration.swift; sourceTree = "<group>"; };
 		3395874C230CE785004594EA /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
-		3395874E230CF9A0004594EA /* MGCParsingUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCParsingUtilities.swift; sourceTree = "<group>"; };
 		33958750230CFE43004594EA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		33958752230D0111004594EA /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,10 +88,7 @@
 			children = (
 				33958738230CE0A8004594EA /* MGCContact.swift */,
 				3395873A230CE0A8004594EA /* MGCLabelValue.swift */,
-				3395873C230CE0A8004594EA /* MGCMenuSection.swift */,
-				33958737230CE0A8004594EA /* MGCMenuSectionFeature.swift */,
 				3395873B230CE0A8004594EA /* MGCPostalAddress.swift */,
-				33958739230CE0A8004594EA /* MGCSegue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,7 +96,6 @@
 		33958747230CE702004594EA /* Common Code */ = {
 			isa = PBXGroup;
 			children = (
-				3395874E230CF9A0004594EA /* MGCParsingUtilities.swift */,
 				33958745230CE6C1004594EA /* MGCContactStore.swift */,
 				33958748230CE716004594EA /* MGCContactStoreUtilities.swift */,
 				3395874A230CE75F004594EA /* MGCAppConfiguration.swift */,
@@ -188,14 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */,
-				33958743230CE0A8004594EA /* MGCMenuSection.swift in Sources */,
-				3395874F230CF9A0004594EA /* MGCParsingUtilities.swift in Sources */,
 				3395874D230CE785004594EA /* MGCExtensions.swift in Sources */,
-				33958740230CE0A8004594EA /* MGCSegue.swift in Sources */,
 				33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */,
 				3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */,
 				33958746230CE6C1004594EA /* MGCContactStore.swift in Sources */,
-				3395873E230CE0A8004594EA /* MGCMenuSectionFeature.swift in Sources */,
 				33958742230CE0A8004594EA /* MGCPostalAddress.swift in Sources */,
 				33958749230CE716004594EA /* MGCContactStoreUtilities.swift in Sources */,
 				3395873F230CE0A8004594EA /* MGCContact.swift in Sources */,
