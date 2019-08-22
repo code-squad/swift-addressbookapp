@@ -594,33 +594,3 @@ class MGCContactStore {
         unregisterForCNContactStoreDidChangeNotification()
     }
 }
-
-// 연락처 숫자를 반환할 메소드가 필요해서 추가
-extension MGCContactStore {
-    func getContactsCount() -> Int {
-        var result = [CNContact]()
-        
-        // Keys required for the operation.
-        let request = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey as CNKeyDescriptor, CNContactFamilyNameKey as CNKeyDescriptor, CNContactOrganizationNameKey as CNKeyDescriptor,
-                                                          CNContactEmailAddressesKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactImageDataKey as CNKeyDescriptor,
-                                                          CNContactEmailAddressesKey as CNKeyDescriptor, CNContactPostalAddressesKey as CNKeyDescriptor,CNPostalAddressStreetKey as CNKeyDescriptor,
-                                                          CNPostalAddressCityKey as CNKeyDescriptor, CNPostalAddressStateKey as CNKeyDescriptor, CNPostalAddressPostalCodeKey as CNKeyDescriptor,
-                                                          CNPostalAddressCountryKey as CNKeyDescriptor, CNContactDatesKey as CNKeyDescriptor, CNContactThumbnailImageDataKey as CNKeyDescriptor,
-                                                          CNContactFormatter.descriptorForRequiredKeys(for: .fullName)])
-        
-        // Sort the result by family name.
-        request.sortOrder = .familyName
-        
-        do {
-            try self.store.enumerateContacts(with: request, usingBlock: {(contact, status) -> Void in
-                result.append(contact)
-            })
-            
-        } catch let error as NSError {
-            print("Error \(error.localizedDescription)")
-        }
-        
-        return result.count
-    }
-}
-
