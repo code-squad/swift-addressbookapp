@@ -24,7 +24,8 @@ class AddressBookViewController: UITableViewController {
         
         MGCContactStore.sharedInstance.fetchContacts(({(contacts: [CNContact]) in
             let contact = contacts[indexPath.row]
-            cell.putInfo(contact: contact)
+            let contactDTO = ContactDTO(contact: contact)
+            cell.putInfo(contactDTO: contactDTO)
         }))
         
         return cell

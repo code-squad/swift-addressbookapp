@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Contacts
 
 class AddressBookTableViewCell: UITableViewCell {
     @IBOutlet weak var profile: UIImageView!
@@ -15,15 +14,15 @@ class AddressBookTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var telLabel: UILabel!
 
-    func putInfo(contact: CNContact) {
-        self.nameLabel.text = contact.familyName + " " + contact.givenName
-        self.telLabel.text = (contact.phoneNumbers[0].value ).stringValue
+    func putInfo(contactDTO: ContactDTO) {
+        self.nameLabel.text = contactDTO.getName()
+        self.telLabel.text = contactDTO.getTel()
         
-        if let emailAddress = contact.emailAddresses.first {
-            self.emailLabel.text = emailAddress.value as String
+        if let emailAddress = contactDTO.getEmail() {
+            self.emailLabel.text = emailAddress
         }
         
-        if let imageData = contact.imageData {
+        if let imageData = contactDTO.getImage() {
             self.profile.image = UIImage(data: imageData)
         }
     }
