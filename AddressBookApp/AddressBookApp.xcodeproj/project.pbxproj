@@ -70,8 +70,7 @@
 		33115B23230BD772007347AB /* AddressBookApp */ = {
 			isa = PBXGroup;
 			children = (
-				33958747230CE702004594EA /* Common Code */,
-				33958736230CE099004594EA /* Model */,
+				331C7BAD230E597400638339 /* ManagingContacts */,
 				33115B24230BD772007347AB /* AppDelegate.swift */,
 				33958750230CFE43004594EA /* AddressBookViewController.swift */,
 				33115B28230BD772007347AB /* Main.storyboard */,
@@ -81,6 +80,15 @@
 				33958752230D0111004594EA /* AddressBookTableViewCell.swift */,
 			);
 			path = AddressBookApp;
+			sourceTree = "<group>";
+		};
+		331C7BAD230E597400638339 /* ManagingContacts */ = {
+			isa = PBXGroup;
+			children = (
+				33958747230CE702004594EA /* Common Code */,
+				33958736230CE099004594EA /* Model */,
+			);
+			path = ManagingContacts;
 			sourceTree = "<group>";
 		};
 		33958736230CE099004594EA /* Model */ = {
