@@ -16,7 +16,10 @@ class AddressBookTableViewCell: UITableViewCell {
 
     func putInfo(contactDTO: ContactDTO) {
         self.nameLabel.text = contactDTO.getName()
-        self.telLabel.text = contactDTO.getTel()
+        
+        if let telNumber = contactDTO.getTel() {
+            self.telLabel.text = telNumber
+        }
         
         if let emailAddress = contactDTO.getEmail() {
             self.emailLabel.text = emailAddress
