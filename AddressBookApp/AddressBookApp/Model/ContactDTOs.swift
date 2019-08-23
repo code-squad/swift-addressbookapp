@@ -11,7 +11,7 @@ import Contacts
 
 struct ContactDTOs {
     var contactDTOs = [ContactDTO]()
-    var initialitys = [String:[ContactDTO]]()
+    var classification =  [(key: String, value: [ContactDTO])]()
     
     init() {
         return
@@ -24,45 +24,47 @@ struct ContactDTOs {
     }
     
     mutating func sort() {
-        self.contactDTOs.sort(by: { (left, right) -> Bool in
+        contactDTOs.sort { (left, right) -> Bool in
             return left < right
-        })
+        }
     }
     
     mutating func makeInitialitys() {
+        var dictionary = [String:[ContactDTO]]()
+        
         for contactDTO in contactDTOs {
             var initiality = ""
             if let familyName = contactDTO.getFamilyName(), familyName.count > 0  {
                 initiality = getInitiality(familyName: familyName)
             }
             
-            if initialitys[initiality] == nil {
-                initialitys[initiality] = [contactDTO]
+            if dictionary[initiality] == nil {
+                dictionary[initiality] = [contactDTO]
                 continue
             }
             
-            initialitys[initiality]!.append(contactDTO)
+            dictionary[initiality]!.append(contactDTO)
         }
         
-        initialitys = [String:[ContactDTO]](uniqueKeysWithValues: initialitys.sorted(by: { $0.0 < $1.0 }))
+        classification = dictionary.sorted { (left, right) -> Bool in
+            return left.key < right.key
+        }
     }
     
     func getSessionCount() -> Int {
-        return initialitys.count
+        return classification.count
     }
     
     func getSessionHeader(index: Int) -> String {
-        return Array(initialitys.keys)[index]
+        return classification[index].key
     }
     
     func getCellCount(index: Int) -> Int {
-        let sessionIndexKey = Array(initialitys.keys)[index]
-        return initialitys[sessionIndexKey]?.count ?? 0
+        return classification[index].value.count
     }
     
     func getContactDTO(sessionIndex: Int, cellIndex: Int) -> ContactDTO {
-        let sessionIndexKey = Array(initialitys.keys)[sessionIndex]
-        return (initialitys[sessionIndexKey]?[cellIndex])!
+        return classification[sessionIndex].value[cellIndex]
     }
     
     private func getInitiality(familyName: String) -> String {
