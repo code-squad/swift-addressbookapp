@@ -38,12 +38,15 @@ struct ContactDTO: Comparable {
             self.image = nil
         }
     }
+    
     func getFamilyName() -> String? {
         return familyName
     }
+    
     func getGivenName() -> String? {
         return givenName
     }
+    
     func getName() -> String {
         guard let givenName = givenName else {
             return familyName ?? ""
@@ -54,15 +57,19 @@ struct ContactDTO: Comparable {
         
         return familyName + " " + givenName
     }
+    
     func getTel() -> String? {
         return tel
     }
+    
     func getEmail() -> String? {
         return email
     }
+    
     func getImage() -> Data? {
         return image
     }
+    
     static func < (lhs: ContactDTO, rhs: ContactDTO) -> Bool {
         guard lhs.getFamilyName() == rhs.getFamilyName() else {
             return lhs.getFamilyName() ?? "" < rhs.getFamilyName() ?? ""
