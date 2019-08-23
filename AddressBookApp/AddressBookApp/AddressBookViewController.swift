@@ -16,25 +16,33 @@ class AddressBookViewController: UITableViewController {
         super.viewDidLoad()
         
         MGCContactStore.sharedInstance.fetchContacts(({(contacts: [CNContact]) in
-            self.contactDTOs = ContactDTOs(contacts: contacts)
-            self.contactDTOs.sort()
-            
             DispatchQueue.main.async {
+                self.contactDTOs = ContactDTOs(contacts: contacts)
+                self.contactDTOs.sort()
+                self.contactDTOs.makeInitialitys()
                 self.tableView.reloadData()
             }
         }))
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return contactDTOs.getSessionCount()
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return contactDTOs.getSessionHeader(index: section)
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return contactDTOs.getCount()
+        return contactDTOs.getCellCount(index: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressBookTableViewCell
         
-        cell.putInfo(contactDTO: contactDTOs.getContactDTO(index: indexPath.row))
+        let contactDTO = contactDTOs.getContactDTO(sessionIndex: indexPath.section, cellIndex: indexPath.row)
+        cell.putInfo(contactDTO: contactDTO)
         
         return cell
     }
