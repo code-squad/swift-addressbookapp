@@ -19,6 +19,9 @@ class AddressBookViewController: UITableViewController {
             self.contactsDTO = contacts.map({ (contact) -> ContactDTO in
                 return ContactDTO(contact: contact)
             })
+            self.contactsDTO.sort(by: { (left, right) -> Bool in
+                return left < right
+            })
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
