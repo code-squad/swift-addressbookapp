@@ -13,6 +13,18 @@ class AddressBookTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var telLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profile.image = UIImage(named: "addressbook-default-profile")
+        nameLabel.text = nil
+        emailLabel.text = nil
+        telLabel.text = nil
+    }
 
     func putInfo(contactDTO: ContactDTO) {
         self.nameLabel.text = contactDTO.getName()
