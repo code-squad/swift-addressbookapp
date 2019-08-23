@@ -10,13 +10,15 @@ import Foundation
 import Contacts
 
 struct ContactDTO {
-    private let name: String
+    private let familyName: String
+    private let givenName: String
     private let tel: String
     private let email: String?
     private let image: Data?
     
     init(contact: CNContact) {
-        self.name = contact.familyName + " " + contact.givenName
+        self.familyName = contact.familyName
+        self.givenName = contact.givenName
         self.tel = (contact.phoneNumbers[0].value ).stringValue
         
         if let emailAddress = contact.emailAddresses.first {
@@ -31,9 +33,14 @@ struct ContactDTO {
             self.image = nil
         }
     }
-    
+    func getFamilyName() -> String {
+        return familyName
+    }
+    func getGivenName() -> String {
+        return givenName
+    }
     func getName() -> String {
-        return name
+        return familyName + " " + givenName
     }
     func getTel() -> String {
         return tel
