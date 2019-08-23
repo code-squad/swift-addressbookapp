@@ -21,6 +21,7 @@
 		3395874D230CE785004594EA /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874C230CE785004594EA /* MGCExtensions.swift */; };
 		33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958750230CFE43004594EA /* AddressBookViewController.swift */; };
 		33958753230D0111004594EA /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958752230D0111004594EA /* AddressBookTableViewCell.swift */; };
+		33F17022231008CB008346B7 /* ContactDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F17021231008CB008346B7 /* ContactDTOs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3395874C230CE785004594EA /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		33958750230CFE43004594EA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		33958752230D0111004594EA /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
+		33F17021231008CB008346B7 /* ContactDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDTOs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				331C7BAF230E5A0700638339 /* ContactDTO.swift */,
+				33F17021231008CB008346B7 /* ContactDTOs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				33958749230CE716004594EA /* MGCContactStoreUtilities.swift in Sources */,
 				3395873F230CE0A8004594EA /* MGCContact.swift in Sources */,
 				33115B25230BD772007347AB /* AppDelegate.swift in Sources */,
+				33F17022231008CB008346B7 /* ContactDTOs.swift in Sources */,
 				33958753230D0111004594EA /* AddressBookTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
