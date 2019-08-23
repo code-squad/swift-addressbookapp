@@ -67,6 +67,14 @@ struct ContactDTOs {
         return classification[sessionIndex].value[cellIndex]
     }
     
+    func getAllSessionHeader() -> [String]? {
+        let allSessionHeader = classification.map { (arg0) -> String in
+            return arg0.key
+        }
+        
+        return allSessionHeader
+    }
+    
     private func getInitiality(familyName: String) -> String {
         let str:NSString = NSString(string: familyName)
         let oneChar:UniChar = str.character(at: 0)
