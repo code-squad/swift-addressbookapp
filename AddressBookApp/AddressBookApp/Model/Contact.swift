@@ -9,7 +9,7 @@
 import Foundation
 import Contacts
 
-struct ContactDTO: Comparable {
+struct Contact: Comparable {
     private let familyName: String?
     private let givenName: String?
     private let tel: String?
@@ -70,7 +70,7 @@ struct ContactDTO: Comparable {
         return image
     }
     
-    static func < (lhs: ContactDTO, rhs: ContactDTO) -> Bool {
+    static func < (lhs: Contact, rhs: Contact) -> Bool {
         guard lhs.getFamilyName() == rhs.getFamilyName() else {
             return lhs.getFamilyName() ?? "" < rhs.getFamilyName() ?? ""
         }

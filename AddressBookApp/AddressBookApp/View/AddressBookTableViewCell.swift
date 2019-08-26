@@ -26,7 +26,7 @@ class AddressBookTableViewCell: UITableViewCell {
         telLabel.text = nil
     }
 
-    func putInfo(contactDTO: ContactDTO) {
+    func putInfo(contactDTO: Contact) {
         self.nameLabel.text = contactDTO.getName()
         
         if let telNumber = contactDTO.getTel() {

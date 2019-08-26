@@ -11,7 +11,7 @@
 		33115B2A230BD772007347AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B28230BD772007347AB /* Main.storyboard */; };
 		33115B2C230BD776007347AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2B230BD776007347AB /* Assets.xcassets */; };
 		33115B2F230BD776007347AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2D230BD776007347AB /* LaunchScreen.storyboard */; };
-		331C7BB0230E5A0700638339 /* ContactDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C7BAF230E5A0700638339 /* ContactDTO.swift */; };
+		331C7BB0230E5A0700638339 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C7BAF230E5A0700638339 /* Contact.swift */; };
 		3395873F230CE0A8004594EA /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958738230CE0A8004594EA /* MGCContact.swift */; };
 		33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873A230CE0A8004594EA /* MGCLabelValue.swift */; };
 		33958742230CE0A8004594EA /* MGCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873B230CE0A8004594EA /* MGCPostalAddress.swift */; };
@@ -21,7 +21,7 @@
 		3395874D230CE785004594EA /* MGCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395874C230CE785004594EA /* MGCExtensions.swift */; };
 		33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958750230CFE43004594EA /* AddressBookViewController.swift */; };
 		33958753230D0111004594EA /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958752230D0111004594EA /* AddressBookTableViewCell.swift */; };
-		33F17022231008CB008346B7 /* ContactDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F17021231008CB008346B7 /* ContactDTOs.swift */; };
+		33F17022231008CB008346B7 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F17021231008CB008346B7 /* Contacts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		33115B2B230BD776007347AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33115B2E230BD776007347AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33115B30230BD776007347AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		331C7BAF230E5A0700638339 /* ContactDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDTO.swift; sourceTree = "<group>"; };
+		331C7BAF230E5A0700638339 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		33958738230CE0A8004594EA /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
 		3395873A230CE0A8004594EA /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
 		3395873B230CE0A8004594EA /* MGCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCPostalAddress.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		3395874C230CE785004594EA /* MGCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCExtensions.swift; sourceTree = "<group>"; };
 		33958750230CFE43004594EA /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		33958752230D0111004594EA /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
-		33F17021231008CB008346B7 /* ContactDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDTOs.swift; sourceTree = "<group>"; };
+		33F17021231008CB008346B7 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 		331C7BAE230E59E900638339 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				331C7BAF230E5A0700638339 /* ContactDTO.swift */,
-				33F17021231008CB008346B7 /* ContactDTOs.swift */,
+				331C7BAF230E5A0700638339 /* Contact.swift */,
+				33F17021231008CB008346B7 /* Contacts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,11 +211,11 @@
 				3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */,
 				33958746230CE6C1004594EA /* MGCContactStore.swift in Sources */,
 				33958742230CE0A8004594EA /* MGCPostalAddress.swift in Sources */,
-				331C7BB0230E5A0700638339 /* ContactDTO.swift in Sources */,
+				331C7BB0230E5A0700638339 /* Contact.swift in Sources */,
 				33958749230CE716004594EA /* MGCContactStoreUtilities.swift in Sources */,
 				3395873F230CE0A8004594EA /* MGCContact.swift in Sources */,
 				33115B25230BD772007347AB /* AppDelegate.swift in Sources */,
-				33F17022231008CB008346B7 /* ContactDTOs.swift in Sources */,
+				33F17022231008CB008346B7 /* Contacts.swift in Sources */,
 				33958753230D0111004594EA /* AddressBookTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

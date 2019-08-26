@@ -10,44 +10,44 @@ import UIKit
 import Contacts
 
 class AddressBookViewController: UITableViewController {
-    var contactDTOs = ContactDTOs()
+    var contacts = Contacts()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MGCContactStore.sharedInstance.fetchContacts(({(contacts: [CNContact]) in
+        MGCContactStore.sharedInstance.fetchContacts(({(cnContacts: [CNContact]) in
             DispatchQueue.main.async {
-                self.contactDTOs = ContactDTOs(contacts: contacts)
-                self.contactDTOs.sort()
-                self.contactDTOs.makeInitialitys()
+                self.contacts = Contacts(contacts: cnContacts)
+                self.contacts.sort()
+                self.contacts.makeInitialitys()
                 self.tableView.reloadData()
             }
         }))
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return contactDTOs.getSessionCount()
+        return contacts.getSessionCount()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return contactDTOs.getSessionHeader(index: section)
+        return contacts.getSessionHeader(index: section)
     }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactDTOs.getCellCount(index: section)
+        return contacts.getCellCount(index: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressBookTableViewCell
         
-        let contactDTO = contactDTOs.getContactDTO(sessionIndex: indexPath.section, cellIndex: indexPath.row)
-        cell.putInfo(contactDTO: contactDTO)
+        let contact = contacts.getContact(sessionIndex: indexPath.section, cellIndex: indexPath.row)
+        cell.putInfo(contactDTO: contact)
         
         return cell
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return contactDTOs.getAllSessionHeader()
+        return contacts.getAllSessionHeader()
     }
 }

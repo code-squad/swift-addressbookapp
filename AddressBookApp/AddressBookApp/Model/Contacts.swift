@@ -9,41 +9,41 @@
 import Foundation
 import Contacts
 
-struct ContactDTOs {
-    var contactDTOs = [ContactDTO]()
-    var classification =  [(key: String, value: [ContactDTO])]()
+struct Contacts {
+    var contacts = [Contact]()
+    var classification =  [(key: String, value: [Contact])]()
     
     init() {
         return
     }
     
     init(contacts: [CNContact]) {
-        self.contactDTOs = contacts.map({ (contact) -> ContactDTO in
-            return ContactDTO(contact: contact)
+        self.contacts = contacts.map({ (contact) -> Contact in
+            return Contact(contact: contact)
         })
     }
     
     mutating func sort() {
-        contactDTOs.sort { (left, right) -> Bool in
+        contacts.sort { (left, right) -> Bool in
             return left < right
         }
     }
     
     mutating func makeInitialitys() {
-        var dictionary = [String:[ContactDTO]]()
+        var dictionary = [String:[Contact]]()
         
-        for contactDTO in contactDTOs {
+        for contact in contacts {
             var initiality = ""
-            if let familyName = contactDTO.getFamilyName(), familyName.count > 0  {
+            if let familyName = contact.getFamilyName(), familyName.count > 0  {
                 initiality = getInitiality(familyName: familyName)
             }
             
             if dictionary[initiality] == nil {
-                dictionary[initiality] = [contactDTO]
+                dictionary[initiality] = [contact]
                 continue
             }
             
-            dictionary[initiality]!.append(contactDTO)
+            dictionary[initiality]!.append(contact)
         }
         
         classification = dictionary.sorted { (left, right) -> Bool in
@@ -63,7 +63,7 @@ struct ContactDTOs {
         return classification[index].value.count
     }
     
-    func getContactDTO(sessionIndex: Int, cellIndex: Int) -> ContactDTO {
+    func getContact(sessionIndex: Int, cellIndex: Int) -> Contact {
         return classification[sessionIndex].value[cellIndex]
     }
     
