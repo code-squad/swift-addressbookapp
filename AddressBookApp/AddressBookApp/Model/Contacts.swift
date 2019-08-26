@@ -9,6 +9,10 @@
 import Foundation
 import Contacts
 
+extension Notification.Name {
+    static let reloadAddressBook = Notification.Name("reloadAddressBook")
+}
+
 struct Contacts {
     var contacts = [Contact]()
     var classification =  [(key: String, value: [Contact])]()
@@ -21,15 +25,18 @@ struct Contacts {
         self.contacts = contacts.map({ (contact) -> Contact in
             return Contact(contact: contact)
         })
+        sort()
+        makeInitialitys()
+        notifyBalanceToObservers()
     }
     
-    mutating func sort() {
+    private mutating func sort() {
         contacts.sort { (left, right) -> Bool in
             return left < right
         }
     }
     
-    mutating func makeInitialitys() {
+    private mutating func makeInitialitys() {
         var dictionary = [String:[Contact]]()
         
         for contact in contacts {
@@ -87,5 +94,10 @@ struct Contacts {
         }
         
         return String(initiality)
+    }
+    
+    /// 연락처가 로드된 것을 옵저버에게 알리기
+    private func notifyBalanceToObservers() {
+        NotificationCenter.default.post(name: .reloadAddressBook, object: self)
     }
 }

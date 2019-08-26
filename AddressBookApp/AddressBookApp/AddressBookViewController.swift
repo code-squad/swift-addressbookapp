@@ -14,14 +14,9 @@ class AddressBookViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(onReloadAddressBook(_:)), name: .reloadAddressBook, object: nil)
         MGCContactStore.sharedInstance.fetchContacts(({(cnContacts: [CNContact]) in
-            DispatchQueue.main.async {
-                self.contacts = Contacts(contacts: cnContacts)
-                self.contacts.sort()
-                self.contacts.makeInitialitys()
-                self.tableView.reloadData()
-            }
+            Contacts.init(contacts: cnContacts)
         }))
     }
     
@@ -49,5 +44,10 @@ class AddressBookViewController: UITableViewController {
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return contacts.getAllSessionHeader()
+    }
+    
+    @objc func onReloadAddressBook(_ notification:Notification) {
+        contacts = notification.object as! Contacts
+        self.tableView.reloadData()
     }
 }
