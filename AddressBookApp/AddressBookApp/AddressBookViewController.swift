@@ -61,4 +61,8 @@ class AddressBookViewController: UITableViewController, UISearchBarDelegate {
         }
         contacts.searchWord(searchText)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
 }
