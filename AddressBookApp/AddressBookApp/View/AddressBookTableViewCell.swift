@@ -41,4 +41,8 @@ class AddressBookTableViewCell: UITableViewCell {
             self.profile.image = UIImage(data: imageData)
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.superview?.endEditing(true)
+    }
 }
