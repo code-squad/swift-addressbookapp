@@ -63,8 +63,8 @@ struct Contacts {
         return classification[index].value.count
     }
     
-    func getContact(sessionIndex: Int, cellIndex: Int) -> Contact {
-        return classification[sessionIndex].value[cellIndex]
+    func getContact(indexPath: IndexPath) -> Contact {
+        return classification[indexPath.section].value[indexPath.row]
     }
     
     func getAllSessionHeader() -> [String]? {

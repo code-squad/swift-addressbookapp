@@ -41,7 +41,7 @@ class AddressBookViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! AddressBookTableViewCell
         
-        let contact = contacts.getContact(sessionIndex: indexPath.section, cellIndex: indexPath.row)
+        let contact = contacts.getContact(indexPath: indexPath)
         cell.putInfo(contactDTO: contact)
         
         return cell
