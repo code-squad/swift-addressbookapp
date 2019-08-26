@@ -27,7 +27,7 @@ struct Contacts {
         })
         sort()
         makeInitialitys()
-        notifyBalanceToObservers()
+        notifyContactsToObservers()
     }
     
     private mutating func sort() {
@@ -97,7 +97,7 @@ struct Contacts {
     }
     
     /// 연락처가 로드된 것을 옵저버에게 알리기
-    private func notifyBalanceToObservers() {
+    private func notifyContactsToObservers() {
         NotificationCenter.default.post(name: .reloadAddressBook, object: self)
     }
 }
