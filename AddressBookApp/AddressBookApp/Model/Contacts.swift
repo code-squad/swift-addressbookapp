@@ -36,13 +36,16 @@ struct Contacts {
         }
     }
     
-    private mutating func makeInitialitys() {
+    mutating func makeInitialitys() {
         var dictionary = [String:[Contact]]()
+        let hangulSystem = YKHangul()
         
         for contact in contacts {
             var initiality = ""
             if let familyName = contact.getFamilyName(), familyName.count > 0  {
-                initiality = getInitiality(familyName: familyName)
+                let initials = hangulSystem.getStringConsonant(string: familyName,
+                                                            consonantType: .Initial)
+                initiality = String(initials.first!)
             }
             
             if dictionary[initiality] == nil {
@@ -82,22 +85,17 @@ struct Contacts {
         return allSessionHeader
     }
     
-    private func getInitiality(familyName: String) -> String {
-        let str:NSString = NSString(string: familyName)
-        let oneChar:UniChar = str.character(at: 0)
-        var initiality:NSString = ""
-        
-        if (oneChar >= 0xAC00 && oneChar <= 0xD7A3){
-            var firstCodeValue = ((oneChar - 0xAC00)/28)/21
-            firstCodeValue += 0x1100;
-            initiality = initiality.appending( NSString(format:"%C", firstCodeValue) as String ) as NSString
-        }
-        
-        return String(initiality)
-    }
-    
     /// 연락처가 로드된 것을 옵저버에게 알리기
     private func notifyContactsToObservers() {
         NotificationCenter.default.post(name: .reloadAddressBook, object: self)
+    }
+    
+    mutating func searchWord(_ word: String) {
+        let searchResult = contacts.filter { (contact) -> Bool in
+            return contact.searchWord(word)
+        }
+        classification.removeAll()
+        classification.append((key: "", value: searchResult))
+        notifyContactsToObservers()
     }
 }

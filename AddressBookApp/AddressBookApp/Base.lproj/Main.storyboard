@@ -79,6 +79,9 @@
                             <outlet property="delegate" destination="qUO-JN-oUl" id="S55-qh-mnN"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="wordSearchBar" destination="vk4-c4-lUh" id="NPR-Ys-Lf5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gih-eU-Vu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

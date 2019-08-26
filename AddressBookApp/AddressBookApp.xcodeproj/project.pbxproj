@@ -11,6 +11,7 @@
 		33115B2A230BD772007347AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B28230BD772007347AB /* Main.storyboard */; };
 		33115B2C230BD776007347AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2B230BD776007347AB /* Assets.xcassets */; };
 		33115B2F230BD776007347AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33115B2D230BD776007347AB /* LaunchScreen.storyboard */; };
+		331C63872313FB1B00A5AC76 /* YKHangul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C63862313FB1B00A5AC76 /* YKHangul.swift */; };
 		331C7BB0230E5A0700638339 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C7BAF230E5A0700638339 /* Contact.swift */; };
 		3395873F230CE0A8004594EA /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33958738230CE0A8004594EA /* MGCContact.swift */; };
 		33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395873A230CE0A8004594EA /* MGCLabelValue.swift */; };
@@ -31,6 +32,7 @@
 		33115B2B230BD776007347AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33115B2E230BD776007347AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33115B30230BD776007347AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		331C63862313FB1B00A5AC76 /* YKHangul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKHangul.swift; sourceTree = "<group>"; };
 		331C7BAF230E5A0700638339 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		33958738230CE0A8004594EA /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
 		3395873A230CE0A8004594EA /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				33115B2B230BD776007347AB /* Assets.xcassets */,
 				33115B2D230BD776007347AB /* LaunchScreen.storyboard */,
 				33115B30230BD776007347AB /* Info.plist */,
+				331C63862313FB1B00A5AC76 /* YKHangul.swift */,
 			);
 			path = AddressBookApp;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33958751230CFE43004594EA /* AddressBookViewController.swift in Sources */,
+				331C63872313FB1B00A5AC76 /* YKHangul.swift in Sources */,
 				3395874D230CE785004594EA /* MGCExtensions.swift in Sources */,
 				33958741230CE0A8004594EA /* MGCLabelValue.swift in Sources */,
 				3395874B230CE75F004594EA /* MGCAppConfiguration.swift in Sources */,
@@ -299,6 +303,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -353,6 +358,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -371,6 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.AddressBookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = off;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

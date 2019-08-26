@@ -9,7 +9,8 @@
 import UIKit
 import Contacts
 
-class AddressBookViewController: UITableViewController {
+class AddressBookViewController: UITableViewController, UISearchBarDelegate {
+    @IBOutlet weak var wordSearchBar: UISearchBar!
     var contacts = Contacts()
     
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class AddressBookViewController: UITableViewController {
         MGCContactStore.sharedInstance.fetchContacts(({(cnContacts: [CNContact]) in
             Contacts.init(contacts: cnContacts)
         }))
+        wordSearchBar.delegate = self
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,7 +49,16 @@ class AddressBookViewController: UITableViewController {
     }
     
     @objc func onReloadAddressBook(_ notification:Notification) {
-        contacts = notification.object as! Contacts
+        contacts = notification.object as? Contacts ?? Contacts()
         self.tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            contacts.makeInitialitys()
+            self.tableView.reloadData()
+            return
+        }
+        contacts.searchWord(searchText)
     }
 }

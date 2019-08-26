@@ -76,4 +76,25 @@ struct Contact: Comparable {
         }
         return lhs.getGivenName() ?? "" < rhs.getGivenName() ?? ""
     }
+    
+    func searchWord(_ word: String) -> Bool {
+        let hangulSystem = YKHangul()
+        
+        guard let familyName = familyName else {
+            return false
+        }
+        
+        if word.first == familyName.first {
+            return true
+        }
+        
+        let inputIntials = hangulSystem.getStringConsonant(string: word, consonantType: .Initial)
+        let familyNameIntials = hangulSystem.getStringConsonant(string: familyName, consonantType: .Initial)
+        
+        if inputIntials.first == word.first {
+            return inputIntials.first == familyNameIntials.first
+        }
+        
+        return false
+    }
 }
