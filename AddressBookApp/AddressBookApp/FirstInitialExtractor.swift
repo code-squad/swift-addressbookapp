@@ -1,5 +1,5 @@
 //
-//  YKHangul.swift
+//  FirstInitialExtractor.swift
 //  AddressBookApp
 //
 // 출처 : https://github.com/yojkim/YKHangul
