@@ -78,7 +78,7 @@ struct Contact: Comparable {
     }
     
     func searchWord(_ word: String) -> Bool {
-        let hangulSystem = YKHangul()
+        let firstInitialExtractor = FirstInitialExtractor()
         
         guard let familyName = familyName else {
             return false
@@ -88,11 +88,12 @@ struct Contact: Comparable {
             return true
         }
         
-        let inputIntials = hangulSystem.getStringConsonant(string: word, consonantType: .Initial)
-        let familyNameIntials = hangulSystem.getStringConsonant(string: familyName, consonantType: .Initial)
+        let inputFirstIntial = firstInitialExtractor.extract(string: word)
+        let familyNameFirstIntial = firstInitialExtractor.extract(string: familyName)
         
-        if inputIntials.first == word.first {
-            return inputIntials.first == familyNameIntials.first
+        
+        if inputFirstIntial.first == word.first {
+            return inputFirstIntial == familyNameFirstIntial
         }
         
         return false

@@ -38,14 +38,12 @@ struct Contacts {
     
     mutating func makeInitialitys() {
         var dictionary = [String:[Contact]]()
-        let hangulSystem = YKHangul()
+        let firstInitialExtractor = FirstInitialExtractor()
         
         for contact in contacts {
             var initiality = ""
             if let familyName = contact.getFamilyName(), familyName.count > 0  {
-                let initials = hangulSystem.getStringConsonant(string: familyName,
-                                                            consonantType: .Initial)
-                initiality = String(initials.first!)
+                initiality = firstInitialExtractor.extract(string: familyName)
             }
             
             if dictionary[initiality] == nil {
