@@ -29,10 +29,10 @@ struct FirstInitialExtractor {
             endOfHangul >= currentUnicodeValue ) {
             
             return initialConsonantArray[Int(((currentUnicodeValue - startOfHangul) / 28) / 21)]
-        } else { // 유니코드 값이 한글 범위가 아닌 경우
-            if let scalar = UnicodeScalar(currentUnicodeValue) {
-                return String(scalar)
-            }
+        }
+        
+        if let scalar = UnicodeScalar(currentUnicodeValue) {
+            return String(scalar)
         }
         
         return notHaveInitial
