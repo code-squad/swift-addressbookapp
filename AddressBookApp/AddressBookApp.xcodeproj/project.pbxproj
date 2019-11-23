@@ -13,6 +13,8 @@
 		FAD45AE0238924D200DE2CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD45ADF238924D200DE2CE8 /* Assets.xcassets */; };
 		FAD45AE3238924D200DE2CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD45AE1238924D200DE2CE8 /* LaunchScreen.storyboard */; };
 		FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */; };
+		FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */; };
+		FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FAD45AE2238924D200DE2CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD45AE4238924D200DE2CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
+		FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,47 @@
 			children = (
 				FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */,
 				FAD45AD8238924CD00DE2CE8 /* SceneDelegate.swift */,
-				FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */,
+				FAD45AEE2389478600DE2CE8 /* ViewControllers */,
+				FAD45AF1238947BA00DE2CE8 /* Views */,
+				FAD45AF3238947F400DE2CE8 /* Utils */,
 				FAD45ADC238924CD00DE2CE8 /* Main.storyboard */,
 				FAD45ADF238924D200DE2CE8 /* Assets.xcassets */,
 				FAD45AE1238924D200DE2CE8 /* LaunchScreen.storyboard */,
 				FAD45AE4238924D200DE2CE8 /* Info.plist */,
 			);
 			path = AddressBookApp;
+			sourceTree = "<group>";
+		};
+		FAD45AEE2389478600DE2CE8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FAD45AEF2389479200DE2CE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FAD45AF1238947BA00DE2CE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AEF2389479200DE2CE8 /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAD45AF3238947F400DE2CE8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD45AD7238924CD00DE2CE8 /* AppDelegate.swift in Sources */,
+				FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
+				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
 				FAD45AD9238924CD00DE2CE8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
