@@ -29,34 +29,37 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조민지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fz-ba-eX4">
-                                            <rect key="frame" x="98" y="16" width="52" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <rect key="frame" x="98" y="0.0" width="62.5" height="60"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abc@qwerty.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWe-9u-F0X">
-                                            <rect key="frame" x="98" y="56" width="300" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="98" y="60" width="300" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+82-10-1234-1234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfa-tu-yq0">
-                                            <rect key="frame" x="249" y="17.5" width="149" height="21"/>
+                                            <rect key="frame" x="249" y="0.0" width="149" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="rWe-9u-F0X" secondAttribute="trailing" constant="16" id="9UQ-ia-40h"/>
-                                        <constraint firstItem="rWe-9u-F0X" firstAttribute="top" secondItem="7Fz-ba-eX4" secondAttribute="bottom" constant="16" id="Awt-6p-4p7"/>
                                         <constraint firstItem="7Fz-ba-eX4" firstAttribute="leading" secondItem="jrc-p6-dWT" secondAttribute="trailing" constant="8" id="CIt-WH-VfQ"/>
                                         <constraint firstItem="jrc-p6-dWT" firstAttribute="top" secondItem="DWs-gh-YnG" secondAttribute="top" id="Hd8-dN-4bm"/>
+                                        <constraint firstItem="rWe-9u-F0X" firstAttribute="height" secondItem="DWs-gh-YnG" secondAttribute="height" multiplier="1/3" id="If1-gA-P6B"/>
                                         <constraint firstItem="7Fz-ba-eX4" firstAttribute="centerY" secondItem="Bfa-tu-yq0" secondAttribute="centerY" id="Lez-Go-xSU"/>
+                                        <constraint firstItem="Bfa-tu-yq0" firstAttribute="height" secondItem="7Fz-ba-eX4" secondAttribute="height" id="Sic-xl-yP1"/>
                                         <constraint firstItem="jrc-p6-dWT" firstAttribute="leading" secondItem="DWs-gh-YnG" secondAttribute="leading" id="WEx-jR-wEM"/>
-                                        <constraint firstItem="7Fz-ba-eX4" firstAttribute="top" secondItem="DWs-gh-YnG" secondAttribute="top" constant="16" id="b3K-Cs-NC7"/>
+                                        <constraint firstItem="rWe-9u-F0X" firstAttribute="top" secondItem="7Fz-ba-eX4" secondAttribute="bottom" id="be5-jT-goT"/>
+                                        <constraint firstItem="7Fz-ba-eX4" firstAttribute="height" secondItem="DWs-gh-YnG" secondAttribute="height" multiplier="2/3" id="eXc-vt-ZK1"/>
                                         <constraint firstAttribute="bottom" secondItem="jrc-p6-dWT" secondAttribute="bottom" id="eqU-Nq-YcW"/>
                                         <constraint firstItem="rWe-9u-F0X" firstAttribute="leading" secondItem="jrc-p6-dWT" secondAttribute="trailing" constant="8" id="hd3-f6-wKS"/>
+                                        <constraint firstItem="7Fz-ba-eX4" firstAttribute="top" secondItem="DWs-gh-YnG" secondAttribute="top" id="oe8-Dg-7tR"/>
                                         <constraint firstAttribute="trailing" secondItem="Bfa-tu-yq0" secondAttribute="trailing" constant="16" id="v5j-1J-XBw"/>
                                     </constraints>
                                 </tableViewCellContentView>
