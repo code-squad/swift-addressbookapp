@@ -15,6 +15,10 @@
 		FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */; };
 		FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */; };
 		FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */; };
+		FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */; };
+		FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFC2389541900DE2CE8 /* MGCContact.swift */; };
+		FAD45AFF2389543800DE2CE8 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */; };
+		FAD45B09238BC05300DE2CE8 /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
+		FAD45AFC2389541900DE2CE8 /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
+		FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
+		FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +70,10 @@
 			children = (
 				FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */,
 				FAD45AD8238924CD00DE2CE8 /* SceneDelegate.swift */,
-				FAD45AEE2389478600DE2CE8 /* ViewControllers */,
+				FAD45AEE2389478600DE2CE8 /* View Controllers */,
 				FAD45AF1238947BA00DE2CE8 /* Views */,
+				FAD45AF623894EE600DE2CE8 /* Common Code */,
+				FAD45AFB2389540C00DE2CE8 /* Models */,
 				FAD45AF3238947F400DE2CE8 /* Utils */,
 				FAD45ADC238924CD00DE2CE8 /* Main.storyboard */,
 				FAD45ADF238924D200DE2CE8 /* Assets.xcassets */,
@@ -73,12 +83,12 @@
 			path = AddressBookApp;
 			sourceTree = "<group>";
 		};
-		FAD45AEE2389478600DE2CE8 /* ViewControllers */ = {
+		FAD45AEE2389478600DE2CE8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FAD45AEA2389426700DE2CE8 /* AddressBookViewController.swift */,
 			);
-			path = ViewControllers;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		FAD45AEF2389479200DE2CE8 /* Cell */ = {
@@ -103,6 +113,24 @@
 				FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FAD45AF623894EE600DE2CE8 /* Common Code */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */,
+				FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */,
+			);
+			path = "Common Code";
+			sourceTree = "<group>";
+		};
+		FAD45AFB2389540C00DE2CE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAD45AFC2389541900DE2CE8 /* MGCContact.swift */,
+				FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +205,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD45AD7238924CD00DE2CE8 /* AppDelegate.swift in Sources */,
+				FAD45B09238BC05300DE2CE8 /* MGCContactStoreUtilities.swift in Sources */,
 				FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */,
+				FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
 				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
+				FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */,
 				FAD45AD9238924CD00DE2CE8 /* SceneDelegate.swift in Sources */,
+				FAD45AFF2389543800DE2CE8 /* MGCLabelValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
