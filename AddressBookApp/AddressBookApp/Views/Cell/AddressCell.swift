@@ -52,5 +52,18 @@ extension AddressCell {
         emailLabel.textColor = .darkGray
         emailLabel.textAlignment = .right
     }
+}
 
+// MARK: - Configure
+
+extension AddressCell {
+    func configure(_ contact: MGCContact) {
+        if let imageData = contact.profilePictureData {
+            profileImageView.image = UIImage(data: imageData)
+        }
+        
+        nameLabel.text = contact.fullName ?? ""
+        emailLabel.text = contact.email ?? ""
+        telLabel.text = contact.phoneNumber ?? ""
+    }
 }

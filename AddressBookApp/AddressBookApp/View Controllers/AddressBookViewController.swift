@@ -46,7 +46,7 @@ class AddressBookViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressCell.reuseID, for: indexPath) as! AddressCell
         
         let contact = contacts[indexPath.row]
-        
+        cell.configure(contact)
         
         return cell
     }
