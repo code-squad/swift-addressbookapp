@@ -17,8 +17,6 @@
 		FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */; };
 		FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */; };
 		FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFC2389541900DE2CE8 /* MGCContact.swift */; };
-		FAD45AFF2389543800DE2CE8 /* MGCLabelValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */; };
-		FAD45B09238BC05300DE2CE8 /* MGCContactStoreUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +32,6 @@
 		FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
 		FAD45AFC2389541900DE2CE8 /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
-		FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCLabelValue.swift; sourceTree = "<group>"; };
-		FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStoreUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */,
-				FAD45B08238BC05300DE2CE8 /* MGCContactStoreUtilities.swift */,
 			);
 			path = "Common Code";
 			sourceTree = "<group>";
@@ -128,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD45AFC2389541900DE2CE8 /* MGCContact.swift */,
-				FAD45AFE2389543700DE2CE8 /* MGCLabelValue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,14 +199,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD45AD7238924CD00DE2CE8 /* AppDelegate.swift in Sources */,
-				FAD45B09238BC05300DE2CE8 /* MGCContactStoreUtilities.swift in Sources */,
 				FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */,
 				FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
 				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
 				FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */,
 				FAD45AD9238924CD00DE2CE8 /* SceneDelegate.swift in Sources */,
-				FAD45AFF2389543800DE2CE8 /* MGCLabelValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
