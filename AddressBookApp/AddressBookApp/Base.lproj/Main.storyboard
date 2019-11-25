@@ -29,8 +29,8 @@
                                                 <constraint firstAttribute="width" secondItem="jrc-p6-dWT" secondAttribute="height" multiplier="1:1" id="yjq-Qd-Fwe"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조민지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fz-ba-eX4">
-                                            <rect key="frame" x="98" y="0.0" width="62.5" height="60"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="조민지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fz-ba-eX4">
+                                            <rect key="frame" x="98" y="0.0" width="143" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+82-10-1234-1234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfa-tu-yq0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="+82-10-1234-1234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfa-tu-yq0">
                                             <rect key="frame" x="249" y="0.0" width="149" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,6 +58,7 @@
                                         <constraint firstItem="Bfa-tu-yq0" firstAttribute="height" secondItem="7Fz-ba-eX4" secondAttribute="height" id="Sic-xl-yP1"/>
                                         <constraint firstItem="jrc-p6-dWT" firstAttribute="leading" secondItem="DWs-gh-YnG" secondAttribute="leading" id="WEx-jR-wEM"/>
                                         <constraint firstItem="rWe-9u-F0X" firstAttribute="top" secondItem="7Fz-ba-eX4" secondAttribute="bottom" id="be5-jT-goT"/>
+                                        <constraint firstItem="Bfa-tu-yq0" firstAttribute="leading" secondItem="7Fz-ba-eX4" secondAttribute="trailing" constant="8" id="cXo-Ic-b6R"/>
                                         <constraint firstItem="7Fz-ba-eX4" firstAttribute="height" secondItem="DWs-gh-YnG" secondAttribute="height" multiplier="2/3" id="eXc-vt-ZK1"/>
                                         <constraint firstItem="rWe-9u-F0X" firstAttribute="leading" secondItem="jrc-p6-dWT" secondAttribute="trailing" constant="8" id="hd3-f6-wKS"/>
                                         <constraint firstItem="7Fz-ba-eX4" firstAttribute="top" secondItem="DWs-gh-YnG" secondAttribute="top" id="oe8-Dg-7tR"/>

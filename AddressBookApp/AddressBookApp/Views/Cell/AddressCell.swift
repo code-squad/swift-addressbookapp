@@ -41,6 +41,7 @@ extension AddressCell {
     
     private func setUpLabels() {
         nameLabel.font = UIFont.systemFont(ofSize: 18.0)
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.textColor = .black
         nameLabel.textAlignment = .left
         
