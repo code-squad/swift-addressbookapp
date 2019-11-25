@@ -16,7 +16,7 @@
 		FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */; };
 		FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */; };
 		FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */; };
-		FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFC2389541900DE2CE8 /* MGCContact.swift */; };
+		FAD45AFD2389541900DE2CE8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AFC2389541900DE2CE8 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		FAD45AEC2389477E00DE2CE8 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		FAD45AF723894F0200DE2CE8 /* MGCContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContactStore.swift; sourceTree = "<group>"; };
-		FAD45AFC2389541900DE2CE8 /* MGCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGCContact.swift; sourceTree = "<group>"; };
+		FAD45AFC2389541900DE2CE8 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 		FAD45AFB2389540C00DE2CE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAD45AFC2389541900DE2CE8 /* MGCContact.swift */,
+				FAD45AFC2389541900DE2CE8 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 				FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
 				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
-				FAD45AFD2389541900DE2CE8 /* MGCContact.swift in Sources */,
+				FAD45AFD2389541900DE2CE8 /* Contact.swift in Sources */,
 				FAD45AD9238924CD00DE2CE8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

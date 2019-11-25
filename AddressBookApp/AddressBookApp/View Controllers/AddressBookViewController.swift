@@ -13,7 +13,7 @@ class AddressBookViewController: UITableViewController {
 
     // MARK: - Vars
     
-    var contacts: [MGCContact] = [] {
+    var contacts: [Contact] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -25,7 +25,7 @@ class AddressBookViewController: UITableViewController {
         super.viewDidLoad()
         
         MGCContactStore.sharedInstance.fetchContacts { contacts in
-            self.contacts = contacts.map { MGCContact(contact: $0) }
+            self.contacts = contacts.map { Contact(contact: $0) }
         }
     }
 

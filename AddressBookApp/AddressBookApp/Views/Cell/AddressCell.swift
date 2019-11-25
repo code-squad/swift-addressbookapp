@@ -57,7 +57,7 @@ extension AddressCell {
 // MARK: - Configure
 
 extension AddressCell {
-    func configure(_ contact: MGCContact) {
+    func configure(_ contact: Contact) {
         if let imageData = contact.profilePictureData {
             profileImageView.image = UIImage(data: imageData)
         }
