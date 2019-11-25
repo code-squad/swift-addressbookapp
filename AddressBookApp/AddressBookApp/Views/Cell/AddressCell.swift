@@ -6,19 +6,51 @@
 //  Copyright © 2019 cmindy. All rights reserved.
 //
 
+import Contacts
 import UIKit
 
 class AddressCell: UITableViewCell {
-
+    
+    // MARK: - Vars
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    // MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setUpAttributes()
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+// MARK: - Attributes
 
-        // Configure the view for the selected state
+extension AddressCell {
+    private func setUpAttributes() {
+        setUpImageView()
+        setUpLabels()
+    }
+    
+    private func setUpImageView() {
+        profileImageView.contentMode = .scaleAspectFill
+    }
+    
+    private func setUpLabels() {
+        nameLabel.font = UIFont.systemFont(ofSize: 18.0)
+        nameLabel.textColor = .black
+        nameLabel.textAlignment = .left
+        
+        telLabel.font = UIFont.systemFont(ofSize: 17.0, weight: .bold)
+        telLabel.textColor = .lightGray
+        telLabel.textAlignment = .left
+        
+        emailLabel.font = UIFont.systemFont(ofSize: 16.0)
+        emailLabel.textColor = .darkGray
+        emailLabel.textAlignment = .right
     }
 
 }
