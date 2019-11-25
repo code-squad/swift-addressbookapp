@@ -60,6 +60,8 @@ extension AddressCell {
     func configure(_ contact: Contact) {
         if let imageData = contact.profilePictureData {
             profileImageView.image = UIImage(data: imageData)
+        } else {
+            profileImageView.image = UIImage(named: "imgDefaultProfile")
         }
         
         nameLabel.text = contact.fullName ?? ""
