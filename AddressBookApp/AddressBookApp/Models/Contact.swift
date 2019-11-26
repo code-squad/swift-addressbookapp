@@ -14,8 +14,8 @@ class Contact {
 
     let fullName: String?
     let phoneNumber: String?
-    var email: String?
-    var profilePictureData: Data?
+    let email: String?
+    let profilePictureData: Data?
 
     
     // MARK: - Initialization
