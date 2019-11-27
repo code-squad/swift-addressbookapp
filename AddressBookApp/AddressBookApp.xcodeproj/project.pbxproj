@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FAC8217C238D009200ABDFFD /* ContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8217B238D009200ABDFFD /* ContactDataSource.swift */; };
 		FAC82180238E39DD00ABDFFD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8217F238E39DD00ABDFFD /* String+Extensions.swift */; };
+		FAC82182238E3D0E00ABDFFD /* Consonant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC82181238E3D0E00ABDFFD /* Consonant.swift */; };
 		FAD45AD7238924CD00DE2CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */; };
 		FAD45ADE238924CD00DE2CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD45ADC238924CD00DE2CE8 /* Main.storyboard */; };
 		FAD45AE0238924D200DE2CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD45ADF238924D200DE2CE8 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		FAC8217B238D009200ABDFFD /* ContactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSource.swift; sourceTree = "<group>"; };
 		FAC8217F238E39DD00ABDFFD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		FAC82181238E3D0E00ABDFFD /* Consonant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consonant.swift; sourceTree = "<group>"; };
 		FAD45AD3238924CD00DE2CE8 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD45ADD238924CD00DE2CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAC82183238E3D1F00ABDFFD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FAC82181238E3D0E00ABDFFD /* Consonant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		FAD45ACA238924CD00DE2CE8 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD45AFC2389541900DE2CE8 /* Contact.swift */,
+				FAC82183238E3D1F00ABDFFD /* Constants */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 				FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */,
 				FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */,
 				FAC82180238E39DD00ABDFFD /* String+Extensions.swift in Sources */,
+				FAC82182238E3D0E00ABDFFD /* Consonant.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
 				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
 				FAD45AFD2389541900DE2CE8 /* Contact.swift in Sources */,
