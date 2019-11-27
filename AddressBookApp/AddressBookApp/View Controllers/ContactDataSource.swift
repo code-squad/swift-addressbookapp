@@ -11,9 +11,17 @@ import Contacts
 
 class ContactDataSource: NSObject, UITableViewDataSource {
     
+    // MARK: - Section
+    
+    private struct Section {
+        let consonant: String
+        let contacts: [Contact]
+    }
+    
     // MARK: - Vars
     
-    private var contacts: [Contact] = [] {
+    private var contacts: [Contact] = []
+    private var sections: [Section] = [] {
         didSet {
             contactsDidFetched?()
         }
@@ -28,25 +36,47 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     override init() {
         super.init()
         
+        var consonants = Consonant.all.reduce(into: [String: [Contact]]()) { dict, consonant in
+            dict[consonant] = [Contact]()
+        }
+        
         MGCContactStore.sharedInstance.fetchContacts { contacts in
             self.contacts = contacts.map { Contact(contact: $0) }
+            self.contacts.forEach { contact in
+                if let consonant = contact.fullName?.initialConsonant() {
+                    consonants[consonant]?.append(contact)
+                }
+            }
+            self.sections = consonants.keys.sorted().map { Section(consonant: $0, contacts: consonants[$0]!) }
         }
     }
     
     // MARK: - UITableView DataSource
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return sections[section].contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AddressCell.reuseID, for: indexPath) as? AddressCell else {
             return .init()
         }
-        
-        let contact = contacts[indexPath.row]
+        let section = sections[indexPath.section]
+        let contact = section.contacts[indexPath.row]
         cell.configure(contact)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].contacts.count > 0 ? sections[section].consonant : nil
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sections.map { $0.consonant }
     }
 }
