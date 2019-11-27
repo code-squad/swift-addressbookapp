@@ -20,7 +20,6 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Vars
     
-    private var contacts: [Contact] = []
     private var sections: [Section] = [] {
         didSet {
             contactsDidFetched?()
@@ -41,8 +40,8 @@ class ContactDataSource: NSObject, UITableViewDataSource {
         }
         
         MGCContactStore.sharedInstance.fetchContacts { contacts in
-            self.contacts = contacts.map { Contact(contact: $0) }
-            self.contacts.forEach { contact in
+            let contacts = contacts.map { Contact(contact: $0) }
+            contacts.forEach { contact in
                 if let consonant = contact.fullName?.initialConsonant() {
                     consonants[consonant]?.append(contact)
                 }
