@@ -21,6 +21,33 @@ iOS 레벨3 주소록 앱 저장소
 
 <img src="assets/image-20191125203426988.png" alt="image-20191125203426988" style="zoom:25%;" />
 
+### 문제 / 해결
+
+- DataSource 분리 문제
+
+  - 뷰 컨트롤러에서 `[Contact]` 배열을 직접 소유하지 않도록 해 Contacts 모듈에 대한 의존성을 줄인다.
+  - 배열을 소유하는 데이터 소스 객체를 만든다.
+  - 데이터소스에서 연락처를 fetch 해온 값을  ` [Contact]` 배열에 세팅해준다. fetch는 async하게 동작하기 때문에 fetch가 완료된 이후, 테이블 뷰의 reload가 필요했다.
+  - 하나의 뷰컨트롤러에 있을 때는 tableView에 접근할 수 있었기 때문에 didSet을 통해 tableView.reloadData를 할 수 있었다.
+  - 객체가 분리되면서 뷰컨의 tableView에 접근을 할 수 없어지면서, reloadData또한 할 수 없는 문제가 발생했다.
+
+- 해결
+
+  - 클로저를 이용해 통신
+
+  - dataSource에 ` var contactsDidFetched: (() -> Void)?` 클로저를 선언해놓고 fetch가 완료되면 이 클로저를 호출한다.
+
+  - 클로저의 구현은 `AddressBookViewController`에서 한다.
+
+  - ```swift
+            dataSource.contactsDidFetched = { [weak self] in
+                guard let self = self else { return }
+                self.tableView.reloadData()
+            }
+    ```
+
+    
+
 [⏫ TOP](#swift-addressbookapp)
 
 
