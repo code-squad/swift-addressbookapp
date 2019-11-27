@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FAC8217C238D009200ABDFFD /* ContactDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8217B238D009200ABDFFD /* ContactDataSource.swift */; };
+		FAC82180238E39DD00ABDFFD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8217F238E39DD00ABDFFD /* String+Extensions.swift */; };
 		FAD45AD7238924CD00DE2CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */; };
 		FAD45ADE238924CD00DE2CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD45ADC238924CD00DE2CE8 /* Main.storyboard */; };
 		FAD45AE0238924D200DE2CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD45ADF238924D200DE2CE8 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		FAC8217B238D009200ABDFFD /* ContactDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataSource.swift; sourceTree = "<group>"; };
+		FAC8217F238E39DD00ABDFFD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FAD45AD3238924CD00DE2CE8 /* AddressBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD45AD6238924CD00DE2CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD45ADD238924CD00DE2CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD45AF42389480E00DE2CE8 /* Cell+ReuseIdentifier.swift */,
+				FAC8217F238E39DD00ABDFFD /* String+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				FAC8217C238D009200ABDFFD /* ContactDataSource.swift in Sources */,
 				FAD45AF52389480E00DE2CE8 /* Cell+ReuseIdentifier.swift in Sources */,
 				FAD45AF823894F0200DE2CE8 /* MGCContactStore.swift in Sources */,
+				FAC82180238E39DD00ABDFFD /* String+Extensions.swift in Sources */,
 				FAD45AEB2389426700DE2CE8 /* AddressBookViewController.swift in Sources */,
 				FAD45AED2389477E00DE2CE8 /* AddressCell.swift in Sources */,
 				FAD45AFD2389541900DE2CE8 /* Contact.swift in Sources */,
