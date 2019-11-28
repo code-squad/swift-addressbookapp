@@ -35,10 +35,7 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     override init() {
         super.init()
         
-        var consonants = Consonant.all.reduce(into: [String: [Contact]]()) { dict, consonant in
-            dict[consonant] = [Contact]()
-        }
-        
+        var consonants = Consonant.consonants
         MGCContactStore.sharedInstance.fetchContacts { contacts in
             let contacts = contacts.map { Contact(contact: $0) }
             contacts.forEach { contact in

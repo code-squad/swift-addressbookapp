@@ -12,4 +12,10 @@ enum Consonant {
     static let all = hangul + english
     static let hangul = Array("ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ").map { String($0).precomposedStringWithCompatibilityMapping }
     static let english = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ").map { String($0) }
+    
+    static var consonants: [String: [Contact]] {
+        return Consonant.all.reduce(into: [String: [Contact]]()) { dict, consonant in
+            dict[consonant] = [Contact]()
+        }
+    }
 }
