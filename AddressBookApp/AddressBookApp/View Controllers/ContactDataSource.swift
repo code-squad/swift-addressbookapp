@@ -37,8 +37,9 @@ class ContactDataSource: NSObject, UITableViewDataSource {
         
         var consonants = Consonant.consonants
         MGCContactStore.sharedInstance.fetchContacts { contacts in
-            let contacts = contacts.map { Contact(contact: $0) }
-            contacts.forEach { contact in
+            contacts.forEach {
+                let contact = Contact(contact: $0)
+
                 if let consonant = contact.fullName?.initialConsonant() {
                     consonants[consonant]?.append(contact)
                 }
