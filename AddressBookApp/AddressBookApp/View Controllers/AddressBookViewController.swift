@@ -14,6 +14,8 @@ class AddressBookViewController: UITableViewController {
     
     private var dataSource = ContactDataSource()
     
+    @IBOutlet weak var contactSearchBar: UISearchBar!
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
