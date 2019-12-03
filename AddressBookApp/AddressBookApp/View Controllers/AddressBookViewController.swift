@@ -23,7 +23,7 @@ class AddressBookViewController: UITableViewController {
         
         setUpAttributes()
         
-        dataSource.contactsDidFetched = { [weak self] in
+        dataSource.dataDidUpdated = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
         }

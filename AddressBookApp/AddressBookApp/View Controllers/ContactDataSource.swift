@@ -22,7 +22,7 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     private var sections: [Section] = [] {
         didSet {
-            contactsDidFetched?()
+            dataDidUpdated?()
         }
     }
     
@@ -32,13 +32,13 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     var searchText: String = "" {
         didSet {
-            contactsDidFetched?()
+            dataDidUpdated?()
         }
     }
     
     // MARK: - Closures
     
-    var contactsDidFetched: (() -> Void)?
+    var dataDidUpdated: (() -> Void)?
     
     // MARK: - Initializer
     
