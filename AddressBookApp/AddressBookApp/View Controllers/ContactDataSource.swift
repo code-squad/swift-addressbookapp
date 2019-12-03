@@ -13,28 +13,35 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Section
     
-    struct Section {
-        let consonant: String
-        let contacts: [Contact]
-    }
+    typealias ContactSection = (key: String, value: [Contact])
     
     // MARK: - Vars
     
-    private var sections: [Section] = [] {
+    private var contacts: [Contact] = [] {
         didSet {
             dataDidUpdated?()
         }
     }
     
-    private var filteredSections: [Section] {
-        return searchText.isEmpty ? sections : sections.filter { check(section: $0) }
+    private var sections: [ContactSection] = [] {
+        didSet {
+            filteredSections = sections
+            dataDidUpdated?()
+        }
+    }
+    
+    private var filteredSections: [ContactSection] = [] {
+        didSet {
+            dataDidUpdated?()
+        }
     }
     
     var searchText: String = "" {
         didSet {
-            dataDidUpdated?()
+            filteredSections = searchText.isEmpty ? sections : makeFilteredSection()
         }
     }
+    
     
     // MARK: - Closures
     
@@ -46,15 +53,15 @@ class ContactDataSource: NSObject, UITableViewDataSource {
         super.init()
         
         var consonants = Consonant.consonants
+        
         MGCContactStore.sharedInstance.fetchContacts { contacts in
-            contacts.forEach {
-                let contact = Contact(contact: $0)
-
-                if let consonant = contact.fullName?.initialConsonant() {
-                    consonants[consonant]?.append(contact)
+            self.contacts = contacts.map { Contact(contact: $0) }
+            self.contacts.forEach {
+                if let consonant = $0.fullName?.initialConsonant() {
+                    consonants[consonant]?.append($0)
                 }
             }
-            self.sections = consonants.keys.sorted().map { Section(consonant: $0, contacts: consonants[$0]!) }
+            self.sections = consonants.sorted { $0.key < $1.key }
         }
     }
     
@@ -65,7 +72,7 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredSections[section].contacts.count
+        return filteredSections[section].value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,29 +80,39 @@ class ContactDataSource: NSObject, UITableViewDataSource {
             return .init()
         }
         let section = filteredSections[indexPath.section]
-        let contact = section.contacts[indexPath.row]
+        let contact = section.value[indexPath.row]
         cell.configure(contact)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return filteredSections[section].contacts.count > 0 ? filteredSections[section].consonant : nil
+        return filteredSections[section].value.count > 0 ? filteredSections[section].key : nil
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return searchText.isEmpty ? filteredSections.map { $0.consonant } : nil
+        return searchText.isEmpty ? filteredSections.map { $0.key } : nil
     }
 }
 
 // MARK: - Methods
 
 extension ContactDataSource {
-    private func check(name: String) -> Bool {
-        return name.contains(searchText) || searchText.isEmpty
+    private func makeFilteredSection() -> [ContactSection] {
+        contacts
+            .filter { check(name: $0.fullName!) }
+            .reduce(into: [String: [Contact]]()) { dict, contact in
+                if let consonant = contact.fullName?.initialConsonant() {
+                    dict[consonant, default: []].append(contact)
+                }
+        }
+        .sorted { $0.key < $1.key }
     }
     
-    private func check(section: Section) -> Bool {
-        return !section.contacts.filter { check(name: $0.fullName!) }.isEmpty
+    private func check(name: String?) -> Bool {
+        guard let name = name?.lowercased() else { return false }
+        let searchedConsonants = searchText.compactMap { String($0).initialConsonant() }
+        let nameConsonants = name.compactMap { String($0).initialConsonant() }
+        return name.hasPrefix(searchText) || nameConsonants.starts(with: searchedConsonants)
     }
 }
