@@ -21,11 +21,47 @@ class AddressBookViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = dataSource
+        setUpAttributes()
         
         dataSource.contactsDidFetched = { [weak self] in
             guard let self = self else { return }
             self.tableView.reloadData()
         }
+    }
+}
+
+// MARK: - Attributes
+
+extension AddressBookViewController {
+    private func setUpAttributes() {
+        setUpTableView()
+        setUpSearchBar()
+    }
+    
+    private func setUpTableView() {
+        tableView.dataSource = dataSource
+    }
+    
+    private func setUpSearchBar() {
+        contactSearchBar.delegate = self
+        
+        contactSearchBar.autocapitalizationType = .none
+        contactSearchBar.autocorrectionType = .no
+    }
+}
+
+// MARK: - UISearchBar
+
+extension AddressBookViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        dataSource.searchText = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else {
+            return
+        }
+        dataSource.searchText = searchText
+        searchBar.resignFirstResponder()
     }
 }
