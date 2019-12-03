@@ -23,11 +23,7 @@ class ContactDataSource: NSObject, UITableViewDataSource {
         }
     }
     
-    private var contacts: [Contact] = [] {
-        didSet {
-            dataDidUpdated?()
-        }
-    }
+    private var contacts: [Contact] = []
     private var sections: [ContactSection] = [] {
         didSet {
             filteredSections = sections
