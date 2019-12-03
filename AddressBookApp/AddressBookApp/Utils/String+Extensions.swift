@@ -11,8 +11,7 @@ import Foundation
 extension String {
     func initialConsonant() -> String? {
         guard let firstWord = self.first else { return nil }
-        let wordWithKCForm = String(firstWord).precomposedStringWithCompatibilityMapping
-        guard let consonant = wordWithKCForm.decomposedStringWithCanonicalMapping.unicodeScalars.first else { return nil }
+        guard let consonant = String(firstWord).decomposedStringWithCompatibilityMapping.unicodeScalars.first else { return nil }
         return UnicodeScalar(consonant).description
     }
 }
