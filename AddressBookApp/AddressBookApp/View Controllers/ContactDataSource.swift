@@ -13,7 +13,7 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Section
     
-    private struct Section {
+    struct Section {
         let consonant: String
         let contacts: [Contact]
     }
@@ -21,6 +21,16 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     // MARK: - Vars
     
     private var sections: [Section] = [] {
+        didSet {
+            contactsDidFetched?()
+        }
+    }
+    
+    private var filteredSections: [Section] {
+        return searchText.isEmpty ? sections : sections.filter { check(section: $0) }
+    }
+    
+    var searchText: String = "" {
         didSet {
             contactsDidFetched?()
         }
@@ -51,18 +61,18 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     // MARK: - UITableView DataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return filteredSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].contacts.count
+        return filteredSections[section].contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AddressCell.reuseID, for: indexPath) as? AddressCell else {
             return .init()
         }
-        let section = sections[indexPath.section]
+        let section = filteredSections[indexPath.section]
         let contact = section.contacts[indexPath.row]
         cell.configure(contact)
         
@@ -70,10 +80,22 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].contacts.count > 0 ? sections[section].consonant : nil
+        return filteredSections[section].contacts.count > 0 ? filteredSections[section].consonant : nil
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sections.map { $0.consonant }
+        return searchText.isEmpty ? filteredSections.map { $0.consonant } : nil
+    }
+}
+
+// MARK: - Methods
+
+extension ContactDataSource {
+    private func check(name: String) -> Bool {
+        return name.contains(searchText) || searchText.isEmpty
+    }
+    
+    private func check(section: Section) -> Bool {
+        return !section.contacts.filter { check(name: $0.fullName!) }.isEmpty
     }
 }
