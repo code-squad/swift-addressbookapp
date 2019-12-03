@@ -8,6 +8,8 @@ iOS 레벨3 주소록 앱 저장소
 
 [2. 섹션 정렬](#2---섹션-정렬)
 
+[3. 검색하기](#3---검색하기)
+
 
 
 ## 1 - 앱 설계하기
@@ -137,3 +139,28 @@ iOS 레벨3 주소록 앱 저장소
 
 [⏫ TOP](#swift-addressbookapp)
 
+
+
+## 3 - 검색하기
+
+### 요구사항 / 추가내용
+
+- 화면 상단에 SearchBar를 추가한다.
+- 이름을 완성형 또는 초성만으로 검색이 가능하도록 구현한다.
+- 인덱스를 감추고, 검색 결과를 포함하는 셀만 표시한다.
+
+
+
+### 실행 결과
+
+<div>
+<img src="assets/image-20191204022114902.png" alt="image-20191204022114902" style="zoom:20%;" />
+<img src="assets/image-20191204022250617.png" alt="image-20191204022250617" style="zoom:20%;" />
+<img src="assets/image-20191204022138512.png" alt="image-20191204022138512" style="zoom:20%;" />
+</div>
+
+
+
+<img src="assets/image-20191203234041069.png" alt="image-20191203234041069" style="zoom: 33%;" />
+
+[⏫ TOP](#swift-addressbookapp)

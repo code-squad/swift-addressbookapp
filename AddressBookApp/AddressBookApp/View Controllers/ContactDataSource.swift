@@ -17,29 +17,30 @@ class ContactDataSource: NSObject, UITableViewDataSource {
     
     // MARK: - Vars
     
+    var searchText: String = "" {
+        didSet {
+            filteredSections = searchText.isEmpty ? sections : makeFilteredSection()
+        }
+    }
+    
     private var contacts: [Contact] = [] {
         didSet {
             dataDidUpdated?()
         }
     }
-    
     private var sections: [ContactSection] = [] {
         didSet {
             filteredSections = sections
             dataDidUpdated?()
         }
     }
-    
     private var filteredSections: [ContactSection] = [] {
         didSet {
             dataDidUpdated?()
         }
     }
-    
-    var searchText: String = "" {
-        didSet {
-            filteredSections = searchText.isEmpty ? sections : makeFilteredSection()
-        }
+    private var searchedConsonants: [String] {
+        return searchText.compactMap { String($0).initialConsonant() }
     }
     
     
@@ -111,7 +112,6 @@ extension ContactDataSource {
     
     private func check(name: String?) -> Bool {
         guard let name = name?.lowercased() else { return false }
-        let searchedConsonants = searchText.compactMap { String($0).initialConsonant() }
         let nameConsonants = name.compactMap { String($0).initialConsonant() }
         return name.hasPrefix(searchText) || nameConsonants.starts(with: searchedConsonants)
     }
